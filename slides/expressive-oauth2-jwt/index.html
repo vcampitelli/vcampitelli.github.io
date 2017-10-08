@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Expressive OAuth 2 Server</title>
+
+        <link rel="stylesheet" href="revealjs/css/reveal.css">
+        <link rel="stylesheet" href="revealjs/css/theme/night.css">
+
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/prism.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1 id="title">Zend Expressive com OAuth 2 e JWT</h1>
+                </section>
+                <section>
+                    <h2>Quem sou eu?</h2>
+                    <ul>
+                        <li>Vinícius Campitelli &bull; @vcampitelli</li>
+                        <li>Ibitinga &bull; São Carlos &bull; São Paulo</li>
+                        <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Zend Expressive</h2>
+                    <ul>
+                        <li class="fragment">Middlewares</li>
+                        <li class="fragment">PSR-7</li>
+                        <li class="fragment">PSR-15</li>
+                    </ul>
+                </section>
+                <section data-transition="slide-in fade-out">
+                    <h3>API</h3>
+                    <pre><code class="language-php">function ($request) {
+    if (!($user = $this->checkAuthentication($request))) {
+        return false;
+    }
+
+    if (!$this->checkAuthorization($user)) {
+        return false;
+    }
+
+    return new MyResponse([]);
+}</code></pre>
+                </section>
+                <section>
+                    <h3>Middlewares</h3>
+                    <img src="img/middleware.png" alt="Representação de Middlewares">
+                    <p class="link-source">Fonte: <a href="https://dracony.org/replacing-controllers-with-middleware/">dracony.org</a></p>
+                </section>
+                <section>
+                    <h3>PSR-7</h3>
+                    <ul>
+                        <li><span class="fragment highlight-green"><code>Psr\Http\Message\ServerRequestInterface</code></span></li>
+                        <li><span class="fragment highlight-green"><code>Psr\Http\Message\ResponseInterface</code></span></li>
+                        <li><code>Psr\Http\Message\MessageInterface</code></li>
+                        <li><code>Psr\Http\Message\RequestInterface</code></li>
+                        <li><code>Psr\Http\Message\StreamInterface</code></li>
+                        <li><code>Psr\Http\Message\UriInterface</code></li>
+                        <li><code>Psr\Http\Message\UploadedFileInterface</code></li>
+                    </ul>
+                    <p class="link-source"><a href="http://www.php-fig.org/psr/psr-7/">http://www.php-fig.org/psr/psr-7/</a></p>
+                </section>
+                <section>
+                    <h3>PSR-15</h3>
+                    <pre><code class="language-php">use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Interop\Http\ServerMiddleware\DelegateInterface as Delegate;
+
+class MyMiddleware implements MiddlewareInterface {
+    public function process(Request $request, Delegate $delegate) {
+        // Processa a requisição e retorna a resposta
+        // Ou chama o próximo middleware capaz de responder
+        return $delegate->process($request);
+    }
+}</code></pre>
+                        <!-- <a href="javascript:;" id="change-stylesheet">change</a> -->
+                </section>
+                <section>
+                    <h2>OAuth 2</h2>
+                    <ul>
+                        <li class="fragment">
+                            Protocolo de autorização
+                            <ul>
+                                <li class="fragment">Para aplicações terceiras</li>
+                                <li class="fragment">Para o próprio cliente</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Papéis</h3>
+                    <ul>
+                        <li>
+                            <strong>Resource Owner</strong><span class="fragment">: Usuário</span>
+                        </li>
+                        <li>
+                            <strong>Client</strong><span class="fragment">: Aplicação</span>
+                        </li>
+                        <li>
+                            <strong>Authorization Server</strong><span class="fragment">: API</span>
+                        </li>
+                        <li>
+                            <strong>Resource Server</strong><span class="fragment">: API *</span>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <div class="col-half">
+                            <h3>Tokens</h3>
+                            <ul>
+                                <li>
+                                    <span class="fragment highlight-green">Access Token</span>
+                                </li>
+                                <li>Refresh Token</li>
+                            </ul>
+                        </div>
+                        <div class="col-half">
+                            <h3>Grant Types</h3>
+                            <ul>
+                                <li><span class="fragment highlight-green">Client credentials</span></li>
+                                <li>Authorization code</li>
+                                <li>Implicit</li>
+                                <li>Resource owner credentials</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="img/grants.svg" alt="Grant types" class="image-white">
+                        <p class="link-source">Fonte: <a href="https://oauth2.thephpleague.com/authorization-server/which-grant/">PHP League OAuth 2.0 Server</a></p>
+                    </section>
+                    <section>
+                        <h3>Referências</h3>
+                        <ul>
+                            <li>
+                                Site oficial<br>
+                                <a href="https://oauth.net/2/">https://oauth.net/2</a>
+                            </li>
+                            <li>
+                                PHP League OAuth 2.0 Server<br>
+                                <a href="https://oauth2.thephpleague.com/">https://oauth2.thephpleague.com</a>
+                            </li>
+                            <li>
+                                Stormpath: What the Heck is OAuth?<br>
+                                <a href="https://stormpath.com/blog/what-the-heck-is-oauth/">https://stormpath.com/blog/what-the-heck-is-oauth</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>JWT</h2>
+                    <ul>
+                        <li>JSON Web Tokens</li>
+                        <li>Padrão para representar <em>claims</em></li>
+                        <li>Dividido em <em>header</em>, <em>payload</em> e <em>signature</em></li>
+                        <li>Assinado com HMAC ou RSA</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Exemplo</h3>
+                    <div id="jwt-wrapper" style="position: relative;">
+                        <pre id="pre-jwt">
+                            <span class="fragment highlight-current-green jwt-header" data-fragment-index="1">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span class="fragment highlight-current-green jwt-payload" data-fragment-index="4">eyJqdGkiOiIxMjM0NTYiLCJhdWQiOiJQSFBlc3RlIDIwMTciLCJzdWIiOiJFeGVtcGxvIEpXVCIsInVzZXIiOnsiaWQiOjEsIm5hbWUiOiJ2Y2FtcGl0ZWxsaSJ9LCJzY29wZXMiOlsic3BlYWtlciJdfQ</span>.<span class="fragment highlight-current-green jwt-signature" data-fragment-index="7">5-ifeSq8FNmLEHPKChXqwzFmwj--DD18avB8QJCN94Q</span>
+                        </pre>
+                        <div class="fragment fade-in jwt-header fragment-jwt-code" data-fragment-index="2">
+                            <pre class="fragment fade-out" data-fragment-index="3"><code class="language-json">{
+  "alg": "HS256",
+  "typ": "JWT"
+}</code></pre>
+                        </div>
+                        <div class="fragment fade-in jwt-payload fragment-jwt-code" data-fragment-index="5">
+                            <pre class="fragment fade-out" data-fragment-index="6"><code class="language-json">{
+  "jti": "123456",
+  "aud": "PHPeste 2017",
+  "sub": "Exemplo JWT",
+  "user": {
+    "id": 1,
+    "name": "vcampitelli"
+  },
+  "scopes": [
+    "speaker"
+  ]
+}</code></pre>
+                        </div>
+                        <div class="fragment fade-in jwt-signature fragment-jwt-code" data-fragment-index="8">
+                            <pre class="fragment fade-out" data-fragment-index="9"><code class="language-javascript">HMACSHA256(
+  base64Url(header) + "." + &nbsp;
+    base64Url(payload),
+  "kJf;N%Z$K1oQ>dPN|LB?Vno$"
+)</code></pre>
+                        </div>
+                    </div>
+                    <p class="link-source">Fonte: <a href="https://jwt.io/">https://jwt.io/</a></p>
+                </section>
+                <section>
+                    <h2>Na Prática</h2>
+                </section>
+                <section>
+                    <h3>Instalação</h3>
+                    <pre><code class="language-bash">composer create-project zendframework/zend-expressive-skeleton
+composer require league/oauth2-server</code></pre>
+                    <p class="link-source">Fonte: <a href="https://github.com/zendframework/zend-expressive-skeleton">github.com/zendframework/zend-expressive-skeleton</a></p>
+                </section>
+                <section>
+                    <h3>Classes</h3>
+                    <ul>
+                        <li><code>ConfigProvider</code></li>
+                        <li><code>ResourceServerMiddleware</code></li>
+                        <li><code>TokenActionMiddleware</code></li>
+                        <li><code>AccessTokenEntity</code></li>
+                        <li><code>AccessTokenRepository</code></li>
+                        <li><code>ClientEntity</code></li>
+                        <li><code>ClientRepository</code></li>
+                        <li><code>ScopeEntity</code></li>
+                        <li><code>ScopeRepository</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Token Middleware</h3>
+                </section>
+                <section>
+                    <pre><code class="language-php">$response = new \Zend\Diactoros\Response\JsonResponse([]);
+try {
+    return $this->getAuthorizationServer()
+        ->respondToAccessTokenRequest($request, $response);
+} catch (\League\OAuth2\Server\Exception\OAuthServerException $e) {
+    return $e->generateHttpResponse($response);
+}</code></pre>
+                </section>
+                <section>
+                    <h3>Authorization Server</h3>
+                </section>
+                <section>
+                    <pre><code class="language-php">$server = new \League\OAuth2\Server\AuthorizationServer(
+    new ClientRepository(),
+    new AccessTokenRepository(),
+    new ScopeRepository(),
+    $privateKey,
+    $encryptionKey
+);
+$server->enableGrantType(
+    new \League\OAuth2\Server\Grant\ClientCredentialsGrant(),
+    new \DateInterval('PT1H') // 1 hora para expiração
+);</code></pre>
+                </section>
+                <section>
+                    <h3>ScopeRepositoryInterface</h3>
+                </section>
+                <section><pre><code class="language-php">public function finalizeScopes(
+    array $scopes,
+    $grantType,
+    ClientEntityInterface $clientEntity,
+    $userIdentifier = null
+) {
+    // Valida os scopes, adiciona novos e remove os inválidos
+    return [];
+}</code></pre>
+                </section>
+                <section>
+                    <h3>AccessTokenEntityInterface</h3>
+                </section>
+                <section><pre class="stretch"><code class="language-php">public function convertToJWT(\League\OAuth2\Server\CryptKey $key) {
+    return (new \Lcobucci\JWT\Builder())
+        ->setAudience('PHPeste 2017')
+        ->setSubject('OAuth 2 e JWT')
+        ->setId('uniqueId', true)
+        ->set('scopes', $this->getScopes())
+        ->setIssuedAt(time())
+        ->setExpiration($this->getExpiryDateTime()->a())
+        ->sign(
+            new \Lcobucci\JWT\Signer\Rsa\Sha256(),
+            (new \Lcobucci\JWT\Signer\Key())->getPrivateKey(
+                $key->getKeyPath(),
+                $key->getPassphrase()
+            )
+        )->getToken();
+}</code></pre>
+                </section>
+                <section>
+                    <h3>Exemplo</h3>
+                </section>
+                <section>
+                    <pre><code class="language-bash">curl -X POST -d client_id=api -d client_secret=mysecret \
+ -d scope="user_list user_create" http://api.local/token</code></pre>
+                    <pre><code class="output-token language-json">{
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjA1ODI3NTJkOTNiMTI4ZTYifQ.eyJhdWQiOiIxIiwic3ViIjoiIiwianRpIjoiMDU4Mjc1MmQ5M2IxMjhlNiIsInNjb3BlcyI6W10sImlhdCI6MTUwNzQwNTI0NCwiZXhwIjoxNTA3NDA4ODQ0fQ.P7V0TBzBOiTXqUk48wMFMhEPYjvT3EXOMqztRHXGqAmZJm7Uhd7jRejwwE-YBPu4lOcRhDsxoYbM5b_VVc1BRgGf824WpWdW1Mg5FALHTlGJqLvVmHYbZqPahBNei4_BXJmtZ7e7Vp9IkjY3qTR4W9h4BjieI7P0TLTIS0S3Q1c"
+}</code></pre>
+                </section>
+                <section>
+                    <pre><code class="output-token language-bash">curl -X GET \
+ -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjA1ODI3NTJkOTNiMTI4ZTYifQ.eyJhdWQiOiIxIiwic3ViIjoiIiwianRpIjoiMDU4Mjc1MmQ5M2IxMjhlNiIsInNjb3BlcyI6W10sImlhdCI6MTUwNzQwNTI0NCwiZXhwIjoxNTA3NDA4ODQ0fQ.P7V0TBzBOiTXqUk48wMFMhEPYjvT3EXOMqztRHXGqAmZJm7Uhd7jRejwwE-YBPu4lOcRhDsxoYbM5b_VVc1BRgGf824WpWdW1Mg5FALHTlGJqLvVmHYbZqPahBNei4_BXJmtZ7e7Vp9IkjY3qTR4W9h4BjieI7P0TLTIS0S3Q1c" \
+ http://api.local/users</code></pre>
+                    <pre><code class="language-json">{ ... }</code></pre>
+                </section>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>Zend Expressive com OAuth 2 e JWT</p>
+            <p>@vcampitelli</p>
+        </div>
+
+        <script src="revealjs/lib/js/head.min.js"></script>
+        <script src="revealjs/js/reveal.js"></script>
+        <script src="js/app.js"></script>
+
+        <script>
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'js/prism.js', async: true }
+                ],
+                slideNumber: true,
+                transition: 'convex'
+            });
+        </script>
+    </body>
+</html>
