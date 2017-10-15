@@ -33,6 +33,9 @@
 #footer > p {
   margin: 1em 0;
 }
+#footer > p > a {
+  color: #555;
+}
 #title {
   font-size: 3em;
 }

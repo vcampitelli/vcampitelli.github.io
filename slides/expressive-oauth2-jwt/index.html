@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Vinícius Campitelli">
 
-        <title>Expressive OAuth 2 Server</title>
+        <title>Zend Expressive com OAuth 2 e JWT</title>
 
         <link rel="stylesheet" href="revealjs/css/reveal.css">
         <link rel="stylesheet" href="revealjs/css/theme/night.css">
@@ -31,8 +32,8 @@
                 <section>
                     <h2>Quem sou eu?</h2>
                     <ul>
-                        <li>Vinícius Campitelli &bull; @vcampitelli</li>
-                        <li>Ibitinga &bull; São Carlos &bull; São Paulo</li>
+                        <li>Vinícius Campitelli &bull; <a href="https://vcampitelli.github.io/">@vcampitelli</a></li>
+                        <li>São Paulo</li>
                         <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
                     </ul>
                 </section>
@@ -46,17 +47,16 @@
                 </section>
                 <section data-transition="slide-in fade-out">
                     <h3>API</h3>
-                    <pre><code class="language-php">function ($request) {
-    if (!($user = $this->checkAuthentication($request))) {
-        return false;
-    }
+                    <pre><code class="language-php">if (!$this->checkAuthentication()) {
+    throw new InvalidCredentialsException('Usuário inválido.');
+}
 
-    if (!$this->checkAuthorization($user)) {
-        return false;
-    }
+if (!$this->checkAuthorization()) {
+    throw new UnauthorizedException('Você não possui permissão.');
+}
 
-    return new MyResponse([]);
-}</code></pre>
+return new MyResponse([]);
+</code></pre>
                 </section>
                 <section>
                     <h3>Middlewares</h3>
@@ -89,7 +89,6 @@ class MyMiddleware implements MiddlewareInterface {
         return $delegate->process($request);
     }
 }</code></pre>
-                        <!-- <a href="javascript:;" id="change-stylesheet">change</a> -->
                 </section>
                 <section>
                     <h2>OAuth 2</h2>
@@ -125,16 +124,14 @@ class MyMiddleware implements MiddlewareInterface {
                         <div class="col-half">
                             <h3>Tokens</h3>
                             <ul>
-                                <li>
-                                    <span class="fragment highlight-green">Access Token</span>
-                                </li>
+                                <li>Access Token</li>
                                 <li>Refresh Token</li>
                             </ul>
                         </div>
                         <div class="col-half">
                             <h3>Grant Types</h3>
                             <ul>
-                                <li><span class="fragment highlight-green">Client credentials</span></li>
+                                <li>Client credentials</li>
                                 <li>Authorization code</li>
                                 <li>Implicit</li>
                                 <li>Resource owner credentials</li>
@@ -163,14 +160,37 @@ class MyMiddleware implements MiddlewareInterface {
                         </ul>
                     </section>
                 </section>
-                <section>
-                    <h2>JWT</h2>
-                    <ul>
-                        <li>JSON Web Tokens</li>
-                        <li>Padrão para representar <em>claims</em></li>
-                        <li>Dividido em <em>header</em>, <em>payload</em> e <em>signature</em></li>
-                        <li>Assinado com HMAC ou RSA</li>
-                    </ul>
+                <section id="current">
+                    <section>
+                        <h2>JWT</h2>
+                        <ul>
+                            <li>JSON Web Tokens</li>
+                            <li>Padrão para representar <em>claims</em></li>
+                            <li>Dividido em <em>header</em>, <em>payload</em> e <em>signature</em></li>
+                            <li>Assinado com HMAC ou RSA</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Claims</h3>
+                        <ul>
+                            <li>Audience: <code>aud</code></li>
+                            <li>Subject: <code>sub</code></li>
+                            <li>Identifier: <code>jti</code></li>
+                            <li>Issuer: <code>iss</code></li>
+                            <li>Issued At: <code>iat</code></li>
+                            <li>Not Before: <code>nbf</code></li>
+                            <li>Expiration: <code>exp</code></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Referências</h3>
+                        <ul>
+                            <li>
+                                Site oficial<br>
+                                <a href="https://jwt.io/">https://jwt.io</a>
+                            </li>
+                        </ul>
+                    </section>
                 </section>
                 <section>
                     <h3>Exemplo</h3>
@@ -206,7 +226,6 @@ class MyMiddleware implements MiddlewareInterface {
 )</code></pre>
                         </div>
                     </div>
-                    <p class="link-source">Fonte: <a href="https://jwt.io/">https://jwt.io/</a></p>
                 </section>
                 <section>
                     <h2>Na Prática</h2>
@@ -216,6 +235,9 @@ class MyMiddleware implements MiddlewareInterface {
                     <pre><code class="language-bash">composer create-project zendframework/zend-expressive-skeleton
 composer require league/oauth2-server</code></pre>
                     <p class="link-source">Fonte: <a href="https://github.com/zendframework/zend-expressive-skeleton">github.com/zendframework/zend-expressive-skeleton</a></p>
+                </section>
+                <section>
+                    <img src="img/expressive-install.png" alt="Screenshot da instalação do zend-expressive-skeleton">
                 </section>
                 <section>
                     <h3>Classes</h3>
@@ -232,7 +254,7 @@ composer require league/oauth2-server</code></pre>
                     </ul>
                 </section>
                 <section>
-                    <h3>Token Middleware</h3>
+                    <h3>TokenActionMiddleware</h3>
                 </section>
                 <section>
                     <pre><code class="language-php">$response = new \Zend\Diactoros\Response\JsonResponse([]);
@@ -244,7 +266,7 @@ try {
 }</code></pre>
                 </section>
                 <section>
-                    <h3>Authorization Server</h3>
+                    <h3>AuthorizationServerFactory</h3>
                 </section>
                 <section>
                     <pre><code class="language-php">$server = new \League\OAuth2\Server\AuthorizationServer(
@@ -260,7 +282,7 @@ $server->enableGrantType(
 );</code></pre>
                 </section>
                 <section>
-                    <h3>ScopeRepositoryInterface</h3>
+                    <h3>ScopeRepository</h3>
                 </section>
                 <section><pre><code class="language-php">public function finalizeScopes(
     array $scopes,
@@ -273,7 +295,7 @@ $server->enableGrantType(
 }</code></pre>
                 </section>
                 <section>
-                    <h3>AccessTokenEntityInterface</h3>
+                    <h3>AccessTokenEntity</h3>
                 </section>
                 <section><pre class="stretch"><code class="language-php">public function convertToJWT(\League\OAuth2\Server\CryptKey $key) {
     return (new \Lcobucci\JWT\Builder())
@@ -315,21 +337,11 @@ $server->enableGrantType(
 
         <div id="footer">
             <p>Zend Expressive com OAuth 2 e JWT</p>
-            <p>@vcampitelli</p>
+            <p><a href="https://vcampitelli.github.io/">@vcampitelli</a></p>
         </div>
 
         <script src="revealjs/lib/js/head.min.js"></script>
         <script src="revealjs/js/reveal.js"></script>
         <script src="js/app.js"></script>
-
-        <script>
-            Reveal.initialize({
-                dependencies: [
-                    { src: 'js/prism.js', async: true }
-                ],
-                slideNumber: true,
-                transition: 'convex'
-            });
-        </script>
     </body>
 </html>
