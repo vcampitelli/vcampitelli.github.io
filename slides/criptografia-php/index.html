@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+		<link rel="stylesheet" href="revealjs/css/theme/black.css">
+
+		<link rel="stylesheet" href="css/prism.css">
+		<link rel="stylesheet" href="css/app.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <h1 id="title">Criptografia com PHP</h1>
+                </section>
+                <section>
+                    <h2>Quem sou eu?</h2>
+                    <ul>
+                        <li><a href="https://vcampitelli.github.io/">@vcampitelli</a></li>
+                        <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
+                    </ul>
+                </section>
+				<section>
+					<h2>O que é criptografia?</h2>
+					<blockquote class="fragment">is the practice and study of techniques for secure communication in the presence of third parties called adversaries</blockquote>
+					<blockquote class="fragment">is about constructing and analyzing protocols that prevent third parties or the public from reading private messages</blockquote>
+				</section>
+				<section>
+					<div>Informação (texto claro)</div>
+					<div>Cifragem</div>
+					<div>Texto cifrado</div>
+				</section>
+				<section>
+					<h3>Pontos</h3>
+					<ul>
+						<li>Tipos de criptografia</li>
+						<li>Vetores de inicialização, cifras e modos de operação</li>
+						<li>Hashing</li>
+						<li>Assinaturas</li>
+						<li>Geradores de aleatoriedade</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Tipos de criptografia</h2>
+					<h3>Simétrica</h3>
+				</section>
+				<section>
+					<h2>Tipos de criptografia</h2>
+					<h3>Assimétrica</h3>
+				</section>
+				<section>
+					<h2>Vetores de inicialização</h2>
+				</section>
+				<section>
+					<h2>Cifras</h2>
+				</section>
+				<section>
+					<h2>Modos de operação</h2>
+				</section>
+				<section>
+					<h2>Hashing</h2>
+					<blockquote>is any function that can be used to map data of arbitrary size to data of fixed size</blockquote>
+				</section>
+				<section>
+					<h3><code>hash</code></h3>
+					<pre><code class="language-php">hash ( string $algo , string $data [, bool $raw_output = false ] )</code></pre>
+					<pre class="fragment"><code class="language-php">echo hash( string $algo , string $data [, bool $raw_output = false ] )</code></pre>
+					<pre class="fragment"><code>$2y$12$sMweydmmSOT3xh5Ef43apOXYQIKCuXXGUhBreBpskv.1ISgslbb0K</code></pre>
+				</section>
+				<section>
+					<h3><code>password_hash</code></h3>
+					<pre><code class="language-php">password_hash( string $password , int $algo [, array $options ] )</code></pre>
+					<pre class="fragment"><code class="language-php">password_hash('phpconf@2017', PASSWORD_DEFAULT, ['cost' => 12]);</code></pre>
+					<pre class="fragment"><code>$2y$12$sMweydmmSOT3xh5Ef43apOXYQIKCuXXGUhBreBpskv.1ISgslbb0K</code></pre>
+				</section>
+				<section>
+					<h3>Argon2 no PHP 7.2 (<code>PASSWORD_ARGON2I</code>)</h3>
+					<ul>
+						<li><code>memory_cost</code>: memória máxima (bytes)</li>
+						<li><code>time_cost</code>: tempo máximo para o cálculo</li>
+						<li><code>threads</code>: número de threads</li>
+					</ul>
+				</section>
+				<section>
+					<h3><code>password_verify</code></h3>
+					<pre><code class="language-php">// À prova de timing attacks
+if (password_verify($_POST['password'], $hash)) {
+	...
+}</code></pre>
+				</section>
+				<section>
+					<h3>Más práticas</h3>
+					<ul>
+						<li><code>md5</code><span class="fragment"> - colisões e velocidade</span></li>
+						<li><code>sha1</code><span class="fragment"> - colisão (<a href="http://shattered.io/">shattered.io</a>)</span></li>
+						<li><code>===</code><span class="fragment"> - <em>timing attack</em></span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Assinaturas</h2>
+				</section>
+				<section>
+					<h2>Geradores de aleatoriedade</h2>
+				</section>
+			</div>
+		</div>
+
+		<footer>
+			<div id="footer">
+	            <p>Criptografia com PHP</p>
+	            <p><a href="https://vcampitelli.github.io/">@vcampitelli</a></p>
+	        </div>
+		</footer>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
