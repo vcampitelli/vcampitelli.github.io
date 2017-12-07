@@ -18,6 +18,9 @@
 .reveal .slides section .fragment.highlight-yellow.visible {
   color: #e7ad52;
 }
+pre.smaller-font {
+  font-size: 0.45em;
+}
 
 /*
  * Custom
