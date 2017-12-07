@@ -3,7 +3,9 @@ Reveal.initialize({
         { src: 'js/prism.js', async: true }
     ],
     slideNumber: true,
-    transition: 'convex'
+    transition: 'convex',
+    history: true,
+    overview: false
 });
 Reveal.addEventListener('fragmentshown', function(event) {
     if (event.fragment.classList.contains('fragment-jwt-code')) {
