@@ -31,8 +31,8 @@
                 <section>
                     <h2>Quem sou eu?</h2>
                     <ul>
-                        <li><a href="https://vcampitelli.github.io/">@vcampitelli</a></li>
-                        <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
+						<li>Vinícius Campitelli &bull; <a href="http://vcampitelli.github.io">vcampitelli.github.io</a></li>
+			            <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
                     </ul>
                 </section>
 				<section>
@@ -49,8 +49,8 @@
 					<h3>Pontos</h3>
 					<ul>
 						<li>Tipos de criptografia</li>
-						<li>Vetores de inicialização</li>
 						<li>Geradores de aleatoriedade</li>
+						<li>Vetores de inicialização</li>
 						<li>Cifras e modos de operação</li>
 						<li>Hashing</li>
 						<li>Assinaturas</li>
@@ -58,26 +58,43 @@
 				</section>
 				<section>
 					<h2>Tipos de criptografia</h2>
+				</section>
+				<section>
 					<h3>Simétrica</h3>
+					<ul>
+						<li>Utiliza uma mesma chave para criptografar e descriptografar os textos</li>
+						<li>
+							Exemplos
+							<ul>
+								<li>AES</li>
+								<li>3DES</li>
+								<li>RC4</li>
+								<li>Blowfish</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Tipos de criptografia</h2>
+				</section>
+				<section>
 					<h3>Assimétrica</h3>
+					<ul>
+						<li>Par de chaves</li>
+						<li>Chave privada: utilizada para criptografar (escrever)</li>
+						<li>Chave pública: utilizada para descriptografar (ler)</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Vetores de inicialização</h2>
+					<h4>Gerando par de chaves RSA</h4>
+					<pre class="language-php"><code class="language-php">openssl genrsa -out private.key 2048
+# Generating RSA private key, 2048 bit long modulus
+
+openssl rsa -in private.key -outform PEM -pubout -out public.pem
+# writing RSA key</code></pre>
 				</section>
 				<section>
 					<h2>Geradores de aleatoriedade</h2>
-				</section>
-				<section>
 					<ul>
-						<li>
-							PHP 5.3+
-							<ul>
-								<code>openssl_random_pseudo_bytes()</code>
-							</ul>
-						</li>
 						<li>
 							PHP 7
 							<ul>
@@ -85,18 +102,48 @@
 								<li><code>random_bytes()</code></li>
 							</ul>
 						</li>
+						<li>
+							PHP 5.3+
+							<ul>
+								<li><code>openssl_random_pseudo_bytes()</code></li>
+							</ul>
+						</li>
+						<li>
+							PHP 5.x
+							<ul>
+								<li><a href="https://github.com/paragonie/random_compat">paragonie/random_compat</a></li>
+							</ul>
+						</li>
 					</ul>
 				</section>
 				<section>
+					<h2>Geradores de aleatoriedade</h2>
 					<h3>Más práticas</h3>
 					<ul>
-						<li><code>rand</code><span class="fragment"> - </span></li>
-						<li><code>mt_rand</code><span class="fragment"> - </span></li>
-						<li><code>===</code><span class="fragment"> - </span></li>
+						<li><code>rand()</code></li>
+						<li><code>mt_rand()</code></li>
 					</ul>
+				</section>
+				<section>
+					<h2>Vetores de inicialização</h2>
+					<ul>
+						<li>Utilizados para "inicializar" os algoritmos</li>
+						<li>
+							<code>openssl_cipher_iv_length()</code> para buscar o tamanho do IV para cada algoritmo
+						</li>
+						<li>
+							<code>openssl_get_cipher_methods()</code> para descobrir os algoritmos disponíveis
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Vetores de inicialização</h2>
+					<pre><code class="language-php">random_bytes(openssl_cipher_iv_length('aes-256-ctr'));
+// Q��A|Gh���C�M</code></pre>
 				</section>
 				<section>
 					<h2>Cifras</h2>
+					 cifras de fluxo (ou contínuas) e em cifras por bloco.
 				</section>
 				<section>
 					<h2>Modos de operação</h2>
