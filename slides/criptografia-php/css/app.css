@@ -19,3 +19,6 @@ pre[class*="language-"] {
   margin-left: auto;
   margin-right: auto;
 }
+:not(pre) > code[class*="language-"] {
+  background-color: transparent;
+}
