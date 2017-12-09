@@ -8,7 +8,7 @@
         <title>Criptografia com PHP</title>
 
         <link rel="stylesheet" href="revealjs/css/reveal.css">
-        <link rel="stylesheet" href="revealjs/css/theme/black.css">
+        <link rel="stylesheet" href="revealjs/css/theme/blood.css">
 
         <link rel="stylesheet" href="css/prism.css">
         <link rel="stylesheet" href="css/app.css">
@@ -46,35 +46,25 @@
                     <section>
                         <div class="row">
                             <div class="block one-third">Texto claro</div>
-                            <div id="flow-arrow" class="one-third"><span>Cifragem</span></div>
+                            <div id="flow-cipher" class="one-third">&rarr;</div>
                             <div class="block one-third">Texto cifrado</div>
                         </div>
                     </section>
                 </section>
                 <section>
-                    <h3>Pontos</h3>
-                    <ul>
-                        <li>Tipos de criptografia</li>
-                        <li>Geradores de aleatoriedade</li>
-                        <li>Vetores de inicialização</li>
-                        <li>Cifras e modos de operação</li>
-                        <li>Hashing</li>
-                        <li>Assinaturas</li>
-                        <li>Utilidades</li>
-                    </ul>
+                    <h2>Tipos de criptografia</h2>
                 </section>
                 <section>
                     <section>
-                        <h2>Tipos de criptografia</h2>
+                        <h3>Simétrica</h3>
                     </section>
                     <section>
-                        <h3>Simétrica</h3>
                         <ul>
                             <li>Utiliza uma mesma chave para criptografar e descriptografar os textos</li>
                             <li>
                                 Exemplos
                                 <ul>
-                                    <li>AES</li>
+                                    <li><span class="fragment highlight-green">AES</span></li>
                                     <li>3DES</li>
                                     <li>RC4</li>
                                     <li>Blowfish</li>
@@ -83,13 +73,94 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>Assimétrica</h3>
+                        <h4>Cifras</h4>
+                    </section>
+                    <section>
+                        <h5>Cifras em bloco</h5>
                         <ul>
-                            <li>Par de chaves</li>
-                            <li>Chave privada: utilizada para criptografar (escrever)</li>
-                            <li>Chave pública: utilizada para descriptografar (ler)</li>
+                            <li>Algoritmo determinístico que usa uma <span class="fragment highlight-green">chave</span> para transformar um <span class="fragment highlight-green">bloco</span> em um texto cifrado</li>
+                            <li class="fragment">
+                                AES
+                                <ul>
+                                    <li>Blocos de 128 bits</li>
+                                    <li>Chaves de 128, 192 ou <span class="fragment highlight-green">256</span> bits</li>
+                                </ul>
+                            </li>
                         </ul>
                     </section>
+                    <section>
+                        <h6>Modos de operação</h6>
+                        <ul>
+                            <li>Mecanismo que irá dividir a mensagem em blocos e aplicar a cifra a cada um</li>
+                            <li>
+                                Exemplos
+                                <ul>
+                                    <li>ECB</li>
+                                    <li>CBC</li>
+                                    <li><span class="fragment highlight-green">CTR</span></li>
+                                    <li>GCM, que também oferece autenticação <em>(PHP 7.1)</em></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h6>Não use ECB!</h6>
+                        <img src="img/Tux.jpg" alt="Imagem do Tux original">
+                        <img src="img/Tux_ecb.jpg" alt="Imagem do Tux aplicando-se ECB">
+                        <img src="img/Tux_secure.jpg" alt="Imagem do Tux aplicando-se outro modo">
+                    </section>
+                    <section>
+                        <h5>Cifras de fluxo</h5>
+                        <ul>
+                            <li>Algoritmo que opera em um bit/byte de cada vez</li>
+                            <li>Chave "infinita" de dados pseudo-randômicos</li>
+                            <li>Indicado quando não se sabe o tamanho do dado</li>
+                            <li>Algoritmo mais conhecido: RC4, mas inseguro</li>
+                            <li><a href="http://www.ecrypt.eu.org/stream/">eSTREAM</a>: projeto para identificar novos algoritmos</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Assimétrica</h3>
+                        <ul>
+                            <li>Chave privada: utilizada para criptografar (escrever)</li>
+                            <li>Chave pública: utilizada para descriptografar (ler)</li>
+                            <li>
+                                Exemplos
+                                <ul>
+                                    <li>RSA</li>
+                                    <li>Curvas Elípticas</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Provê encriptação e autenticação</li>
+                            <li>Utilizada para estabelecer conexões seguras em ambientes inseguros</li>
+                            <li>
+                                Principais utilizações
+                                <ul>
+                                    <li>SSH</li>
+                                    <li>SSL/TLS (certificados digitais)</li>
+                                    <li>PGP</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Troca de chaves Diffie–Hellman</h4>
+                        <p class="small">Fonte: <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></p>
+                    </section>
+                    <section>
+                        <img src="img/Diffie-Hellman_Key_Exchange.png" alt="Exemplificação do algoritmo Diffie-Hellman para troca de chaves">
+                    </section>
+                </section>
+                <section>
+                    <h3>CrypTool</h3>
+                    <a href="https://www.cryptool.org/en/ct2-downloads"><img src="img/cryptool.jpg" alt="Screenshot do programa CrypTool 2"></a>
+                    <p class="small"><a href="https://www.cryptool.org/en/ct2-downloads">CrypTool</a></p>
                 </section>
                 <section>
                     <section>
@@ -148,13 +219,6 @@
                     </section>
                 </section>
                 <section>
-                    <h2>Cifras</h2>
-                     cifras de fluxo (ou contínuas) e em cifras por bloco.
-                </section>
-                <section>
-                    <h2>Modos de operação</h2>
-                </section>
-                <section>
                     <section>
                         <h3>Na prática</h3>
                     </section>
@@ -172,6 +236,15 @@ $encrypted = openssl_encrypt($data, 'aes-256-ctr', $key, 0, $iv);
                     </section>
                     <section>
                         <code class="language-php">string openssl_decrypt( string $data , string $method , string $key [, int $options = 0 [, string $iv = "" [, string $tag = "" [, string $aad = "" ]]]] )</code>
+                    </section>
+                    <section>
+                        <pre><code class="language-php">// $key e $iv devem ser os mesmos usados no openssl_encrypt()
+// Uma forma de passar o IV é enviá-lo junto com o texto cifrado
+// Por exemplo: $data = $iv . $crypt;
+$ivLength = openssl_cipher_iv_length('aes-256-ctr');
+$iv = substr($data, 0, $ivLength);
+$crypt = substr($data, $ivLength);
+openssl_decrypt($crypt, 'aes-256-ctr', $key, 0, $iv);</code></pre>
                     </section>
                 </section>
                 <section>
@@ -305,14 +378,21 @@ openssl_verify($data, $signature, $pubKey, 'sha256WithRSAEncryption');
                     </section>
                     <section>
                         <h3>Libsodium</h3>
+                        <ul>
+                            <li></li>
+                        </ul>
                     </section>
                     <section>
                         <h4>Gerando par de chaves RSA</h4>
-                        <pre class="language-php"><code class="language-php">openssl genrsa -out private.key 2048
+                        <pre><code class="language-php">openssl genrsa -out private.key 2048
 # Generating RSA private key, 2048 bit long modulus
 
 openssl rsa -in private.key -outform PEM -pubout -out public.pem
 # writing RSA key</code></pre>
+                    </section>
+                    <section>
+                        <h4>Gerando chaves simétricas seguras</h4>
+                        <pre><code class="language-php">pwgen -sy1 32</code></pre>
                     </section>
                 </section>
             </div>
