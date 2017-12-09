@@ -1,6 +1,9 @@
 /*
  * Custom
  */
+#title {
+  font-size: 3.2em;
+}
 #footer {
   position: fixed;
   bottom: 0;

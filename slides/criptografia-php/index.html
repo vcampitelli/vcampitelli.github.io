@@ -32,7 +32,7 @@
                     <h2>Quem sou eu?</h2>
                     <ul>
                         <li>Vinícius Campitelli &bull; <a href="http://vcampitelli.github.io">vcampitelli.github.io</a></li>
-                        <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
+                        <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca &bull; senhasegura</li>
                     </ul>
                 </section>
                 <section>
@@ -98,36 +98,52 @@
                                     <li>ECB</li>
                                     <li>CBC</li>
                                     <li><span class="fragment highlight-green">CTR</span></li>
-                                    <li>GCM, que também oferece autenticação <em>(PHP 7.1)</em></li>
+                                    <li>GCM <em>(PHP 7.1)</em></li>
                                 </ul>
                             </li>
                         </ul>
                     </section>
                     <section>
                         <h6>Não use ECB!</h6>
-                        <img src="img/Tux.jpg" alt="Imagem do Tux original">
-                        <img src="img/Tux_ecb.jpg" alt="Imagem do Tux aplicando-se ECB">
-                        <img src="img/Tux_secure.jpg" alt="Imagem do Tux aplicando-se outro modo">
+                        <div class="one-third">
+                            <img src="img/Tux.jpg" alt="Imagem do Tux original">
+                            <p class="small">Tux original</p>
+                        </div>
+                        <div class="one-third fragment">
+                            <img src="img/Tux_secure.jpg" alt="Imagem do Tux aplicando-se outro modo">
+                            <p class="small">Tux aplicando-se CBC / CTR</p>
+                        </div>
+                        <div class="one-third fragment">
+                            <img src="img/Tux_ecb.jpg" alt="Imagem do Tux aplicando-se ECB">
+                            <p class="small">Tux aplicando-se ECB</p>
+                        </div>
                     </section>
                     <section>
-                        <h5>Cifras de fluxo</h5>
+                        <h5>Cifras de fluxo (stream)</h5>
                         <ul>
                             <li>Algoritmo que opera em um bit/byte de cada vez</li>
                             <li>Chave "infinita" de dados pseudo-randômicos</li>
                             <li>Indicado quando não se sabe o tamanho do dado</li>
-                            <li>Algoritmo mais conhecido: RC4, mas inseguro</li>
-                            <li><a href="http://www.ecrypt.eu.org/stream/">eSTREAM</a>: projeto para identificar novos algoritmos</li>
+                            <li>
+                                Algoritmos
+                                <ul>
+                                    <li>RC4, mais conhecido mas inseguro</li>
+                                    <li><a href="http://www.ecrypt.eu.org/stream/">eSTREAM</a>: projeto para escolher novos algoritmos</li>
+                                </ul>
+                            </li>
                         </ul>
                     </section>
                 </section>
                 <section>
                     <section>
                         <h3>Assimétrica</h3>
+                    </section>
+                    <section>
                         <ul>
                             <li>Chave privada: utilizada para criptografar (escrever)</li>
                             <li>Chave pública: utilizada para descriptografar (ler)</li>
                             <li>
-                                Exemplos
+                                Algoritmos
                                 <ul>
                                     <li>RSA</li>
                                     <li>Curvas Elípticas</li>
@@ -150,17 +166,15 @@
                         </ul>
                     </section>
                     <section>
-                        <h4>Troca de chaves Diffie–Hellman</h4>
-                        <p class="small">Fonte: <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></p>
+                        <h4>Problema: Troca de chaves</h4>
+                        <div class="fragment">
+                            <p>Algoritmo Diffie–Hellman</p>
+                        </p>
                     </section>
                     <section>
                         <img src="img/Diffie-Hellman_Key_Exchange.png" alt="Exemplificação do algoritmo Diffie-Hellman para troca de chaves">
+                        <p class="small">Fonte: <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></p>
                     </section>
-                </section>
-                <section>
-                    <h3>CrypTool</h3>
-                    <a href="https://www.cryptool.org/en/ct2-downloads"><img src="img/cryptool.jpg" alt="Screenshot do programa CrypTool 2"></a>
-                    <p class="small"><a href="https://www.cryptool.org/en/ct2-downloads">CrypTool</a></p>
                 </section>
                 <section>
                     <section>
@@ -192,8 +206,7 @@
                     <section>
                         <h3>Más práticas</h3>
                         <ul>
-                            <li><code>rand()</code></li>
-                            <li><code>mt_rand()</code></li>
+                            <li><code>rand()</code> e <code>mt_rand()</code> não são <em>criptograficamente</em> seguros</li>
                         </ul>
                     </section>
                 </section>
@@ -219,6 +232,13 @@
                     </section>
                 </section>
                 <section>
+                    <section>
+                        <h3>Más práticas gerais</h3>
+                        <ul>
+                            <li>mcrypt: desatualizada desde 2008</li>
+                            <li>Fazer seu próprio algoritmo</li>
+                        </ul>
+                    </section>
                     <section>
                         <h3>Na prática</h3>
                     </section>
@@ -377,10 +397,21 @@ openssl_verify($data, $signature, $pubKey, 'sha256WithRSAEncryption');
                         <h2>Utilidades</h2>
                     </section>
                     <section>
+                        <h3>CrypTool</h3>
+                        <a href="https://www.cryptool.org/en/ct2-downloads"><img src="img/cryptool.jpg" alt="Screenshot do programa CrypTool 2"></a>
+                        <p class="small"><a href="https://www.cryptool.org/en/ct2-downloads">CrypTool</a></p>
+                    </section>
+                    <section>
                         <h3>Libsodium</h3>
                         <ul>
-                            <li></li>
+                            <li>Biblioteca moderna para criptografia, assinaturas e hashing</li>
+                            <li>Incorporada no PHP 7.2 (<a href="http://php.net/manual/en/book.sodium.php">manual</a>)</li>
+                            <li><a href="https://dev.to/paragonie/php-72-the-first-programming-language-to-add-modern-cryptography-to-its-standard-library">PHP 7.2: The First Programming Language to Add Modern Cryptography to its Standard Library</a></li>
                         </ul>
+                    </section>
+                    <section>
+                        <h4>Gerando chaves simétricas seguras</h4>
+                        <pre><code class="language-php">pwgen -sy1 32</code></pre>
                     </section>
                     <section>
                         <h4>Gerando par de chaves RSA</h4>
@@ -390,10 +421,15 @@ openssl_verify($data, $signature, $pubKey, 'sha256WithRSAEncryption');
 openssl rsa -in private.key -outform PEM -pubout -out public.pem
 # writing RSA key</code></pre>
                     </section>
-                    <section>
-                        <h4>Gerando chaves simétricas seguras</h4>
-                        <pre><code class="language-php">pwgen -sy1 32</code></pre>
-                    </section>
+                </section>
+                <section>
+                    <h1>Obrigado!</h1>
+                    <ul>
+                        <li>GitHub: <a href="https://github.com/vcampitelli">@vcampitelli</a></li>
+                        <li>Twitter: <a href="https://twitter.com/vcampitelli">@vcampitelli</a></li>
+                        <li>Slides: <a href="https://vcampitelli.github.io">vcampitelli.github.io</a></li>
+                        <li>Vagas: <a href="mailto:vagas@mt4.com.br">vagas@mt4.com.br</a></li>
+                    </ul>
                 </section>
             </div>
         </div>
