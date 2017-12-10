@@ -5,69 +5,100 @@
 
         <title>vcampitelli</title>
 
-        <link rel="stylesheet" href="css/flatly.min.css">
-        <style>
-            body {
-                padding-top: 2em;
-            }
-            #intro > img {
-                float: left;
-                margin-right: 1em;
-            }
-            #intro > h1,
-            #intro > p {
-                margin: 0;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/flatly.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
-    <body>
-        <div class="container">
-            <div id="intro" class="jumbotron">
-                <img src="img/profile.jpg" alt="Vinícius Campitelli" class="img-rounded" id="img-profile">
+    <body data-spy="scroll" data-target="#navbar">
+        <div id="intro" class="jumbotron">
+            <div class="container">
+                <img src="img/profile.jpg" alt="Vinícius Campitelli" class="img-circle">
                 <h1>Vinícius Campitelli</h1>
-                <p>@vcampitelli</p>
+                <h2>@vcampitelli</h2>
             </div>
-            <div class="panel panel-success">
-                <div class="panel-heading">Quem sou eu?</div>
-                <div class="panel-body">
-                    <ul>
-                        <li>PHP Developer</li>
-                        <li>Co-founder do <a href="https://curseduca.pro/">Curseduca</a></li>
-                        <li>Lead developer em <a href="https://www.mediapost.com.br">@MediaPost</a> / <a href="https://www.mt4.com.br">MT4 Tecnologia</a></li>
-                    </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div id="sidebar" class="col-md-2">
+                    <nav id="navbar" data-spy="affix">
+                        <ul class="nav">
+                            <li><a href="#whoami">Quem sou eu?</a></li>
+                            <li><a href="#talks">Palestras</a></li>
+                            <li><a href="#links">Links</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Links</div>
-                <div class="list-group">
-                    <a href="https://github.com/vcampitelli" class="list-group-item">
-                        <button type="button" class="btn pull-right">Acessar</button>
-                        <h4 class="list-group-item-heading">GitHub</h4>
-                        <p class="list-group-item-text">
-                            @vcampitelli
-                        </p>
-                    </a>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Palestras</div>
-                <div class="list-group">
-                    <a href="slides/expressive-oauth2-jwt/" class="list-group-item">
-                        <button type="button" class="btn pull-right">Acessar</button>
-                        <h4 class="list-group-item-heading">Zend Expressive com OAuth 2 e JWT</h4>
-                        <p class="list-group-item-text">
-                            Apresentações no PHPeste 2017 e na PHPConference 2017
-                        </p>
-                    </a>
-                    <a href="slides/criptografia-php/" class="list-group-item">
-                        <button type="button" class="btn pull-right">Acessar</button>
-                        <h4 class="list-group-item-heading">Criptografia com PHP</h4>
-                        <p class="list-group-item-text">
-                            Apresentação na PHPConference 2017
-                        </p>
-                    </a>
+                <div class="col-md-9">
+                    <div id="whoami" class="section">
+                        <h2>Quem sou eu?</h2>
+                        <ul>
+                            <li>PHP Developer</li>
+                            <li>Co-founder do <a href="https://curseduca.pro/">Curseduca</a></li>
+                            <li>Lead developer em <a href="https://www.mediapost.com.br">@MediaPost</a> / <a href="https://www.mt4.com.br">MT4 Tecnologia</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="talks" class="section">
+                        <h2>Palestras</h2>
+                        <div class="panel panel-default">
+                            <div class="list-group">
+                                <a href="slides/expressive-oauth2-jwt/" class="list-group-item">
+                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
+                                    <h4 class="list-group-item-heading">Zend Expressive com OAuth 2 e JWT</h4>
+                                    <p class="list-group-item-text">
+                                        Apresentações no PHPeste 2017 e na PHPConference 2017
+                                    </p>
+                                </a>
+                                <a href="slides/criptografia-php/" class="list-group-item">
+                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
+                                    <h4 class="list-group-item-heading">Criptografia com PHP</h4>
+                                    <p class="list-group-item-text">
+                                        Apresentação na PHPConference 2017
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="links" class="section">
+                        <h2>Links</h2>
+                        <div class="panel panel-default">
+                            <div class="list-group">
+                                <a href="https://github.com/vcampitelli" class="list-group-item">
+                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
+                                    <h4 class="list-group-item-heading">GitHub</h4>
+                                    <p class="list-group-item-text">
+                                        @vcampitelli
+                                    </p>
+                                </a>
+                                <a href="https://curseduca.pro/" class="list-group-item">
+                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
+                                    <h4 class="list-group-item-heading">Curseduca</h4>
+                                    <p class="list-group-item-text">
+                                        Plataforma de e-learning no modelo SaaS
+                                    </p>
+                                </a>
+                                <a href="https://mediapost.com.br/" class="list-group-item">
+                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
+                                    <h4 class="list-group-item-heading">@MediaPost</h4>
+                                    <p class="list-group-item-text">
+                                        Especialistas em email marketing há mais de 10 anos
+                                    </p>
+                                </a>
+                                <a href="https://mt4.com.br/" class="list-group-item">
+                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
+                                    <h4 class="list-group-item-heading">MT4 Tecnologia</h4>
+                                    <p class="list-group-item-text">
+                                        Produtos e soluções feitas sob medida
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </body>
 </html>

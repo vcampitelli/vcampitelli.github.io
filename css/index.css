@@ -1,0 +1,54 @@
+#intro {
+  background: rgba(246,212,101,1);
+  background: -moz-linear-gradient(120deg, rgba(246,212,101,1) 0%, rgba(253,161,133,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(246,212,101,1)), color-stop(100%, rgba(253,161,133,1)));
+  background: -webkit-linear-gradient(120deg, rgba(246,212,101,1) 0%, rgba(253,161,133,1) 100%);
+  background: -o-linear-gradient(120deg, rgba(246,212,101,1) 0%, rgba(253,161,133,1) 100%);
+  background: -ms-linear-gradient(120deg, rgba(246,212,101,1) 0%, rgba(253,161,133,1) 100%);
+  background: linear-gradient(120deg, rgba(246,212,101,1) 0%, rgba(253,161,133,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6d465', endColorstr='#fda185', GradientType=1 );
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding: 5em 0;
+  }
+}
+#intro > .container > img {
+  float: left;
+  margin-right: 1em;
+}
+#intro > .container > h1 {
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+#intro > .container > h1,
+#intro > .container > h2 {
+  margin: 0;
+}
+#intro > .container > h2 {
+  font-size: 20px;
+}
+
+.section {
+  padding-bottom: 3em;
+}
+.section + .section {
+  margin-top: 3em;
+  padding-top: 6em;
+  border-top: 1px #ddd solid;
+}
+.section > h2 {
+  margin-top: 0;
+}
+li.active {
+  border-right: 2px #18bc9c solid;
+}
+/*
+.col-md-3 + .col-md-9 {
+  margin-left: 25%;
+}
+.col-md-3.affix-top + .col-md-9 {
+  margin-left: 0;
+}
+*/
