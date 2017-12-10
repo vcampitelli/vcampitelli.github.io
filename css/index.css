@@ -14,9 +14,13 @@
     padding: 5em 0;
   }
 }
+#intro {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
 #intro > .container > img {
   float: left;
   margin-right: 1em;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 #intro > .container > h1 {
   font-weight: 900;
@@ -40,15 +44,13 @@
 }
 .section > h2 {
   margin-top: 0;
+  font-weight: bold;
 }
 li.active {
   border-right: 2px #18bc9c solid;
 }
-/*
-.col-md-3 + .col-md-9 {
-  margin-left: 25%;
+
+/* Affix */
+.affix {
+  top: 1em;
 }
-.col-md-3.affix-top + .col-md-9 {
-  margin-left: 0;
-}
-*/
