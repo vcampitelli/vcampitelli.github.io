@@ -1,0 +1,49 @@
+/*
+ * Custom
+ */
+#title {
+  font-size: 3.2em;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 1em;
+  color: #555;
+  font-size: 0.9em;
+  font-family: "Open Sans", sans-serif;
+}
+#footer > p {
+  margin: 1em 0;
+}
+#footer > p > a {
+  color: #555;
+}
+pre[class*="language-"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+:not(pre) > code[class*="language-"] {
+  background-color: transparent;
+}
+div.block {
+  border: 3px #fff solid;
+}
+div.one-third {
+  float: left;
+  padding: 0.5em;
+  box-sizing: border-box;
+  width: 31.333333%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+#flow-cipher {
+  font-size: 2em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.reveal .slides section .fragment.highlight-green.visible {
+  color: #e7ad52;
+}
+p.small {
+  font-size: 0.5em;
+}
