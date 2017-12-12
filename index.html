@@ -9,124 +9,99 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
     <body data-spy="scroll" data-target="#navbar">
-        <div id="intro" class="jumbotron">
+        <div id="intro">
             <div class="container">
-                <img src="img/profile.jpg" alt="Vinícius Campitelli" class="img-circle">
+                <img src="img/profile.jpg" alt="Vinícius Campitelli" class="rounded-circle">
                 <h1>Vinícius Campitelli</h1>
-                <h2>@vcampitelli</h2>
+                <a href="https://github.com/vcampitelli" title="GitHub: vcampitelli">GitHub</a>
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div id="sidebar" class="col-md-2">
-                    <nav id="navbar" data-spy="affix" data-offset-top="260">
-                        <ul class="nav">
-                            <li><a href="#whoami">Quem sou eu?</a></li>
-                            <li><a href="#talks">Palestras</a></li>
-                            <li><a href="#links">Links</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-md-9">
-                    <div id="whoami" class="section">
+            <div id="whoami" class="section">
+                <div class="row">
+                    <div class="col-md-6">
                         <h2>Quem sou eu?</h2>
                         <ul>
                             <li>PHP Developer</li>
                             <li>Co-founder do <a href="https://curseduca.pro/">Curseduca</a></li>
                             <li>Lead developer em <a href="https://www.mediapost.com.br">@MediaPost</a> / <a href="https://www.mt4.com.br">MT4 Tecnologia</a></li>
                         </ul>
-                        <h3>Habilidades e interesses</h3>
-                        <p>
-                            <span class="label label-primary">php</span>
-                            <span class="label label-default">zend framework</span>
-                            <span class="label label-default">zend expressive</span>
-                            <span class="label label-default">symfony</span>
-                            <span class="label label-default">slim</span>
-                        </p>
-                        <p>
-                            <span class="label label-primary">html5</span>
-                            <span class="label label-primary">css3</span>
-                            <span class="label label-default">bootstrap</span>
-                        </p>
-                        <p>
-                            <span class="label label-primary">javascript</span>
-                            <span class="label label-default">jquery</span>
-                            <span class="label label-default">dojo</span>
-                        </p>
-                        <p>
-                            <span class="label label-primary">mysql</span>
-                            <span class="label label-primary">mongodb</span>
-                            <span class="label label-primary">rabbitmq</span>
-                        </p>
-                        <p>
-                            <span class="label label-primary">linux</span>
-                            <span class="label label-primary">python</span>
-                            <span class="label label-primary">bash</span>
-                        </p>
                     </div>
-
-                    <div id="talks" class="section">
-                        <h2>Palestras</h2>
-                        <div class="panel panel-default">
-                            <div class="list-group">
-                                <a href="slides/expressive-oauth2-jwt/" class="list-group-item">
-                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
-                                    <h4 class="list-group-item-heading">Zend Expressive com OAuth 2 e JWT</h4>
-                                    <p class="list-group-item-text">
-                                        Apresentações no PHPeste 2017 e na PHPConference 2017
-                                    </p>
-                                </a>
-                                <a href="slides/criptografia-php/" class="list-group-item">
-                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
-                                    <h4 class="list-group-item-heading">Criptografia com PHP</h4>
-                                    <p class="list-group-item-text">
-                                        Apresentação na PHPConference 2017
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="links" class="section">
-                        <h2>Links</h2>
-                        <div class="panel panel-default">
-                            <div class="list-group">
-                                <a href="https://github.com/vcampitelli" class="list-group-item">
-                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
-                                    <h4 class="list-group-item-heading">GitHub</h4>
-                                    <p class="list-group-item-text">
-                                        @vcampitelli
-                                    </p>
-                                </a>
-                                <a href="https://curseduca.pro/" class="list-group-item">
-                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
-                                    <h4 class="list-group-item-heading">Curseduca</h4>
-                                    <p class="list-group-item-text">
-                                        Plataforma de e-learning no modelo SaaS
-                                    </p>
-                                </a>
-                                <a href="https://mediapost.com.br/" class="list-group-item">
-                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
-                                    <h4 class="list-group-item-heading">@MediaPost</h4>
-                                    <p class="list-group-item-text">
-                                        Especialistas em email marketing há mais de 10 anos
-                                    </p>
-                                </a>
-                                <a href="https://mt4.com.br/" class="list-group-item">
-                                    <button type="button" class="btn btn-link pull-right">Acessar</button>
-                                    <h4 class="list-group-item-heading">MT4 Tecnologia</h4>
-                                    <p class="list-group-item-text">
-                                        Produtos e soluções feitas sob medida
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h2>O que eu faço?</h2>
+                        <p class="mb-2">
+                            <span class="badge badge-secondary">php</span>
+                            <span class="badge badge-secondary">html5</span>
+                            <span class="badge badge-secondary">css3</span>
+                            <span class="badge badge-secondary">javascript</span>
+                        </p>
+                        <p class="mb-2">
+                            <span class="badge badge-secondary">mysql</span>
+                            <span class="badge badge-secondary">mongodb</span>
+                            <span class="badge badge-secondary">rabbitmq</span>
+                        </p>
+                        <p class="mb-2">
+                            <span class="badge badge-secondary">linux</span>
+                            <span class="badge badge-secondary">python</span>
+                            <span class="badge badge-secondary">bash</span>
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+            <div id="talks" class="section">
+                <h2>Palestras</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="slides/expressive-oauth2-jwt/">Zend Expressive com OAuth 2 e JWT</a></h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Apresentações no PHPeste 2017 e na PHPConference 2017</h6>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed elit semper, imperdiet turpis eu, semper libero. Vestibulum id elit feugiat, pulvinar odio sed, tristique dui. Phasellus sed nisl in tortor venenatis viverra. Mauris vel sollicitudin leo. Aliquam lobortis tortor sed dolor finibus, nec tristique nibh facilisis. Proin tincidunt at felis id imperdiet. Maecenas nec magna ut dolor pellentesque vehicula id eu nisl. Integer congue finibus bibendum. Mauris a magna tellus.
+                        </p>
+                        <a href="slides/expressive-oauth2-jwt/" class="btn btn-success">Acessar slides</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="slides/criptografia-php/">Criptografia com PHP</a></h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Apresentação na PHPConference 2017</h6>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed elit semper, imperdiet turpis eu, semper libero. Vestibulum id elit feugiat, pulvinar odio sed, tristique dui. Phasellus sed nisl in tortor venenatis viverra. Mauris vel sollicitudin leo. Aliquam lobortis tortor sed dolor finibus, nec tristique nibh facilisis. Proin tincidunt at felis id imperdiet. Maecenas nec magna ut dolor pellentesque vehicula id eu nisl. Integer congue finibus bibendum. Mauris a magna tellus.
+                        </p>
+                        <a href="slides/criptografia-php/" class="btn btn-success">Acessar slides</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="links" class="section">
+                <h2>Links</h2>
+                <ul>
+                    <li>
+                        <a href="https://github.com/vcampitelli">
+                            <h4>GitHub</h4>
+                            <p>@vcampitelli</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://curseduca.pro/">
+                            <h4>Curseduca</h4>
+                            <p>Plataforma de e-learning no modelo SaaS</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mediapost.com.br/">
+                            <h4>@MediaPost</h4>
+                            <p>Especialistas em email marketing há mais de 10 anos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mt4.com.br/">
+                            <h4>MT4 Tecnologia</h4>
+                            <p>Produtos e soluções feitas sob medida</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
