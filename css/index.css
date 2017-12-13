@@ -9,6 +9,29 @@ body {
   background-color: #e8e8e8;
   color: rgba(0, 0, 0, 0.6);
 }
+.btn-success {
+  background-color: #7185c7;
+  border-color: #7185c7;
+}
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #4d63ad;
+  border-color: #4d63ad;
+}
+.btn-success:active {
+  background-color: #344c9c !important;
+  border-color: #344c9c !important;
+}
+a {
+  color: #4d63ad;
+  transition: all 0.3s ease-in-out;
+}
+a:hover,
+a:focus {
+  color: #7185c7;
+  text-decoration: none;
+}
+
 /* Intro */
 #intro {
   background: #feb47b; /* Old browsers */
@@ -37,39 +60,44 @@ body {
   font-size: 4rem;
   font-weight: 900;
   letter-spacing: -2px;
-}
-#intro > .container > h1 {
   margin-bottom: 0.25em;
 }
 #intro > .container > a {
   font-size: 1em;
   color: #fff;
   padding: 0.6em 0.8em;
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: 0 0 0 2px #fff inset;
 }
 #intro > .container > a:hover {
   background: #fff;
-  box-shadow: 0 0 0 2px #fff inset!important;
   color: rgba(0,0,0,.8);
 }
 
 /* Sections */
 .section {
-  padding: 2em;
+  padding: 5em 0;
 }
 .section + .section {
-  margin-top: 2em;
-  padding-top: 4em;
   border-top: 1px #ddd solid;
 }
 .section h2 {
   margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #444;
+  font-size: 2rem;
 }
 .section h2,
 .section h3,
 .card-title {
   font-weight: bold;
+}
+.card-title > a {
+  color: #505050;
+}
+.card-title > a:hover,
+.card-title > a:focus {
+  color: #777;
 }
 .card {
   box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
@@ -80,19 +108,38 @@ body {
 }
 
 /* Links */
-#links > ul {
+#links {
+  background-color: #f3f3f3;
+  text-align: center;
+}
+#links a > span {
+  color: #aaa;
+}
+#links a:hover > span,
+#links a:focus > span {
+  color: #bbb;
+}
+
+/* Footer */
+#footer {
+  font-size: 1.25em;
+  padding: 3em 0;
+}
+#footer a {
+  font-size: 1rem;
+}
+#footer ul {
+  margin: 0;
   list-style-type: none;
-  padding: 0;
 }
-#links > ul > li {
-  padding: 1em 0;
+#footer li {
+  display: inline;
 }
-#links > ul > li > a {
-  color: #666;
+#footer a {
+  color: #aaa;
+  padding: 0.5em 0.8em;
 }
-#links > ul > li > a > p {
-  margin-bottom: 0;
-}
-#links > ul > li + li {
-  border-top: 1px #ddd solid;
+#footer a:hover,
+#footer a:focus {
+  color: #888;
 }
