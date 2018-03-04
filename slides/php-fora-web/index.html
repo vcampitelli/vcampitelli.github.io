@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>PHP fora da Web</title>
+
+        <!-- Google Fonts -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,300,300i,400,400i,700,700i%7CRaleway:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+        <!-- CSS WebSlides -->
+        <link rel="stylesheet" type="text/css" media="all" href="static/css/webslides.css">
+        <link rel="stylesheet" type="text/css" media="all" href="static/css/prism.css">
+        <link rel="stylesheet" type="text/css" media="all" href="static/css/styles.css">
+
+        <!-- Optional - CSS SVG Icons (Font Awesome) -->
+        <link rel="stylesheet" type="text/css" media="all" href="static/css/svg-icons.css">
+    </head>
+    <body>
+        <main role="main">
+            <article id="webslides" class="vertical">
+                <!-- Quick Guide
+              - Each parent <section> in the <article id="webslides"> element is an individual slide.
+              - Vertical sliding = <article id="webslides" class="vertical">
+              - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+            -->
+
+                <section>
+                    <div class="wrap aligncenter">
+                        <h1><strong>PHP fora da Web</strong></h1>
+                        <p class="text-intro">Utilizando nossa linguagem preferida <span class="red">&hearts;</span> para criar CLI scripts e robôs</p>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap size-50 aligncenter">
+                        <h2><strong>Roteiro</strong></h2>
+                        <div class="bg-white shadow">
+                            <ul class="flexblock reasons">
+                                <li>
+                                    <h2>Scripts CLI</h2>
+                                    <p>Lidando com argumentos, streams e roteamento de comandos</p>
+                                </li>
+                                <li>
+                                    <h2>Robôs</h2>
+                                    <p>Gerenciando início e término de robôs, usando <code>pcntl</code> ou <code>pthreads</code></p>
+                                </li>
+                                <li>
+                                    <h2>Reutilização</h2>
+                                    <p>Criando códigos que rodem em mais de um ambiente</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="aligncenter">
+                        <h2>Scripts CLI</h2>
+                        <p>Criando utilitários para a linha de comando</p>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h3><strong>Argumentos</strong></h3>
+                                <p class="text-intro">As variáveis <code>$argc</code> e <code>$argv</code> guardam informações sobre os argumentos do script</p>
+                                <p><code>$argv</code> é um <em>array</em> com os argumentos passados, sendo que o índice 0 contém o nome do script invocado</p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">if ($argc == 1) {
+    echo "Uso: php {$argv[0]} &lt;comando&gt;" . PHP_EOL;
+    exit(2);
+}
+switch ($argv[1]) {
+    case 'run':
+        // ...
+        break;
+
+    default:
+        // ...
+        break;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                Lidando com Streams (stdin, stdout e stderr)
+                    fopen(), fgets(), fwrite()
+                Roteamento de comandos
+                    Abordagem de controllers para melhor manutenção
+                Utilizando bibliotecas para facilitar o trabalho
+                    Zend\Console
+                    Symfony Console
+
+                    Robôs
+    Criando um gerenciador para início, término e acompanhamento de robôs
+    pcntl
+        Fluxo simples
+            pcntl_fork() + pcntl_waitpid()
+        Sinais
+            pcntl_signal() para instalar o handler de sinais
+            pcntl_signal_dispatch() para despachar sinais pendentes
+            posix_kill() para enviar um sinal
+    Biblioteca pthreads
+        Introdução
+            v3 e a rescrita no PHP 7.2
+            Instalação no PHP 7.2
+            Referências
+                https://www.sitepoint.com/upgrading-pthreads-v2-v3-look/
+                https://www.sitepoint.com/parallel-programming-pthreads-php-fundamentals/
+        Classes
+            Threaded
+            Thread
+            Stackable
+            Worker
+            Pool
+    Reutilização
+        Como criar códigos que rodem em qualquer ambiente?
+        Performance
+        Boas práticas
+            Legibilidade de código: PHPCS, PHPMD
+            SOLID
+            Object Calisthenics
+        Configurações
+            Através de variáveis de ambiente
+            Recomendação “12 Factor Apps”: https://www.12factor.net/config
+        Injeção de dependências
+            Interfaces
+                Dependendo de Interfaces ao invés de classes Concretas ou até mesmo Abstratas
+            Containers
+                PSR-11: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md
+                The PHP League Container: https://github.com/thephpleague/container
+
+                <section>
+                    <div class="wrap">
+                        <h2>Features</h2>
+                        <ul class="flexblock features">
+                            <li>
+                                <div>
+                                    <h2>
+                        <span>&rarr;</span>
+                        Simple Navigation
+                      </h2> with arrow keys, presenter...
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h2>
+                        <svg class="fa-link">
+                          <use xlink:href="#fa-link"></use>
+                        </svg>
+                        Permalinks
+                      </h2> Go to a specific slide.
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h2>
+                        <svg class="fa-clock-o">
+                          <use xlink:href="#fa-clock-o"></use>
+                        </svg>
+                        Slide Counter
+                      </h2> Current/Total number.
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h2>
+                        <span>40<sup>+</sup></span>
+                        Beautiful Components
+                      </h2> Covers, cards, quotes...
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h2>
+                        <svg class="fa-text-height">
+                          <use xlink:href="#fa-text-height"></use>
+                        </svg>
+                        Vertical Rhythm
+                      </h2> Use multiples of 8.
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h2>
+                        <span>500<sup>+</sup></span>
+                        SVG Icons
+                      </h2> Font Awesome Kit.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <h2><strong>WebSlides Demos</strong></h2>
+                        <p>Contribute on <a href="https://github.com/webslides/webslides" title="Contribute on Github">Github</a>. <span class="alignright"><a href="demos/index.html" title="WebSlides Demos">View all &rsaquo;</a></span></p>
+                        <ul class="flexblock gallery">
+                            <li>
+                                <a href="demos/why-webslides.html" title="Why WebSlides?">
+                                    <figure>
+                                        <img alt="Thumbnail Why WebSlides?" src="https://webslides.tv/static/images/demos-why.png">
+                                        <figcaption>
+                                            <h2>Why WebSlides?</h2>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="demos/landings.html" title="Landings">
+                                    <figure>
+                                        <img alt="Thumbnail Landings" src="https://webslides.tv/static/images/demos-landings.png">
+                                        <figcaption>
+                                            <h2>Landings</h2>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="demos/portfolios.html" title="Portfolios">
+                                    <figure>
+                                        <img alt="Thumbnail Portfolios" src="https://webslides.tv/static/images/demos-portfolios.png">
+                                        <figcaption>
+                                            <h2>Portfolios</h2>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="demos/keynote.html" title="Apple Keynote">
+                                    <figure>
+                                        <img alt="Thumbnail Apple Keynote" src="https://webslides.tv/static/images/demos-apple.png">
+                                        <figcaption>
+                                            <h2>Apple Keynote</h2>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h4>
+                      <svg class="fa-life-ring">
+                        <use xlink:href="#fa-life-ring"></use>
+                      </svg>
+                      <strong>Guides</strong>
+                    </h4>
+                                <p>If you need help, here's just three tutorials. Just a basic knowledge of HTML is required:</p>
+                                <ul class="description">
+                                    <li><a href="demos/components.html" title="WebSlides Components">WebSlides Components</a>.</li>
+                                    <li><a href="demos/classes.html" title="WebSlides Classes">WebSlides Classes</a>.</li>
+                                    <li><a href="demos/media.html" title="WebSlides Media">WebSlides Media: images, videos...</a></li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <figure><img class="aligncenter" src="static/images/setup.png" alt="WebSlides Files"></figure>
+                            </div>
+                            <div class="column">
+                                <h4>
+                      <svg class="fa-cubes">
+                        <use xlink:href="#fa-cubes"></use>
+                      </svg>
+                      <strong>Built to expand</strong>
+                    </h4>
+                                <p>The best way to <strong>inspire with your content</strong> is to connect on a personal level:</p>
+                                <ul class="description">
+                                    <li>Background images: <a href="http://unsplash.com">Unsplash</a>.</li>
+                                    <li>CSS animations: <a href="https://daneden.github.io/animate.css/">Animate.css</a>.</li>
+                                    <li>Longforms: <a href="http://michalsnik.github.io/aos/"> Animate on scroll</a>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end .grid -->
+                    </div>
+                </section>
+                <section class="aligncenter">
+                    <!-- .wrap = container (width: 90%) -->
+                    <div class="wrap">
+                        <h2><strong>Ready to Start?</strong> </h2>
+                        <p class="text-intro">Create your own presentation instantly. <br>120+ premium slides ready to use.</p>
+                        <p>
+                            <a href="https://webslides.tv/webslides-latest.zip" class="button" title="Download WebSlides">
+                    <svg class="fa-cloud-download">
+                      <use xlink:href="#fa-cloud-download"></use>
+                    </svg>
+                    Free Download
+                  </a>
+                            <span class="try">
+                    <a href="https://www.paypal.me/jlantunez/8" title="Thanks :)">
+                      <svg class="fa-paypal">
+                        <use xlink:href="#fa-paypal"></use>
+                      </svg>
+                      Pay what you want.
+                    </a>
+                  </span>
+                        </p>
+                    </div>
+                </section>
+                <section class="slide-bottom">
+                    <div class="wrap">
+                        <div class="content-right text-serif">
+                            <h2>
+                    <strong>Thanks.</strong>
+                    <a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Finally,%20everything%20you%20need%20to%20make%20HTML%20presentations%20in%20a%20fast/beautiful%20way.%20@WebSlides%20=%20Good%20karma%20&mdash;%20https://webslides.tv">
+                      <svg class="fa-twitter">
+                        <use xlink:href="#fa-twitter"></use>
+                      </svg>
+                    </a>
+                  </h2>
+                            <p>People share content that makes them feel inspired. WebSlides is a very effective way to engage young audiences, customers, and teams.</p>
+                            <p>Best,<br> <a href="https://twitter.com/jlantunez">@jlantunez</a>, <a href="https://twitter.com/belelros">@belelros</a>, and <a href="https://twitter.com/luissacristan">@luissacristan</a>.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+            <!-- end article -->
+        </main>
+        <!-- end main -->
+
+        <!-- A global footer
+
+         <footer role="contentinfo">
+          <div class="wrap">
+            <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+          </div>
+        </footer>  -->
+
+        <!-- Required -->
+        <script src="static/js/webslides.js"></script>
+        <script>
+            window.ws = new WebSlides();
+        </script>
+
+        <script defer src="static/js/svg-icons.js"></script>
+        <script defer src="static/js/prism.js"></script>
+    </body>
+</html>
