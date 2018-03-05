@@ -400,15 +400,6 @@ pcntl_wtermsig(); // Returns the signal which caused the child to terminate</cod
                                     <li>A V3 foi totalmente reescrita para uso no PHP 7.2</li>
                                     <li>Necessita do PHP compilado com ZTS (Zend Thread Safety)</li>
                                 </ul>
-                                <br>
-                                <p class="no-margin-bottom">Referências</p>
-                                <ul class="squared no-margin-top">
-                                    <li><a href="https://blog.programster.org/ubuntu16-04-compile-php-7-2-with-pthreads">Tutorial para instalação</a></li>
-                                    <li><a href="https://www.slideshare.net/jpauli/php-and-threads-zts">Slides sobre ZTS e threads no PHP</a> (@jpauli)</li>
-                                    <li><a href="https://www.sitepoint.com/parallel-programming-pthreads-php-fundamentals/">Tutorial sobre pthreads</a> (SitePoint)</li>
-                                    <li><a href="https://www.sitepoint.com/upgrading-pthreads-v2-v3-look/">Tutorial sobre pthreads v2 x v3</a> (SitePoint)</li>
-                                    <li>Manual do PHP: <a href="http://php.net/pthreads">php.net/pthreads</a></li>
-                                </ul>
                             </div>
                             <div class="column aligncenter">
                                 <p>Classes disponíveis</p>
@@ -426,6 +417,108 @@ pcntl_wtermsig(); // Returns the signal which caused the child to terminate</cod
                             </div>
                         </div>
                     </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h3>Classe <code>Thread</code></h3>
+                                <p class="text-intro">Ela deve implementar o método <code>run()</code></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">class Task extends \Thread
+{
+    private $threadId;
+
+    public function __construct($threadId)
+    {
+        $this->threadId = (int) $threadId;
+    }
+
+    public function run()
+    {
+        echo "Iniciando a thread {$this->threadId}" . PHP_EOL;
+        sleep(rand(1, 5));
+        echo "Finalizando a thread {$this->threadId}" . PHP_EOL;
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h3>Classe <code>Worker</code></h3>
+                                <p class="text-intro">Agrupa tarefas para serem executadas <em>sequencialmente</em></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">$worker = new Worker();
+$worker->start();
+
+// Empilha 9 tarefas no worker
+for ($i = 0; $i < 8; ++$i) {
+    $worker->stack(new Task($i));
+}
+
+// Aguarda o término das tarefas
+while ($worker->collect());
+
+// Desliga o worker
+$worker->shutdown();</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h3>Classe <code>Pool</code></h3>
+                                <p class="text-intro">Agrupa <code>Worker</code>s para serem executados <em>concorrentemente</em></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">// Cria 3 workers que serão executados simultaneamente
+$pool = new Pool(3);
+
+// Submete 9 tarefas para o pool
+for ($i = 0; $i < 8; ++$i) {
+    $pool->submit(new Task($i));
+}
+
+// Aguarda o término das tarefas
+while ($pool->collect());
+
+// Desliga todos os workers
+$pool->shutdown();</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h4 class="no-margin-bottom">Pontos de atenção</h4>
+                                <ul class="squared no-margin-top">
+                                    <li>Tenha cuidado ao manusear memória compartilhada</li>
+                                    <li>Nem toda tarefa ganha performance ao ser dividida em <em>threads</em></li>
+                                    <li>Não se esqueça de aguardar as <em>threads</em> terminarem (<code>join</code>)</li>
+                                    <li>Tenha cuidado ao manusear memória compartilhada (de novo)</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4 class="no-margin-bottom">Referências</h4>
+                                <ul class="squared no-margin-top">
+                                    <li><a href="https://blog.programster.org/ubuntu16-04-compile-php-7-2-with-pthreads">Tutorial para instalação</a></li>
+                                    <li><a href="https://www.slideshare.net/jpauli/php-and-threads-zts">Slides sobre ZTS e threads no PHP</a> (@jpauli)</li>
+                                    <li><a href="https://www.sitepoint.com/parallel-programming-pthreads-php-fundamentals/">Tutorial sobre pthreads</a> (SitePoint)</li>
+                                    <li><a href="https://www.sitepoint.com/upgrading-pthreads-v2-v3-look/">Tutorial sobre pthreads v2 x v3</a> (SitePoint)</li>
+                                    <li>Manual do PHP: <a href="http://php.net/pthreads">php.net/pthreads</a></li>
+                                </ul>
+                            </div>
+                        </div>
                 </section>
                 <section>
                     <div class="aligncenter">
