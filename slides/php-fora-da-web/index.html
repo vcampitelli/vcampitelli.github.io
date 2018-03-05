@@ -20,6 +20,27 @@
                     <div class="wrap aligncenter">
                         <h1><strong>PHP fora da Web</strong></h1>
                         <p class="text-intro">Utilizando nossa linguagem preferida <span class="red">&hearts;</span> para criar CLI scripts e robôs</p>
+                        <p><em>(mas sem heresias)</em></p>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap size-50 aligncenter vertical-align">
+                        <h2><strong>Quem sou eu?</strong></h2>
+                        <ul class="flexblock features">
+                            <li>
+                                <a href="http://vcampitelli.github.io/">
+                                    <img src="https://viniciuscampitelli.com/img/profile.jpg" alt="Vinícius Campitelli" class="avatar-">
+                                    <strong>Vinícius Campitelli</strong><br>
+                                    @vcampitelli
+                                </a>
+                            </li>
+                            <li>
+                                <div>
+                                    Lead developer na <a href="https://mediapost.com.br">@MediaPost</a> e <a href="https://mt4.com.br">MT4 Tecnologia</a><br>
+                                    Gestor de tecnologia no <a href="https://curseduca.pro">Curseduca</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </section>
                 <section>
@@ -521,6 +542,12 @@ $pool->shutdown();</code></pre>
                         </div>
                 </section>
                 <section>
+                    <div class="wrap aligncenter">
+                        <h4>Demonstração</h4>
+                        <p>Porque uma vez só não vale a pena</p>
+                    </div>
+                </section>
+                <section>
                     <div class="aligncenter">
                         <h2><strong>Reutilização</strong></h2>
                         <p>Criando códigos que rodem em mais de um ambiente</p>
@@ -530,68 +557,148 @@ $pool->shutdown();</code></pre>
                     <div class="wrap">
                         <h3>Boas práticas</h3>
                         <p class="text-intro">Deixe seu código limpo e organizado para facilitar o entendimento</p>
-                        <ul class="squared">
-                            <li>PHPCS</li>
-                            <li>PHPMD</li>
-                            <li>SOLID</li>
-                            <li>Object Calisthenics</li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <div class="wrap">
-                        <h3>Configurações</h3>
-                        <p class="text-intro">Como armazenar as configurações?</p>
-                        <ul class="squared">
-                            <li>12 Factor Apps: <a href="https://www.12factor.net/config">III. Config - Store config in the environment</a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section>
-                    <div class="wrap">
-                        <h3>Injeção de dependências</h3>
-                        <p class="text-intro">Como armazenar as configurações?</p>
-                        <ul class="squared">
+                        <ul class="flexblock border blink">
                             <li>
-                                Interfaces
-                                <ul>
-                                    <li>Dependendo de Interfaces ao invés de classes Concretas ou até mesmo Abstratas</li>
-                                </ul>
+                                <a href="https://github.com/squizlabs/PHP_CodeSniffer">
+                                    <h3>PHP CodeSniffer</h3>
+                                    Detecta e corrige violações de acordo com um padrão de regras (por exemplo, PSR-2)
+                                </a>
                             </li>
                             <li>
-                                Containers
-                                <ul>
+                                <a href="https://phpmd.org/">
+                                    <h3>PHP Mess Detector</h3>
+                                    Analisador diversos aspectos, como variáveis desnecessárias, códigos muito complexos, etc
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://imasters.com.br/desenvolvimento/solid-com-php/">
+                                    <h3>SOLID</h3>
+                                    Cinco princípios para deixar softwares mais entendíveis, flexíveis e de fácil manutenção
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://williamdurand.fr/2013/06/03/object-calisthenics/">
+                                    <h3>Object Calisthenics</h3>
+                                    Conjunto de 9 regras para auxiliar na manutenção, legibilidade e facilidade de teste
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h3>Configurações</h3>
+                                <p class="text-intro">Como armazenar parâmetros, credenciais e outras opções?</p>
+                                <ul class="squared">
+                                    <li><a href="https://www.12factor.net/config">12 Factor Apps: III. Config - Store config in the environment</a></li>
+                                    <li>Arquivos PHP (com simples <em>arrays</em>, por exemplo)</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">// config.php
+return [
+    'db' => [
+        'dsn'  => 'mysql:dbname=mydatabase;host=localhost',
+        'user' => 'user',
+        'pass' => 'my@p4ssw0rd'
+    ]
+];</code></pre>
+                                <pre><code class="language-php">// index.php
+$config = require 'config.php';
+$dbh = new PDO(
+    $config['db']['dsn'],
+    $config['db']['user'],
+    $config['db']['pass']
+);</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h3>Injeção de dependências</h3>
+                                <p class="text-intro">Aumentando a reusabilidade de seus códigos</p>
+                                <ul class="squared">
                                     <li>
-                                        PSR-11: Containers:
-                                        <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">
-                                            https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md
-                                        </a>
+                                        <strong>Interfaces</strong>
+                                        <ul>
+                                            <li>Dependa de Interfaces ao invés de classes <em>(mesmo que abstratas)</em></li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        The PHP League Container:
-                                        <a href="https://github.com/thephpleague/container">
-                                            https://github.com/thephpleague/container
-                                        </a>
+                                        <strong>Containers</strong>
+                                        <ul>
+                                            <li>
+                                                PSR-11 - Containers:
+                                                <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md">
+                                                    https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md
+                                                </a>
+                                            </li>
+                                            <li>
+                                                The PHP League Container:
+                                                <a href="https://github.com/thephpleague/container">
+                                                    https://github.com/thephpleague/container
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">class MyClass
+{
+    protected $logger;
+
+    public function __construct(\Psr\Log\LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    public function run()
+    {
+        $this->logger->notice('...');
+    }
+}</code></pre>
+                                <pre><code class="language-php">// Psr\Container\ContainerInterface
+$container = require 'container.php';
+$myClass = new MyClass(
+    $container->get(\Psr\Log\LoggerInterface::class)
+);</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap aligncenter">
+                        <h2>Obrigado!</h2>
+                        <ul class="flexblock metrics">
+                            <li>
+                                <a href="https://github.com/vcampitelli">
+                                    <svg class="fa-github"><use xlink:href="#fa-github"></use></svg>
+                                    <strong>GitHub</strong>@vcampitelli
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/vcampitelli">
+                                    <svg class="fa-twitter"><use xlink:href="#fa-twitter"></use></svg>
+                                    <strong>Twitter</strong>@vcampitelli
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://viniciuscampitelli.com/slides/php-fora-da-web">
+                                    <svg class="fa-television"><use xlink:href="#fa-television"></use></svg>
+                                    <strong>Slides</strong>viniciuscampitelli.com/slides/php-fora-da-web
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </section>
             </article>
-            <!-- end article -->
         </main>
-        <!-- end main -->
-
-        <!-- A global footer
-
-         <footer role="contentinfo">
-          <div class="wrap">
-            <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
-          </div>
-        </footer>  -->
-
-        <!-- Required -->
         <script src="static/js/webslides.js"></script>
         <script>
             window.ws = new WebSlides({

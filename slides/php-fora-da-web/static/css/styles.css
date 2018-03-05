@@ -21,3 +21,8 @@ pre[class*="language-"] {
 .width-100 {
   width: 100%;
 }
+.shadow,
+.shadow:before,
+.shadow:after {
+  animation: none;
+}
