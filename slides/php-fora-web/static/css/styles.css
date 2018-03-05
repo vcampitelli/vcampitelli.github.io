@@ -1,3 +1,20 @@
 .red {
   color: #c23;
 }
+ul.squared > li {
+  list-style-type: square;
+}
+.no-margin-top {
+  margin-top: 0;
+}
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: transparent;
+}
+.padded-sides {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
