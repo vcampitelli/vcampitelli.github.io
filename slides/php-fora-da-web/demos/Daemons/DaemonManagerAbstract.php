@@ -14,6 +14,8 @@ abstract class DaemonManagerAbstract
             echo "Iniciando {$class} ({$pid})..." . PHP_EOL;
             $this->pool[$class] = $pid;
         }
+
+        $this->watch();
     }
 
     public function stop()

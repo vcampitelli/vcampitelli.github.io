@@ -474,7 +474,6 @@ class CreateUserCommand extends Command
                                 <pre><code class="language-php">pcntl_async_signals(); // Enable/disable asynchronous signal handling or return the old setting
 pcntl_fork(); // Forks the currently running process
 pcntl_signal_dispatch(); // Calls signal handlers for pending signals
-pcntl_signal_get_handler(); // Get the current handler for specified signal
 pcntl_signal(); // Installs a signal handler
 pcntl_sigprocmask(); // Sets and retrieves blocked signals
 pcntl_sigtimedwait(); // Waits for signals, with a timeout
@@ -492,7 +491,7 @@ pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre
                             <div class="column">
                                 <h4>Fluxo simples de execução</h4>
                                 <p class="text-intro">Utilizando <code>pcntl_fork()</code></p>
-                                <p>Para iniciar um processo (via <em>fork</em>)</p>
+                                <p>Fazendo <em>fork</em> do processo atual</p>
                             </div>
                             <div class="column">
                                 <pre><code class="language-php">protected function startDaemon($class)
@@ -522,7 +521,13 @@ pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre
                             <div class="column">
                                 <h4>Fluxo simples de execução</h4>
                                 <p class="text-intro">Utilizando <code>pcntl_waitpid()</code></p>
-                                <p>Para aguardar o término da execução</p>
+                                <p><code class="language-php">int pcntl_waitpid(
+    int $pid ,
+    int &amp;$status
+    [, int $options = 0
+    [, array &amp;$rusage ]]
+)</code></p>
+</code>
                             </div>
                             <div class="column">
                                 <pre><code class="language-php">protected function watch()
@@ -543,6 +548,44 @@ pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre
         }
 
         sleep(1);
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <h4>Fluxo simples de execução</h4>
+                                <p class="text-intro">Utilizando sinais</p>
+                                <p>Para lidar com eventos externos</p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">pcntl_signal(SIGINT, [$this, 'signalHandler']);
+pcntl_signal(SIGTERM, [$this, 'signalHandler']);
+pcntl_signal(SIGHUP, [$this, 'signalHandler']);
+pcntl_signal(SIGUSR1, [$this, 'signalHandler']);
+pcntl_signal(SIGUSR2, [$this, 'signalHandler']);
+
+public function signalHandler($signal)
+{
+    switch ($signal) {
+        case SIGTERM:
+        case SIGINT:
+        case SIGHUP:
+            echo 'Terminando graciosamente...';
+            die();
+
+        case SIGUSR1:
+            echo "Capturado sinal SIGUSR1 " . PHP_EOL;
+            break;
+
+        /* ... */
+
+        default:
+            echo "Capturado sinal {$signal}" . PHP_EOL;
     }
 }</code></pre>
                             </div>

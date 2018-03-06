@@ -21,7 +21,8 @@ class DaemonManager extends DaemonManagerAbstract
         $daemon = new $class();
         while ($daemon->shouldRun()) {
             $daemon->run();
-            sleep(1);
+            pcntl_signal_dispatch();
+            sleep(rand(1,3));
         }
         die();
     }
@@ -29,7 +30,7 @@ class DaemonManager extends DaemonManagerAbstract
     protected function stopDaemon($daemon)
     {
     }
-    
+
     protected function watch()
     {
         $count = count($this->pool);
@@ -50,12 +51,13 @@ class DaemonManager extends DaemonManagerAbstract
             sleep(1);
         }
     }
-    
+
     // Busque os robôs que devem ser executados de
     // um banco de dados, arquivo de configuração, etc
     protected function getDaemons()
     {
         // @FIXME
+        include_once __DIR__ . '/Example/DaemonAbstract.php';
         include_once __DIR__ . '/Example/Daemon1.php';
         include_once __DIR__ . '/Example/Daemon2.php';
 
