@@ -8,9 +8,10 @@ abstract class DaemonManagerAbstract
     public function start()
     {
         $this->pool = [];
+        $i = 0;
 
         foreach ($this->getDaemons() as $class) {
-            $pid = $this->startDaemon($class);
+            $pid = $this->startDaemon($class, ++$i);
             echo "Iniciando {$class} ({$pid})..." . PHP_EOL;
             $this->pool[$class] = $pid;
         }
@@ -27,7 +28,7 @@ abstract class DaemonManagerAbstract
 
     abstract protected function getDaemons();
 
-    abstract protected function startDaemon($class);
+    abstract protected function startDaemon($class, $id);
 
     abstract protected function stopDaemon($daemon);
 

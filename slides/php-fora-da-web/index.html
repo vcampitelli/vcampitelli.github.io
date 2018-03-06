@@ -709,10 +709,9 @@ $pool->shutdown();</code></pre>
                             <div class="column">
                                 <h4 class="no-margin-bottom">Pontos de atenção</h4>
                                 <ul class="squared no-margin-top">
-                                    <li>Tenha cuidado ao manusear memória compartilhada</li>
+                                    <li>Tenha cuidado ao realizar operações atômicas (métodos <code>synchronized</code>, <code>notify</code> e <code>wait</code>)</li>
                                     <li>Nem toda tarefa ganha performance ao ser dividida em <em>threads</em></li>
                                     <li>Não se esqueça de aguardar as <em>threads</em> terminarem (<code>join</code>)</li>
-                                    <li>Tenha cuidado ao manusear memória compartilhada (de novo)</li>
                                 </ul>
                             </div>
                             <div class="column">
@@ -785,7 +784,7 @@ $pool->shutdown();</code></pre>
                                 <pre><code class="language-php">// config.php
 return [
     'db' => [
-        'dsn'  => 'mysql:dbname=mydatabase;host=localhost',
+        'dsn'  => 'mysql:dbname=mydb;host=localhost',
         'user' => 'user',
         'pass' => 'my@p4ssw0rd'
     ]

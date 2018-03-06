@@ -5,7 +5,7 @@ use Daemon\DaemonManagerAbstract;
 
 class DaemonManager extends DaemonManagerAbstract
 {
-    protected function startDaemon($class)
+    protected function startDaemon($class, $id)
     {
         $pid = pcntl_fork();
         if ($pid == -1) {
@@ -22,7 +22,7 @@ class DaemonManager extends DaemonManagerAbstract
         while ($daemon->shouldRun()) {
             $daemon->run();
             pcntl_signal_dispatch();
-            sleep(rand(1,3));
+            sleep(rand(1, 3));
         }
         die();
     }
@@ -43,7 +43,7 @@ class DaemonManager extends DaemonManagerAbstract
                 // if WNOHANG was used and no child was available
                 if ($return) {
                     unset($this->pool[$index]);
-                    echo "Filho {$index} morreu..." . PHP_EOL;
+                    echo "Filho {$pid} morreu..." . PHP_EOL;
                     --$count;
                 }
             }
