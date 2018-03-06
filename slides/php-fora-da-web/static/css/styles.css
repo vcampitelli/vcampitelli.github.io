@@ -1,3 +1,6 @@
+.max-width {
+  max-width: 1024px;
+}
 .red {
   color: #c23;
 }
@@ -9,6 +12,10 @@ ul.squared > li {
 }
 .no-margin-bottom {
   margin-bottom: 0;
+}
+p.margin-half {
+  margin-bottom: 1.6rem;
+  line-height: 1.6rem;
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
@@ -25,4 +32,11 @@ pre[class*="language-"] {
 .shadow:before,
 .shadow:after {
   animation: none;
+}
+.features li, .clients li, pre[class*="language-"] {
+  -webkit-box-shadow: 0 8px 16px rgba(0, 20, 80, 0.02), 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 20, 80, 0.02), 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+pre[class*="language-"] {
+  border: 0;
 }

@@ -19,12 +19,11 @@
                 <section>
                     <div class="wrap aligncenter">
                         <h1><strong>PHP fora da Web</strong></h1>
-                        <p class="text-intro">Utilizando nossa linguagem preferida <span class="red">&hearts;</span> para criar CLI scripts e robôs</p>
-                        <p><em>(mas sem heresias)</em></p>
+                        <p class="text-intro">Utilizando nossa linguagem preferida <span class="red">&hearts;</span> para criar scripts CLI e robôs</p>
                     </div>
                 </section>
                 <section>
-                    <div class="wrap size-50 aligncenter vertical-align">
+                    <div class="wrap max-width aligncenter vertical-align">
                         <h2><strong>Quem sou eu?</strong></h2>
                         <ul class="flexblock features">
                             <li>
@@ -44,7 +43,7 @@
                     </div>
                 </section>
                 <section>
-                    <div class="wrap size-50 aligncenter">
+                    <div class="wrap max-width aligncenter">
                         <h2><strong>Roteiro</strong></h2>
                         <div class="bg-white shadow">
                             <ul class="flexblock reasons">
@@ -62,6 +61,12 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap aligncenter">
+                        <h3>É a melhor solução para o meu problema?</h3>
+                        <p>Primeiro, considere se você está usando as melhores ferramentas para cada tipo de trabalho</p>
                     </div>
                 </section>
                 <section>
@@ -138,13 +143,17 @@ array(6) {
                         <div class="grid vertical-align">
                             <div class="column">
                                 <h3>Streams</h3>
-                                <p class="text-intro">Uso básico das funções <code>fopen</code>, <code>fgets</code> e <code>fputs</code></p>
+                                <p class="text-intro">Uso das funções <code>fopen</code>, <code>fgets</code> e <code>fputs</code></p>
                                 <p>Junto com as constantes <code>STDIN</code>, <code>STDOUT</code> e <code>STDERR</code></p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">echo "Qual seu nome? ";
+                                <pre><code class="language-php">// Leitura do STDIN
+echo "Qual seu nome? ";
 $line = trim(fgets(STDIN));
 echo "Bem-vindo, {$line}." . PHP_EOL;
+</code></pre>
+                                <pre><code class="language-php">// Saída para  STDERR
+fputs(STDERR, 'Erro no sistema');
 </code></pre>
                             </div>
                         </div>
@@ -154,12 +163,19 @@ echo "Bem-vindo, {$line}." . PHP_EOL;
                     <div class="wrap">
                         <h3>Mais streams</h3>
                         <p class="text-intro">Uso de funções como <code>stream_context_create</code>, <code>stream_copy_to_stream</code>, <code>stream_filter_append</code>, entre outras</p>
-                        <div class="panel">
-                            Referências
-                            <ul>
-                                <li>Manual do PHP: <a href="http://php.net/stream">php.net/stream</a></li>
-                                <li>Palestra do Alexandre Gaigalas na PHP Experience em 2016: <a href="https://www.youtube.com/watch?v=ZRYMzS97HVQ">PHP Streams</a></li>
-                            </ul>
+                        <div class="grid vertical-align">
+                            <div class="column">
+                                <p class="margin-half">Referências</p>
+                                <ul class="squared">
+                                    <li>Manual do PHP: <a href="http://php.net/stream">php.net/stream</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=ZRYMzS97HVQ">Palestra do Alexandre Gaigalas na PHP Experience em 2016</a></li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                        <pre><code class="language-php">// Exemplo simples do poder das streams
+stream_filter_append(STDERR, 'string.toupper');
+stream_copy_to_stream(STDIN, STDERR);</code></pre>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -215,9 +231,9 @@ return [
             'routes' => [
                 'user-reset-password' => [
                     'options' => [
-                        'route'    => 'user resetpassword [--verbose|-v] &lt;userEmail&gt;',
+                        'route'    => 'user resetpassword [--verbose|-v] &lt;email&gt;',
                         'defaults' => [
-                            'controller' => Application\Controller\Index::class,
+                            'controller' => Application\Controller\IndexController::class,
                             'action'     => 'resetpassword'
                         ]
                     ]
@@ -239,29 +255,25 @@ return [
                                 <p class="text-intro"><a href="https://github.com/zendframework/zend-console">Zend\Console</a></p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">namespace Application\Controller;
-
-use RuntimeException;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Console\Request as ConsoleRequest;
+                                <pre><code class="language-php">use Zend\Mvc\Controller\AbstractActionController;
 
 class IndexController extends AbstractActionController
 {
     public function resetpasswordAction()
     {
         $request = $this->getRequest();
-        if (! $request instanceof ConsoleRequest) {
-            throw new RuntimeException('Requisição inválida');
+        if (! $request instanceof \Zend\Console\Request) {
+            throw new \RuntimeException('Requisição inválida');
         }
 
-        $userEmail = $request->getParam('userEmail');
+        $email = $request->getParam('email');
         /* ... */
 
         if ($request->getParam('verbose') || $request->getParam('v')) {
-            return "Nova senha para {$userEmail}: '{$newPassword}'";
+            /* ... */
         }
 
-        return "Senha enviada para o email {$userEmail}";
+        return 'Senha enviada com sucesso';
     }
 }</code></pre>
                                 <small>Adaptado da <a href="https://docs.zendframework.com/zend-console/intro/">documentação oficial</a></small>
@@ -400,53 +412,10 @@ class CreateUserCommand extends Command
                         </div>
                     </div>
                 </section>
-<!--
-                    Robôs
-    pcntl
-        Sinais
-            pcntl_signal() para instalar o handler de sinais
-            pcntl_signal_dispatch() para despachar sinais pendentes
-            posix_kill() para enviar um sinal
-    Biblioteca pthreads
-        Introdução
-            v3 e a rescrita no PHP 7.2
-            Instalação no PHP 7.2
-            Referências
-                https://www.sitepoint.com/upgrading-pthreads-v2-v3-look/
-                https://www.sitepoint.com/parallel-programming-pthreads-php-fundamentals/
-        Classes
-            Threaded
-            Thread
-            Stackable
-            Worker
-            Pool
-    Reutilização
-        Como criar códigos que rodem em qualquer ambiente?
-        Performance
-        Boas práticas
-            Legibilidade de código: PHPCS, PHPMD
-            SOLID
-            Object Calisthenics
-        Configurações
-            Através de variáveis de ambiente
-            Recomendação “12 Factor Apps”: https://www.12factor.net/config
-        Injeção de dependências
-            Interfaces
-                Dependendo de Interfaces ao invés de classes Concretas ou até mesmo Abstratas
-            Containers
-                PSR-11: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md
-                The PHP League Container: https://github.com/thephpleague/container
--->
                 <section>
                     <div class="aligncenter">
                         <h2><strong>Robôs</strong></h2>
                         <p>Usando o PHP para criar daemons</p>
-                    </div>
-                </section>
-                <section>
-                    <div class="wrap aligncenter">
-                        <h3>É a melhor solução para o meu problema?</h3>
-                        <p>Primeiro, considere se você está usando as melhores ferramentas para cada tipo de trabalho</p>
                     </div>
                 </section>
                 <section>
@@ -458,13 +427,15 @@ class CreateUserCommand extends Command
                                 <p>Ou você pode ter daemons "auto-executáveis" - por exemplo, diretamente via <em>cron</em></p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">class DaemonManager {
+                                <pre><code class="language-php">abstract class DaemonManagerAbstract
+{
     protected $pool = [];
 
-    public function start() {
+    public function start()
+    {
         $this->pool = [];
         // Busque os robôs que devem ser executados de
-        // um banco de dados, arquivo de configuração, etc
+        // banco de dados, arquivo de configuração, etc
         foreach ($this->getDaemons() as $class) {
             $this->pool[] = $this->startDaemon($class);
         }
@@ -472,19 +443,20 @@ class CreateUserCommand extends Command
         $this->watch();
     }
 
-    public function stop() {
+    public function stop()
+    {
         foreach ($this->pool as $daemon) {
             $this->stopDaemon($daemon);
         }
     }
 
-    protected function getDaemons() { /* ... */ }
+    abstract protected function getDaemons();
 
-    protected function startDaemon($class) { /* ... */ }
+    abstract protected function startDaemon($class);
 
-    protected function stopDaemon(DaemonAbstract $daemon) { /* ... */}
+    abstract protected function stopDaemon(DaemonAbstract $daemon);
 
-    protected function watch() { /* ... */ }
+    abstract protected function watch();
 }</code></pre>
                             </div>
                         </div>
@@ -495,18 +467,12 @@ class CreateUserCommand extends Command
                         <div class="grid vertical-align">
                             <div class="column">
                                 <h3>pcntl</h3>
-                                <p class="text-intro">Extensão <em>Process Control</em> com diversas funcionalidades</p>
+                                <p class="text-intro">Extensão <em>Process Control</em></p>
                                 <p>Manual do PHP: <a href="http://php.net/pcntl">php.net/pcntl</a></p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">pcntl_alarm(); // Set an alarm clock for delivery of a signal
-pcntl_async_signals(); // Enable/disable asynchronous signal handling or return the old setting
-pcntl_errno(); // Alias of pcntl_get_last_error
-pcntl_exec(); // Executes specified program in current process space
+                                <pre><code class="language-php">pcntl_async_signals(); // Enable/disable asynchronous signal handling or return the old setting
 pcntl_fork(); // Forks the currently running process
-pcntl_get_last_error(); // Retrieve the error number set by the last pcntl function which failed
-pcntl_getpriority(); // Get the priority of any process
-pcntl_setpriority(); // Change the priority of any process
 pcntl_signal_dispatch(); // Calls signal handlers for pending signals
 pcntl_signal_get_handler(); // Get the current handler for specified signal
 pcntl_signal(); // Installs a signal handler
@@ -515,13 +481,7 @@ pcntl_sigtimedwait(); // Waits for signals, with a timeout
 pcntl_sigwaitinfo(); // Waits for signals
 pcntl_strerror(); // Retrieve the system error message associated with the given errno
 pcntl_wait(); // Waits on or returns the status of a forked child
-pcntl_waitpid(); // Waits on or returns the status of a forked child
-pcntl_wexitstatus(); // Returns the return code of a terminated child
-pcntl_wifexited(); // Checks if status code represents a normal exit
-pcntl_wifsignaled(); // Checks whether the status code represents a termination due to a signal
-pcntl_wifstopped(); // Checks whether the child process is currently stopped
-pcntl_wstopsig(); // Returns the signal which caused the child to stop
-pcntl_wtermsig(); // Returns the signal which caused the child to terminate</code></pre>
+pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre>
                             </div>
                         </div>
                     </div>
@@ -592,7 +552,6 @@ pcntl_wtermsig(); // Returns the signal which caused the child to terminate</cod
                 <section>
                     <div class="wrap aligncenter">
                         <h4>Demonstração</h4>
-                        <p>A hora do palestrante passar vergonha quando nada funcionar</p>
                     </div>
                 </section>
                 <section>
@@ -728,7 +687,6 @@ $pool->shutdown();</code></pre>
                 <section>
                     <div class="wrap aligncenter">
                         <h4>Demonstração</h4>
-                        <p>Porque uma vez só não vale a pena</p>
                     </div>
                 </section>
                 <section>
