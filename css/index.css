@@ -1,0 +1,145 @@
+/* Common */
+body {
+  background-color: #fff;
+}
+.badge {
+  padding: 0.5em 0.8em;
+}
+.badge-secondary {
+  background-color: #e8e8e8;
+  color: rgba(0, 0, 0, 0.6);
+}
+.btn-success {
+  background-color: #7185c7;
+  border-color: #7185c7;
+}
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #4d63ad;
+  border-color: #4d63ad;
+}
+.btn-success:active {
+  background-color: #344c9c !important;
+  border-color: #344c9c !important;
+}
+a {
+  color: #4d63ad;
+  transition: all 0.3s ease-in-out;
+}
+a:hover,
+a:focus {
+  color: #7185c7;
+  text-decoration: none;
+}
+
+/* Intro */
+#intro {
+  background: #feb47b; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #feb47b 0%, #ff7e5f 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #feb47b 0%,#ff7e5f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #feb47b 0%,#ff7e5f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb47b', endColorstr='#ff7e5f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 768px) {
+  #intro {
+    padding: 5em 0;
+  }
+}
+@media screen and (min-width: 1366px) {
+  #intro {
+    padding: 10em 0;
+  }
+}
+#intro > .container > img {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+#intro > .container > h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 0.25em;
+}
+#intro > .container > a {
+  font-size: 1em;
+  color: #fff;
+  padding: 0.6em 0.8em;
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px #fff inset;
+}
+#intro > .container > a:hover {
+  background: #fff;
+  color: rgba(0,0,0,.8);
+}
+
+/* Sections */
+.section {
+  padding: 5em 0;
+}
+.section + .section {
+  border-top: 1px #ddd solid;
+}
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #444;
+  font-size: 2rem;
+}
+.section h2,
+.section h3,
+.card-title {
+  font-weight: bold;
+}
+.card-title > a {
+  color: #505050;
+}
+.card-title > a:hover,
+.card-title > a:focus {
+  color: #777;
+}
+.card {
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+}
+.card-subtitle {
+  padding-bottom: 1em;
+  border-bottom: 1px #eee solid;
+}
+
+/* Links */
+#links {
+  background-color: #f3f3f3;
+  text-align: center;
+}
+#links a > span {
+  color: #aaa;
+}
+#links a:hover > span,
+#links a:focus > span {
+  color: #bbb;
+}
+
+/* Footer */
+#footer {
+  font-size: 1.25em;
+  padding: 3em 0;
+}
+#footer a {
+  font-size: 1rem;
+}
+#footer ul {
+  margin: 0;
+  list-style-type: none;
+}
+#footer li {
+  display: inline;
+}
+#footer a {
+  color: #aaa;
+  padding: 0.5em 0.8em;
+}
+#footer a:hover,
+#footer a:focus {
+  color: #888;
+}
