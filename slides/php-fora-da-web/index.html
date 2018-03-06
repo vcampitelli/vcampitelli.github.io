@@ -35,8 +35,8 @@
                             </li>
                             <li>
                                 <div>
-                                    Lead developer na <a href="https://mediapost.com.br">@MediaPost</a> e <a href="https://mt4.com.br">MT4 Tecnologia</a><br>
-                                    Gestor de tecnologia no <a href="https://curseduca.pro">Curseduca</a>
+                                    <a href="https://mediapost.com.br">@MediaPost</a> e <a href="https://mt4.com.br">MT4 Tecnologia</a><br>
+                                    <a href="https://curseduca.pro">Curseduca</a>
                                 </div>
                             </li>
                         </ul>
@@ -142,9 +142,9 @@ array(6) {
                     <div class="wrap">
                         <div class="grid vertical-align">
                             <div class="column">
-                                <h3>Streams</h3>
-                                <p class="text-intro">Uso das funções <code>fopen</code>, <code>fgets</code> e <code>fputs</code></p>
-                                <p>Junto com as constantes <code>STDIN</code>, <code>STDOUT</code> e <code>STDERR</code></p>
+                                <h3>I/O Streams</h3>
+                                <p class="text-intro">Uso das funções <code>fopen</code>, <code>fgets</code>, <code>fputs</code>, <code>stream_get_line</code> e diversas outras</p>
+                                <p>Disponibilização das constantes <code>STDIN</code>, <code>STDOUT</code> e <code>STDERR</code></p>
                             </div>
                             <div class="column">
                                 <pre><code class="language-php">// Leitura do STDIN
@@ -152,7 +152,7 @@ echo "Qual seu nome? ";
 $line = trim(fgets(STDIN));
 echo "Bem-vindo, {$line}." . PHP_EOL;
 </code></pre>
-                                <pre><code class="language-php">// Saída para  STDERR
+                                <pre><code class="language-php">// Saída para STDERR
 fputs(STDERR, 'Erro no sistema');
 </code></pre>
                             </div>
@@ -161,7 +161,7 @@ fputs(STDERR, 'Erro no sistema');
                 </section>
                 <section>
                     <div class="wrap">
-                        <h3>Mais streams</h3>
+                        <h3>Streams</h3>
                         <p class="text-intro">Uso de funções como <code>stream_context_create</code>, <code>stream_copy_to_stream</code>, <code>stream_filter_append</code>, entre outras</p>
                         <div class="grid vertical-align">
                             <div class="column">
@@ -185,10 +185,7 @@ stream_copy_to_stream(STDIN, STDERR);</code></pre>
                             <div class="column">
                                 <h3>Roteamento de comandos</h3>
                                 <p class="text-intro">Organize seu script para que ele seja modular</p>
-                                <p>
-                                    Para organizar melhor seu script, você pode estruturá-lo usando MVC, por exemplo.<br>>
-                                    Crie estrutura de controllers e/ou actions e seu código irá ficar mais enxuto.
-                                </p>
+                                <p>Crie estrutura de controllers para facilitar a manutenção</p>
                             </div>
                             <div class="column">
                                 <pre><code class="language-php">if ($argc != 3) {
@@ -349,16 +346,16 @@ class CreateUserCommand extends Command
         ->setName('app:create-user')
 
         // Descrição do comando ao executar bin/console list
-        ->setDescription('Creates a new user.')
+        ->setDescription('Cria um novo usuário.')
 
         // Descrição completa ao invocar o --help
-        ->setHelp('This command allows you to create a user...')
+        ->setHelp('Esse comando permite você criar um novo usuário...')
 
         // Argumento obrigatório
         ->addArgument(
             'username',
             \Symfony\Component\Console\Input\InputArgument::REQUIRED,
-            'Nome do usuário'
+            'Nome de usuário'
         );
 }</code></pre>
                                 <small>Adaptado da <a href="https://symfony.com/doc/current/components/console.html">documentação oficial</a></small>
@@ -378,13 +375,13 @@ class CreateUserCommand extends Command
 {
     // Imprime várias linhas (automaticamente adicionando \n)
     $output->writeln([
-        'User Creator',
-        '============',
+        'Criando usuário',
+        '===============',
         '',
     ]);
 
     // Imprime sem \n
-    $output->write('Username: ');
+    $output->write('Nome de usuário: ');
     $output->write($input->getArgument('username'));
 }</code></pre>
                                 <small>Adaptado da <a href="https://symfony.com/doc/current/components/console.html">documentação oficial</a></small>
@@ -427,36 +424,25 @@ class CreateUserCommand extends Command
                                 <p>Ou você pode ter daemons "auto-executáveis" - por exemplo, diretamente via <em>cron</em></p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">abstract class DaemonManagerAbstract
+                                <pre><code class="language-php">interface DaemonManagerInterface
 {
-    protected $pool = [];
+    // Inicia todos os daemons
+    public function start();
 
-    public function start()
-    {
-        $this->pool = [];
-        // Busque os robôs que devem ser executados de
-        // banco de dados, arquivo de configuração, etc
-        foreach ($this->getDaemons() as $class) {
-            $this->pool[] = $this->startDaemon($class);
-        }
+    // Inicia um daemon específico
+    public function startDaemon($class);
 
-        $this->watch();
-    }
+    // Para todos os daemons
+    public function stop();
 
-    public function stop()
-    {
-        foreach ($this->pool as $daemon) {
-            $this->stopDaemon($daemon);
-        }
-    }
+    // Para um daemon específico
+    public function stopDaemon($class);
 
-    abstract protected function getDaemons();
+    // Lista os daemons que devem ser iniciados
+    protected function getActive();
 
-    abstract protected function startDaemon($class);
-
-    abstract protected function stopDaemon(DaemonAbstract $daemon);
-
-    abstract protected function watch();
+    // Monitora o status de cada daemon
+    protected function watchStatus();
 }</code></pre>
                             </div>
                         </div>
@@ -471,16 +457,14 @@ class CreateUserCommand extends Command
                                 <p>Manual do PHP: <a href="http://php.net/pcntl">php.net/pcntl</a></p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">pcntl_async_signals(); // Enable/disable asynchronous signal handling or return the old setting
-pcntl_fork(); // Forks the currently running process
-pcntl_signal_dispatch(); // Calls signal handlers for pending signals
-pcntl_signal(); // Installs a signal handler
-pcntl_sigprocmask(); // Sets and retrieves blocked signals
-pcntl_sigtimedwait(); // Waits for signals, with a timeout
-pcntl_sigwaitinfo(); // Waits for signals
-pcntl_strerror(); // Retrieve the system error message associated with the given errno
-pcntl_wait(); // Waits on or returns the status of a forked child
-pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre>
+                                <pre><code class="language-php">pcntl_fork(); // Faz um fork do processo atual
+pcntl_signal_dispatch(); // Invoca os handlers para sinais pendentes
+pcntl_signal(); // Instala um handler
+pcntl_sigprocmask(); // Bloqueia/desbloqueia sinais
+pcntl_sigtimedwait(); // Espera por um sinal, com timeout
+pcntl_sigwaitinfo(); // Espera por um sinal
+pcntl_wait(); // Aguarda/retorna o status de um filho
+pcntl_waitpid(); // Aguarda/retorna o status de um filho</code></pre>
                             </div>
                         </div>
                     </div>
@@ -494,7 +478,7 @@ pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre
                                 <p>Fazendo <em>fork</em> do processo atual</p>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">protected function startDaemon($class)
+                                <pre><code class="language-php">public function startDaemon($class)
 {
     $pid = pcntl_fork();
     if ($pid == -1) {
@@ -530,17 +514,12 @@ pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre
 </code>
                             </div>
                             <div class="column">
-                                <pre><code class="language-php">protected function watch()
-{
+                                <pre><code class="language-php">protected function watchStatus() {
     $count = count($this->pool);
     while ($count > 0) {
         foreach ($this->pool as $index => $pid) {
-            $return = pcntl_waitpid($pid, $status, WNOHANG);
-
-            // Segundo o manual do pcntl_waitpid() [http://php.net/pcntl_waitpid]:
-            // returns the process ID of the child which exited, -1 on error or zero
-            // if WNOHANG was used and no child was available
-            if ($return) {
+            // Retorna o PID do filho se ele estiver terminado
+            if (pcntl_waitpid($pid, $status, WNOHANG)) {
                 unset($this->pool[$index]);
                 echo "Filho {$index} morreu..." . PHP_EOL;
                 --$count;
@@ -564,13 +543,9 @@ pcntl_waitpid(); // Waits on or returns the status of a forked child</code></pre
                             </div>
                             <div class="column">
                                 <pre><code class="language-php">pcntl_signal(SIGINT, [$this, 'signalHandler']);
-pcntl_signal(SIGTERM, [$this, 'signalHandler']);
-pcntl_signal(SIGHUP, [$this, 'signalHandler']);
-pcntl_signal(SIGUSR1, [$this, 'signalHandler']);
-pcntl_signal(SIGUSR2, [$this, 'signalHandler']);
+// Para SIGTERM, SIGINT, SIGHUP, SIGUSR1, etc
 
-public function signalHandler($signal)
-{
+public function signalHandler($signal) {
     switch ($signal) {
         case SIGTERM:
         case SIGINT:
@@ -583,9 +558,6 @@ public function signalHandler($signal)
             break;
 
         /* ... */
-
-        default:
-            echo "Capturado sinal {$signal}" . PHP_EOL;
     }
 }</code></pre>
                             </div>
@@ -886,7 +858,7 @@ $myClass = new MyClass(
         <script src="static/js/webslides.js"></script>
         <script>
             window.ws = new WebSlides({
-                // changeOnClick: true,
+                changeOnClick: true,
                 loop: false
             });
         </script>
