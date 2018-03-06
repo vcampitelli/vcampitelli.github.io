@@ -202,16 +202,200 @@ if (!method_exists($class, $command)) {
                 </section>
                 <section>
                     <div class="wrap">
-                        <div class="grid vertical-align">
+                        <div class="grid sm vertical-align">
                             <div class="column">
                                 <h3>Bibliotecas</h3>
+                                <p class="text-intro"><a href="https://github.com/zendframework/zend-console">Zend\Console</a></p>
                             </div>
                             <div class="column">
-                                <ul>
-                                    <li>Zend\Console</li>
-                                    <li>Symfony Console</li>
-                                    <li>Laravel Zero</li>
-                                </ul>
+                                <pre><code class="language-php">// config/autoload/*.php
+return [
+    'console' => [
+        'router' => [
+            'routes' => [
+                'user-reset-password' => [
+                    'options' => [
+                        'route'    => 'user resetpassword [--verbose|-v] &lt;userEmail&gt;',
+                        'defaults' => [
+                            'controller' => Application\Controller\Index::class,
+                            'action'     => 'resetpassword'
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+];</code></pre>
+                                <small>Retirado da <a href="https://docs.zendframework.com/zend-console/intro/">documentação oficial</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Bibliotecas</h3>
+                                <p class="text-intro"><a href="https://github.com/zendframework/zend-console">Zend\Console</a></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">namespace Application\Controller;
+
+use RuntimeException;
+use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Console\Request as ConsoleRequest;
+
+class IndexController extends AbstractActionController
+{
+    public function resetpasswordAction()
+    {
+        $request = $this->getRequest();
+        if (! $request instanceof ConsoleRequest) {
+            throw new RuntimeException('Requisição inválida');
+        }
+
+        $userEmail = $request->getParam('userEmail');
+        /* ... */
+
+        if ($request->getParam('verbose') || $request->getParam('v')) {
+            return "Nova senha para {$userEmail}: '{$newPassword}'";
+        }
+
+        return "Senha enviada para o email {$userEmail}";
+    }
+}</code></pre>
+                                <small>Adaptado da <a href="https://docs.zendframework.com/zend-console/intro/">documentação oficial</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Bibliotecas</h3>
+                                <p class="text-intro"><a href="https://symfony.com/doc/current/components/console.html">Symfony Console</a></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">// application.php
+require __DIR__.'/vendor/autoload.php';
+
+$application = new Symfony\Component\Console\Application();
+
+$application->add(new App\Command\CreateUserCommand());
+
+$application->run();</code></pre>
+                                <small>Adaptado da <a href="https://symfony.com/doc/current/components/console.html">documentação oficial</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Bibliotecas</h3>
+                                <p class="text-intro"><a href="https://symfony.com/doc/current/components/console.html">Symfony Console</a></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">// src/Command/CreateUserCommand.php
+namespace App\Command;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class CreateUserCommand extends Command
+{
+    protected function configure()
+    {
+        /* ... */
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        /* ... */
+    }
+}</code></pre>
+                                <small>Adaptado da <a href="https://symfony.com/doc/current/components/console.html">documentação oficial</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Bibliotecas</h3>
+                                <p class="text-intro"><a href="https://symfony.com/doc/current/components/console.html">Symfony Console</a></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">protected function configure()
+{
+    $this
+        // Nome do comando, executado pelo bin/console
+        ->setName('app:create-user')
+
+        // Descrição do comando ao executar bin/console list
+        ->setDescription('Creates a new user.')
+
+        // Descrição completa ao invocar o --help
+        ->setHelp('This command allows you to create a user...')
+
+        // Argumento obrigatório
+        ->addArgument(
+            'username',
+            \Symfony\Component\Console\Input\InputArgument::REQUIRED,
+            'Nome do usuário'
+        );
+}</code></pre>
+                                <small>Adaptado da <a href="https://symfony.com/doc/current/components/console.html">documentação oficial</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Bibliotecas</h3>
+                                <p class="text-intro"><a href="https://symfony.com/doc/current/components/console.html">Symfony Console</a></p>
+                            </div>
+                            <div class="column">
+                                <pre><code class="language-php">protected function execute(InputInterface $input, OutputInterface $output)
+{
+    // Imprime várias linhas (automaticamente adicionando \n)
+    $output->writeln([
+        'User Creator',
+        '============',
+        '',
+    ]);
+
+    // Imprime sem \n
+    $output->write('Username: ');
+    $output->write($input->getArgument('username'));
+}</code></pre>
+                                <small>Adaptado da <a href="https://symfony.com/doc/current/components/console.html">documentação oficial</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Bibliotecas</h3>
+                                <p class="text-intro">Outras opções</p>
+                            </div>
+                            <div class="column">
+                                <div class="alignleft">
+                                    <ul class="flexblock blink border aligncenter">
+                                        <li><a href="https://github.com/laravel-zero/laravel-zero">Laravel Zero</a></li>
+                                        <li><a href="https://climate.thephpleague.com/">CLImate</a></p>
+                                        <li><a href="http://auraphp.com/framework/2.x/en/cli/">Aura.Cli</a></p>
+                                        <li><a href="https://github.com/c9s/CLIFramework">CLIFramework</a></p>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
