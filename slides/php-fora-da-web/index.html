@@ -583,14 +583,9 @@ public function signalHandler($signal) {
                             <div class="column aligncenter">
                                 <p>Classes disponíveis</p>
                                 <ul class="flexblock">
-                                    <li><code class="language-php">Threaded</code></li>
                                     <li><code class="language-php">Thread</code></li>
                                     <li><code class="language-php">Worker</code></li>
-                                    <li><code class="language-php">Collectable</code></li>
-                                    <li><code class="language-php">Modifiers</code></li>
                                     <li><code class="language-php">Pool</code></li>
-                                    <li><code class="language-php">Mutex</code></li>
-                                    <li><code class="language-php">Cond</code></li>
                                     <li><code class="language-php">Volatile</code></li>
                                 </ul>
                             </div>
@@ -655,7 +650,7 @@ $worker->shutdown();</code></pre>
                         <div class="grid vertical-align">
                             <div class="column">
                                 <h3>Classe <code>Pool</code></h3>
-                                <p class="text-intro">Agrupa <code>Worker</code>s para serem executados <em>concorrentemente</em></p>
+                                <p class="text-intro">Agrupa <code>Workers</code> para serem executados <em>concorrentemente</em></p>
                             </div>
                             <div class="column">
                                 <pre><code class="language-php">// Cria 3 workers que serão executados simultaneamente
@@ -861,6 +856,11 @@ $myClass = new MyClass(
                 changeOnClick: true,
                 loop: false
             });
+            document.addEventListener('contextmenu', function(ev) {
+                ev.preventDefault();
+                ws.goPrev();
+                return false;
+            }, false);
         </script>
 
         <script defer src="static/js/svg-icons.js"></script>
