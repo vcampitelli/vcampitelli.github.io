@@ -79,13 +79,6 @@ class SimpleMessageExchange
 
         // Separa o nonce do texto
         $nonce = substr($ciphertext, 0, SODIUM_CRYPTO_BOX_NONCEBYTES);
-        if (strlen($nonce) != SODIUM_CRYPTO_BOX_NONCEBYTES) {
-            var_dump($ciphertext);
-            var_dump($nonce);
-            var_dump(SODIUM_CRYPTO_BOX_NONCEBYTES);
-            die('erro no nonce');
-        }
-        $old = $ciphertext;
         $ciphertext = substr($ciphertext, SODIUM_CRYPTO_BOX_NONCEBYTES);
 
         $plaintext = sodium_crypto_box_open(
@@ -94,11 +87,6 @@ class SimpleMessageExchange
             $keypair
         );
         if ($plaintext === false) {
-            var_dump($old);
-            var_dump($ciphertext);
-            var_dump($nonce);
-            debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
-            die('erro no plaintext');
             throw new Exception("Malformed message or invalid MAC");
         }
         return $plaintext;

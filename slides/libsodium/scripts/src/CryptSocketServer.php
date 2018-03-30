@@ -66,7 +66,10 @@ class CryptSocketServer extends SocketServer
      */
     protected function readFrom(int $clientId, string $data) : string
     {
-        return $this->crypt->decrypt($data, $this->publicKeys[$clientId]);
+        return $this->crypt->decrypt(
+            sodium_hex2bin($data),
+            $this->publicKeys[$clientId]
+        );
     }
 
     /**

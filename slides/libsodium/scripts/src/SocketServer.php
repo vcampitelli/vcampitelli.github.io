@@ -95,7 +95,8 @@ class SocketServer
                 $client = stream_socket_accept($this->socket);
                 if ($client) {
                     ++$this->clientId;
-                    echo "Novo cliente conectado: {$this->clientId}" . PHP_EOL;
+                    list($ip, $port) = explode(':', stream_socket_get_name($client, true));
+                    echo "Novo cliente conectado: {$this->clientId} (porta {$port})" . PHP_EOL;
 
                     // Avisa os outros clientes que há um novo cliente conectado
                     if ($this->handleNewClient($this->clientId, $client)) {
@@ -124,7 +125,6 @@ class SocketServer
                 if (empty($data)) {
                     continue;
                 }
-                echo "\t\t\tReading {$clientId}...\n";
                 $data = $this->readFrom($clientId, $data);
 
                 $color = $this->colors[($clientId - 1) % $colorsCount];

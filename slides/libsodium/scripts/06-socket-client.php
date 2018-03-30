@@ -30,7 +30,7 @@ while (true) {
     echo 'Digite aqui sua mensagem: ';
     $line = trim(fgets(STDIN));
     if (!empty($line)) {
-        fwrite($socket, $crypt->encrypt($line, $publicKey) . PHP_EOL);
+        fwrite($socket, sodium_bin2hex($crypt->encrypt($line, $publicKey)) . PHP_EOL);
     }
 
     echo 'Aguardando server...      ';
