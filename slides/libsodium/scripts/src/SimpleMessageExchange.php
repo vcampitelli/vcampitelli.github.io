@@ -1,50 +1,91 @@
 <?php
 namespace Vcampitelli;
 
+use Exception;
+
+/**
+ * Simples classe para mostrar como utilizar a criptografia assimétrica com a libsodium
+ */
 class SimpleMessageExchange
 {
-    protected $boxSecretKey;
+    /**
+     * Chave privada
+     *
+     * @var string
+     */
+    public $boxSecretKey;
 
-    protected $boxPublicKey;
+    /**
+     * Chave pública
+     *
+     * @var string
+     */
+    public $boxPublicKey;
 
+    /**
+     * Construtor
+     */
     public function __construct()
     {
         $boxKp = sodium_crypto_box_keypair();
-        $signKp = sodium_crypto_sign_keypair();
+        // $signKp = sodium_crypto_sign_keypair();
 
         // Split the key for the crypto_box API for ease of use
         $this->boxSecretKey = sodium_crypto_box_secretkey($boxKp);
         $this->boxPublicKey = sodium_crypto_box_publickey($boxKp);
 
         // Split the key for the crypto_sign API for ease of use
-        $signSecretKey = sodium_crypto_sign_secretkey($signKp);
-        $signPublicKey = sodium_crypto_sign_publickey($signKp);
+        // $signSecretKey = sodium_crypto_sign_secretkey($signKp);
+        // $signPublicKey = sodium_crypto_sign_publickey($signKp);
     }
 
-    public function send(SimpleMessageExchange $destination, string $message) : string
+    /**
+     * Descriptografa uma mensagem
+     *
+     * @param  string $plainText Mensagem a ser enviada
+     * @param  string $publicKey Destinatário
+     *
+     * @return string            Mensagem criptografada
+     */
+    public function encrypt(string $plainText, string $publicKey) : string
     {
         $keypair = sodium_crypto_box_keypair_from_secretkey_and_publickey(
             $this->boxSecretKey,
-            $destination->getBoxPublicKey()
+            $publicKey
         );
         $nonce = random_bytes(SODIUM_CRYPTO_BOX_NONCEBYTES);
         $ciphertext = sodium_crypto_box(
-            $message,
+            $plainText,
             $nonce,
             $keypair
         );
         return $nonce . $ciphertext;
     }
 
-    public function read(SimpleMessageExchange $sender, string $ciphertext) : string
+    /**
+     * Descriptografa uma mensagem
+     *
+     * @param  string $ciphertext Mensagem encriptada
+     * @param  string $publicKey  Remetente
+     *
+     * @return string             Mensagem em texto plano
+     */
+    public function decrypt(string $ciphertext, string $publicKey) : string
     {
         $keypair = sodium_crypto_box_keypair_from_secretkey_and_publickey(
             $this->boxSecretKey,
-            $sender->getBoxPublicKey()
+            $publicKey
         );
 
         // Separa o nonce do texto
         $nonce = substr($ciphertext, 0, SODIUM_CRYPTO_BOX_NONCEBYTES);
+        if (strlen($nonce) != SODIUM_CRYPTO_BOX_NONCEBYTES) {
+            var_dump($ciphertext);
+            var_dump($nonce);
+            var_dump(SODIUM_CRYPTO_BOX_NONCEBYTES);
+            die('erro no nonce');
+        }
+        $old = $ciphertext;
         $ciphertext = substr($ciphertext, SODIUM_CRYPTO_BOX_NONCEBYTES);
 
         $plaintext = sodium_crypto_box_open(
@@ -53,13 +94,13 @@ class SimpleMessageExchange
             $keypair
         );
         if ($plaintext === false) {
+            var_dump($old);
+            var_dump($ciphertext);
+            var_dump($nonce);
+            debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+            die('erro no plaintext');
             throw new Exception("Malformed message or invalid MAC");
         }
         return $plaintext;
-    }
-
-    public function getBoxPublicKey() : string
-    {
-        return $this->boxPublicKey;
     }
 }

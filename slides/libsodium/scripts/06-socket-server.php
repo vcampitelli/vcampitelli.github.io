@@ -6,9 +6,7 @@ if ($port < 1) {
 }
 
 require __DIR__ . '/src/SocketServer.php';
+require __DIR__ . '/src/CryptSocketServer.php';
 require __DIR__ . '/src/SimpleMessageExchange.php';
-
-$server = new Vcampitelli\SocketServer($port);
-$server->start(function ($sender, $receiver, string $message) {
-    return "crypt!!! {$message}";
-});
+$server = new Vcampitelli\CryptSocketServer($port);
+$server->start();

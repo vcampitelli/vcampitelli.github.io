@@ -29,7 +29,7 @@ class SocketServer
      *
      * @var int
      */
-    protected $clientIncrement;
+    protected $clientId;
 
     /**
      * Cores de cada cliente
@@ -53,12 +53,25 @@ class SocketServer
      */
     public function __construct(int $port)
     {
+        ob_implicit_flush();
         $this->socket = stream_socket_server("tcp://127.0.0.1:{$port}", $errno, $errstr);
         if (!$this->socket) {
             throw new Exception($errstr, $errno);
         }
+
+        $this->init();
     }
 
+    /**
+     * Inicialização
+     */
+    protected function init() : void
+    {
+    }
+
+    /**
+     * Fecha o socket
+     */
     public function __destruct()
     {
         fclose($this->socket);
@@ -66,19 +79,11 @@ class SocketServer
 
     /**
      * Inicia o socket
-     *
-     * @param callable $formatMessage Send message function
      */
-    public function start(callable $formatMessage = null) : void
+    public function start() : void
     {
-        if ($formatMessage === null) {
-            $formatMessage = function ($sender, $receiver, string $message) {
-                return $message;
-            };
-        }
-
         $this->clients = [];
-        $this->clientIncrement = 0;
+        $this->clientId = 0;
         $colorsCount = count($this->colors);
 
         while (true) {
@@ -89,16 +94,25 @@ class SocketServer
             if (in_array($this->socket, $reads)) {
                 $client = stream_socket_accept($this->socket);
                 if ($client) {
-                    ++$this->clientIncrement;
-                    echo "Novo cliente conectado: {$this->clientIncrement}" . PHP_EOL;
-                    $this->clients[$this->clientIncrement] = $client;
+                    ++$this->clientId;
+                    echo "Novo cliente conectado: {$this->clientId}" . PHP_EOL;
+
+                    // Avisa os outros clientes que há um novo cliente conectado
+                    if ($this->handleNewClient($this->clientId, $client)) {
+                        $this->clients[$this->clientId] = $client;
+                    }
                 }
 
                 unset($reads[array_search($this->socket, $reads)]);
             }
 
             foreach ($reads as $clientId => $client) {
-                $data = fread($client, 128);
+                // Ignora as mensagens do server
+                if (!$clientId) {
+                    continue;
+                }
+
+                $data = fgets($client);
                 if (!$data) {
                     unset($this->clients[$clientId]);
                     fclose($client);
@@ -106,14 +120,61 @@ class SocketServer
                     continue;
                 }
 
+                $data = trim($data);
+                if (empty($data)) {
+                    continue;
+                }
+                echo "\t\t\tReading {$clientId}...\n";
+                $data = $this->readFrom($clientId, $data);
+
                 $color = $this->colors[($clientId - 1) % $colorsCount];
                 $data = "{$color}[{$clientId}] {$data}\e[0m";
+                echo $data . PHP_EOL;
                 foreach ($this->clients as $receiverId => $receiver) {
                     if ($receiverId != $clientId) {
-                        fwrite($receiver, $formatMessage($client, $receiver, $data));
+                        fwrite($receiver, $this->formatMessage($receiverId, $data) . PHP_EOL);
                     }
                 }
             }
         }
+    }
+
+    /**
+     * Cria um objeto para o novo cliente
+     *
+     * @param  string $clientId ID do cliente
+     * @param  object $client   Cliente
+     *
+     * @return bool
+     */
+    protected function handleNewClient($clientId, $client) : bool
+    {
+        return true;
+    }
+
+    /**
+     * Lê uma mensagem enviada pelo cliente especificado
+     *
+     * @param  int    $clientId ID do cliente
+     * @param  string $data     Mensagem enviada
+     *
+     * @return string
+     */
+    protected function readFrom(int $clientId, string $data) : string
+    {
+        return $data;
+    }
+
+    /**
+     * Formata a mensagem
+     *
+     * @param  int    $receiverId ID do cliente de destino
+     * @param  string $message    Mensagem a ser formatada
+     *
+     * @return string
+     */
+    protected function formatMessage(int $receiverId, string $message) : string
+    {
+        return $message;
     }
 }

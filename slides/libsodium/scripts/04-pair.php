@@ -12,8 +12,8 @@ $alice = new Vcampitelli\SimpleMessageExchange();
 $bob = new Vcampitelli\SimpleMessageExchange();
 
 // On Alice's computer:
-$crypted = $alice->send($bob, $message);
-echo $crypted . PHP_EOL;
+$crypted = $alice->encrypt($message, $bob->publicKey);
+echo "\e[0;34m[Crypt]\e[0m {$crypted}" . PHP_EOL;
 
 // On Bob's computer:
-echo $bob->read($alice, $crypted) . PHP_EOL;
+echo "\e[0;35m[Decrypt]\e[0m " . $bob->decrypt($crypted, $alice->publicKey) . PHP_EOL;
