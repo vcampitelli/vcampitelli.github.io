@@ -3,7 +3,7 @@
 $ciphertext = trim(fgets(STDIN));
 if (empty($ciphertext)) {
     echo 'Você deve informar o texto a ser descriptografado.' . PHP_EOL;
-    die(1);
+    die();
 }
 $ciphertext = sodium_hex2bin($ciphertext);
 
@@ -18,7 +18,7 @@ $ciphertext = substr($ciphertext, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
 $plaintext = sodium_crypto_secretbox_open($ciphertext, $nonce, $key);
 if ($plaintext === false) {
     echo 'Erro ao descriptografar.' . PHP_EOL;
-    die(1);
+    die();
 }
 
-echo $plaintext;
+echo $plaintext . PHP_EOL;

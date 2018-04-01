@@ -8,19 +8,18 @@ try {
 
     // Converte o JSON
     $data = json_decode($data);
-    if ((empty($data)) || (empty($data->message)) || (empty($data->auth))) {
-        throw new Exception('Os dados informados não são válidos. Utilize o script 03-auth.php para gerá-los.');
+    if ((empty($data)) || (empty($data->message)) || (empty($data->signature))) {
+        throw new Exception('Os dados informados não são válidos. Utilize o script 07-sign.php para gerá-los.');
     }
-    if (($data->auth = sodium_hex2bin($data->auth)) === false) {
+    if (($data->signature = sodium_hex2bin($data->signature)) === false) {
         throw new Exception('A assinatura informada não é válida.');
     }
 
-    // Lê a chave
-    $key = trim(file_get_contents('03-auth.key'));
+    // Lê a chave pública
+    $publicKey = trim(file_get_contents('07-public.key'));
 
     // Verifica a assinatura
-    if (!sodium_crypto_auth_verify($data->auth, $data->message, $key)) {
-        sodium_memzero($key);
+    if (!sodium_crypto_sign_verify_detached($data->signature, $data->message, $publicKey)) {
         throw new Exception('A autenticação falhou.');
     }
 

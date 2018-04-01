@@ -13,4 +13,4 @@ $mac = sodium_crypto_auth($plaintext, $key);
 echo json_encode([
     'message' => $plaintext,
     'auth'    => sodium_bin2hex($mac)
-]);
+]) . PHP_EOL;
