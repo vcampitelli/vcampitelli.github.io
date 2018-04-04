@@ -22,8 +22,8 @@ $publicKey = sodium_hex2bin($publicKey);
 stream_set_timeout($socket, 1);
 
 // Gera o par de chaves e avisa o server
-require __DIR__ . '/src/SimpleMessageExchange.php';
-$crypt = new Vcampitelli\SimpleMessageExchange();
+require __DIR__ . '/src/SimpleCrypt.php';
+$crypt = new Vcampitelli\SimpleCrypt();
 fwrite($socket, $crypt->boxPublicKey . PHP_EOL);
 
 while (true) {

@@ -13,7 +13,7 @@ class CryptSocketServer extends SocketServer
     /**
      * Objeto quer lida com a criptografia
      *
-     * @var SimpleMessageExchange
+     * @var SimpleCrypt
      */
     protected $crypt;
 
@@ -29,7 +29,7 @@ class CryptSocketServer extends SocketServer
      */
     protected function init() : void
     {
-        $this->crypt = new SimpleMessageExchange();
+        $this->crypt = new SimpleCrypt();
     }
 
     /**

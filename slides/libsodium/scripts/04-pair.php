@@ -6,10 +6,10 @@ if (empty($message)) {
     die(1);
 }
 
-require __DIR__ . '/src/SimpleMessageExchange.php';
+require __DIR__ . '/src/SimpleCrypt.php';
 
-$alice = new Vcampitelli\SimpleMessageExchange();
-$bob = new Vcampitelli\SimpleMessageExchange();
+$alice = new Vcampitelli\SimpleCrypt();
+$bob = new Vcampitelli\SimpleCrypt();
 
 // On Alice's computer:
 $crypted = $alice->encrypt($message, $bob->publicKey);

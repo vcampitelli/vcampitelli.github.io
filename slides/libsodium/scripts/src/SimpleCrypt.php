@@ -6,7 +6,7 @@ use Exception;
 /**
  * Simples classe para mostrar como utilizar a criptografia assimétrica com a libsodium
  */
-class SimpleMessageExchange
+class SimpleCrypt
 {
     /**
      * Chave privada
