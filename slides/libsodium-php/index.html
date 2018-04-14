@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Vinícius Campitelli">
+
+        <title>libsodium no PHP 7</title>
+
+        <link rel="stylesheet" href="revealjs/css/reveal.css">
+        <link rel="stylesheet" href="revealjs/css/theme/beige.css">
+
+        <link rel="stylesheet" href="css/prism.css">
+        <link rel="stylesheet" href="css/app.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1 id="title">libsodium no PHP 7</h1>
+                </section>
+                <section>
+                    <h2>Quem sou eu?</h2>
+                    <ul>
+                        <li>Vinícius Campitelli &bull; <a href="http://vcampitelli.github.io">vcampitelli.github.io</a></li>
+                        <li>MT4 Tecnologia &bull; @MediaPost &bull; Curseduca</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>O que é criptografia?</h2>
+                    </section>
+                    <section>
+                        <blockquote>é a prática e o estudo de técnicas para comunicação segura na presença de terceiros</blockquote>
+                        <blockquote>é a construção e análise de protocolos que previnam terceiros de ler mensagens privadas</blockquote>
+                    </section>
+                    <section>
+                        <div class="row">
+                            <div class="block one-third">Texto claro</div>
+                            <div id="flow-cipher" class="one-third">&rarr;</div>
+                            <div class="block one-third">Texto cifrado</div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Tipos de criptografia</h2>
+                    </section>
+                    <section>
+                        <h3>Simétrica</h3>
+                        <ul>
+                            <li>Utiliza uma mesma chave para criptografar e descriptografar os textos</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>Problema: Troca de chaves</h4>
+                        <div class="fragment">
+                            <p>Algoritmo Diffie–Hellman</p>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="img/Diffie-Hellman_Key_Exchange.png" alt="Exemplificação do algoritmo Diffie-Hellman para troca de chaves">
+                        <p class="small">Fonte: <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Wikipedia</a></p>
+                    </section>
+                    <section>
+                        <h3>Assimétrica</h3>
+                        <ul>
+                            <li>Chave pública: utilizada para criptografar (escrever)</li>
+                            <li>Chave privada: utilizada para descriptografar (ler)</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Hashing</h2>
+                        <blockquote>é uma função que mapeia dados de tamanho arbitrário para dados de tamanho fixo</blockquote>
+                    </section>
+                    <section>
+                        <h2>Assinaturas</h2>
+                        <blockquote>esquema matemático para demonstrar a autenticidade de uma mensagem</blockquote>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>libsodium</h3>
+                        <ul>
+                            <li>Biblioteca incorporada no PHP 7.2</li>
+                            <li>Site oficial: <a href="http://libsodium.org/">libsodium.org</a></li>
+                            <li>Biblioteca PHP: <a href="https://paragonie.com/book/pecl-libsodium">pecl libsodium</a></li>
+                            <li>GitHub da biblioteca PHP:<a href="https://github.com/jedisct1/libsodium-php">libsodium-php</a>/li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Hora de rodar os scripts!</h3>
+                        <p>(e de provavelmente as coisas darem errado)</p>
+                    </section>
+                </section>
+                <section>
+                    <h1>Obrigado!</h1>
+                    <ul>
+                        <li>GitHub: <a href="https://github.com/vcampitelli">@vcampitelli</a></li>
+                        <li>Twitter: <a href="https://twitter.com/vcampitelli">@vcampitelli</a></li>
+                        <li>Slides: <a href="https://vcampitelli.github.io">vcampitelli.github.io</a></li>
+                        <li>Vagas: <a href="mailto:vagas@mediapost.com.br">vagas@mediapost.com.br</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <div id="footer">
+                <p>libsodium no PHP 7</p>
+                <p><a href="https://vcampitelli.github.io/">@vcampitelli</a></p>
+            </div>
+        </footer>
+
+        <script src="revealjs/lib/js/head.min.js"></script>
+        <script src="revealjs/js/reveal.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
