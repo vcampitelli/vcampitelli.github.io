@@ -34,7 +34,12 @@ $key = sodium_crypto_pwhash(
 $stream = sodium_crypto_secretstream_xchacha20poly1305_init_pull($header, $key);
 do {
     $chunk = fread($input, $chunkSize + SODIUM_CRYPTO_SECRETSTREAM_XCHACHA20POLY1305_ABYTES);
-    list($decrypted, $tag) = sodium_crypto_secretstream_xchacha20poly1305_pull($stream, $chunk);
+    $pull = sodium_crypto_secretstream_xchacha20poly1305_pull($stream, $chunk);
+    if (!is_array($pull)) {
+        echo "\e[0;31mSenha incorreta!\e[0m" . PHP_EOL;
+        die(1);
+    }
+    list($decrypted, $tag) = $pull;
     if ($tag === SODIUM_CRYPTO_SECRETSTREAM_XCHACHA20POLY1305_TAG_FINAL) {
         break;
     }

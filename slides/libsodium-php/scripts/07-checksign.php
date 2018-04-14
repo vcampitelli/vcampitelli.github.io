@@ -23,8 +23,8 @@ try {
         throw new Exception('A autenticação falhou.');
     }
 
-    echo 'Autenticação efetuada com sucesso.' . PHP_EOL;
+    echo "\e[0;32mAutenticação efetuada com sucesso.\e[0m" . PHP_EOL;
 } catch (Exception $e) {
-    echo "\e[0;31m[" . get_class($e) . "] {$e->getMessage()}\e[0m" . PHP_EOL;
+    echo "\e[0;31m{$e->getMessage()}\e[0m" . PHP_EOL;
     die(1);
 }

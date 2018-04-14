@@ -9,14 +9,14 @@ use Exception;
 class SimpleCrypt
 {
     /**
-     * Chave privada
+     * Chave privada para encriptação
      *
      * @var string
      */
-    public $boxSecretKey;
+    protected $boxSecretKey;
 
     /**
-     * Chave pública
+     * Chave pública para encriptação
      *
      * @var string
      */
@@ -28,15 +28,10 @@ class SimpleCrypt
     public function __construct()
     {
         $boxKp = sodium_crypto_box_keypair();
-        // $signKp = sodium_crypto_sign_keypair();
 
         // Split the key for the crypto_box API for ease of use
         $this->boxSecretKey = sodium_crypto_box_secretkey($boxKp);
         $this->boxPublicKey = sodium_crypto_box_publickey($boxKp);
-
-        // Split the key for the crypto_sign API for ease of use
-        // $signSecretKey = sodium_crypto_sign_secretkey($signKp);
-        // $signPublicKey = sodium_crypto_sign_publickey($signKp);
     }
 
     /**
@@ -90,5 +85,15 @@ class SimpleCrypt
             throw new Exception("Malformed message or invalid MAC");
         }
         return $plaintext;
+    }
+
+    /**
+     * Retorna a chave pública para encriptação
+     *
+     * @return string
+     */
+    public function getBoxPublicKey()
+    {
+        return $this->boxPublicKey;
     }
 }

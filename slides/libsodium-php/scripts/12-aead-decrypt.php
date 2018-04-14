@@ -25,7 +25,7 @@ $decrypted = sodium_crypto_aead_xchacha20poly1305_ietf_decrypt(
     $key
 );
 if ($decrypted === false) {
-    echo 'Erro na verificação' . PHP_EOL;
+    echo "\e[0;31mErro na verificação\e[0m" . PHP_EOL;
     die(1);
 }
 var_dump($decrypted);

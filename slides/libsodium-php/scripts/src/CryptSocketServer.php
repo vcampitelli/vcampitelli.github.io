@@ -43,7 +43,7 @@ class CryptSocketServer extends SocketServer
     protected function handleNewClient($clientId, $client) : bool
     {
         // Envia a public key do server para o cliente
-        fwrite($client, sodium_bin2hex($this->crypt->boxPublicKey) . PHP_EOL);
+        fwrite($client, sodium_bin2hex($this->crypt->getBoxPublicKey()) . PHP_EOL);
 
         // Recebe e guarda a public key do cliente
         $publicKey = trim(fgets($client, SODIUM_CRYPTO_BOX_PUBLICKEYBYTES * 2 + 1));

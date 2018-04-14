@@ -13,4 +13,4 @@ $key = trim(file_get_contents('02-encrypt.key'));
 $nonce = random_bytes(SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
 
 // Prefixa o nonce junto com os dados para poder ser recuperado pelo decrypt
-echo sodium_bin2hex($nonce . sodium_crypto_secretbox($plaintext, $nonce, $key));
+echo sodium_bin2hex($nonce . sodium_crypto_secretbox($plaintext, $nonce, $key)) . PHP_EOL;

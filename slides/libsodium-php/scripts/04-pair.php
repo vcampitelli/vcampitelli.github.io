@@ -11,9 +11,9 @@ require __DIR__ . '/src/SimpleCrypt.php';
 $alice = new Vcampitelli\SimpleCrypt();
 $bob = new Vcampitelli\SimpleCrypt();
 
-// On Alice's computer:
-$crypted = $alice->encrypt($message, $bob->publicKey);
-echo "\e[0;34m[Crypt]\e[0m {$crypted}" . PHP_EOL;
+// Alice
+$crypted = $alice->encrypt($message, $bob->boxPublicKey);
+echo "\e[0;34m[Crypt]\e[0m " . sodium_bin2hex($crypted) . PHP_EOL;
 
-// On Bob's computer:
-echo "\e[0;35m[Decrypt]\e[0m " . $bob->decrypt($crypted, $alice->publicKey) . PHP_EOL;
+// Bob
+echo "\e[0;35m[Decrypt]\e[0m " . $bob->decrypt($crypted, $alice->boxPublicKey) . PHP_EOL;

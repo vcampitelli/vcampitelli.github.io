@@ -4,12 +4,12 @@
  */
 
 $x = random_bytes(SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
+
 // After an encryption
 sodium_increment($x);
 
-// compare
-if (sodium_compare($message['nonce'], $expected_nonce) === 0) {
-    // Proceed with crypto_box decryption
+// Comparação segura à timing attacks
+if (sodium_compare($nonce, $expectedNonce) === 0) {
 }
 
 /**

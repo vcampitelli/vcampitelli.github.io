@@ -10,8 +10,10 @@ $secretKey = trim(file_get_contents('08-generichash.key'));
 
 // Alternativa à md5/sha1
 $hash = sodium_crypto_generichash($data);
+echo 'Hash simples (alternativa à md5/sha1): ';
 var_dump(sodium_bin2hex($hash));
 
 // MAC
+echo 'HMAC: ';
 $blake2mac = sodium_crypto_generichash($data, $secretKey);
 var_dump(sodium_bin2hex($blake2mac));

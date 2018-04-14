@@ -24,7 +24,7 @@ stream_set_timeout($socket, 1);
 // Gera o par de chaves e avisa o server
 require __DIR__ . '/src/SimpleCrypt.php';
 $crypt = new Vcampitelli\SimpleCrypt();
-fwrite($socket, $crypt->boxPublicKey . PHP_EOL);
+fwrite($socket, $crypt->getBoxPublicKey() . PHP_EOL);
 
 while (true) {
     echo 'Digite aqui sua mensagem: ';
