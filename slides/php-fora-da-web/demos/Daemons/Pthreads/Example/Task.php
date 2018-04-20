@@ -1,12 +1,35 @@
 <?php
 namespace Daemon\Pthreads\Example;
 
-class Task
+class Task extends \Thread
 {
+    const DIRECTION_1 = 1;
+    const DIRECTION_2 = 2;
+    const DIRECTION_3 = 3;
+    const DIRECTION_4 = 4;
+
     protected $id = 0;
 
-    public function __construct($id)
-    {
+    private $imageResource;
+    private $blankResource;
+    private $destinationImage;
+    private $startX;
+    private $endX;
+    private $startY;
+    private $endY;
+    private $direction;
+
+    public function __construct(
+        $id,
+        $imageResource,
+        $blankResource,
+        $destinationImage,
+        $startX,
+        $startY,
+        $endX,
+        $endY,
+        $direction
+    ) {
         $this->id = $id;
         $colors = [
             "\033[0;31m",
@@ -20,28 +43,106 @@ class Task
             "\033[0;39m",
             "\033[0;40m"
         ];
+        $this->imageResource = $imageResource;
+        $this->blankResource = $blankResource;
+        $this->destinationImage = $destinationImage;
+        $this->startX = (int) $startX;
+        $this->endX = (int) $endX;
+        $this->startY = (int) $startY;
+        $this->endY = (int) $endY;
+        $this->direction = $direction;
         $this->color = $colors[$id % count($colors)];
     }
 
-    public function run($image, $filename, $startX, $startY, $width, $steps)
+    public function run()
     {
-        $color = imagecolorallocate($image, random_int(0, 255), random_int(0, 255), random_int(0, 255));
+        $this->pool = [];
+        $this->banner();
 
-        for ($x = $startX; $x < $startX + $width - 1; $x += $steps) {
-            echo str_repeat("\t", $this->id) . "{$this->color}[{$this->id}] Rodando...\033[m" . PHP_EOL;
+        switch ($this->direction) {
+            case self::DIRECTION_1:
+                for ($x = $this->startX; $x <= $this->endX; ++$x) {
+                    for ($y = $this->startY; $y <= $this->endY; ++$y) {
+                        $this->for($x, $y);
+                    }
+                    $this->finishY();
+                }
+                break;
 
-            for ($y = $startY; $y < $startY + $width - 1; $y += $steps) {
-                /*
-                echo str_repeat("\t", $this->id) . "{$this->color}[{$this->id}] " .
-                    "{$x} x {$y} -> " . ($x + $width) . " x " . ($y + $steps) .
-                    "\033[m" . PHP_EOL;
-                */
-                imagefilledrectangle($image, $x, $y, $x + $steps, $y + $steps, $color);
-                imagepng($image, $filename, 0);
-                usleep(random_int(10000, 500000));
-            }
-            usleep(random_int(10000, 500000));
+            case self::DIRECTION_2:
+                for ($x = $this->endX - 1; $x > $this->startX; --$x) {
+                    for ($y = $this->startY; $y <= $this->endY; ++$y) {
+                        $this->for($x, $y);
+                    }
+                    $this->finishY();
+                }
+                break;
+
+            case self::DIRECTION_3:
+                for ($x = $this->startX; $x <= $this->endX; ++$x) {
+                    for ($y = $this->endY - 1; $y > $this->startY; --$y) {
+                        $this->for($x, $y);
+                    }
+                    $this->finishY();
+                }
+                break;
+
+            case self::DIRECTION_4:
+                for ($x = $this->endX - 1; $x > $this->startX; --$x) {
+                    for ($y = $this->endY - 1; $y > $this->startY; --$y) {
+                        $this->for($x, $y);
+                    }
+                    $this->finishY();
+                }
+                break;
         }
+
+        $this->finishAll();
+    }
+
+    protected function banner()
+    {
+        echo str_repeat("\t", $this->id) . "{$this->color}[{$this->id}] Rodando...\033[m" . PHP_EOL;
+    }
+
+    protected function finishY()
+    {
+        $resource = $this->blankResource;
+        $filename = $this->destinationImage;
+        $this->synchronized(function () use ($resource, $filename) {
+            imagepng($resource, $filename, 0);
+        });
+        usleep(random_int(10000, 300000));
+    }
+
+    protected function finishAll()
+    {
         echo str_repeat("\t", $this->id) . "{$this->color}[{$this->id}] Finalizando...\033[m" . PHP_EOL;
+        $resource = $this->blankResource;
+        $filename = $this->destinationImage;
+        $this->synchronized(function () use ($resource, $filename) {
+            imagepng($resource, $filename, 0);
+        });
+        usleep(random_int(10000, 200000));
+    }
+
+    protected function for($x, $y)
+    {
+        // echo "{$this->id}\t{$x}\t{$y}\n";
+        $rgb = imagecolorsforindex($this->imageResource, imagecolorat($this->imageResource, $x, $y));
+
+        $index = "{$rgb['red']}.{$rgb['green']}.{$rgb['blue']}";
+        if (!isset($this->pool[$index])) {
+            // http://php.net/manual/en/function.imagecolorallocate.php#94785
+            $this->pool[$index] = imagecolorexact($this->blankResource, $rgb['red'], $rgb['green'], $rgb['blue']);
+            if ($this->pool[$index] == -1) {
+                $this->pool[$index] = (imagecolorstotal($this->blankResource) >= 255)
+                    ? imagecolorclosest($this->blankResource, $rgb['red'], $rgb['green'], $rgb['blue'])
+                    : imagecolorallocate($this->blankResource, $rgb['red'], $rgb['green'], $rgb['blue']);
+            }
+        }
+
+        imagesetpixel($this->blankResource, $x, $y, $this->pool[$index]);
+        usleep(random_int(100, 200));
     }
 }
