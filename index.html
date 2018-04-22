@@ -13,96 +13,78 @@
             <div class="container">
                 <img src="img/profile.jpg" alt="Vinícius Campitelli" class="rounded-circle">
                 <h1>Vinícius Campitelli</h1>
-                <a href="https://github.com/vcampitelli/">github.com/vcampitelli</a>
+                <p>Web Developer e entusiasta PHP &hearts;</p>
             </div>
         </div>
         <div class="container">
-            <div id="whoami" class="section">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Quem sou eu?</h2>
-                        <ul>
-                            <li>Desenvolvedor PHP e entusiasta</li>
-                            <li>Co-founder do <a href="https://curseduca.pro/">Curseduca</a></li>
-                            <li>Lead developer em <a href="https://www.mediapost.com.br">@MediaPost</a> / <a href="https://www.mt4.com.br">MT4 Tecnologia</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>O que eu faço?</h2>
-                        <p class="mb-2">
-                            <span class="badge badge-light">php</span>
-                            <span class="badge badge-light">html5</span>
-                            <span class="badge badge-light">css3</span>
-                            <span class="badge badge-light">javascript</span>
-                        </p>
-                        <p class="mb-2">
-                            <span class="badge badge-light">mysql</span>
-                            <span class="badge badge-light">mongodb</span>
-                            <span class="badge badge-light">rabbitmq</span>
-                        </p>
-                        <p class="mb-2">
-                            <span class="badge badge-light">linux</span>
-                            <span class="badge badge-light">python</span>
-                            <span class="badge badge-light">bash</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
             <div id="talks" class="section">
                 <h2>Palestras</h2>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="https://github.com/vcampitelli/vcampitelli.github.io/tree/master/slides/libsodium-php/scripts">libsodium no PHP 7</a></h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Apresentação no DarkMira Tour 2018</h6>
-                        <p class="card-text">
-                            A libsodium é uma biblioteca moderna de criptografia e foi incluída no core do PHP 7.2, o que representa um posicionamento muito interessante da comunidade no quesito de segurança. Veremos como utilizar essa lib para:<br>
-                            <ul>
-                                <li>Geração de dados aleatórios</li>
-                                <li>Prevenção de timing attacks</li>
-                                <li>Criptografia simétrica (secret key)</li>
-                                <li>Criptografia assimétrica (par de chaves: pública e privada)</li>
-                                <li>Hashing para autenticidade de mensagens e criação de senhas</li>
-                                <li>Criptografia com autenticidade</li>
-                                <li>Troca de chaves utilizando o algoritmo Diffie-Hellman</li>
-                                <li>Overview da criptografia de curvas elípticas</li>
-                            </ul>
-                        </p>
-                        <a href="https://github.com/vcampitelli/vcampitelli.github.io/tree/master/slides/libsodium-php/scripts" class="btn btn-success">Ver scripts</a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="https://github.com/vcampitelli/vcampitelli.github.io/tree/master/slides/libsodium-php/scripts">libsodium no PHP 7</a></h4>
+                                <input type="checkbox" id="showmore-1" class="showmore"> <label for="showmore-1"></label>
+                                <div class="card-text">
+                                    A libsodium é uma biblioteca moderna de criptografia e foi incluída no core do PHP 7.2, o que representa um posicionamento muito interessante da comunidade no quesito de segurança. Veremos como utilizar essa lib para:<br>
+                                    <ul>
+                                        <li>Geração de dados aleatórios</li>
+                                        <li>Prevenção de timing attacks</li>
+                                        <li>Criptografia simétrica (secret key)</li>
+                                        <li>Criptografia assimétrica (par de chaves: pública e privada)</li>
+                                        <li>Hashing para autenticidade de mensagens e criação de senhas</li>
+                                        <li>Criptografia com autenticidade</li>
+                                    </ul>
+                                    <p class="text-muted">DarkMira Tour 2018</p>
+                                </div>
+                                <a href="https://github.com/vcampitelli/vcampitelli.github.io/tree/master/slides/libsodium-php/scripts" class="btn btn-info">Ver scripts</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="slides/php-fora-da-web/">PHP fora da Web</a></h4>
+                                <input type="checkbox" id="showmore-2" class="showmore"> <label for="showmore-2"></label>
+                                <div class="card-text">
+                                    O PHP foi inicialmente feito para a Web, mas também podemos utilizá-lo para criar CLI scripts e até mesmo daemons. É lógico que existem linguagens focadas para isso, mas em alguns cenários podemos aproveitar os códigos PHP já existentes no backend e também a experiência dos programadores da equipe. Iremos ver como lidar com argumentos para scripts e roteá-los para comandos, como criar mecanismos de controle e execução de processos externos e em background e ter códigos que sejam reaproveitáveis entre ambientes.
+                                    <p class="text-muted">PHPExperience 2018 &bull; The Developer's Conference Florianópolis 2018</p>
+                                </div>
+                                <a href="slides/php-fora-da-web/" class="btn btn-info">Acessar slides</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="slides/criptografia-php/">Criptografia com PHP</a></h4>
+                                <input type="checkbox" id="showmore-3" class="showmore"> <label for="showmore-3"></label>
+                                <div class="card-text">
+                                    Prática e estudo que consiste em transformar uma informação (texto claro) em um código cifrado, para que apenas as pessoas/sistemas escolhidos possam decifrar.
+                                    Pontos abordados: Tipos de criptografia (simétrica e assimétrica); Cifras e modos de operação; Geradores de aleatoriedade e vetores de inicialização; Hashing; Assinaturas.
+                                    <p class="text-muted">PHPConference 2017</p>
+                                </div>
+                                <a href="slides/criptografia-php/" class="btn btn-info">Acessar slides</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="slides/expressive-oauth2-jwt/">Zend Expressive com OAuth 2 e JWT</a></h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Apresentações no PHPeste 2017 e na PHPConference 2017</h6>
-                        <p class="card-text">
-                            O Zend Expressive é o micro-framework da Zend que implementa a PSR-7, lançado oficialmente em 2016.
-                            A versão 2 foi lançada em março de 2017 e tem recebido bastante destaque desde então.
-                            Aprenda sobre <em>middlewares</em>, <em>controllers</em>, <em>factories</em> e injeção de dependências via <em>containers</em>.
-                            Entenda OAuth2 e como utilizá-lo para realizar a autorização de APIs, usando JSON Web Tokens (JWT) para lidar com <em>access tokens</em>.
-                        </p>
-                        <a href="slides/expressive-oauth2-jwt/" class="btn btn-success">Acessar slides</a>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="slides/criptografia-php/">Criptografia com PHP</a></h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Apresentação na PHPConference 2017</h6>
-                        <p class="card-text">
-                            Prática e estudo que consiste em transformar uma informação (texto claro) em um código cifrado, para que apenas as pessoas/sistemas escolhidos possam decifrar.
-                            Pontos abordados: Tipos de criptografia (simétrica e assimétrica); Cifras e modos de operação; Geradores de aleatoriedade e vetores de inicialização; Hashing; Assinaturas.
-                        </p>
-                        <a href="slides/criptografia-php/" class="btn btn-success">Acessar slides</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="slides/php-fora-da-web/">PHP fora da Web</a></h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Apresentação na PHPExperience 2018</h6>
-                        <p class="card-text">
-                            O PHP foi inicialmente feito para a Web, mas também podemos utilizá-lo para criar CLI scripts e até mesmo daemons. É lógico que existem linguagens focadas para isso, mas em alguns cenários podemos aproveitar os códigos PHP já existentes no backend e também a experiência dos programadores da equipe. Iremos ver como lidar com argumentos para scripts e roteá-los para comandos, como criar mecanismos de controle e execução de processos externos e em background e ter códigos que sejam reaproveitáveis entre ambientes.
-                        </p>
-                        <a href="slides/php-fora-da-web/" class="btn btn-success">Acessar slides</a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="slides/expressive-oauth2-jwt/">Expressive com OAuth 2 e JWT</a></h4>
+                                <input type="checkbox" id="showmore-4" class="showmore"> <label for="showmore-4"></label>
+                                <div class="card-text">
+                                    O Zend Expressive é o micro-framework da Zend que implementa a PSR-7, lançado oficialmente em 2016.
+                                    A versão 2 foi lançada em março de 2017 e tem recebido bastante destaque desde então.
+                                    Aprenda sobre <em>middlewares</em>, <em>controllers</em>, <em>factories</em> e injeção de dependências via <em>containers</em>.
+                                    Entenda OAuth2 e como utilizá-lo para realizar a autorização de APIs, usando JSON Web Tokens (JWT) para lidar com <em>access tokens</em>.
+                                    <p class="text-muted">PHPeste 2017 &bull; PHPConference 2017</p>
+                                </div>
+                                <a href="slides/expressive-oauth2-jwt/" class="btn btn-info">Acessar slides</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,18 +97,21 @@
                     <div class="col-md-4">
                         <a href="https://curseduca.pro/">
                             <h4>Curseduca</h4>
+                            <p class="text-muted">Co-founder</p>
                             <span>Plataforma SaaS de e-learning</span>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="https://mediapost.com.br/">
                             <h4>@MediaPost</h4>
+                            <p class="text-muted">Lead developer</p>
                             <span>Especialistas em email marketing</span>
                         </a>
                     </div>
                     <div class="col-md-4">
                         <a href="https://mt4.com.br/">
                             <h4>MT4 Tecnologia</h4>
+                            <p class="text-muted">Lead developer</p>
                             <span>Produtos e soluções feitas sob medida</span>
                         </a>
                     </div>
@@ -135,11 +120,9 @@
         </div>
 
         <div id="footer" class="container text-center">
-            <ul>
-                <li><a href="https://github.com/vcampitelli">GitHub</a></li>
-                <li><a href="https://twitter.com/vcampitelli">Twitter</a></li>
-                <li><a href="https://br.linkedin.com/in/viniciuscampitelli">LinkedIn</a></li>
-            </ul>
+            <a href="https://github.com/vcampitelli">GitHub</a> &bull;
+            <a href="https://twitter.com/vcampitelli">Twitter</a> &bull;
+            <a href="https://br.linkedin.com/in/viniciuscampitelli">LinkedIn</a>
         </div>
     </body>
 </html>
