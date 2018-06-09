@@ -19,11 +19,11 @@
   color: #555;
 }
 pre[class*="language-"] {
-  margin-left: auto;
-  margin-right: auto;
+  border: 0;
+  box-shadow: none;
 }
-:not(pre) > code[class*="language-"] {
-  background-color: transparent;
+code[class*="language-"] {
+  text-shadow: none;
 }
 div.block {
   border: 3px #fff solid;
