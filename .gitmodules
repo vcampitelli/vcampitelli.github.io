@@ -1,0 +1,15 @@
+[submodule "slides/slides-libsodium-php"]
+	path = slides/libsodium-php
+	url = https://github.com/vcampitelli/slides-libsodium-php.git
+[submodule "slides/slides-php-fora-da-web"]
+	path = slides/php-fora-da-web
+	url = https://github.com/vcampitelli/slides-php-fora-da-web.git
+[submodule "slides/slides-criptografia-php"]
+	path = slides/slides-criptografia-php
+	url = https://github.com/vcampitelli/slides-criptografia-php.git
+[submodule "slides/criptografia-php"]
+	path = slides/criptografia-php
+	url = https://github.com/vcampitelli/slides-criptografia-php.git
+[submodule "slides/expressive-oauth2-jwt"]
+	path = slides/expressive-oauth2-jwt
+	url = https://github.com/vcampitelli/slides-expressive-oauth2-jwt.git

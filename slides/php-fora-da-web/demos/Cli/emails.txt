@@ -1,3 +1,0 @@
-email1
-email@exemplo.com
-email2
