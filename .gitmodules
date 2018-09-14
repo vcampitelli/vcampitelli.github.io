@@ -13,3 +13,7 @@
 [submodule "slides/expressive-oauth2-jwt"]
 	path = slides/expressive-oauth2-jwt
 	url = https://github.com/vcampitelli/slides-expressive-oauth2-jwt.git
+[submodule "slides/libsodium-php"]
+	path = slides/libsodium-php
+	url = https://github.com/vcampitelli/slides-libsodium-php.git
+	branch = master
