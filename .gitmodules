@@ -17,3 +17,7 @@
 	path = slides/libsodium-php
 	url = https://github.com/vcampitelli/slides-libsodium-php.git
 	branch = master
+[submodule "slides/boas-praticas"]
+	path = slides/boas-praticas
+	url = https://github.com/vcampitelli/slides-boas-praticas.git
+	branch = master
