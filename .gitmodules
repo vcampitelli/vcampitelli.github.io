@@ -18,3 +18,6 @@
 	path = slides/php-fora-da-web
 	url = https://github.com/vcampitelli/slides-php-fora-da-web.git
 	branch = master
+[submodule "slides/seguranca-alem-obvio-php"]
+	path = slides/seguranca-alem-obvio-php
+	url = https://github.com/vcampitelli/slides-seguranca-alem-obvio-php
