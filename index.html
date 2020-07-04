@@ -5,200 +5,242 @@
 
         <title>Vinícius Campitelli</title>
 
-        <link rel="stylesheet" type="text/css" href="css/flatly.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet"
+            type="text/css">
+        <link href="css/index.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div id="intro">
+        <header id="header">
             <div class="container">
-                <img src="img/profile.jpg" alt="Vinícius Campitelli" class="rounded-circle">
+                <img src="img/profile.jpg" alt="Vinícius Campitelli">
                 <h1>Vinícius Campitelli</h1>
                 <p>Web Developer e entusiasta PHP &hearts;</p>
             </div>
-        </div>
-        <div class="container">
-            <div id="talks" class="section">
-                <h2>Palestras</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="/slides-apis-seguras">Criando APIs seguras</a></h4>
-                                <input type="checkbox" id="showmore-apis-seguras" class="showmore"> <label for="showmore-apis-seguras"></label>
-                                <div class="card-text">
-                                    Com a disseminação do uso de microserviços, vários aspectos de segurança em nossas APIs precisam ser repensados, pois um simples problema pode ser escalado a níveis preocupantes. Veremos sobre:
-                                    <ul>
-                                        <li>Conceitos de autenticação e autorização;</li>
-                                        <li>Melhores práticas no uso de <em>access tokens</em>;</li>
-                                        <li>Aplicação de <em>throttling</em> e <em>rate limiting</em>;</li>
-                                        <li>Camuflagem de IDs sequencias;</li>
-                                        <li>Criptografando e assinando a requisição para evitar <em>tampering</em>.</li>
-                                    </ul>
-                                </div>
-                                <a href="/slides-apis-seguras" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="/slides-seguranca-alem-obvio-php">Segurança além do óbvio com PHP</a></h4>
-                                <input type="checkbox" id="showmore-1" class="showmore"> <label for="showmore-1"></label>
-                                <div class="card-text">
-                                    Como aplicar as melhores medidas para protegermos nossos sistemas em PHP, pensando em questões de segurança além dos exemplos mais comuns encontrados, que muitas vezes são resolvidos pelos próprios frameworks? Pontos que serão abordados: enumeração de usuários, gerenciamento de sessão, melhores práticas de validação de entradas, runtime application self-protection, armazenamento e políticas de senhas.
-                                </div>
-                                <a href="/slides-seguranca-alem-obvio-php" class="btn btn-info">Acessar slides</a>
-                                <a href="https://github.com/vcampitelli/slides-seguranca-alem-obvio-php/tree/master/scripts" class="btn btn-info">Ver scripts</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="slides/libsodium-php">libsodium no PHP 7</a></h4>
-                                <input type="checkbox" id="showmore-libsodium" class="showmore"> <label for="showmore-libsodium"></label>
-                                <div class="card-text">
-                                    A libsodium é uma biblioteca moderna de criptografia e foi incluída no core do PHP 7.2, o que representa um posicionamento muito interessante da comunidade no quesito de segurança. Veremos como utilizar essa lib para:<br>
-                                    <ul>
-                                        <li>Geração de dados aleatórios</li>
-                                        <li>Prevenção de timing attacks</li>
-                                        <li>Criptografia simétrica (secret key)</li>
-                                        <li>Criptografia assimétrica (par de chaves: pública e privada)</li>
-                                        <li>Hashing para autenticidade de mensagens e criação de senhas</li>
-                                        <li>Criptografia com autenticidade</li>
-                                    </ul>
-                                </div>
-                                <a href="slides/libsodium-php/" class="btn btn-info">Acessar slides</a>
-                                <a href="https://github.com/vcampitelli/slides-libsodium-php/tree/master/scripts" class="btn btn-info">Ver scripts</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="slides/boas-praticas/">Boas práticas</a></h4>
-                                <input type="checkbox" id="showmore-3" class="showmore"> <label for="showmore-3"></label>
-                                <div class="card-text">
-                                     SOLID, Object Calisthenics e Clean Code são termos que fazem parte da vida de um programador, mas é comum vermos que no dia-a-dia nem tudo sempre segue a teoria. Veremos como aplicar esses conceitos na prática mostrando trechos de códigos e exemplos de como refatorar o que já foi feito.
-                                </div>
-                                <a href="slides/boas-praticas/" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="slides/php-fora-da-web/">PHP fora da Web</a></h4>
-                                <input type="checkbox" id="showmore-2" class="showmore"> <label for="showmore-2"></label>
-                                <div class="card-text">
-                                    O PHP foi inicialmente feito para a Web, mas também podemos utilizá-lo para criar CLI scripts e até mesmo daemons. É lógico que existem linguagens focadas para isso, mas em alguns cenários podemos aproveitar os códigos PHP já existentes no backend e também a experiência dos programadores da equipe. Iremos ver como lidar com argumentos para scripts e roteá-los para comandos, como criar mecanismos de controle e execução de processos externos e em background e ter códigos que sejam reaproveitáveis entre ambientes.
-                                </div>
-                                <a href="slides/php-fora-da-web/" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="https://viniciuscampitelli.com/slides-mecanismos-autenticacao-seguros/">Criando mecanismos de autenticação seguros</a></h4>
-                                <input type="checkbox" id="showmore-auth" class="showmore"> <label for="showmore-auth"></label>
-                                <div class="card-text">
-                                    Uma das partes mais básicas de um sistema é seu processo de login. E por ser algo que não agrega valor direto ao negócio, acabamos não gastando o tempo necessário para criar um fluxo realmente seguro, fazendo com que ele se torne o principal vetor de ataques de nossa aplicação. Iremos aprender como criar mecanismos seguros de autenticação, utilizando CSRF de forma correta, CAPTCHA, duplo fator de autenticação, prevenção à enumeração de usuários e autenticação em APIs. Veremos também diversas dicas de como implementar as arriscadas (mas muitas vezes necessárias) funções 'Permanecer logado' e 'Esqueci a senha'.
-                                </div>
-                                <a href="https://viniciuscampitelli.com/slides-mecanismos-autenticacao-seguros/" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="https://speakerdeck.com/vcampitelli/12-factor-apps">12-Factor Apps</a></h4>
-                                <input type="checkbox" id="showmore-5" class="showmore"> <label for="showmore-5"></label>
-                                <div class="card-text">
-                                    É comum nos depararmos com algumas dificuldades quando precisamos preparar nosso sistema para que ele seja escalável e de fácil manutenção, principalmente em arquiteturas de (micro)serviços.
-                                    O 12-Factor App é um documento que elenca 12 fatores que permitem facilitar a criação, manutenção e escalabilidade de uma aplicação. Iremos ver esses conceitos e também como aplicá-los.
-                                </div>
-                                <a href="https://speakerdeck.com/vcampitelli/12-factor-apps" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="slides/criptografia-php/">Criptografia com PHP</a></h4>
-                                <input type="checkbox" id="showmore-7" class="showmore"> <label for="showmore-7"></label>
-                                <div class="card-text">
-                                    Prática e estudo que consiste em transformar uma informação (texto claro) em um código cifrado, para que apenas as pessoas/sistemas escolhidos possam decifrar.
-                                    Pontos abordados: Tipos de criptografia (simétrica e assimétrica); Cifras e modos de operação; Geradores de aleatoriedade e vetores de inicialização; Hashing; Assinaturas.
-                                </div>
-                                <a href="slides/criptografia-php/" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="slides/expressive-oauth2-jwt/">Expressive com OAuth 2 e JWT</a></h4>
-                                <input type="checkbox" id="showmore-4" class="showmore"> <label for="showmore-4"></label>
-                                <div class="card-text">
-                                    O Zend Expressive é o micro-framework da Zend que implementa a PSR-7, lançado oficialmente em 2016.
-                                    A versão 2 foi lançada em março de 2017 e tem recebido bastante destaque desde então.
-                                    Aprenda sobre <em>middlewares</em>, <em>controllers</em>, <em>factories</em> e injeção de dependências via <em>containers</em>.
-                                    Entenda OAuth2 e como utilizá-lo para realizar a autorização de APIs, usando JSON Web Tokens (JWT) para lidar com <em>access tokens</em>.
-                                </div>
-                                <a href="slides/expressive-oauth2-jwt/" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h4 class="card-title h5"><a href="https://speakerdeck.com/vcampitelli/carreira-e-empreendedorismo">Carreira e Empreendedorismo</a></h4>
-                                <input type="checkbox" id="showmore-6" class="showmore"> <label for="showmore-6"></label>
-                                <div class="card-text">
-                                    Esses dois caminhos são extremamente opostos, certo? Para empreender, preciso abrir mão da minha carreira atual? Em muitos casos, não! Veremos exemplos de como podemos extrair o melhor de cada caminho para aliarmos inovação e o sentimento de realizar algo próprio sem abrir mão da carreira em alguma empresa.
-                                </div>
-                                <a href="https://speakerdeck.com/vcampitelli/carreira-e-empreendedorismo" class="btn btn-info">Acessar slides</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="links" class="section">
+        </header>
+        <main id="content">
             <div class="container">
-                <h2>Links</h2>
-                <div class="row">
-                    <div class="col-md-3">
+                <section id="about">
+                    <h2>Sobre mim</h2>
+                    <blockquote>
+                        Desenvolvedor PHP desde os 16 anos, apaixonado por tecnologia e principalmente Web. Me interesso por
+                        arquitetura de soluções, boas práticas de codificação e segurança da informação. Sou sócio-fundador do
+                        <a href="https://curseduca.com">Curseduca</a>, uma empresa especializada em e-learning criada em
+                        2013 que oferece educação através de soluções tecnológicas.
+                    </blockquote>
+                </section>
+
+                <section id="talks">
+                    <h2>Palestras</h2>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides-apis-seguras"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides-apis-seguras">Criando APIs seguras</a></h3>
+                            <div class="card-body">
+                                Com a disseminação do uso de microserviços, vários aspectos de segurança em nossas APIs precisam ser repensados, pois um simples problema pode ser escalado a níveis preocupantes. Veremos sobre:
+                                <ul>
+                                    <li>Conceitos de autenticação e autorização;</li>
+                                    <li>Melhores práticas no uso de <em>access tokens</em>;</li>
+                                    <li>Aplicação de <em>throttling</em> e <em>rate limiting</em>;</li>
+                                    <li>Camuflagem de IDs sequencias;</li>
+                                    <li>Criptografando e assinando a requisição para evitar <em>tampering</em>.</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides-apis-seguras">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides-seguranca-alem-obvio-php"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides-seguranca-alem-obvio-php">Segurança além do óbvio com PHP</a></h3>
+                            <div class="card-body">
+                                Como aplicar as melhores medidas para protegermos nossos sistemas em PHP, pensando em questões de segurança além dos exemplos mais comuns encontrados, que muitas vezes são resolvidos pelos próprios frameworks?<br>
+                                Pontos que serão abordados:
+                                <ul>
+                                    <li>Enumeração de usuários;</li>
+                                    <li>Gerenciamento de sessão;</li>
+                                    <li>Melhores práticas de validação de entradas;</li>
+                                    <li>Runtime application self-protection;</li>
+                                    <li>Armazenamento e políticas de senhas.</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides-seguranca-alem-obvio-php">Ver em tela cheia</a>
+                                <a href="https://github.com/vcampitelli/slides-seguranca-alem-obvio-php/tree/master/scripts" class="outline">Ver scripts</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides/libsodium-php"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides/libsodium-php">libsodium no PHP 7</a></h3>
+                            <div class="card-body">
+                                A libsodium é uma biblioteca moderna de criptografia e foi incluída no core do PHP 7.2, o que representa um posicionamento muito interessante da comunidade no quesito de segurança. Veremos como utilizar essa lib para:<br>
+                                <ul>
+                                    <li>Geração de dados aleatórios</li>
+                                    <li>Prevenção de timing attacks</li>
+                                    <li>Criptografia simétrica (secret key)</li>
+                                    <li>Criptografia assimétrica (par de chaves: pública e privada)</li>
+                                    <li>Hashing para autenticidade de mensagens e criação de senhas</li>
+                                    <li>Criptografia com autenticidade</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides/libsodium-php/">Ver em tela cheia</a>
+                                <a href="https://github.com/vcampitelli/slides-libsodium-php/tree/master/scripts" class="outline">Ver scripts</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides/boas-praticas/"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides/boas-praticas/">Boas práticas</a></h3>
+                            <div class="card-body">
+                                SOLID, Object Calisthenics e Clean Code são termos que fazem parte da vida de um programador, mas é comum vermos que no dia-a-dia nem tudo sempre segue a teoria. Veremos como aplicar esses conceitos na prática mostrando trechos de códigos e exemplos de como refatorar o que já foi feito.
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides/boas-praticas/">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides/php-fora-da-web/"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides/php-fora-da-web/">PHP fora da Web</a></h3>
+                            <div class="card-body">
+                                O PHP foi inicialmente feito para a Web, mas também podemos utilizá-lo para criar CLI scripts e até mesmo daemons. É lógico que existem linguagens focadas para isso, mas em alguns cenários podemos aproveitar os códigos PHP já existentes no backend e também a experiência dos programadores da equipe.
+                                Iremos ver:
+                                <ul>
+                                    <li>Como lidar com argumentos para scripts e roteá-los para comandos;</li>
+                                    <li>Como criar mecanismos de controle e execução de processos externos e em background;</li>
+                                    <li>Como ter códigos que sejam reaproveitáveis entre ambientes.</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides/php-fora-da-web/">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides-mecanismos-autenticacao-seguros/"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides-mecanismos-autenticacao-seguros/">Criando mecanismos de autenticação seguros</a></h3>
+                            <div class="card-body">
+                                Uma das partes mais básicas de um sistema é seu processo de login. E por ser algo que não agrega valor direto ao negócio, acabamos não gastando o tempo necessário para criar um fluxo realmente seguro, fazendo com que ele se torne o principal vetor de ataques de nossa aplicação.
+                                Iremos aprender:
+                                <ul>
+                                    <li>Como criar mecanismos seguros de autenticação;</li>
+                                    <li>Utilizando CSRF de forma correta;</li>
+                                    <li>CAPTCHA;</li>
+                                    <li>Duplo fator de autenticação;</li>
+                                    <li>Prevenção à enumeração de usuários;</li>
+                                    <li>Autenticação em APIs;</li>
+                                    <li>Funções "Permanecer logado" e "Esqueci a senha".</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides-mecanismos-autenticacao-seguros/">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://speakerdeck.com/vcampitelli/12-factor-apps"></iframe>
+                        <div class="card">
+                            <h3><a href="https://speakerdeck.com/vcampitelli/12-factor-apps">12-Factor Apps</a></h3>
+                            <div class="card-body">
+                                É comum nos depararmos com algumas dificuldades quando precisamos preparar nosso sistema para que ele seja escalável e de fácil manutenção, principalmente em arquiteturas de (micro)serviços.
+                                O 12-Factor App é um documento que elenca 12 fatores que permitem facilitar a criação, manutenção e escalabilidade de uma aplicação. Iremos ver esses conceitos e também como aplicá-los.
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://speakerdeck.com/vcampitelli/12-factor-apps">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides/criptografia-php/"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides/criptografia-php/">Criptografia com PHP</a></h3>
+                            <div class="card-body">
+                                Prática e estudo que consiste em transformar uma informação (texto claro) em um código cifrado, para que apenas as pessoas/sistemas escolhidos possam decifrar.
+                                Pontos abordados:
+                                <ul>
+                                    <li>Tipos de criptografia (simétrica e assimétrica);</li>
+                                    <li>Cifras e modos de operação;</li>
+                                    <li>Geradores de aleatoriedade e vetores de inicialização;</li>
+                                    <li>Hashing;</li>
+                                    <li>Assinaturas.</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides/criptografia-php/">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://viniciuscampitelli.com/slides/expressive-oauth2-jwt/"></iframe>
+                        <div class="card">
+                            <h3><a href="https://viniciuscampitelli.com/slides/expressive-oauth2-jwt/">Expressive com OAuth 2 e JWT</a></h3>
+                            <div class="card-body">
+                                O Zend Expressive é o micro-framework da Zend que implementa a PSR-7, lançado oficialmente em 2016.
+                                A versão 2 foi lançada em março de 2017 e tem recebido bastante destaque desde então.
+                                Aprenda sobre <em>middlewares</em>, <em>controllers</em>, <em>factories</em> e injeção de dependências via <em>containers</em>.
+                                Entenda OAuth2 e como utilizá-lo para realizar a autorização de APIs, usando JSON Web Tokens (JWT) para lidar com <em>access tokens</em>.
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://viniciuscampitelli.com/slides/expressive-oauth2-jwt/">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <iframe src="https://speakerdeck.com/vcampitelli/carreira-e-empreendedorismo"></iframe>
+                        <div class="card">
+                            <h3><a href="https://speakerdeck.com/vcampitelli/carreira-e-empreendedorismo">Carreira e Empreendedorismo</a></h3>
+                            <div class="card-body">
+                            Esses dois caminhos são extremamente opostos, certo? Para empreender, preciso abrir mão da minha carreira atual? Em muitos casos, não! Veremos exemplos de como podemos extrair o melhor de cada caminho para aliarmos inovação e o sentimento de realizar algo próprio sem abrir mão da carreira em alguma empresa.
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://speakerdeck.com/vcampitelli/carreira-e-empreendedorismo">Ver em tela cheia</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section id="links">
+                <div class="container">
+                    <h2>Galeria de links</h2>
+                    <div class="d-flex">
                         <a href="https://curseduca.pro/">
                             <h4>Curseduca</h4>
-                            <p class="text-muted">Co-founder</p>
+                            <p>Co-founder</p>
                             <span>Plataforma SaaS de e-learning</span>
                         </a>
-                    </div>
-                    <div class="col-md-3">
                         <a href="https://github.com/vcampitelli">
                             <h4>GitHub</h4>
-                            <p class="text-muted">@vcampitelli</p>
+                            <p>@vcampitelli</p>
                         </a>
-                    </div>
-                    <div class="col-md-3">
                         <a href="https://twitter.com/vcampitelli">
                             <h4>Twitter</h4>
-                            <p class="text-muted">@vcampitelli</p>
+                            <p>@vcampitelli</p>
                         </a>
-                    </div>
-                    <div class="col-md-3">
                         <a href="https://br.linkedin.com/in/viniciuscampitelli">
                             <h4>LinkedIn</h4>
-                            <p class="text-muted">Co-founder</p>
+                            <p>Co-founder</p>
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     </body>
 </html>
