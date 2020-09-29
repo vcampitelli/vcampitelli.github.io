@@ -199,9 +199,10 @@ iframe {
   }
   #header-photo {
     width: 100%;
-    max-width: 150px;
+    max-width: 100px;
   }
   #header-intro {
+    margin-top: 1rem;
     font-size: 1.1rem;
   }
 
@@ -217,6 +218,10 @@ iframe {
   }
   .d-flex {
     display: block;
+  }
+  iframe {
+    height: 300px;
+    max-height: 90vh;
   }
   .card {
     margin-top: 30px;
