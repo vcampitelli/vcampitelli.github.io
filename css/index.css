@@ -274,6 +274,9 @@ iframe {
 #links .d-flex > a {
   flex: 1 0 auto;
 }
+#links .d-flex > a > span {
+  display: block;
+}
 
 @keyframes movingbg {
   0% {
