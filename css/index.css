@@ -81,6 +81,11 @@ h2 {
   margin-bottom: 15px;
   color: #333;
 }
+h2 + h3 {
+  color: #aaa;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
 h3 {
   font-size: 1.6rem;
   color: #444;
@@ -98,6 +103,10 @@ a:focus {
 }
 .d-flex {
   display: flex;
+}
+span.muted {
+  color: rgba(255, 153, 102, 0.5);
+  font-style: italic;
 }
 
 /**
@@ -145,10 +154,13 @@ a:focus {
 /**
  * Talks
  */
-iframe {
+iframe, .slide-thumbnail {
   width: 100%;
   border: 0;
   scrollbar-width: thin;
+}
+.slide-thumbnail > img {
+  max-width: 100%;
 }
 .card {
   align-self: center;
@@ -193,7 +205,7 @@ iframe {
 .card-footer > a.outline:focus {
   color: #fff;
 }
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   #header {
     padding: 30px 0;
   }
@@ -219,7 +231,7 @@ iframe {
   .d-flex {
     display: block;
   }
-  iframe {
+  iframe, .slide-thumbnail {
     height: 300px;
     max-height: 90vh;
   }
@@ -228,7 +240,7 @@ iframe {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 769px) {
   #header {
     padding: 75px 0;
   }
@@ -248,10 +260,15 @@ iframe {
     display: flex;
     margin: 60px 0;
   }
-  iframe {
+  iframe, .slide-thumbnail {
     width: 450px;
     flex-shrink: 0;
+  }
+  iframe {
     min-height: 315px;
+  }
+  .slide-thumbnail {
+    min-height: 253px;
   }
   .card {
     margin-left: 30px;
