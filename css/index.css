@@ -1,169 +1,303 @@
-/* Common */
-body {
-  background-color: #fff;
+/**
+ * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.badge {
-  padding: 0.5em 0.8em;
+body,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+p {
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+  margin: 15px 0 15px 30px;
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/**
+ * Common layout
+ */
+body {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  letter-spacing: -0.1px;
+  color: #111;
+}
+html,
+body {
+  background: #f5f5f5;
+  scrollbar-width: thin;
+  scrollbar-color: #bbb #ddd;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1;
+}
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+h3 {
+  font-size: 1.6rem;
+  color: #444;
+  line-height: 1;
 }
 a {
-  color: #4d63ad;
-  transition: all 0.3s ease-in-out;
+  color: #ff9966;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
 }
 a:hover,
 a:focus {
-  color: #7185c7;
+  color: #ff5e62;
   text-decoration: none;
 }
+.d-flex {
+  display: flex;
+}
 
-/* Intro */
-#intro {
+/**
+ * Header
+ */
+#header {
   color: #fff;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background: #ff9966;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  background: #f96;
   background: linear-gradient(-45deg, #ff9966, #ff5e62);
   background-size: 400% 400%;
-  animation: AnimationName 6s ease infinite;
+  animation: movingbg 6s ease infinite;
 }
-@keyframes AnimationName {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+#header > .d-flex {
+  align-items: center;
 }
-@media screen and (min-width: 768px) {
-  #intro {
-    padding: 3em 0;
-  }
+#header-photo {
+  display: block;
+  border-radius: 50%;
 }
-@media screen and (min-width: 1366px) {
-  #intro {
-    padding: 5em 0;
-  }
-}
-#intro > .container > img {
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-#intro img {
-  float: left;
-  margin-right: 0.5em;
-}
-#intro h1 {
-  line-height: 1;
-  font-size: 3.25rem;
-  font-weight: 900;
-  letter-spacing: -2px;
-  margin-bottom: 0;
-}
-#intro p {
-  margin-bottom: 0;
+#header-intro {
   color: #f0f0f0;
-  text-indent: 0.7rem;
+}
+#header-intro > span,
+#header-intro > a {
+  color: #fff;
+  font-weight: 600;
+}
+#header-intro > a {
+  border-bottom: 2px rgba(255, 255, 255, 0.75) solid;
+}
+#header-intro > a:hover,
+#header-intro > a:focus {
+  color: #f0f0f0;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Sections */
-.section {
-  padding: 5em 0;
+/**
+ * Content
+ */
+#content > .container > section > h2 {
+  margin-bottom: 15px;
 }
-.section + .section {
-  border-top: 1px #ddd solid;
-}
-.section h2 {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #444;
-  font-size: 2rem;
-}
-.section h2,
-.section h3,
-.card-title {
-  font-weight: bold;
-}
-.card-title > a {
-  color: #505050;
-}
-.card-title > a:hover,
-.card-title > a:focus {
-  color: #777;
+
+/**
+ * Talks
+ */
+iframe {
+  width: 100%;
+  border: 0;
+  scrollbar-width: thin;
 }
 .card {
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  align-self: center;
 }
-.card-title {
-  padding-bottom: 1rem;
-  border-bottom: 1px #eee solid;
+.card > h3 > a {
+  text-decoration: none;
 }
-.card-text > .text-muted {
-  margin: 0.5rem 0;
-  font-size: 0.9em;
-  font-style: italic;
+.card-body {
+  padding: 15px 0;
 }
-.card-text {
-  text-align: justify;
-  height: 7.5em;
-  overflow: hidden;
-  margin-bottom: 2rem;
-  position: relative;
+.card-footer > a {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  background: #f96;
+  color: #fff;
+  border: 2px #f96 solid;
+  text-transform: uppercase;
 }
-.card-text:before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  background: linear-gradient(transparent 4em, white);
-}
-.card-text > ul {
-  margin-bottom: 0;
-}
-.showmore + label {
-  position: absolute;
-  bottom: 4em;
-  right: 1.25rem;
-  color: #ccc;
-  text-align: center;
-  font-size: 0.9em;
-  cursor: pointer;
-}
-.showmore {
-  display: none;
-}
-.showmore + label:after {
-  content: "Ver mais";
-}
-.showmore:checked + label:after {
-  content: "Ver menos";
-}
-.showmore:checked ~ .card-text {
-  height: auto;
-}
-.showmore:checked ~ .card-text:before {
-  background-image: none;
-}
-
-/* Links */
-#links {
-  background-color: #f3f3f3;
-  text-align: center;
-}
-#links a > span {
-  color: #777;
-}
-
-/* Footer */
-#footer {
-  font-size: 0.7em;
-  padding: 3em 0;
-  color: #ccc;
-}
-#footer a {
+.card-footer > a > span {
+  display: inline-block;
+  margin-left: 3px;
   font-size: 1rem;
+  line-height: 1;
+  animation: arrowslide 1s ease-in-out infinite;
 }
-#footer a {
-  color: #aaa;
-  padding: 0.5em 0.8em;
+.card-footer > a.outline {
+  background: transparent;
+  border-color: #f96;
+  color: #f96;
 }
-#footer a:hover,
-#footer a:focus {
-  color: #888;
+.card-footer > a:hover,
+.card-footer > a:focus {
+  background-color: #ff5e62;
+  border-color: #ff5e62;
+}
+.card-footer > a:active {
+  background-color: #ef4e52;
+  border-color: #ef4e52;
+}
+.card-footer > a.outline:hover,
+.card-footer > a.outline:focus {
+  color: #fff;
+}
+@media (max-width: 575px) {
+  #header {
+    padding: 30px 0;
+  }
+  #header-photo {
+    width: 100%;
+    max-width: 150px;
+  }
+  #header-intro {
+    font-size: 1.1rem;
+  }
+
+  #content > .container > section {
+    margin: 30px 0;
+  }
+
+  #talks article {
+    padding: 30px 0;
+  }
+  #talks article + article {
+    border-top: 1px #ddd solid;
+  }
+  .d-flex {
+    display: block;
+  }
+  .card {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 576px) {
+  #header {
+    padding: 75px 0;
+  }
+  #header-photo {
+    width: 150px;
+  }
+  #header-intro {
+    margin-left: 30px;
+    font-size: 1.7rem;
+  }
+
+  #content > .container > section {
+    margin: 60px 0;
+  }
+
+  #talks article {
+    display: flex;
+    margin: 60px 0;
+  }
+  iframe {
+    width: 450px;
+    flex-shrink: 0;
+    min-height: 315px;
+  }
+  .card {
+    margin-left: 30px;
+  }
+}
+
+/**
+ * Articles
+ */
+#articles {
+  padding: 60px 0;
+  background-color: #eaeaea;
+}
+
+/**
+ * Links
+ */
+#links {
+  padding: 60px 0;
+  background-color: #222;
+}
+#links h2 {
+  color: #f0f0f0;
+}
+#links .d-flex > a {
+  flex: 1 0 auto;
+}
+#links .d-flex > a > span {
+  display: block;
+}
+
+@keyframes movingbg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes arrowslide {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(6px, 0);
+  }
 }
