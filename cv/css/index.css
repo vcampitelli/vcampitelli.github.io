@@ -112,14 +112,11 @@ h1#title {
 h1#title > span {
   background: #f96;
   color: #fff;
-  padding: 0 5px;
+  padding: 0 7px;
   letter-spacing: -1px;
 }
 ul {
   list-style: square inside;
-}
-li > ul {
-  margin-left: 2rem;
 }
 ul.nolist {
   list-style: none;
@@ -223,6 +220,16 @@ h3 {
   }
 }
 @media (min-width: 992px) {
+  #areas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #areas > li {
+    margin-right: 3rem;
+  }
+  #areas > li:last-child {
+    margin-right: 0;
+  }
   #timeline > li {
     display: flex;
   }
