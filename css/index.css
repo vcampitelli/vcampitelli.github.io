@@ -171,6 +171,30 @@ iframe, .slide-thumbnail {
 .card-body {
   padding: 15px 0;
 }
+.talk-image {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.talk-image > a {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 4px 8px 4px 28px;
+  color: #f96;
+  text-transform: uppercase;
+  background: #eaeaea 8px center no-repeat
+    url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20viewBox%3D%220%200%20512%20512%22%20style%3D%22enable-background%3Anew%200%200%20512%20512%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cpath%20d%3D%22M490.24%2C113.92c-13.888-24.704-28.96-29.248-59.648-30.976C399.936%2C80.864%2C322.848%2C80%2C256.064%2C80%0Ac-66.912%2C0-144.032%2C0.864-174.656%2C2.912c-30.624%2C1.76-45.728%2C6.272-59.744%2C31.008C7.36%2C138.592%2C0%2C181.088%2C0%2C255.904%0AC0%2C255.968%2C0%2C256%2C0%2C256c0%2C0.064%2C0%2C0.096%2C0%2C0.096v0.064c0%2C74.496%2C7.36%2C117.312%2C21.664%2C141.728%0Ac14.016%2C24.704%2C29.088%2C29.184%2C59.712%2C31.264C112.032%2C430.944%2C189.152%2C432%2C256.064%2C432c66.784%2C0%2C143.872-1.056%2C174.56-2.816%0Ac30.688-2.08%2C45.76-6.56%2C59.648-31.264C504.704%2C373.504%2C512%2C330.688%2C512%2C256.192c0%2C0%2C0-0.096%2C0-0.16c0%2C0%2C0-0.064%2C0-0.096%0AC512%2C181.088%2C504.704%2C138.592%2C490.24%2C113.92z%20M192%2C352V160l160%2C96L192%2C352z%22%20fill%3D%22%23f96%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-size: 16px;
+}
+.talk-image > a:hover,
+.talk-image > a:focus {
+  background-color: #f96;
+  background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20viewBox%3D%220%200%20512%20512%22%20style%3D%22enable-background%3Anew%200%200%20512%20512%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cpath%20d%3D%22M490.24%2C113.92c-13.888-24.704-28.96-29.248-59.648-30.976C399.936%2C80.864%2C322.848%2C80%2C256.064%2C80%0Ac-66.912%2C0-144.032%2C0.864-174.656%2C2.912c-30.624%2C1.76-45.728%2C6.272-59.744%2C31.008C7.36%2C138.592%2C0%2C181.088%2C0%2C255.904%0AC0%2C255.968%2C0%2C256%2C0%2C256c0%2C0.064%2C0%2C0.096%2C0%2C0.096v0.064c0%2C74.496%2C7.36%2C117.312%2C21.664%2C141.728%0Ac14.016%2C24.704%2C29.088%2C29.184%2C59.712%2C31.264C112.032%2C430.944%2C189.152%2C432%2C256.064%2C432c66.784%2C0%2C143.872-1.056%2C174.56-2.816%0Ac30.688-2.08%2C45.76-6.56%2C59.648-31.264C504.704%2C373.504%2C512%2C330.688%2C512%2C256.192c0%2C0%2C0-0.096%2C0-0.16c0%2C0%2C0-0.064%2C0-0.096%0AC512%2C181.088%2C504.704%2C138.592%2C490.24%2C113.92z%20M192%2C352V160l160%2C96L192%2C352z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  color: #fff;
+}
+.talk-image > a:hover > svg > g > path,
+.talk-image > a:focus > svg > g > path {
+  fill: #fff;
+}
 .card-footer > a {
   display: inline-block;
   font-size: 0.9rem;
@@ -197,6 +221,7 @@ iframe, .slide-thumbnail {
   background-color: #ff5e62;
   border-color: #ff5e62;
 }
+.talk-image > a:active,
 .card-footer > a:active {
   background-color: #ef4e52;
   border-color: #ef4e52;
@@ -259,6 +284,7 @@ iframe, .slide-thumbnail {
   #talks article {
     display: flex;
     margin: 60px 0;
+    align-items: start;
   }
   iframe, .slide-thumbnail {
     width: 450px;
