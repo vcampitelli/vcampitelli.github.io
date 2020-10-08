@@ -107,7 +107,7 @@ h1#title {
   color: #f96;
   font-variant: small-caps;
   line-height: 1.2;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
 }
 h1#title > span {
   background: #f96;
@@ -225,6 +225,7 @@ h3 {
     flex-wrap: wrap;
   }
   #areas > li {
+    margin-top: 0.5rem;
     margin-right: 3rem;
   }
   #areas > li:last-child {
