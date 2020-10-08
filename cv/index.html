@@ -11,14 +11,17 @@
         <link href="css/index.css?d=202010052100" rel="stylesheet" type="text/css">
         <link href="css/font.css?d=202010052100" rel="stylesheet" type="text/css">
 
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg">
-        <link rel="shortcut icon" href="/img/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.jpg">
+        <link rel="shortcut icon" href="../img/favicon.ico">
     </head>
     <body>
         <div class="container">
             <div id="intro" class="d-flex">
                 <header>
-                    <h1 id="title">Vinícius<br><b>Campitelli</b></h1>
+                    <h1 id="title">
+                        Vinícius<br>
+                        <span>Campitelli</span>
+                    </h1>
                 </header>
                 <div class="ml-2">
                     <i class="icon-map-marker"></i> São Paulo - SP<br>
@@ -45,47 +48,51 @@
             <main id="main">
                 <section>
                     <h1>Habilidades</h1>
-                    <h2 class="h4">Tecnologias</h2>
                     <ul class="label-list">
                         <li>PHP</li>
+                        <li>Python</li>
+                        <li class="bull">&bull;</li>
                         <li>SQL</li>
                         <li>NoSQL</li>
-                        <li>Message Queue</li>
+                        <li class="bull">&bull;</li>
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
-                        <li>Linux</li>
-                    </ul>
-
-                    <h2 class="h4">Temas</h2>
-                    <ul class="label-list">
-                        <li>Cibersegurança</li>
-                        <li>Cibersegurança</li>
-                        <li>Arquitetura de Soluções</li>
+                        <li class="bull">&bull;</li>
+                        <li>Message Queue</li>
+                        <li>WebSockets</li>
+                        <li>Criptografia</li>
+                        <li>Segurança da Informação</li>
+                        <li class="bull">&bull;</li>
+                        <li>Metodologias Ágeis</li>
+                        <li>Gestão de Projetos</li>
+                        <li class="bull">&bull;</li>
+                        <li>Docker</li>
                         <li>DevOps</li>
                         <li>Infraestrutura</li>
+                        <li>Linux</li>
                     </ul>
                 </section>
 
                 <section>
                     <h1>Pretensões</h1>
-                    <h2 class="h3">Áreas</h2>
                     <ul>
-                        <li>Produção de conteúdo (como artigos, treinamentos, cursos e similares) de TI;</li>
-                        <li>Consultoria pontual em projetos;</li>
-                        <li>Desenvolvimento remoto meio período;</li>
-                    </ul>
-
-                    <h2 class="h3 mt-2">Temas</h2>
-                    <ul>
-                        <li>PHP</li>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>Lógica de programação</li>
-                        <li>Arquitetura de sistemas</li>
-                        <li>Cibersegurança</li>
-                        <li>Qualidade de código</li>
-                        <li>APIs e microserviços</li>
-                        <li>e afins...</li>
+                        <li>
+                            Produção de conteúdos (como artigos, treinamentos, cursos e similares) de TI;
+                            <ul>
+                                <li>PHP;</li>
+                                <li>HTML, CSS, JavaScript;</li>
+                                <li>Lógica de programação;</li>
+                                <li>Arquitetura de sistemas;</li>
+                                <li>Cibersegurança e criptografia;</li>
+                                <li>Qualidade de código;</li>
+                                <li>APIs e microserviços;</li>
+                                <li>Soft skills;</li>
+                                <li>e afins...</li>
+                            </ul>
+                        </li>
+                        <li>Consultoria em projetos;</li>
+                        <li>Freelance de desenvolvimento remoto meio período;</li>
                     </ul>
                 </section>
 
@@ -197,16 +204,16 @@
                 <section>
                     <h1>Profissional</h1>
 
-                    <div class="d-flex half">
+                    <div class="d-flex">
                         <div>
                             <span class="small text-muted">2013 - 2020</span>
-                            <h4>Curseduca</h4>
+                            <p class="bold">Curseduca</p>
                             <p>Co-fundador e CTO de uma plataforma SaaS de e-learning</p>
                         </div>
 
                         <div class="ml-2">
                             <span class="small text-muted">2013 - 2019</span>
-                            <h4>MT4 Tecnologia</h4>
+                            <p class="bold">MT4 Tecnologia</p>
                             <p>Tech lead na @MediaPost E-mail Marketing</p>
                             <p>Arquiteto de novas soluções no produto de cibersegurança</p>
                         </div>
@@ -216,28 +223,40 @@
                 <section>
                     <h1>Educação</h1>
 
-                    <div class="d-flex half">
+                    <div class="d-flex justify-content-between">
                         <div>
                             <span class="small text-muted">2009-2012</span>
-                            <h4>Universidade Federal de São Carlos</h4>
+                            <p class="bold">Universidade Federal de São Carlos</p>
                             <p>Bacharel em Ciência da Computação</p>
                         </div>
 
                         <div class="ml-2">
-                            <h4>Cursos em destaque</h4>
-                            <ul>
-                                <li>LINCE (MasterMind SP)</li>
-                                <li>Programação Neuro-Linguística (Ápice)</li>
-                                <li>Gestão de Vendas (Insper)</li>
-                            </ul>
+                            <p class="bold">Cursos em destaque</p>
+                            <div id="featured-courses" class="d-flex">
+                                <ul>
+                                    <li>LINCE <span>@ MasterMind SP</span><br><span class="smaller">Liderança, Inteligência Interpessoal e Comunicação Eficaz</span> </li>
+                                </ul>
+                                <ul class="ml-1">
+                                    <li>Programação Neuro-Linguística <span>@ Ápice</span></li>
+                                    <li>Gestão de Vendas <span>@ Insper</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <section>
                     <h1>Idiomas</h1>
-                    Inglês: Fluente<br>
-                    Espanhol: Intermediário
+                    <div class="d-flex">
+                        <div>
+                            <p class="bold">Inglês</p>
+                            Fluente
+                        </div>
+                        <div class="ml-2">
+                            <p class="bold">Espanhol</p>
+                            Intermediário
+                        </div>
+                    </div>
                 </section>
 
                 <section>
@@ -245,7 +264,6 @@
                     <p>Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas nos mais diversos eventos
                     ao redor do Brasil.</p>
                     <p>Os slides dessas apresentações estão em <a href="https://viniciuscampitelli.com/">viniciuscampitelli.com</a>.</p>
-                    <p class="mt-2">Alguns eventos:</p>
                     <div id="talks">
                         <div class="d-flex mt-2">
                             <div>
@@ -261,11 +279,11 @@
                             </div>
                             <div>
                                 <p>PHP Experience</p>
-                                São Paulo 2017
+                                São Paulo 2018
                             </div>
                             <div>
                                 <p>PHP Community Summit</p>
-                                São Paulo 2019
+                                São Paulo 2018 e 2019
                             </div>
                         </div>
                         <div class="d-flex mt-2">
@@ -290,6 +308,10 @@
                     </div>
                 </section>
             </main>
+
+            <footer>
+                <a href="mailto:eu@viniciuscampitelli.com">eu@viniciuscampitelli.com</a>
+            </footer>
         </div>
     </body>
 

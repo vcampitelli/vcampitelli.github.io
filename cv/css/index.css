@@ -33,7 +33,15 @@ body {
   line-height: 1.5;
 }
 a {
+  color: #f96;
   text-decoration-skip-ink: auto;
+}
+a:hover,
+a:focus {
+  color: #ff5e62;
+}
+a:active {
+  color: #ef4e52;
 }
 img {
   max-width: 100%;
@@ -58,6 +66,8 @@ select {
  * App CSS
  */
 body {
+  background: #fff;
+  color: #444;
   font-family: "Roboto Slab", Roboto, sans-serif;
 }
 #intro,
@@ -76,7 +86,7 @@ body {
 }
 #intro > div > a:hover,
 #intro > div > a:focus {
-  color: #ff8000;
+  color: #f96;
 }
 #intro i[class^="icon-"] {
   display: inline-block;
@@ -84,50 +94,61 @@ body {
   text-align: center;
 }
 h1#title {
-  color: #222;
-  text-transform: lowercase;
+  text-align: center;
+  color: #f96;
+  font-variant: small-caps;
   line-height: 1.2;
+  letter-spacing: 3px;
+}
+h1#title > span {
+  background: #f96;
+  color: #fff;
+  padding: 0 5px;
+  letter-spacing: -1px;
 }
 ul {
   list-style: square inside;
+}
+li > ul {
+  margin-left: 2rem;
 }
 ul.nolist {
   list-style: none;
 }
 section + section {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
-h1, .h1 {
+h1 {
   font-size: 2rem;
   font-weight: 600;
 }
-h1 > b, .h1 > b {
-  font-weight: 900;
-}
-h2, .h2 {
+h2 {
   font-size: 1.7rem;
   font-weight: 600;
 }
-h3, .h3 {
+h3 {
   font-size: 1.4rem;
   font-weight: 600;
 }
-h4, .h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-h5, .h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
+#main h1 {
+  margin-left: -2rem;
+  border-left: 0.35rem #f96 solid;
+  padding-left: 1.65rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 .d-flex {
   display: flex;
 }
-.d-flex.half > div {
-  flex-basis: 50%;
+.justify-content-between {
+  justify-content: space-between;
 }
 .mt-2 {
   margin-top: 2rem;
+}
+.ml-1 {
+  margin-left: 1rem;
 }
 .ml-2 {
   margin-left: 2rem;
@@ -138,19 +159,25 @@ h5, .h5 {
 .small {
   font-size: 0.9rem;
 }
+.smaller {
+  font-size: 0.8rem;
+}
 .label-list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 .label-list > li {
   font-size: 0.9rem;
-  background: #eee;
-  color: #222;
   padding: 5px 10px;
-  border-radius: 3px;
+  color: #666;
+  margin: 0 5px 5px 0;
 }
-.label-list > li + li {
-  margin-left: 0.5rem;
+.label-list > li:not(.bull) {
+  background: #eee;
+}
+#featured-courses > ul > li > span {
+  color: #777;
 }
 #talks {
   flex-wrap: wrap;
@@ -163,6 +190,7 @@ h5, .h5 {
     flex-basis: 50%;
   }
 }
+.bold,
 #talks > .d-flex > div > p {
   font-weight: 600;
 }
@@ -193,6 +221,16 @@ h5, .h5 {
 #timeline > li > .description {
   border-left: 2px #ccc solid;
   padding-left: 2rem;
+}
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px #eee solid;
+}
+footer > a {
+  color: #999;
+  font-size: 0.9rem;
 }
 
 /* Grid */
