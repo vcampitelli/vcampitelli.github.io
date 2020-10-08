@@ -1,0 +1,225 @@
+/**
+ * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+a {
+  text-decoration-skip-ink: auto;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**
+ * App CSS
+ */
+body {
+  font-family: "Roboto Slab", Roboto, sans-serif;
+}
+#intro,
+#main {
+  padding: 2rem;
+}
+#intro {
+  margin-top: 2rem;
+  background: #eee;
+  align-items: center;
+  justify-content: space-between;
+}
+#intro > div > a {
+  color: #444;
+  text-decoration: none;
+}
+#intro > div > a:hover,
+#intro > div > a:focus {
+  color: #ff8000;
+}
+#intro i[class^="icon-"] {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+}
+h1#title {
+  color: #222;
+  text-transform: lowercase;
+  line-height: 1.2;
+}
+ul {
+  list-style: square inside;
+}
+ul.nolist {
+  list-style: none;
+}
+section + section {
+  margin-top: 2rem;
+}
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h1 > b, .h1 > b {
+  font-weight: 900;
+}
+h2, .h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+h3, .h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+h4, .h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+h5, .h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.d-flex {
+  display: flex;
+}
+.d-flex.half > div {
+  flex-basis: 50%;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.text-muted {
+  color: #999;
+}
+.small {
+  font-size: 0.9rem;
+}
+.label-list {
+  list-style: none;
+  display: flex;
+}
+.label-list > li {
+  font-size: 0.9rem;
+  background: #eee;
+  color: #222;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.label-list > li + li {
+  margin-left: 0.5rem;
+}
+#talks {
+  flex-wrap: wrap;
+}
+#talks > .d-flex > div {
+  flex-basis: 25%;
+}
+@media (max-width: 1024px) {
+  #talks > .d-flex > div {
+    flex-basis: 50%;
+  }
+}
+#talks > .d-flex > div > p {
+  font-weight: 600;
+}
+#talks > .d-flex > div + div {
+  margin-left: 2rem;
+}
+
+/**
+ * Timeline
+ */
+#timeline > li {
+  display: flex;
+}
+#timeline > li > .date,
+#timeline > li > .description {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#timeline > li > .date {
+  width: 5rem;
+  margin-right: 2rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+#timeline > li > .date > span {
+  color: #aaa;
+}
+#timeline > li > .description {
+  border-left: 2px #ccc solid;
+  padding-left: 2rem;
+}
+
+/* Grid */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
