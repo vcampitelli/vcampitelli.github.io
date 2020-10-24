@@ -147,6 +147,9 @@ h3 {
 .mt-2 {
   margin-top: 2rem;
 }
+.mt-3 {
+  margin-top: 3rem;
+}
 .ml-1 {
   margin-left: 1rem;
 }
@@ -203,7 +206,7 @@ h3 {
 #timeline > li > .date > span {
   color: #aaa;
 }
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
   #timeline > li {
     list-style-type: none;
   }
@@ -216,7 +219,7 @@ h3 {
     margin-top: 2.5rem;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px), print {
   #areas {
     display: flex;
     flex-wrap: wrap;
@@ -291,7 +294,7 @@ footer > a {
     max-width: 720px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px), print {
   .container {
     max-width: 840px;
   }
@@ -315,9 +318,17 @@ footer > a {
   .ml-md-2 {
     margin-left: 2rem;
   }
+  .ml-md-4 {
+    margin-left: 4rem;
+  }
 }
 @media (min-width: 1200px) {
   .container {
     max-width: 960px;
   }
+}
+@media print {
+    .container {
+        max-width: 100%;
+    }
 }
