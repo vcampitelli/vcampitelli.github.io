@@ -75,7 +75,6 @@ body {
   padding: 2rem;
 }
 #intro {
-  margin-top: 2rem;
   background: #eee;
   align-items: center;
   justify-content: space-between;
@@ -92,6 +91,7 @@ body {
 #intro > div > a {
   color: #666;
   text-decoration: none;
+  display: block;
 }
 #intro > div > a:hover,
 #intro > div > a:focus {
@@ -182,15 +182,17 @@ h3 {
 #featured-courses > ul > li > span {
   color: #777;
 }
-#talks {
+#talks > .d-flex {
   flex-wrap: wrap;
 }
-@media (min-width: 792px) {
+@media (min-width: 792px), print {
   #talks > .d-flex > div {
+    margin-top: 1rem;
+    padding-right: 1rem;
     flex-basis: 50%;
   }
 }
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   #talks > .d-flex > div {
     flex-basis: 25%;
   }
@@ -328,7 +330,22 @@ footer > a {
   }
 }
 @media print {
-    .container {
-        max-width: 100%;
-    }
+  .container {
+    max-width: 100%;
+  }
+  .d-screen-only {
+    display: none !important;
+  }
+  #talks-wrapper {
+    margin-top: 0;
+    page-break-before: always;
+  }
+}
+@media screen {
+  #intro {
+    margin-top: 2rem;
+  }
+  .d-print-only {
+    display: none !important;
+  }
 }
