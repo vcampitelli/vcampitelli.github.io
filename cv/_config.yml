@@ -1,0 +1,8 @@
+title: "@vcampitelli"
+description: "my online cv"
+plugins:
+  - jekyll-multiple-languages-plugin
+
+# jekyll-multiple-languages-plugin
+languages: ["pt", "en"]
+exclude_from_localizations: ["img", "css"]

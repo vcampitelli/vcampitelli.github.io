@@ -115,6 +115,22 @@ h1#title > span {
   padding: 0 7px;
   letter-spacing: -1px;
 }
+#svg-phone {
+  enable-background: new 0 0 891.024 891.024;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+#svg-phone > g > path {
+  fill: #666;
+}
+#alert-intro {
+  margin-top: 2rem;
+  padding: 0.75rem 1.25rem;
+  color: #144376;
+  background-color: #d4e6f9;
+  font-size: 0.9rem;
+}
 ul {
   list-style: square inside;
 }
@@ -196,6 +212,9 @@ h3 {
   #talks > .d-flex > div {
     flex-basis: 25%;
   }
+  #talks > .d-flex.flex-50 > div {
+    flex-basis: 50%;
+  }
 }
 .bold,
 #talks > .d-flex > div > p {
@@ -221,7 +240,7 @@ h3 {
     margin-top: 2.5rem;
   }
 }
-@media (min-width: 992px), print {
+@media print, (min-width: 992px) {
   #areas {
     display: flex;
     flex-wrap: wrap;
@@ -268,7 +287,8 @@ h3 {
 }
 
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
   margin-top: 2rem;
   padding: 1rem 0;
   border-top: 1px #eee solid;
@@ -276,6 +296,16 @@ footer {
 footer > a {
   color: #999;
   font-size: 0.9rem;
+}
+#i18n-flags {
+  display: flex;
+  list-style-type: none;
+}
+#i18n-flags > li > a > img {
+  width: 24px;
+}
+#i18n-flags > li + li {
+  margin-left: 8px;
 }
 
 /* Grid */
@@ -296,7 +326,7 @@ footer > a {
     max-width: 720px;
   }
 }
-@media (min-width: 992px), print {
+@media print, (min-width: 992px) {
   .container {
     max-width: 840px;
   }

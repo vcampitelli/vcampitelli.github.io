@@ -1,5 +1,7 @@
+---
+---
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="{{ site.lang }}">
     <head>
         <meta charset="utf-8">
 
@@ -8,17 +10,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet" type="text/css">
-        <link href="css/index.css?d=202010131610" rel="stylesheet" type="text/css">
-        <link href="css/font.css?d=202010081830" rel="stylesheet" type="text/css">
+        <link href="{{ "/css/index.css?d=202011101908" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
+        <link href="{{ "/css/font.css?d=202010081830" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
 
-        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.jpg">
-        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg">
+        <link rel="shortcut icon" href="/img/favicon.ico">
     </head>
     <body>
         <div class="container">
             <div id="intro" class="d-flex">
                 <header>
-                    <img src="img/profile.jpg" alt="Vinícius Campitelli">
+                    <img src="{{ "/img/profile.jpg" | prepend: site.baseurl_root }}" alt="Vinícius Campitelli">
                     <h1 id="title">
                         Vinícius<br>
                         <span>Campitelli</span>
@@ -26,7 +28,7 @@
                 </header>
                 <div class="ml-md-2 mt-2 mt-md-0">
                     <i class="icon-location"></i> São Paulo - SP<br>
-                    <i class="icon-hourglass-3"></i> 28 anos
+                    <i class="icon-hourglass-3"></i> {% t 29_YEARS_OLD %}
                 </div>
                 <div class="ml-md-2">
                     <a href="mailto:eu@viniciuscampitelli.com" title="Email: eu@viniciuscampitelli.com">
@@ -34,13 +36,13 @@
                     </a>
                     <a href="https://wa.me/5511991669190" class="d-print-only" title="Telefone: (11) 99166-9190">
                         <!--?xml version="1.0" encoding="iso-8859-1"?-->
-                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="891.024px" height="891.024px" viewBox="0 0 891.024 891.024" style="enable-background:new 0 0 891.024 891.024;width: 16px;height: 16px;vertical-align: middle;" xml:space="preserve">
+                        <svg id="svg-phone" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 891.024 891.024" xml:space="preserve">
                             <g>
                                 <path d="M2.8,180.875c46.6,134,144.7,286.2,282.9,424.399c138.2,138.2,290.4,236.301,424.4,282.9c18.2,6.3,38.3,1.8,52-11.8
                                     l92.7-92.7l21.6-21.6c19.5-19.5,19.5-51.2,0-70.7l-143.5-143.4c-19.5-19.5-51.2-19.5-70.7,0l-38.899,38.9
                                     c-20.2,20.2-52.4,22.2-75,4.6c-44.7-34.8-89-73.899-131.9-116.8c-42.9-42.9-82-87.2-116.8-131.9c-17.601-22.6-15.601-54.7,4.6-75
                                     l38.9-38.9c19.5-19.5,19.5-51.2,0-70.7l-143.5-143.5c-19.5-19.5-51.2-19.5-70.7,0l-21.6,21.6l-92.7,92.7
-                                    C1,142.575-3.5,162.675,2.8,180.875z" style="fill: #666;"></path>
+                                    C1,142.575-3.5,162.675,2.8,180.875z"></path>
                             </g>
                         </svg>
                         (11) 99166-9190
@@ -59,13 +61,15 @@
                 </div>
             </div>
 
+        {% if site.lang == "en" %}
+            <div id="alert-intro">This translation is a work in progress! Please be patient until I finish it :-)</div>
+        {% endif %}
+
             <main id="main">
                 <section>
-                    <h1>Sobre</h1>
+                    <h1>{% t ABOUT %}</h1>
                     <p>
-                        Olá! Meu nome é <b>Vinícius Campitelli</b> e sou <b>apaixonado por empreendedorismo, tecnologia e cibersegurança</b>. Comecei a programar com 14 anos e desde então nunca mais parei.
-                        <b>Fundei minha própria startup</b> - Curseduca, uma plataforma SaaS de e-learning - e comecei a <b>ministrar palestras</b> em eventos de tecnologia. Assim, descobri o que realmente
-                        gostava de fazer: <b>compartilhar conhecimento</b>.
+                        {% t ABOUT_INTRO %}
                     </p>
                     <p class="mt-2">
                         Estou buscando oportunidades de <b>produção de conteúdos</b> <em>(artigos, treinamentos, cursos e similares)</em> em diversas áreas de TI, entre elas:
@@ -80,7 +84,7 @@
                         <li>Criptografia;</li>
                         <li>Qualidade de código;</li>
                         <li>APIs e microserviços;</li>
-                        <li>Soft skills;</li>
+                        <li>Soft skills.</li>
                     </ul>
                     <p class="mt-2">
                         Também busco atuar como <b>líder de equipes técnicas</b> ou de forma temporária em:
@@ -93,10 +97,12 @@
                 </section>
 
                 <section>
-                    <h1>Habilidades</h1>
+                    <h1>{%t SKILLS %}</h1>
                     <ul class="label-list">
                         <li>PHP</li>
                         <li>Python</li>
+                        <li>Node.js</li>
+                        <li>React</li>
                         <li class="bull">&bull;</li>
                         <li>NoSQL</li>
                         <li>SQL</li>
@@ -129,7 +135,7 @@
                 </section>
 
                 <section>
-                    <h1>Linha do tempo</h1>
+                    <h1>{% t TIMELINE %}</h1>
                     <ol id="timeline">
                         <li>
                             <div class="date">
@@ -254,7 +260,7 @@
                     <div class="d-flex half">
                         <div>
                             <section>
-                                <h1>Profissional</h1>
+                                <h1>{% t PROFESSIONAL %}</h1>
 
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2013 - 2020</span>
@@ -278,7 +284,7 @@
 
                         <div class="ml-md-4">
                             <section>
-                                <h1>Educação</h1>
+                                <h1>{% t EDUCATION %}</h1>
 
                                 <div>
                                     <span class="small text-muted">2009-2012</span>
@@ -300,14 +306,14 @@
                             </section>
 
                             <section class="mt-3">
-                                <h1>Idiomas</h1>
+                                <h1>{% t LANGUAGES %}</h1>
                                 <div class="d-flex">
                                     <div>
-                                        <p class="bold">Inglês</p>
+                                        <p class="bold">{% t ENGLISH %}</p>
                                         Fluente
                                     </div>
                                     <div class="ml-md-2">
-                                        <p class="bold">Espanhol</p>
+                                        <p class="bold">{% t SPANISH %}</p>
                                         Intermediário
                                     </div>
                                 </div>
@@ -317,14 +323,14 @@
                 </section>
 
                 <section id="talks-wrapper">
-                    <h1>Palestras</h1>
+                    <h1>{% t TALKS %}</h1>
                     <p>
                         Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas nos mais diversos eventos ao redor do Brasil.
                         Os slides dessas apresentações estão em <a href="https://viniciuscampitelli.com/">viniciuscampitelli.com</a>.
                         Alguns desses eventos:
                     </p>
                     <div id="talks">
-                        <div class="d-flex mt-2">
+                        <div class="d-flex flex-50 mt-2">
                             <div>
                                 <p>The Developers Conference</p>
                                 São Paulo: Online 2020, 2019<br>
@@ -333,20 +339,20 @@
                             </div>
                             <div>
                                 <p>PHP Conference</p>
-                                Porto Alegre 2018, 2019<br>
+                                Porto Alegre 2018, 2019, Online 2020<br>
                                 Osasco 2017
                             </div>
-                            <div>
-                                <p>PHP Experience</p>
-                                São Paulo 2018 (<a href="https://www.youtube.com/watch?v=S1gLE6xH06s">assistir</a>)
-                            </div>
+                        </div>
+                        <div class="d-flex">
                             <div>
                                 <p>PHP Community Summit</p>
                                 São Paulo 2019 (<a href="https://www.youtube.com/watch?v=kUGhNbqptcA">assistir</a>)<br>
                                 São Paulo 2018 (<a href="https://www.youtube.com/watch?v=NEMwgMhGB4A">assistir</a>)
                             </div>
-                        </div>
-                        <div class="d-flex">
+                            <div>
+                                <p>PHP Experience</p>
+                                São Paulo 2018 (<a href="https://www.youtube.com/watch?v=S1gLE6xH06s">assistir</a>)
+                            </div>
                             <div>
                                 <p>DarkMira Tour</p>
                                 Brasília 2018
@@ -356,6 +362,8 @@
                                 Recife 2019<br>
                                 Fortaleza 2017
                             </div>
+                        </div>
+                        <div class="d-flex">
                             <div>
                                 <p>PHPSC Conference</p>
                                 Blumenau 2019<br>
@@ -365,16 +373,34 @@
                                 <p>PHP Day Curitiba</p>
                                 Curitiba 2017
                             </div>
+                            <div>
+                                <p>Meetanços</p>
+                                Libsodium: Criptografia moderna no PHP (<a href="https://www.youtube.com/watch?v=Vd2lQNOzBr4">assistir</a>)
+                            </div>
+                            <div>
+                                <p>CapiConf</p>
+                                Online 2020
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
 
-            <footer class="text-muted">
-                Vinícius Campitelli <span class="small">&bull;</span>
-                <a href="mailto:eu@viniciuscampitelli.com">eu@viniciuscampitelli.com</a>
-                <span class="small">&bull;</span>
-                <a href="https://wa.me/5511991669190" title="(11) 99166-9190">(11) 99166-9190</a>
+            <footer>
+                <div class="text-muted">
+                    Vinícius Campitelli <span class="small">&bull;</span>
+                    <a href="mailto:eu@viniciuscampitelli.com">eu@viniciuscampitelli.com</a>
+                </div>
+                <ul id="i18n-flags">
+                    <!-- https://github.com/lipis/flag-icon-css -->
+                {% if site.lang == "pt" %}
+                    {% capture link1 %}{{ site.baseurl_root }}/en{{ page.url}}{% endcapture %}
+                    <li><a href="{{ link1 }}"><img src="{{ "/img/flag/us.svg" | prepend: site.baseurl_root }}" alt="{% t lang.ENGLISH %}" title="{% t lang.ENGLISH %}"></a></li>
+                {% elsif site.lang == "en" %}
+                    {% capture link2 %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
+                    <li><a href="{{ link2 }}"><img src="{{ "/img/flag/br.svg" | prepend: site.baseurl_root }}" alt="{% t lang.PORTUGUESE %}" title="{% t lang.PORTUGUESE %}"></a></li>
+                    {% endif %}
+                </ul>
             </footer>
         </div>
     </body>
