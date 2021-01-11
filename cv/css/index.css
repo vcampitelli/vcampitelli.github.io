@@ -366,7 +366,8 @@ footer > a {
   .d-screen-only {
     display: none !important;
   }
-  #talks-wrapper {
+  html[lang="en"] #section-pro-education,
+  html[lang="pt"] #talks-wrapper {
     margin-top: 0;
     page-break-before: always;
   }
