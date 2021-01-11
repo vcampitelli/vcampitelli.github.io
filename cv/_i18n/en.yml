@@ -3,17 +3,18 @@ AGE: 29 years old
 ABOUT: About
 ABOUT_INTRO: "Hi! My name is <b>Vinícius Campitelli</b>, I am a <b>passionated entrepreneur, IT and cybersecurity enthusiast</b>. I started programming when I was 14 years old and I haven't stopped since.
               <b>I have created my own startup</b> - Curseduca, an e-learning SaaS platform - and <b>spoken at several tech conferences</b>. That is how I discovered what I really liked doing: <b>sharing my knowledge</b>."
-ABOUT_JOB_CONTENT: "I am looking at job opportunities for <b>content creation</b> <em>(e.g. articles, trainings, courses)</em> in the following IT areas:"
+ABOUT_JOB_CONTENT: "I am looking at job opportunities to work as:"
+ABOUT_JOB_CONTENT_CREATION: "Content creation <em>(e.g. articles and courses)</em>"
 ABOUT_JOB_OTHER: "I may also work as:"
 ABOUT_JOB_LEAD: Team manager
 ABOUT_JOB_CONSULTING: IT Consultant
 ABOUT_JOB_DEVELOPER: Lead PHP developer
 SKILLS: Skills
-SKILL_PROGRAMMING_LOGIC: Programming Logic
+SKILL_CLOUD: Cloud Management
 SKILL_SYSTEMS_ARCH: Systems Architecture
+SKILL_CYBERSECURITY: Cybersecurity
 SKILL_CRYPTOGRAPHY: Cryptography
 SKILL_CODE_QUALITY: Code quality
-SKILL_API_MICROSERVICES: APIs and microservices
 SKILL_SOFTWARE_ENGINEERING: Software Engineering
 SKILL_DB_MODELING: Database Modeling
 SKILL_INFORMATION_SECURITY: Information Security
@@ -23,6 +24,10 @@ SKILL_PROCESS_MANAGEMENT: Process Management
 SKILL_LEADERSHIP: Leadership
 SKILL_AGILE: Agile methods
 TIMELINE: Timeline
+MONTH_JANUARY: january
+MONTH_SEPTEMBER: september
+MONTH_OCTOBER: october
+MONTH_NOVEMBER: november
 PROFESSIONAL: Professional
 PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for creating and selling digital products and online courses"
 MT4_JOB_DEV: Full-stack web developer

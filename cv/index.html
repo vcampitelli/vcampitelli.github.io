@@ -68,24 +68,10 @@
                         {% t ABOUT_INTRO %}
                     </p>
                     <p class="mt-2">
-                        {% t ABOUT_JOB_CONTENT %}
-                    </p>
-                    <ul id="areas" class="ml-2">
-                        <li>PHP;</li>
-                        <li>HTML, CSS, JavaScript;</li>
-                        <li>{% t SKILL_PROGRAMMING_LOGIC %};</li>
-                        <li>{% t SKILL_SYSTEMS_ARCH %};</li>
-                        <li>{% t SKILL_DB_MODELING %};</li>
-                        <li>{% t SKILL_CYBERSECURITY %};</li>
-                        <li>{% t SKILL_CRYPTOGRAPHY %};</li>
-                        <li>{% t SKILL_CODE_QUALITY %};</li>
-                        <li>{% t SKILL_API_MICROSERVICES %};</li>
-                        <li>Soft skills.</li>
-                    </ul>
-                    <p class="mt-2">
-                        {% t ABOUT_JOB_OTHER %}
+                        {% t ABOUT_JOB_OPPORTUNITIES %}
                     </p>
                     <ul class="ml-2">
+                        <li>{% t ABOUT_JOB_CONTENT_CREATION %};</li>
                         <li>{% t ABOUT_JOB_LEAD %};</li>
                         <li>{% t ABOUT_JOB_CONSULTING %};</li>
                         <li>{% t ABOUT_JOB_DEVELOPER %}.</li>
@@ -108,17 +94,22 @@
                         <li>HTML</li>
                         <li>JavaScript</li>
                         <li class="bull">&bull;</li>
+                        <li>{% t SKILL_CYBERSECURITY %}</li>
+                        <li>{% t SKILL_INFORMATION_SECURITY %}</li>
                         <li>{% t SKILL_CRYPTOGRAPHY %}</li>
-                        <li>Daemons</li>
+                        <li class="bull">&bull;</li>
                         <li>{% t SKILL_SOFTWARE_ENGINEERING %}</li>
+                        <li>{% t SKILL_SYSTEMS_ARCH %}</li>
+                        <li>{% t SKILL_CODE_QUALITY %}</li>
+                        <li class="bull">&bull;</li>
+                        <li>Daemons</li>
                         <li>Git</li>
                         <li>Message Queue</li>
                         <li>{% t SKILL_DB_MODELING %}</li>
-                        <li>{% t SKILL_INFORMATION_SECURITY %}</li>
                         <li>Threads</li>
                         <li>WebSockets</li>
                         <li class="bull">&bull;</li>
-                        <li>AWS</li>
+                        <li>{% t SKILL_CLOUD %}</li>
                         <li>Docker</li>
                         <li>DevOps</li>
                         <li>{% t SKILL_INFRA %}</li>
@@ -131,13 +122,14 @@
                     </ul>
                 </section>
 
+            {% if site.lang == 'pt' %}
                 <section>
                     <h1>{% t TIMELINE %}</h1>
                     <ol id="timeline">
                         <li>
                             <div class="date">
                                 2020<br>
-                                <span>outubro</span>
+                                <span>{% t MONTH_OCTOBER %}</span>
                             </div>
                             <div class="description">
                                 Para começar uma nova empreitada em produção de conteúdos (artigos, vídeos, cursos e outros),
@@ -147,7 +139,7 @@
                         <li>
                             <div class="date">
                                 2019<br>
-                                <span>novembro</span>
+                                <span>{% t MONTH_NOVEMBER %}</span>
                             </div>
                             <div class="description">
                                 Saí da MT4 Tecnologia para me dedicar 100% ao empreendedorismo através do Curseduca
@@ -156,7 +148,7 @@
                         <li>
                             <div class="date">
                                 2019<br>
-                                <span>janeiro</span>
+                                <span>{% t MONTH_JANUARY %}</span>
                             </div>
                             <div class="description">
                                 Deixei o posto de Tech Lead da @MediaPost para me dedicar à uma empresa de cibersegurança do grupo, onde desenvolvi o
@@ -167,7 +159,7 @@
                         <li>
                             <div class="date">
                                 2016<br>
-                                <span>outubro</span>
+                                <span>{% t MONTH_OCTOBER %}</span>
                             </div>
                             <div class="description">
                                 Estive presente na <a href="https://www.zendcon.com/" target="_blank" rel="noopener">ZendCon</a>, conferência de PHP realizada em Las Vegas, para
@@ -177,7 +169,7 @@
                         <li>
                             <div class="date">
                                 2016<br>
-                                <span>janeiro</span>
+                                <span>{% t MONTH_JANUARY %}</span>
                             </div>
                             <div class="description">
                                 Me tornei <em>tech lead</em> na <a href="https://www.mediapost.com.br/" target="_blank" rel="noopener">@MediaPost Email Marketing</a>,
@@ -188,7 +180,7 @@
                         <li>
                             <div class="date">
                                 2015<br>
-                                <span>outubro</span>
+                                <span>{% t MONTH_OCTOBER %}</span>
                             </div>
                             <div class="description">
                                 Ministrei alguns cursos livres (presenciais e online) na <a href="https://4linux.com.br/" target="_blank" rel="noopener">4Linux</a>, como HTML, CSS, JavaScript e PhoneGap
@@ -197,7 +189,7 @@
                         <li>
                             <div class="date">
                                 2013<br>
-                                <span>setembro</span>
+                                <span>{% t MONTH_SEPTEMBER %}</span>
                             </div>
                             <div class="description">
                                 Fundei com um sócio o <a href="https://curseduca.com/" target="_blank" rel="noopener">Curseduca</a>, uma startup na área de e-learning que então funcionava como um
@@ -208,7 +200,7 @@
                         <li>
                             <div class="date">
                                 2013<br>
-                                <span>janeiro</span>
+                                <span>{% t MONTH_JANUARY %}</span>
                             </div>
                             <div class="description">
                                 Iniciei meu trabalho na <a href="https://mt4.com.br/" target="_blank" rel="noopener">MT4 Tecnologia</a> como Desenvolvedor Web Full-stack, atuando principalmente
@@ -252,6 +244,7 @@
                         </li>
                     </ol>
                 </section>
+            {% endif %}
 
                 <section>
                     <div class="d-flex half">
@@ -259,6 +252,11 @@
                             <section>
                                 <h1>{% t PROFESSIONAL %}</h1>
 
+                                <div class="mt-2 w-half">
+                                    <span class="small text-muted">2021</span>
+                                    <p class="bold">Impacta</p>
+                                    <p>{% t PRO_IMPACTA_DESCRIPTION %}</p>
+                                </div>
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2013 - 2020</span>
                                     <p class="bold">Curseduca</p>
@@ -270,11 +268,6 @@
                                     <p>&bull; {% t MT4_JOB_DEV %}</p>
                                     <p>&bull; {% t MT4_JOB_LEAD %}</p>
                                     <p>&bull; {% t MT4_JOB_CYBER %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <span class="small text-muted">2021</span>
-                                    <p class="bold">Impacta</p>
-                                    <p>{% t PRO_IMPACTA_DESCRIPTION %}</p>
                                 </div>
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2015</span>
