@@ -27,8 +27,8 @@
                     </h1>
                 </header>
                 <div class="ml-md-2 mt-2 mt-md-0">
-                    <i class="icon-location"></i> São Paulo - SP<br>
-                    <i class="icon-hourglass-3"></i> {% t 29_YEARS_OLD %}
+                    <i class="icon-location"></i> {% t LOCATION %}<br>
+                    <i class="icon-hourglass-3"></i> {% t AGE %}
                 </div>
                 <div class="ml-md-2">
                     <a href="mailto:eu@viniciuscampitelli.com" title="Email: eu@viniciuscampitelli.com">
@@ -61,10 +61,6 @@
                 </div>
             </div>
 
-        {% if site.lang == "en" %}
-            <div id="alert-intro">This translation is a work in progress! Please be patient until I finish it :-)</div>
-        {% endif %}
-
             <main id="main">
                 <section>
                     <h1>{% t ABOUT %}</h1>
@@ -72,26 +68,27 @@
                         {% t ABOUT_INTRO %}
                     </p>
                     <p class="mt-2">
-                        Estou buscando oportunidades de <b>produção de conteúdos</b> <em>(artigos, treinamentos, cursos e similares)</em> em diversas áreas de TI, entre elas:
+                        {% t ABOUT_JOB_CONTENT %}
                     </p>
                     <ul id="areas" class="ml-2">
                         <li>PHP;</li>
                         <li>HTML, CSS, JavaScript;</li>
-                        <li>Lógica de programação;</li>
-                        <li>Arquitetura de sistemas;</li>
-                        <li>Modelagem de Banco de Dados;</li>
-                        <li>Cibersegurança;</li>
-                        <li>Criptografia;</li>
-                        <li>Qualidade de código;</li>
-                        <li>APIs e microserviços;</li>
+                        <li>{% t SKILL_PROGRAMMING_LOGIC %};</li>
+                        <li>{% t SKILL_SYSTEMS_ARCH %};</li>
+                        <li>{% t SKILL_DB_MODELING %};</li>
+                        <li>{% t SKILL_CYBERSECURITY %};</li>
+                        <li>{% t SKILL_CRYPTOGRAPHY %};</li>
+                        <li>{% t SKILL_CODE_QUALITY %};</li>
+                        <li>{% t SKILL_API_MICROSERVICES %};</li>
                         <li>Soft skills.</li>
                     </ul>
                     <p class="mt-2">
-                        Também busco atuar como <b>líder de equipes técnicas</b> ou de forma temporária em:
+                        {% t ABOUT_JOB_OTHER %}
                     </p>
                     <ul class="ml-2">
-                        <li>Consultoria em projetos <em>(nos mesmos tópicos acima)</em>;</li>
-                        <li>Desenvolvimento de aplicações PHP.</li>
+                        <li>{% t ABOUT_JOB_LEAD %};</li>
+                        <li>{% t ABOUT_JOB_CONSULTING %};</li>
+                        <li>{% t ABOUT_JOB_DEVELOPER %}.</li>
                     </ul>
                     </section>
                 </section>
@@ -111,26 +108,26 @@
                         <li>HTML</li>
                         <li>JavaScript</li>
                         <li class="bull">&bull;</li>
-                        <li>Criptografia</li>
+                        <li>{% t SKILL_CRYPTOGRAPHY %}</li>
                         <li>Daemons</li>
-                        <li>Engenharia de Software</li>
+                        <li>{% t SKILL_SOFTWARE_ENGINEERING %}</li>
                         <li>Git</li>
                         <li>Message Queue</li>
-                        <li>Modelagem de Banco de Dados</li>
-                        <li>Segurança da Informação</li>
+                        <li>{% t SKILL_DB_MODELING %}</li>
+                        <li>{% t SKILL_INFORMATION_SECURITY %}</li>
                         <li>Threads</li>
                         <li>WebSockets</li>
                         <li class="bull">&bull;</li>
                         <li>AWS</li>
                         <li>Docker</li>
                         <li>DevOps</li>
-                        <li>Infraestrutura</li>
+                        <li>{% t SKILL_INFRA %}</li>
                         <li>Linux</li>
                         <li class="bull">&bull;</li>
-                        <li>Gestão de Pessoas</li>
-                        <li>Gestão de Projetos</li>
-                        <li>Liderança</li>
-                        <li>Metodologias Ágeis</li>
+                        <li>{% t SKILL_PEOPLE_MANAGEMENT %}</li>
+                        <li>{% t SKILL_PROCESS_MANAGEMENT %}</li>
+                        <li>{% t SKILL_LEADERSHIP %}</li>
+                        <li>{% t SKILL_AGILE %}</li>
                     </ul>
                 </section>
 
@@ -265,19 +262,24 @@
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2013 - 2020</span>
                                     <p class="bold">Curseduca</p>
-                                    <p>Co-fundador e CTO de uma plataforma SaaS de e-learning para produtores de conteúdos ou empresas que queiram escalar treinamentos</p>
+                                    <p>{% t PRO_CURSEDUCA_DESCRIPTION %}</p>
                                 </div>
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2013 - 2019</span>
                                     <p class="bold">MT4 Tecnologia</p>
-                                    <p>&bull; Desenvolvedor web full-stack</p>
-                                    <p>&bull; Tech lead na @MediaPost</p>
-                                    <p>&bull; Arquiteto de cibersegurança</p>
+                                    <p>&bull; {% t MT4_JOB_DEV %}</p>
+                                    <p>&bull; {% t MT4_JOB_LEAD %}</p>
+                                    <p>&bull; {% t MT4_JOB_CYBER %}</p>
+                                </div>
+                                <div class="mt-2 w-half">
+                                    <span class="small text-muted">2021</span>
+                                    <p class="bold">Impacta</p>
+                                    <p>{% t PRO_IMPACTA_DESCRIPTION %}</p>
                                 </div>
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2015</span>
                                     <p class="bold">4Linux</p>
-                                    <p>Instrutor de alguns cursos livres, como HTML, CSS, JavaScript e PhoneGap</p>
+                                    <p>{% t PRO_4LINUX_DESCRIPTION %}</p>
                                 </div>
                             </section>
                         </div>
@@ -289,17 +291,17 @@
                                 <div>
                                     <span class="small text-muted">2009-2012</span>
                                     <p class="bold">Universidade Federal de São Carlos</p>
-                                    <p>Graduado em Bacharelado em Ciência da Computação</p>
+                                    <p>{% t EDUCATION_UNIVERSITY_DESCRIPTION %}</p>
                                 </div>
 
                                 <div class="mt-2">
-                                    <p class="bold">Cursos em destaque</p>
+                                    <p class="bold">{% t OPEN_COURSES %}</p>
                                     <div id="featured-courses" class="d-flex">
                                         <ul>
-                                            <li>LINCE <span>@ MasterMind SP</span><br><span class="smaller ml-2">Liderança, Inteligência Interpessoal e Comunicação Eficaz</span> </li>
-                                            <li>Programação Neuro-Linguística <span>@ Ápice</span></li>
-                                            <li>Gestão de Vendas <span>@ Insper</span></li>
-                                            <li>Oratória e Apresentação <span>@ The Speaker</span></li>
+                                            <li>LINCE <span>@ MasterMind SP</span><br><span class="smaller ml-1">{% t COURSE_LINCE_DESCRIPTION %}</span></li>
+                                            <li>{% t COURSE_NLP %} <span>@ Ápice</span></li>
+                                            <li>{% t COURSE_SALES %} <span>@ Insper</span></li>
+                                            <li>{% t COURSE_SPEAKING %} <span>@ The Speaker</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -310,11 +312,11 @@
                                 <div class="d-flex">
                                     <div>
                                         <p class="bold">{% t ENGLISH %}</p>
-                                        Fluente
+                                        {% t LANGUAGE_FLUENT %}
                                     </div>
                                     <div class="ml-md-2">
                                         <p class="bold">{% t SPANISH %}</p>
-                                        Intermediário
+                                        {%t LANGUAGE_INTERMEDIATE %}
                                     </div>
                                 </div>
                             </section>
@@ -324,11 +326,7 @@
 
                 <section id="talks-wrapper">
                     <h1>{% t TALKS %}</h1>
-                    <p>
-                        Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas nos mais diversos eventos ao redor do Brasil.
-                        Os slides dessas apresentações estão em <a href="https://viniciuscampitelli.com/">viniciuscampitelli.com</a>.
-                        Alguns desses eventos:
-                    </p>
+                    <p>{% t TALKS_DESCRIPTION %}</p>
                     <div id="talks">
                         <div class="d-flex flex-50 mt-2">
                             <div>
@@ -346,12 +344,12 @@
                         <div class="d-flex">
                             <div>
                                 <p>PHP Community Summit</p>
-                                São Paulo 2019 (<a href="https://www.youtube.com/watch?v=kUGhNbqptcA">assistir</a>)<br>
-                                São Paulo 2018 (<a href="https://www.youtube.com/watch?v=NEMwgMhGB4A">assistir</a>)
+                                São Paulo 2019 (<a href="https://www.youtube.com/watch?v=kUGhNbqptcA">{% t TALKS_WATCH %}</a>)<br>
+                                São Paulo 2018 (<a href="https://www.youtube.com/watch?v=NEMwgMhGB4A">{% t TALKS_WATCH %}</a>)
                             </div>
                             <div>
                                 <p>PHP Experience</p>
-                                São Paulo 2018 (<a href="https://www.youtube.com/watch?v=S1gLE6xH06s">assistir</a>)
+                                São Paulo 2018 (<a href="https://www.youtube.com/watch?v=S1gLE6xH06s">{% t TALKS_WATCH %}</a>)
                             </div>
                             <div>
                                 <p>DarkMira Tour</p>
@@ -375,7 +373,7 @@
                             </div>
                             <div>
                                 <p>Meetanços</p>
-                                Libsodium: Criptografia moderna no PHP (<a href="https://www.youtube.com/watch?v=Vd2lQNOzBr4">assistir</a>)
+                                {% t TALKS_LIBSODIUM_MEETUP %} (<a href="https://www.youtube.com/watch?v=Vd2lQNOzBr4">{% t TALKS_WATCH %}</a>)
                             </div>
                             <div>
                                 <p>CapiConf</p>

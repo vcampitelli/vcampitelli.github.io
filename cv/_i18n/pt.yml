@@ -1,14 +1,53 @@
-29_YEARS_OLD: 29 anos
+LOCATION: São Paulo - SP
+AGE: 29 anos
 ABOUT: Sobre
 ABOUT_INTRO: "Olá! Meu nome é <b>Vinícius Campitelli</b> e sou <b>apaixonado por empreendedorismo, tecnologia e cibersegurança</b>. Comecei a programar com 14 anos e desde então nunca mais parei.
               <b>Fundei minha própria startup</b> - Curseduca, uma plataforma SaaS de e-learning - e comecei a <b>ministrar palestras</b> em eventos de tecnologia. Assim, descobri o que realmente
               gostava de fazer: <b>compartilhar conhecimento</b>."
+ABOUT_JOB_CONTENT: "Estou buscando oportunidades de <b>produção de conteúdos</b> <em>(artigos, treinamentos, cursos e similares)</em> em diversas áreas de TI, entre elas:"
+ABOUT_JOB_OTHER: "Também busco atuar como:"
+ABOUT_JOB_LEAD: Líder de equipes técnicas
+ABOUT_JOB_CONSULTING: Consultoria em TI
+ABOUT_JOB_DEVELOPER: Desenvolvimento de aplicações PHP
 SKILLS: Habilidades
+SKILL_PROGRAMMING_LOGIC: Lógica de programação
+SKILL_SYSTEMS_ARCH: Arquitetura de sistemas
+SKILL_CYBERSECURITY: Cybersecurity
+SKILL_CRYPTOGRAPHY: Criptografia
+SKILL_CODE_QUALITY: Qualidade de código
+SKILL_API_MICROSERVICES: APIs e microsserviços
+SKILL_SOFTWARE_ENGINEERING: Engenharia de Software
+SKILL_DB_MODELING: Modelagem de Banco de Dados
+SKILL_INFORMATION_SECURITY: Segurança da Informação
+SKILL_INFRA: Infraestrutura
+SKILL_PEOPLE_MANAGEMENT: Gestão de Pessoas
+SKILL_PROCESS_MANAGEMENT: Gestão de Projetos
+SKILL_LEADERSHIP: Liderança
+SKILL_AGILE: Metodologias Ágeis
 TIMELINE: Linha do tempo
 PROFESSIONAL: Profissional
+PRO_CURSEDUCA_DESCRIPTION: "Co-fundador e CTO de uma plataforma SaaS de e-learning para produtores de conteúdos ou empresas que queiram escalar treinamentos"
+MT4_JOB_DEV: Desenvolvedor web full-stack
+MT4_JOB_LEAD: Tech lead na @MediaPost
+MT4_JOB_CYBER: Arquiteto de cibersegurança
+PRO_4LINUX_DESCRIPTION: "Instrutor de alguns cursos livres, como HTML, CSS, JavaScript e PhoneGap"
+PRO_IMPACTA_DESCRIPTION: "Instrutor de cursos livres de desenvolvimento front-end, back-end, banco de dados, entre outros"
 EDUCATION: Educação
+EDUCATION_UNIVERSITY_DESCRIPTION: Graduado em Bacharelado em Ciência da Computação
+OPEN_COURSES: Cursos em destaque
+COURSE_LINCE_DESCRIPTION: Liderança, Inteligência Interpessoal e Comunicação Eficaz
+COURSE_NLP: Programação Neuro-Linguística
+COURSE_SALES: Gestão de Vendas
+COURSE_SPEAKING: Oratória e Apresentação
 LANGUAGES: Idiomas
+LANGUAGE_FLUENT: Fluente
+LANGUAGE_INTERMEDIATE: Intermediário
 TALKS: Palestras
+TALKS_DESCRIPTION: "Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas nos mais diversos eventos ao redor do Brasil.
+                    Os slides dessas apresentações estão em <a href=\"https://viniciuscampitelli.com/\">viniciuscampitelli.com</a>.
+                    Alguns desses eventos são:"
+TALKS_WATCH: assistir
+TALKS_LIBSODIUM_MEETUP: "Libsodium: Criptografia moderna no PHP"
 PORTUGUESE: Português
 ENGLISH: Inglês
 SPANISH: Espanhol
