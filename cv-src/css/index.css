@@ -1,0 +1,382 @@
+/**
+ * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  padding: 0;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.7;
+}
+a {
+  color: #f96;
+  text-decoration-skip-ink: auto;
+}
+a:hover,
+a:focus {
+  color: #ff5e62;
+}
+a:active {
+  color: #ef4e52;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**
+ * App CSS
+ */
+body {
+  background: #fff;
+  color: #444;
+  font-family: "Roboto Slab", Roboto, sans-serif;
+}
+#intro,
+#main {
+  padding: 2rem;
+}
+#intro {
+  background: #eee;
+  align-items: center;
+  justify-content: space-between;
+}
+#intro > header {
+  display: flex;
+}
+#intro > header > img {
+  width: 80px;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+#intro > div > a {
+  color: #666;
+  text-decoration: none;
+  display: block;
+}
+#intro > div > a:hover,
+#intro > div > a:focus {
+  color: #f96;
+}
+#intro i[class^="icon-"] {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+}
+h1#title {
+  text-align: center;
+  color: #f96;
+  font-variant: small-caps;
+  line-height: 1.2;
+  letter-spacing: 4px;
+}
+h1#title > span {
+  background: #f96;
+  color: #fff;
+  padding: 0 7px;
+  letter-spacing: -1px;
+}
+#svg-phone {
+  enable-background: new 0 0 891.024 891.024;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+#svg-phone > g > path {
+  fill: #666;
+}
+#alert-intro {
+  margin-top: 2rem;
+  padding: 0.75rem 1.25rem;
+  color: #144376;
+  background-color: #d4e6f9;
+  font-size: 0.9rem;
+}
+ul {
+  list-style: square inside;
+}
+ul.nolist {
+  list-style: none;
+}
+section + section {
+  margin-top: 4rem;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+#main h1 {
+  margin-left: -2rem;
+  border-left: 0.35rem #f96 solid;
+  padding-left: 1.65rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.ml-1 {
+  margin-left: 1rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.text-muted {
+  color: #999;
+}
+.small {
+  font-size: 0.9rem;
+}
+.smaller {
+  font-size: 0.8rem;
+}
+.label-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.label-list > li {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  color: #666;
+  margin: 0 5px 5px 0;
+}
+.label-list > li:not(.bull) {
+  background: #eee;
+}
+#featured-courses > ul > li > span {
+  color: #777;
+}
+#talks > .d-flex {
+  flex-wrap: wrap;
+}
+@media (min-width: 792px), print {
+  #talks > .d-flex > div {
+    margin-top: 1rem;
+    padding-right: 1rem;
+    flex-basis: 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #talks > .d-flex > div {
+    flex-basis: 25%;
+  }
+  #talks > .d-flex.flex-50 > div {
+    flex-basis: 50%;
+  }
+}
+.bold,
+#talks > .d-flex > div > p {
+  font-weight: 600;
+}
+
+/**
+ * Timeline
+ */
+#timeline > li > .date > span {
+  color: #aaa;
+}
+@media screen and (max-width: 991px) {
+  #timeline > li {
+    list-style-type: none;
+  }
+  #timeline > li > .date {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px #ccc solid;
+  }
+  #timeline > li + li {
+    margin-top: 2.5rem;
+  }
+}
+@media print, (min-width: 992px) {
+  #areas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #areas > li {
+    flex-basis: 50%;
+    margin-top: 0.5rem;
+  }
+  #areas > li:last-child {
+    margin-right: 0;
+  }
+  #timeline > li {
+    display: flex;
+  }
+
+  #timeline > li > .date,
+  #timeline > li > .description {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  #timeline > li > .date {
+    width: 5rem;
+    margin-right: 2rem;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  #timeline > li > .description {
+    position: relative;
+    border-left: 2px #ccc solid;
+    padding-left: 2rem;
+  }
+  #timeline > li > .description:before {
+    content: "";
+    position: absolute;
+    top: 1.6rem;
+    left: -5px;
+    width: 8px;
+    height: 8px;
+    background: #f96;
+    border-radius: 50%;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px #eee solid;
+}
+footer > a {
+  color: #999;
+  font-size: 0.9rem;
+}
+#i18n-flags {
+  display: flex;
+  list-style-type: none;
+}
+#i18n-flags > li > a > img {
+  width: 24px;
+}
+#i18n-flags > li + li {
+  margin-left: 8px;
+}
+
+/* Grid */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media print, (min-width: 992px) {
+  .container {
+    max-width: 840px;
+  }
+  .d-flex {
+    display: flex;
+  }
+  .d-flex.half > div {
+    flex-basis: 50%;
+  }
+
+  .mt-md-0 {
+    margin-top: 0;
+  }
+  .mt-md-2 {
+    margin-top: 2rem;
+  }
+
+  .ml-md-1 {
+    margin-left: 1rem;
+  }
+  .ml-md-2 {
+    margin-left: 2rem;
+  }
+  .ml-md-4 {
+    margin-left: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media print {
+  .container {
+    max-width: 100%;
+  }
+  .d-screen-only {
+    display: none !important;
+  }
+  html[lang="en"] #section-pro-education,
+  html[lang="pt"] #talks-wrapper {
+    margin-top: 0;
+    page-break-before: always;
+  }
+}
+@media screen {
+  #intro {
+    margin-top: 2rem;
+  }
+  .d-print-only {
+    display: none !important;
+  }
+}
