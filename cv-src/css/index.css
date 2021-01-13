@@ -190,10 +190,20 @@ h3 {
   font-size: 0.9rem;
   padding: 5px 10px;
   color: #666;
-  margin: 0 5px 5px 0;
+  margin-right: 5px;
 }
-.label-list > li:not(.bull) {
+.label-list > li {
   background: #eee;
+}
+.label-list > li.code {
+  background: #ffeeee;
+}
+#skills > p {
+  margin: 0.5rem 0;
+  line-height: 2.5;
+  font-size: 0.9rem;
+  color: #777;
+  border-bottom: 1px #eee solid;
 }
 #featured-courses > ul > li > span {
   color: #777;
@@ -202,6 +212,36 @@ h3 {
   flex-wrap: wrap;
 }
 @media (min-width: 792px), print {
+  #skills {
+    display: grid;
+    grid-template-columns: 0fr auto;
+  }
+  #skills > .label-list {
+    padding-left: 10px;
+  }
+  #skills > .label-list {
+    border-bottom: 1px #eee solid;
+  }
+  #skills > p {
+    margin: 0;
+    white-space: nowrap;
+  }
+  #skills > p:last-of-type,
+  #skills > .label-list:last-of-type {
+    border-bottom: 0;
+  }
+  #skills > p,
+  #skills > .label-list {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  #skills > p:first-of-type,
+  #skills > .label-list:first-of-type {
+    padding-top: 0;
+  }
+  #skills > .label-list > li {
+    margin-bottom: 5px;
+  }
   #talks > .d-flex > div {
     margin-top: 1rem;
     padding-right: 1rem;
@@ -286,26 +326,9 @@ h3 {
   }
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  padding: 1rem 0;
-  border-top: 1px #eee solid;
-}
 footer > a {
   color: #999;
   font-size: 0.9rem;
-}
-#i18n-flags {
-  display: flex;
-  list-style-type: none;
-}
-#i18n-flags > li > a > img {
-  width: 24px;
-}
-#i18n-flags > li + li {
-  margin-left: 8px;
 }
 
 /* Grid */
@@ -359,17 +382,59 @@ footer > a {
     max-width: 960px;
   }
 }
+@media screen {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px #eee solid;
+  }
+  #i18n-flags {
+    display: flex;
+    list-style-type: none;
+  }
+  #i18n-flags > li > a > img {
+    width: 24px;
+  }
+  #i18n-flags > li + li {
+    margin-left: 8px;
+  }
+}
 @media print {
+  #intro {
+    margin-top: 0;
+  }
+  section + section {
+    margin-top: 3rem;
+  }
   .container {
     max-width: 100%;
   }
   .d-screen-only {
     display: none !important;
   }
-  html[lang="en"] #section-pro-education,
-  html[lang="pt"] #talks-wrapper {
+  #section-pro-education,
+  #talks-wrapper {
     margin-top: 0;
     page-break-before: always;
+  }
+  body {
+    padding-bottom: 2rem;
+  }
+  #footer-text {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px #eee solid;
+    font-size: 0.8rem;
+  }
+  #footer-text > span.small {
+    display: none;
   }
 }
 @media screen {

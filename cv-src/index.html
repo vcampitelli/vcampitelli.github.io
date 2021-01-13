@@ -81,49 +81,72 @@
 
                 <section>
                     <h1>{%t SKILLS %}</h1>
-                    <ul class="label-list">
-                        <li>PHP</li>
-                        <li>Python</li>
-                        <li>Node.js</li>
-                        <li>React</li>
-                        <li class="bull">&bull;</li>
-                        <li>NoSQL</li>
-                        <li>SQL</li>
-                        <li class="bull">&bull;</li>
-                        <li>CSS</li>
-                        <li>HTML</li>
-                        <li>JavaScript</li>
-                        <li class="bull">&bull;</li>
-                        <li>{% t SKILL_CYBERSECURITY %}</li>
-                        <li>{% t SKILL_INFORMATION_SECURITY %}</li>
-                        <li>{% t SKILL_CRYPTOGRAPHY %}</li>
-                        <li class="bull">&bull;</li>
-                        <li>{% t SKILL_SOFTWARE_ENGINEERING %}</li>
-                        <li>{% t SKILL_SYSTEMS_ARCH %}</li>
-                        <li>{% t SKILL_CODE_QUALITY %}</li>
-                        <li class="bull">&bull;</li>
-                        <li>Daemons</li>
-                        <li>Git</li>
-                        <li>Message Queue</li>
-                        <li>{% t SKILL_DB_MODELING %}</li>
-                        <li>Threads</li>
-                        <li>WebSockets</li>
-                        <li class="bull">&bull;</li>
-                        <li>{% t SKILL_CLOUD %}</li>
-                        <li>Docker</li>
-                        <li>DevOps</li>
-                        <li>{% t SKILL_INFRA %}</li>
-                        <li>Linux</li>
-                        <li class="bull">&bull;</li>
-                        <li>{% t SKILL_PEOPLE_MANAGEMENT %}</li>
-                        <li>{% t SKILL_PROCESS_MANAGEMENT %}</li>
-                        <li>{% t SKILL_LEADERSHIP %}</li>
-                        <li>{% t SKILL_AGILE %}</li>
-                    </ul>
+                    <div id="skills">
+                        <p>{% t SKILL_LANGUAGES %}</p>
+                        <ul class="label-list">
+                            <li class="code">PHP</li>
+                            <li class="code">Python</li>
+                            <li class="code">Shell Script</li>
+                            <li class="code">Node.js</li>
+                            <li class="code">React</li>
+                            <li class="code">HTML</li>
+                            <li class="code">CSS</li>
+                            <li class="code">JavaScript</li>
+                        </ul>
+
+                        <p>{% t SKILL_DB %}</p>
+                            <ul class="label-list">
+                            <li>{% t SKILL_DB_MODELING %}</li>
+                            <li class="code">NoSQL</li>
+                            <li class="code">SQL</li>
+                        </ul>
+
+                        <p>{% t SKILL_CYBERSECURITY %}</p>
+                        <ul class="label-list">
+                            <li>{% t SKILL_INFORMATION_SECURITY %}</li>
+                            <li>{% t SKILL_CRYPTOGRAPHY %}</li>
+                            <li>{% t SKILL_BLUE_TEAM_OPS %}</li>
+                            <li class="code">libsodium</li>
+                            <li class="code">openssl</li>
+                        </ul>
+
+                        <p>{% t SKILL_ENGINEERING %}</p>
+                        <ul class="label-list">
+                            <li>{% t SKILL_SOFTWARE_ENGINEERING %}</li>
+                            <li>{% t SKILL_SYSTEMS_ARCH %}</li>
+                            <li>{% t SKILL_CODE_QUALITY %}</li>
+                        </ul>
+
+                        <p>{% t SKILL_TECH %}</p>
+                        <ul class="label-list">
+                            <li class="code">Daemons</li>
+                            <li class="code">Git</li>
+                            <li class="code">Message Queue</li>
+                            <li class="code">Threads</li>
+                            <li class="code">WebSockets</li>
+                        </ul>
+
+                        <p>{% t SKILL_INFRA %}</p>
+                        <ul class="label-list">
+                            <li>{% t SKILL_CLOUD %}</li>
+                            <li>{% t SKILL_NETWORKING %}</li>
+                            <li>DevOps</li>
+                            <li class="code">Docker</li>
+                            <li class="code">Linux</li>
+                        </ul>
+
+                        <p>{% t SKILL_MANAGEMENT %}</p>
+                        <ul class="label-list">
+                            <li>{% t SKILL_PEOPLE_MANAGEMENT %}</li>
+                            <li>{% t SKILL_PROCESS_MANAGEMENT %}</li>
+                            <li>{% t SKILL_LEADERSHIP %}</li>
+                            <li>{% t SKILL_AGILE %}</li>
+                        </ul>
+                    </div>
                 </section>
 
             {% if site.lang == 'pt' %}
-                <section>
+                <section class="d-screen-only">
                     <h1>{% t TIMELINE %}</h1>
                     <ol id="timeline">
                         <li>
@@ -372,17 +395,21 @@
                                 <p>CapiConf</p>
                                 Online 2020
                             </div>
+                            <div>
+                                <p>PHPSP</p>
+                                {% t TALKS_PHPSP_LIVE_SECURITY %} (<a href="https://www.youtube.com/watch?v=kYY-DjrN55U">{% t TALKS_WATCH %}</a>)
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
 
             <footer>
-                <div class="text-muted">
+                <div id="footer-text" class="text-muted">
                     Vinícius Campitelli <span class="small">&bull;</span>
-                    <a href="mailto:eu@viniciuscampitelli.com">eu@viniciuscampitelli.com</a>
+                    <a href="https://viniciuscampitelli.com">viniciuscampitelli.com</a>
                 </div>
-                <ul id="i18n-flags">
+                <ul id="i18n-flags" class="d-screen-only">
                     <!-- https://github.com/lipis/flag-icon-css -->
                 {% if site.lang == "pt" %}
                     {% capture link1 %}{{ site.baseurl_root }}/en{{ page.url}}{% endcapture %}
