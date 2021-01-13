@@ -371,6 +371,10 @@ footer > a {
     margin-top: 0;
     page-break-before: always;
   }
+  #footer-text {
+    position: fixed;
+    bottom: 0;
+  }
 }
 @media screen {
   #intro {
