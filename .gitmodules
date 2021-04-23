@@ -6,10 +6,6 @@
 	path = slides/expressive-oauth2-jwt
 	url = https://github.com/vcampitelli/slides-expressive-oauth2-jwt.git
 	branch = master
-[submodule "slides/libsodium-php"]
-	path = slides/libsodium-php
-	url = https://github.com/vcampitelli/slides-libsodium-php.git
-	branch = master
 [submodule "slides/boas-praticas"]
 	path = slides/boas-praticas
 	url = https://github.com/vcampitelli/slides-boas-praticas.git
@@ -18,6 +14,3 @@
 	path = slides/php-fora-da-web
 	url = https://github.com/vcampitelli/slides-php-fora-da-web.git
 	branch = master
-[submodule "slides/seguranca-alem-obvio-php"]
-	path = slides/seguranca-alem-obvio-php
-	url = https://github.com/vcampitelli/slides-seguranca-alem-obvio-php
