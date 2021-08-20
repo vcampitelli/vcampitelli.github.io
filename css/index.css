@@ -98,7 +98,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #ff5e62;
+  color: #fff;
   text-decoration: none;
 }
 .d-flex {
@@ -141,7 +141,7 @@ span.muted {
 #header-intro > a {
   font-size: 0.9rem;
   padding: 0.25em 0.5em;
-  border: 2px rgba(255, 255, 255, 0.75) solid;
+  border-bottom: 2px rgba(255, 255, 255, 0.75) solid;
 }
 #header-intro > a:hover,
 #header-intro > a:focus {
@@ -154,6 +154,10 @@ span.muted {
  */
 #content > .container > section > h2 {
   margin-bottom: 15px;
+}
+
+#workshops > h3 {
+    margin-bottom: 15px;
 }
 
 /**
@@ -218,7 +222,7 @@ iframe, .slide-thumbnail {
   line-height: 1;
   animation: arrowslide 1s ease-in-out infinite;
 }
-.card-footer > .button.outline {
+.button.outline {
   background: transparent;
   border-color: #f96;
   color: #f96;
