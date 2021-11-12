@@ -10,6 +10,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 blockquote,
 ul,
 ol,
@@ -28,10 +29,10 @@ body {
 }
 
 :root {
+  --body-bg: #f5f5f5;
   --heading-color: #66101F;
   --subheading-color: #66101F;
   --header-link-color: #114b5f;
-  --header-link-color-light: #416f7f;
   --main-color: #22333B;
   --main-color-light: #768185;
   --bg-black: #222;
@@ -49,7 +50,7 @@ body {
 }
 html,
 body {
-  background: #f5f5f5;
+  background: var(--body-bg);
   scrollbar-width: thin;
   scrollbar-color: #bbb #ddd;
 }
@@ -141,7 +142,7 @@ span.muted {
   content: "";
   position: absolute;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.04;
   top: 0;
   right: 0;
   bottom: 0;
@@ -200,9 +201,6 @@ span.muted {
 /**
 * Workshops
 */
-#workshops {
-  padding-bottom: 30px;
-}
 #workshops > div > p {
   font-size: 1.1em;
   margin-bottom: 1em;
@@ -315,30 +313,16 @@ iframe, .slide-thumbnail {
     position: relative;
     padding: 30px 0;
   }
-  #header > .d-flex {
-    position: relative;
-  }
-  #header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--color-orange) url(../img/profile-large.jpg) top center / cover no-repeat fixed;
-    background-blend-mode: soft-light;
-    opacity: 0.5;
-  }
   #header-photo {
     display: none;
   }
   #header-intro {
     margin-top: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.35rem;
   }
 
-  #content > .container > section,
-  #content > section {
+  section,
+  #links {
     padding: 30px 0;
   }
 
@@ -383,8 +367,8 @@ iframe, .slide-thumbnail {
     font-size: 1.6rem;
   }
 
-  #content > .container > section,
-  #content > section {
+  section,
+  #links {
     padding: 60px 0;
   }
 
@@ -415,7 +399,7 @@ iframe, .slide-thumbnail {
   .card-body {
     overflow: auto;
     scrollbar-width: thin;
-    scrollbar-color: #ddd #f5f5f5;
+    scrollbar-color: #ddd var(--body-bg);
   }
 }
 
@@ -430,7 +414,6 @@ iframe, .slide-thumbnail {
  * Links
  */
 #links {
-  padding: 60px 0;
   background-color: var(--bg-black);
 }
 #links h2 {
