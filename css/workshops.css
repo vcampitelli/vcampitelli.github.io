@@ -9,9 +9,10 @@ h1 {
 h2 {
   font-size: 1.3rem;
   line-height: 1.5;
+  margin-bottom: 0;
 }
 h3 {
-  font-size: 1.1rem !important;
+  font-size: 1rem !important;
   line-height: 1.5;
 }
 .section {
@@ -36,18 +37,22 @@ h3 {
   color: #f0f0f0;
 }
 h2 > code {
+  display: inline-block;
   padding: 0.5rem;
   vertical-align: middle;
   color: var(--color-orange-dark);
   background-color: #e5e5e5;
   font-size: 0.8rem;
   line-height: 1;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 h2 > code:before {
   content: '$';
   color: #bbb;
   padding-right: .25rem;
+}
+h2 > code + span {
+  display: block;
 }
 .bg-black h2 > code {
   background-color: rgba(255, 255, 255, 0.1);
@@ -102,6 +107,9 @@ h2 > code:before {
   background-color: #1a1a1a;
   border-radius: var(--border-radius);
   margin-top: 1rem;
+}
+#topics > .topics-list > div > div {
+  flex-grow: 1;
 }
 #topics > .topics-list > div > div > h4 {
   font-size: 1.2rem;
@@ -318,5 +326,12 @@ h2 > code:before {
 
   #header-intro > h1 {
     font-size: 3.5rem;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+  h2 > code + span {
+    line-height: 1;
   }
 }
