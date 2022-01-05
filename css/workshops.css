@@ -72,6 +72,10 @@ h2 > code + span {
 #header {
   position: relative;
 }
+#header > .container {
+  position: relative;
+  z-index: 1;
+}
 #header > video {
   position: absolute;
   top: 0;
@@ -82,8 +86,8 @@ h2 > code + span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  mix-blend-mode: soft-light;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
 }
 #header-intro {
   margin-left: 0;
@@ -94,10 +98,38 @@ h2 > code + span {
   line-height: 1.3;
   margin-bottom: 2rem;
 }
+#header-intro > h1 > span {
+  /*font-weight: 900;*/
+  /*background: var(--header-link-color);*/
+}
+
+#header-intro > h1 > span {
+  display: inline-block;
+  position: relative;
+  font-size: 0.95em;
+  padding: 0.01em 0.25em;
+}
+#header-intro > h1 > span::after {
+  content: "";
+  position: absolute;
+  background: var(--header-link-color);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 0.1em;
+  transform: skewX(-10deg);
+}
 #header-intro > h1::-moz-selection,
 #header-intro > h1::selection {
   color: #fff;
   background: var(--header-link-color);
+}
+#header-intro > h1 > span::-moz-selection,
+#header-intro > h1 > span::selection {
+  color: var(--header-link-color);
+  background: #fff;
 }
 
 /* Topics */
@@ -260,13 +292,11 @@ h2 > code + span {
 
 /* Contact */
 #contact {
-  justify-content: space-between;
-  margin-top: 2rem;
   flex-wrap: wrap;
 }
 #contact > a {
   display: flex;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 #contact > a:last-child {
   margin-bottom: 0;
@@ -294,6 +324,10 @@ h2 > code + span {
   }
 }
 @media (min-width: 769px) {
+  #contact > a {
+    flex: 0 0 auto;
+    width: 50%;
+  }
   h2 {
     font-size: 2rem;
   }
@@ -320,6 +354,10 @@ h2 > code + span {
   }
 }
 @media (min-width: 1201px) {
+  #contact > a {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
   .blocks > div {
     flex-basis: 33.333333%;
   }
