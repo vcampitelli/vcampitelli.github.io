@@ -211,6 +211,11 @@ h3 {
 #talks > .d-flex {
   flex-wrap: wrap;
 }
+#talks img {
+  width: 22px;
+  display: inline-block;
+  vertical-align: middle;
+}
 @media (min-width: 792px), print {
   #skills {
     display: grid;
@@ -397,7 +402,7 @@ footer > a {
   #i18n-flags > li > a > img {
     width: 24px;
   }
-  #i18n-flags > li + li {
+    #i18n-flags > li + li {
     margin-left: 8px;
   }
 }
@@ -416,7 +421,7 @@ footer > a {
   }
   #section-pro-education,
   #talks-wrapper {
-    margin-top: 0;
+    margin-top: 0.5rem;
     page-break-before: always;
   }
   body {
