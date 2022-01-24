@@ -1,4 +1,4 @@
-LOCATION: São Paulo, Brazil
+LOCATION: Sao Paulo, Brazil
 AGE: 30 years old
 TELPEHONE: +55 11 99166 9190
 ABOUT: About
@@ -6,9 +6,9 @@ ABOUT_INTRO: "Hi! My name is <b>Vinícius Campitelli</b>, I am a <b>passionate e
               <b>I have created my own startup</b> - Curseduca, an e-learning SaaS platform - and <b>spoken at several tech conferences</b>."
 ABOUT_JOB_OPPORTUNITIES: "I am looking at job opportunities to work as:"
 ABOUT_JOB_CONTENT_CREATION: "Content creator <em>(e.g. articles, trainings and courses)</em>"
-ABOUT_JOB_LEAD: Team manager
 ABOUT_JOB_CONSULTING: IT Consultant
 ABOUT_JOB_DEVELOPER: Lead PHP developer
+ABOUT_JOB_ADVOCATE: Developer Relations/Advocate
 SKILLS: Skills
 SKILL_LANGUAGES: Languages
 SKILL_DB: Databases
@@ -32,6 +32,7 @@ SKILL_LEADERSHIP: Leadership
 SKILL_AGILE: Agile methods
 TIMELINE: Timeline
 MONTH_JANUARY: january
+MONTH_FEBRUARY: february
 MONTH_SEPTEMBER: september
 MONTH_OCTOBER: october
 MONTH_NOVEMBER: november
@@ -41,7 +42,8 @@ MT4_JOB_DEV: Full-stack web developer
 MT4_JOB_LEAD: Lead developer at @MediaPost
 MT4_JOB_CYBER: Cybersecurity architect
 PRO_4LINUX_DESCRIPTION: "Open courses instructor (HTML, CSS, JavaScript and PhoneGap)"
-PRO_IMPACTA_DESCRIPTION: "Open courses instructor (PHP, SQL, HTML, CSS and JavaScript)"
+PRO_PICOLOTEC_DESCRPITION: "Running almost 20 workshops during the year about several IT subjects (e.g. cybersecurity, architecture, DevOps)"
+PRO_OTTERA_DESCRPITION: "Working as Software Engineer at the OTT platform and acting as Business Development in Brazil by running meetings and demos for clients"
 EDUCATION: Education
 EDUCATION_UNIVERSITY_DESCRIPTION: Bachelor of Computer Science
 OPEN_COURSES: Featured courses
@@ -50,12 +52,13 @@ COURSE_NLP: Neuro-linguistic Programming
 COURSE_SALES: Sales Management
 COURSE_SPEAKING: Public Speaking and Presentation
 LANGUAGES: Languages
+LANGUAGE_NATIVE: Native
 LANGUAGE_FLUENT: Fluent
-LANGUAGE_INTERMEDIATE: Intermediate
+LANGUAGE_BASIC: Basic
 TALKS: Talks
 TALKS_DESCRIPTION: "I spoke at great teach conferences in Brazil about PHP development, cybersecurity, engineering, APIs and several other subjects.
-                    The presentation slides for those talks are at <a href=\"https://viniciuscampitelli.com/\">viniciuscampitelli.com</a>.
-                    Some of those events are:"
+                    The presentation slides for those talks are at <a href=\"https://viniciuscampitelli.com/\">viniciuscampitelli.com</a> and you can
+                    watch some recordings from:"
 TALKS_WATCH: watch
 TALKS_LIBSODIUM_MEETUP: "Libsodium: Modern cryptography in PHP"
 TALKS_PHPSP_LIVE_SECURITY: "PHPSP Live #21: Why worry about Security?"

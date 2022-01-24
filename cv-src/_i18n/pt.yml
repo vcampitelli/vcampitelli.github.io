@@ -6,9 +6,9 @@ ABOUT_INTRO: "Olá! Meu nome é <b>Vinícius Campitelli</b> e sou <b>apaixonado 
               <b>Fundei minha própria startup</b> - Curseduca, uma plataforma SaaS de e-learning - e comecei a <b>ministrar palestras</b> em eventos de tecnologia."
 ABOUT_JOB_OPPORTUNITIES: "Estou buscando oportunidades para atuar como:"
 ABOUT_JOB_CONTENT_CREATION: "Produtor de conteúdos <em>(artigos, treinamentos, cursos e similares)</em>"
-ABOUT_JOB_LEAD: Líder de equipes técnicas
 ABOUT_JOB_CONSULTING: Consultoria em TI
 ABOUT_JOB_DEVELOPER: Desenvolvimento de aplicações PHP
+ABOUT_JOB_ADVOCATE: Developer Relations/Advocate
 SKILLS: Habilidades
 SKILL_LANGUAGES: Linguagens
 SKILL_DB: Banco de Dados
@@ -32,6 +32,7 @@ SKILL_LEADERSHIP: Liderança
 SKILL_AGILE: Metodologias Ágeis
 TIMELINE: Linha do tempo
 MONTH_JANUARY: janeiro
+MONTH_FEBRUARY: fevereiro
 MONTH_SEPTEMBER: setembro
 MONTH_OCTOBER: outubro
 MONTH_NOVEMBER: novembro
@@ -41,7 +42,8 @@ MT4_JOB_DEV: Desenvolvedor web full-stack
 MT4_JOB_LEAD: Tech lead na @MediaPost
 MT4_JOB_CYBER: Arquiteto de cibersegurança
 PRO_4LINUX_DESCRIPTION: "Instrutor de alguns cursos livres, como HTML, CSS, JavaScript e PhoneGap"
-PRO_IMPACTA_DESCRIPTION: "Instrutor de cursos livres de desenvolvimento front-end, back-end, banco de dados, entre outros"
+PRO_PICOLOTEC_DESCRPITION: "Ministrei quase 20 workshops durante um ano sobre diversos assuntos de TI, como desenvolvimento seguro, arquitetura, DevOps, entre outros"
+PRO_OTTERA_DESCRPITION: "Trabalho como Engenheiro de Software na plataforma OTT e atuo em Business Development no Brasil, fazendo reuniões e demonstrações do produto"
 EDUCATION: Educação
 EDUCATION_UNIVERSITY_DESCRIPTION: Graduado em Bacharelado em Ciência da Computação
 OPEN_COURSES: Cursos em destaque
@@ -50,12 +52,13 @@ COURSE_NLP: Programação Neuro-Linguística
 COURSE_SALES: Gestão de Vendas
 COURSE_SPEAKING: Oratória e Apresentação
 LANGUAGES: Idiomas
+LANGUAGE_NATIVE: Nativo
 LANGUAGE_FLUENT: Fluente
-LANGUAGE_INTERMEDIATE: Intermediário
+LANGUAGE_BASIC: Básico
 TALKS: Palestras
 TALKS_DESCRIPTION: "Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas nos mais diversos eventos ao redor do Brasil.
-                    Os slides dessas apresentações estão em <a href=\"https://viniciuscampitelli.com/\">viniciuscampitelli.com</a>.
-                    Alguns desses eventos são:"
+                    Os slides dessas apresentações estão em <a href=\"https://viniciuscampitelli.com/\">viniciuscampitelli.com</a> e você pode
+                    assistir algumas gravações de:"
 TALKS_WATCH: assistir
 TALKS_LIBSODIUM_MEETUP: "Libsodium: Criptografia moderna no PHP"
 TALKS_PHPSP_LIVE_SECURITY: "PHPSP Live! #21 PHPapo: Segurança, por que se preocupar?"
