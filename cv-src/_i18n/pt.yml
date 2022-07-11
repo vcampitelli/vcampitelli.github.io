@@ -3,7 +3,7 @@ AGE: 30 anos
 TELPEHONE: (11) 99166-9190
 ABOUT: Sobre
 ABOUT_INTRO: "Olá! Meu nome é <b>Vinícius Campitelli</b> e sou <b>apaixonado por empreendedorismo, tecnologia e cibersegurança</b>. Comecei a programar com 14 anos e desde então nunca mais parei.
-              <b>Fundei minha própria startup</b> - Curseduca, uma plataforma SaaS de e-learning - e comecei a <b>ministrar palestras</b> em eventos de tecnologia."
+              <b>Fundei minha própria startup</b> chamada Curseduca, uma plataforma SaaS de e-learning, e <b>ministro workshops</b> para empresas e <b>palestras</b> em eventos de tecnologia."
 ABOUT_JOB_OPPORTUNITIES: "Estou buscando oportunidades para atuar como:"
 ABOUT_JOB_CONTENT_CREATION: "Produtor de conteúdos <em>(artigos, treinamentos, cursos e similares)</em>"
 ABOUT_JOB_CONSULTING: Consultoria em TI
@@ -41,9 +41,14 @@ PRO_CURSEDUCA_DESCRIPTION: "Co-fundador e CTO de uma plataforma SaaS de e-learni
 MT4_JOB_DEV: Desenvolvedor web full-stack
 MT4_JOB_LEAD: Tech lead na @MediaPost
 MT4_JOB_CYBER: Arquiteto de cibersegurança
+MONTH_FEBRUARY_SHORT: fev
+MONTH_JUNE_SHORT: jun
 PRO_4LINUX_DESCRIPTION: "Instrutor de alguns cursos livres, como HTML, CSS, JavaScript e PhoneGap"
-PRO_PICOLOTEC_DESCRPITION: "Ministrei quase 20 workshops durante um ano sobre diversos assuntos de TI, como desenvolvimento seguro, arquitetura, DevOps, entre outros"
-PRO_OTTERA_DESCRPITION: "Trabalho como Engenheiro de Software na plataforma OTT e atuo em Business Development no Brasil, fazendo reuniões e demonstrações do produto"
+PRO_OTTERA_DESCRIPTION: "Trabalhei como Engenheiro de Software na plataforma de streaming e atuei como Business Development no Brasil, fazendo reuniões e demonstrações do produto"
+PRO_LETSCODE_DESCRIPTION: "Instrutor de cursos como DevOps, Banco de Dados e similares, também fazendo parte do planejamento e criação de materiais para o curso de DevOps"
+WORKSHOPS: Workshops
+WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ministrei quase 70 horas de workshops sobre diversos assuntos de TI, como desenvolvimento seguro, arquitetura, DevOps, entre outros"
+WORKSHOPS_YAMPI_DESCRIPTION: "Quarenta horas de treinamento sobre microsserviços <em>(como REST, GraphQL, gRPC, Sagas, CQRS e Event Sourcing)</em> e DevOps <em>(Docker, Kubernetes e CI/CD)</em>"
 EDUCATION: Educação
 EDUCATION_UNIVERSITY_DESCRIPTION: Graduado em Bacharelado em Ciência da Computação
 OPEN_COURSES: Cursos em destaque
@@ -56,9 +61,9 @@ LANGUAGE_NATIVE: Nativo
 LANGUAGE_FLUENT: Fluente
 LANGUAGE_BASIC: Básico
 TALKS: Palestras
-TALKS_DESCRIPTION: "Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas nos mais diversos eventos ao redor do Brasil.
+TALKS_DESCRIPTION: "Ministrei palestras sobre PHP, cibersegurança, arquitetura, APIs e outros temas em diversos eventos.
                     Os slides dessas apresentações estão em <a href=\"https://viniciuscampitelli.com/\">viniciuscampitelli.com</a> e você pode
-                    assistir algumas gravações de:"
+                    assistir algumas gravações em:"
 TALKS_WATCH: assistir
 TALKS_LIBSODIUM_MEETUP: "Libsodium: Criptografia moderna no PHP"
 TALKS_PHPSP_LIVE_SECURITY: "PHPSP Live! #21 PHPapo: Segurança, por que se preocupar?"

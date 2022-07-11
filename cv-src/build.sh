@@ -8,6 +8,7 @@ CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
 BRANCH="gh-pages"
 IS_BUILD=false
+CONTAINER_NAME="jekyll-cv"
 
 cd "$(dirname "$0")/../"
 
@@ -23,17 +24,25 @@ case "$1" in
 esac
 
 # Building files
-docker run --rm \
-  --volume="${PWD}:/srv" \
-  -it jekyll/jekyll:${JEKYLL_VERSION} \
-  /bin/bash -c \
-    "cd /srv/${SOURCE_FOLDER} && 
-    bundle install --jobs 4 &&
-    JEKYLL_ENV=production bundle exec jekyll ${jekyll_command}"
+COMMAND="cd /srv/${SOURCE_FOLDER} && bundle install --jobs 4 && JEKYLL_ENV=production bundle exec jekyll ${jekyll_command}"
+if [[ $(docker ps --filter "name=${CONTAINER_NAME}" --format ".") == "." ]]; then
+  docker exec -it $CONTAINER_NAME /bin/bash -c $COMMAND
+elif [[ $(docker ps -a --filter "name=${CONTAINER_NAME}" --format ".") == "." ]]; then
+  docker start $CONTAINER_NAME
+  docker exec -it $CONTAINER_NAME /bin/bash -c $COMMAND
+else
+  docker run \
+    --name $CONTAINER_NAME \
+    --volume="${PWD}:/srv" \
+    -it jekyll/jekyll:${JEKYLL_VERSION} \
+    $COMMAND
+
+fi
 
 # Comitting them
-if [[ $IS_BUILD ]]; then
+if $IS_BUILD; then
     git add ${DESTINATION_FOLDER}
-    git commit -m "Building static files"
+    git commit -m "Build dos arquivos estáticos do CV"
     git push --force ${BRANCH}
+    rm -rf ${DESTINATION_FOLDER}
 fi

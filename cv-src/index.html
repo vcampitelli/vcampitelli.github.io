@@ -67,15 +67,6 @@
                     <p>
                         {% t ABOUT_INTRO %}
                     </p>
-                    <p class="mt-2">
-                        {% t ABOUT_JOB_OPPORTUNITIES %}
-                    </p>
-                    <ul class="ml-2">
-                        <li>{% t ABOUT_JOB_CONTENT_CREATION %};</li>
-                        <li>{% t ABOUT_JOB_CONSULTING %};</li>
-                        <li>{% t ABOUT_JOB_ADVOCATE %}.</li>
-                    </ul>
-                    </section>
                 </section>
 
                 <section>
@@ -86,7 +77,7 @@
                             <li class="code">PHP</li>
                             <li class="code">Python</li>
                             <li class="code">Shell Script</li>
-                            <li class="code">Node.js</li>
+                            <li class="code">Node</li>
                             <li class="code">React</li>
                             <li class="code">HTML</li>
                             <li class="code">CSS</li>
@@ -300,15 +291,15 @@
                             <section>
                                 <h1>{% t PROFESSIONAL %}</h1>
 
-                                <div class="mt-2 w-half">
-                                    <span class="small text-muted">2021</span>
-                                    <p class="bold">OTTera</p>
-                                    <p>{% t PRO_OTTERA_DESCRPITION %}</p>
+                                <div class="w-half">
+                                    <span class="small text-muted">2022 - atual</span>
+                                    <p class="bold">Let's Code</p>
+                                    <p>{% t PRO_LETSCODE_DESCRIPTION %}</p>
                                 </div>
                                 <div class="mt-2 w-half">
-                                    <span class="small text-muted">2021</span>
-                                    <p class="bold">Picolotec</p>
-                                    <p>{% t PRO_PICOLOTEC_DESCRPITION %}</p>
+                                    <span class="small text-muted">{% t MONTH_FEBRUARY_SHORT %}/2021 - {% t MONTH_JUNE_SHORT %}/2022</span>
+                                    <p class="bold">OTTera</p>
+                                    <p>{% t PRO_OTTERA_DESCRIPTION %}</p>
                                 </div>
                                 <div class="mt-2 w-half">
                                     <span class="small text-muted">2013 - 2020</span>
@@ -331,6 +322,22 @@
                         </div>
 
                         <div class="ml-md-4">
+                            <section>
+                                <h1>{% t WORKSHOPS %}</h1>
+
+                                <div>
+                                    <span class="small text-muted">2022</span>
+                                    <p class="bold">Yampi</p>
+                                    <p>{% t WORKSHOPS_YAMPI_DESCRIPTION %}</p>
+                                </div>
+
+                                <div class="mt-2">
+                                    <span class="small text-muted">2021</span>
+                                    <p class="bold">Picolotec</p>
+                                    <p>{% t WORKSHOPS_PICOLOTEC_DESCRIPTION %}</p>
+                                </div>
+                            </section>
+
                             <section>
                                 <h1>{% t EDUCATION %}</h1>
 
@@ -374,11 +381,19 @@
                     </div>
                 </section>
 
-                <section id="talks-wrapper">
+                <section id="talks-wrapper" class="d-screen-only">
                     <h1>{% t TALKS %}</h1>
                     <p>{% t TALKS_DESCRIPTION %}</p>
                     <div id="talks">
                         <div class="d-flex flex-50 mt-2">
+                            <div>
+                                <p>
+                                    <img src="{{ "/img/flag/br.svg" | prepend: site.baseurl_root }}" alt="{% t lang.PORTUGUESE %}" title="{% t lang.PORTUGUESE %}">
+                                    PHP Community Summit
+                                </p>
+                                Online 2021
+                                (<a href="https://www.youtube.com/watch?v=SJPZxvEYXxI&t=13000s" target="_blank" rel="noopener">{% t TALKS_WATCH %}</a>)<br>
+                            </div>
                             <div>
                                 <p>
                                     <img src="{{ "/img/flag/br.svg" | prepend: site.baseurl_root }}" alt="{% t lang.PORTUGUESE %}" title="{% t lang.PORTUGUESE %}">
