@@ -70,9 +70,11 @@ body {
   color: #444;
   font-family: "Roboto Slab", Roboto, sans-serif;
 }
-#intro,
-#main {
+#intro {
   padding: 2rem;
+}
+#main {
+  padding: 2rem 1rem;
 }
 #intro {
   background: #eee;
@@ -132,7 +134,8 @@ h1#title > span {
   font-size: 0.9rem;
 }
 ul {
-  list-style: square inside;
+  list-style: square outside;
+  margin-left: 1.2rem;
 }
 ul.nolist {
   list-style: none;
@@ -153,9 +156,9 @@ h3 {
   font-weight: 600;
 }
 #main h1 {
-  margin-left: -2rem;
-  border-left: 0.35rem #f96 solid;
-  padding-left: 1.65rem;
+  margin-left: -1rem;
+  border-left: 4px #f96 solid;
+  padding-left: 0.6rem;
   color: #555;
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -205,7 +208,8 @@ h3 {
   color: #777;
   border-bottom: 1px #eee solid;
 }
-#featured-courses > ul > li > span {
+#featured-courses > ul > li > span,
+#featured-courses > ul > li > p > span {
   color: #777;
 }
 #talks > .d-flex {
@@ -421,7 +425,7 @@ footer > a {
   }
   #section-pro-education,
   #talks-wrapper {
-    margin-top: 6.5rem;
+    margin-top: 0;
     page-break-before: always;
   }
   body {
@@ -440,6 +444,12 @@ footer > a {
   }
   #footer-text > span.small {
     display: none;
+  }
+  .line-height-small {
+    line-height: 1.3;
+  }
+  .smaller {
+    font-size: 0.7rem;
   }
 }
 @media screen {

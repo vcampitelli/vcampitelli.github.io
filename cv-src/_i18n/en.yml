@@ -2,8 +2,8 @@ LOCATION: Sao Paulo, Brazil
 AGE: 30 years old
 TELPEHONE: +55 11 99166 9190
 ABOUT: About
-ABOUT_INTRO: "Hi! My name is <b>Vinícius Campitelli</b>, I am a <b>passionate entrepreneur, IT and cybersecurity enthusiast</b>. I started programming when I was 14 years old and I haven't stopped since.
-              <b>I have created my own startup</b> called Curseduca, an e-learning SaaS platform, and <b>spoken at several tech conferences</b>."
+ABOUT_INTRO: "My name is <b>Vinícius Campitelli</b> and I am a passionate entrepreneur and IT enthusiast. I started programming when I was 14 years old and I haven't stopped since.
+              I have developed projects in several areas, including process automation, email marketing and cybersecurity. I have also <b>created my own startup</b>, an e-learning SaaS platform named Curseduca, and <b>spoken at several tech conferences</b>. I'm now an <b>IT Consultant</b> and <b>Workshop Instructor</b>."
 ABOUT_JOB_OPPORTUNITIES: "I am looking at job opportunities to work as:"
 ABOUT_JOB_CONTENT_CREATION: "Content creator <em>(e.g. articles, trainings and courses)</em>"
 ABOUT_JOB_CONSULTING: IT Consultant
@@ -38,7 +38,7 @@ MONTH_OCTOBER: october
 MONTH_NOVEMBER: november
 PROFESSIONAL: Professional
 PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for creating and selling digital products and online courses"
-MT4_JOB_DEV: Full-stack web developer
+MT4_JOB_DEV: Full-stack Web developer
 MT4_JOB_LEAD: Lead developer at @MediaPost
 MT4_JOB_CYBER: Cybersecurity architect
 MONTH_FEBRUARY_SHORT: Feb
@@ -46,6 +46,7 @@ MONTH_JUNE_SHORT: Jun
 PRO_4LINUX_DESCRIPTION: "Open courses instructor (HTML, CSS, JavaScript and PhoneGap)"
 PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform and acting as Business Development in Brazil by running meetings and demos for clients"
 PRO_LETSCODE_DESCRIPTION: "Instructor on DevOps, database and other courses, also helped to plan and create materials for the DevOps course"
+PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and  and best practices"
 WORKSHOPS: Workshops
 WORKSHOPS_YAMPI_DESCRIPTION: "Delivered 40 hours of trainings in microsservices and DevOps subjects, like GraphQL, gRPC, Docker, Kubernetes and CI/CD"
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ran almost 70 hours of workshops during the year about several subjects (e.g. cybersecurity, architecture, DevOps)"
