@@ -12,31 +12,35 @@ CONTAINER_NAME="jekyll-cv"
 
 cd "$(dirname "$0")/../"
 
+COMMAND="bundle exec jekyll"
 case "$1" in
     "serve")
-        jekyll_command="serve -w -H 0.0.0.0"
+        COMMAND+=" serve -w -H 0.0.0.0"
         ;;
 
     *)
         IS_BUILD=true
-        jekyll_command="build -d ../${DESTINATION_FOLDER}"
+        COMMAND="JEKYLL_ENV=production ${COMMAND} build -d ../${DESTINATION_FOLDER}"
         ;;
 esac
 
 # Building files
-COMMAND="cd /srv/${SOURCE_FOLDER} && bundle install --jobs 4 && JEKYLL_ENV=production bundle exec jekyll ${jekyll_command}"
 if [[ $(docker ps --filter "name=${CONTAINER_NAME}" --format ".") == "." ]]; then
-  docker exec -it $CONTAINER_NAME /bin/bash -c $COMMAND
+  docker exec -it -w "/app/${SOURCE_FOLDER}" $CONTAINER_NAME /bin/bash -c "$COMMAND"
 elif [[ $(docker ps -a --filter "name=${CONTAINER_NAME}" --format ".") == "." ]]; then
   docker start $CONTAINER_NAME
-  docker exec -it $CONTAINER_NAME /bin/bash -c $COMMAND
+  docker exec -it -w "/app/${SOURCE_FOLDER}" $CONTAINER_NAME /bin/bash -c "$COMMAND"
 else
+  if [[ $(docker images --filter "reference=${CONTAINER_NAME}:latest" --format ".") != "." ]]; then
+    docker build -t $CONTAINER_NAME $SOURCE_FOLDER
+  fi
   docker run \
     --name $CONTAINER_NAME \
-    --volume="${PWD}:/srv" \
-    -it jekyll/jekyll:${JEKYLL_VERSION} \
+    --volume="${PWD}:/app" \
+    -p "4000:4000" \
+    -w "/app/${SOURCE_FOLDER}" \
+    -it $CONTAINER_NAME \
     $COMMAND
-
 fi
 
 # Comitting them

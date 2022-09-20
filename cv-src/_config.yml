@@ -4,6 +4,7 @@ title: "@vcampitelli"
 description: "my online cv"
 plugins:
   - jekyll-multiple-languages-plugin
+exclude: ['build.sh', 'Dockerfile']
 
 # jekyll-multiple-languages-plugin
 languages: ["pt", "en"]
