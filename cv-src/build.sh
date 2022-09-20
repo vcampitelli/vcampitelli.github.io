@@ -47,6 +47,6 @@ fi
 if $IS_BUILD; then
     git add ${DESTINATION_FOLDER}
     git commit -m "Build dos arquivos estáticos do CV"
-    git push --force ${BRANCH}
+    git push --force origin ${BRANCH}
     rm -rf ${DESTINATION_FOLDER}
 fi
