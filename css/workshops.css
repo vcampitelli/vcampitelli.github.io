@@ -2,6 +2,9 @@
 :root {
   --border-radius: 10px;
 }
+html {
+  scroll-behavior: smooth;
+}
 h1 {
   font-size: 1.5rem;
   line-height: 1.5;
@@ -66,8 +69,7 @@ h2 > code + span {
 
 /* Header */
 #header::before {
-  background-image: none;
-  opacity: 1;
+  background-repeat: repeat;
 }
 #header {
   position: relative;
@@ -76,50 +78,17 @@ h2 > code + span {
   position: relative;
   z-index: 1;
 }
-#header > video {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-}
 #header-intro {
   margin-left: 0;
 }
 #header-intro > h1 {
   color: #f0f0f0;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.3;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 #header-intro > h1 > span {
-  /*font-weight: 900;*/
-  /*background: var(--header-link-color);*/
-}
-
-#header-intro > h1 > span {
-  display: inline-block;
-  position: relative;
-  font-size: 0.95em;
-  padding: 0.01em 0.25em;
-}
-#header-intro > h1 > span::after {
-  content: "";
-  position: absolute;
-  background: var(--header-link-color);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  border-radius: 0.1em;
-  transform: skewX(-10deg);
+  font-weight: 900;
 }
 #header-intro > h1::-moz-selection,
 #header-intro > h1::selection {
