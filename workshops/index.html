@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;900&display=swap"
               rel="stylesheet">
         <link href="../css/index.css?v=20211112" rel="stylesheet" type="text/css">
-        <link href="../css/workshops.css?v=20220104" rel="stylesheet" type="text/css">
+        <link href="../css/workshops.css?v=20220925" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png?v=20211112">
         <link rel="shortcut icon" href="../img/favicon.png?v=20211112">
@@ -25,20 +25,20 @@
                         Capacite suas equipes de TI com workshops feitos <span>sob medida</span> em Desenvolvimento,
                         Cibersegurança, DevOps, Arquiteturas de Sistemas e diversos outros assuntos
                     </h1>
+                    <a href="#content">Saiba mais &#129122;</a>
                 </div>
             </div>
-            <video autoplay loop muted>
-                <source src="/workshops/video/typing.mp4" type="video/mp4">
-            </video>
         </header>
         <main id="content">
             <div class="section bg-black">
                 <div class="container">
                     <h2>
                         <code>groups</code>
-                        <span>Qualifique seu times de tecnologia</span>
+                        <span>Qualifique seus times de tecnologia</span>
                     </h2>
-                    <h3 class="mb-2">Treine equipes de Análise, Desenvolvimento, DevOps ou similares</h3>
+                    <h3 class="mb-2">
+                        Treine suas equipes de Análise, Desenvolvimento, DevOps e afins sobre os principais temas de TI
+                    </h3>
                     <div id="topics">
                         <div class="topics-list">
                             <div>
@@ -376,13 +376,13 @@
                         </h2>
                         <p>
                             Desenvolvedor Web desde os 16 anos, apaixonado por tecnologia e principalmente Web. Já atuei
-                            em dezenas de projetos nas mais diversas áreas, como email marketing, automação de redes,
-                            e-commerce, cibersegurança e e-learning, onde inclusive fundei uma startup.
+                            em projetos nas mais diversas áreas, como email marketing, automação de redes, e-commerce,
+                            cibersegurança e e-learning, onde inclusive fundei uma startup.
                         </p>
                         <p>
-                            Já palestrei em grandes eventos, falando sobre arquitetura de sistemas, boas práticas de
-                            codificação e segurança da informação. Você pode saber mais sobre isso através dos slides e
-                            gravações em vídeo feitas nesses eventos:
+                            Também palestrei em grandes eventos, falando sobre arquitetura de sistemas, boas práticas de
+                            codificação e segurança da informação. Você pode saber mais através dos slides e vídeos
+                            desses eventos.
                         </p>
 
                         <div class="d-flex">
@@ -410,7 +410,7 @@
                                     </g>
                                 </svg>
                                 <span>
-                                    <strong>Ver Palestras &raquo;</strong>
+                                    <strong>Ver palestras &raquo;</strong>
                                     Slides e vídeos
                                 </span>
                             </a>
@@ -436,7 +436,7 @@
                         <code>ping</code>
                         <span>Se interessou?</span>
                     </h2>
-                    <h3>Quer saber mais sobre os workshops ou possui alguma dúvida? Fale comigo!</h3>
+                    <h3>Quer saber mais sobre os workshops? Fale comigo!</h3>
                     <div id="contact" class="d-flex">
                         <a href="htt&#112;s&#58;/&#47;a&#112;i&#46;&#119;&#104;&#97;&#116;sa&#112;p&#46;co&#109;&#47;sen&#100;?p&#104;&#111;ne=&#053;&#053;&#049;&#049;&#057;&#057;&#049;&#054;&#054;&#057;&#049;&#057;&#048;"
                             target="_blank" rel="noopener">
@@ -458,7 +458,7 @@
                             </svg>
                             <span>
                                 <strong>WhatsApp</strong>
-                                <span>&#040;&#049;&#049;&#041;&#032;&#057;&#057;&#049;&#054;&#054;&#045;&#057;&#049;&#057;&#048;</span>
+                                <span></span>
                             </span>
                         </a>
                         <a href="&#109;ailt&#111;&#58;&#101;&#117;&#064;&#118;&#105;&#110;&#105;&#099;&#105;&#117;&#115;&#099;&#097;&#109;&#112;&#105;&#116;&#101;&#108;&#108;&#105;&#046;&#099;&#111;&#109;"
@@ -478,7 +478,7 @@
                             </svg>
                             <span>
                                 <strong>Email</strong>
-                                <span>&#101;&#117;&#064;&#118;&#105;&#110;&#105;&#099;&#105;&#117;&#115;&#099;&#097;&#109;&#112;&#105;&#116;&#101;&#108;&#108;&#105;&#046;&#099;&#111;&#109;</span>
+                                <span></span>
                             </span>
                         </a>
                         <a href="https://t.me/vcampitelli" target="_blank" rel="noopener">
@@ -534,5 +534,15 @@
                 </div>
             </div>
         </main>
+
+        <script>
+            const $links = document.getElementById('contact').children;
+            $links[0].querySelector('span > span').innerHTML = '&#040;&#049;&#049;&#041;&#032;&#057;&#057;&#049;&#054;&#054;&#045;&#057;&#049;&#057;&#048;';
+            $links[1].querySelector('span > span').innerHTML = '&#101;&#117;&#064;&#118;&#105;&#110;&#105;&#099;&#105;&#117;&#115;&#099;&#097;&#109;&#112;&#105;&#116;&#101;&#108;&#108;&#105;&#046;&#099;&#111;&#109;';
+
+            // document.getElementById('header-intro').children[1].onclick = () => {
+            //     // window.animate
+            // };
+        </script>
     </body>
 </html>
