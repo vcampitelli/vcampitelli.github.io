@@ -200,6 +200,7 @@ h2 > code + span {
     display: block;
     flex: 1 0 50%;
     width: 50%;
+    height: auto;
     margin-bottom: 0;
   }
   #about-workshops > div {
