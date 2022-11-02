@@ -1,6 +1,6 @@
 /* Common */
 :root {
-  --border-radius: 10px;
+  --border-radius: 5px;
 }
 html {
   scroll-behavior: smooth;
@@ -66,6 +66,7 @@ h2 > code {
   font-size: 0.8rem;
   line-height: 1;
   margin-right: 0.5rem;
+  border-radius: var(--border-radius);
 }
 h2 > code:before {
   content: '$';
@@ -118,6 +119,9 @@ h2 > code + span {
   color: var(--header-link-color);
   background: #fff;
 }
+#header-intro > a {
+  border-radius: var(--border-radius);
+}
 
 /* Topics */
 #topics > .topics-list > div {
@@ -141,8 +145,6 @@ h2 > code + span {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #333;
-  border: 8px #333 solid;
   align-self: center;
 }
 #topics > .topics-list > div > svg path {
@@ -154,6 +156,7 @@ h2 > code + span {
 @media (min-width: 1201px) {
   #topics {
     display: flex;
+    column-gap: 3rem;
     padding: 1.5rem 0;
   }
   #topics > .topics-image {
@@ -169,7 +172,6 @@ h2 > code + span {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 3rem;
     flex-basis: 33%;
     flex-shrink: 0;
   }
@@ -198,8 +200,7 @@ h2 > code + span {
   }
   #about-workshops > img {
     display: block;
-    flex: 1 0 50%;
-    width: 50%;
+    flex: 1 0 65.667%;
     height: auto;
     margin-bottom: 0;
   }
@@ -211,19 +212,15 @@ h2 > code + span {
 }
 /* Blocks */
 .blocks {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-top: 2rem;
 }
-.blocks > div {
-  padding: 15px;
-  flex: 0 0 100%;
-  color: var(--header-link-color);
-}
-.blocks .block-white {
+.block-white {
+  margin-top: 1rem;
   display: flex;
-  padding: 1.5rem;
+  padding: 1rem 1.25rem;
   background: #f5f5f5;
   border-radius: var(--border-radius);
+  color: var(--header-link-color);
 }
 .block-white > svg > g > [fill] {
   fill: var(--color-orange);
@@ -246,8 +243,8 @@ h2 > code + span {
 .block-text > h4 {
   margin: 0;
   font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 36px;
+  font-size: 1.31rem;
+  line-height: 32px;
 }
 .block-text > p {
   font-size: 0.9rem;
@@ -273,15 +270,25 @@ h2 > code + span {
 #about-me > .container > div > p {
   margin-bottom: 1.5rem;
 }
+#about-me > .container > div > div {
+  color: #999;
+}
+#about-me > .container > div > div > div {
+  margin-bottom: 1rem;
+}
+@media (min-width: 769px) {
+  #about-me > .container > div > div {
+    justify-content: space-between;
+    column-gap: 1rem;
+  }
+  #about-me > .container > div > div > div {
+    margin-bottom: 0;
+  }
+}
 @media (min-width: 1201px) {
   #about-me > .container > div {
     width: 50%;
   }
-}
-#about-me > .container > div > div {
-  justify-content: space-between;
-  column-gap: 1rem;
-  color: #999;
 }
 #about-me > .container > div > div > a {
   display: flex;
@@ -362,13 +369,12 @@ h2 > code + span {
   }
 
   .blocks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
   }
-
-  .blocks > div {
-    flex-basis: 50%;
+  .block-white {
+    margin-top: 0;
   }
 
   #header-intro > h1 {
@@ -380,8 +386,9 @@ h2 > code + span {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
-  .blocks > div {
-    flex-basis: 33.333333%;
+
+  .blocks {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   #header-intro > h1 {
@@ -389,7 +396,7 @@ h2 > code + span {
   }
 
   h2 {
-    margin-bottom: 15px;
+    margin-bottom: 0.5rem;
   }
   h2 > code + span {
     line-height: 1;
