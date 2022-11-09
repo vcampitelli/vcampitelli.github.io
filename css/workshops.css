@@ -402,3 +402,19 @@ h2 > code + span {
     line-height: 1;
   }
 }
+#floating-btn {
+  position: fixed;
+  z-index: 2;
+  display: block;
+  right: 10px;
+  bottom: 10px;
+  width: 52px;
+  height: 52px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+}
+#floating-btn:is(:hover, :focus) {
+  background-color: #35e376;
+}
