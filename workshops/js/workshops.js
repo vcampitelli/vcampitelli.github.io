@@ -6,4 +6,12 @@ document.querySelector('#header-intro > a').onclick = function (e) {
     e.preventDefault();
     e.stopPropagation();
     $content.scrollIntoView({behavior: 'smooth'});
+    return false;
 };
+
+document.getElementById('schedule-demo').onclick = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    Calendly.initPopupWidget({url: 'https://calendly.com/viniciuscampitelli/demo?hide_landing_page_details=1'});
+    return false;
+}

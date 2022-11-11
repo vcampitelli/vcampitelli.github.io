@@ -20,10 +20,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;900&display=swap"
               rel="stylesheet">
         <link href="../css/index.css?v=20211112" rel="stylesheet" type="text/css">
-        <link href="../css/workshops.css?v=20221109" rel="stylesheet" type="text/css">
+        <link href="../css/workshops.css?v=20221111" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png?v=20211112">
         <link rel="shortcut icon" href="../img/favicon.png?v=20211112">
+
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -52,10 +54,8 @@
         <main id="content">
             <div class="section bg-black">
                 <div class="container">
-                    <h2>
-                        <code>groups</code>
-                        <span>Qualifique seus times de tecnologia</span>
-                    </h2>
+                    <code class="h2">groups</code>
+                    <h2>Qualifique seus times de tecnologia</h2>
                     <p class="mb-2">
                         Veja algumas vantagens em capacitar suas equipes de Análise, Desenvolvimento, DevOps e afins
                     </p>
@@ -172,10 +172,8 @@
             </div>
             <div class="section">
                 <div class="container">
-                    <h2>
-                        <code>pwd</code>
-                        <span>Sobre os treinamentos</span>
-                    </h2>
+                    <code class="h2">pwd</code>
+                    <h2>Sobre os treinamentos</h2>
                     <p class="mb-2">
                         Fuja de cursos gravados e ofereça uma experiência customizada de treinamentos para suas equipes
                     </p>
@@ -216,10 +214,8 @@
             </div>
             <div class="section bg-white">
                 <div class="container">
-                    <h2>
-                        <code>ls</code>
-                        <span>Temas</span>
-                    </h2>
+                    <code class="h2">ls</code>
+                    <h2>Temas</h2>
                     <p>
                         Você pode requisitar outros temas e o grau de aprofundamento que deseja em cada um deles
                     </p>
@@ -412,10 +408,8 @@
             <div id="about-me" class="section">
                 <div class="container">
                     <div>
-                        <h2>
-                            <code>whoami</code>
-                            <span>Sobre mim</span>
-                        </h2>
+                        <code class="h2">whoami</code>
+                        <h2>Sobre mim</h2>
                         <div class="d-flex my-2">
                             <div>
                                 <p class="big-lead">15 anos</p>
@@ -492,11 +486,14 @@
             </div>
             <div class="section">
                 <div class="container">
-                    <h2>
-                        <code>ping</code>
-                        <span>Se interessou?</span>
-                    </h2>
-                    <p>Quer saber mais sobre os workshops? Fale comigo!</p>
+                    <code class="h2">ping</code>
+                    <div class="d-flex align-items-center">
+                        <h2 class="mb-0">Está interessado?</h2>
+                        <button type="button" id="schedule-demo">
+                            Agende uma demonstração gratuita
+                        </button>
+                    </div>
+                    <p class="mt-2">Ou fale diretamente comigo por um dos canais abaixo:</p>
                     <div id="contact" class="d-flex">
                         <a href="htt&#112;s&#58;/&#47;a&#112;i&#46;&#119;&#104;&#97;&#116;sa&#112;p&#46;co&#109;&#47;sen&#100;?p&#104;&#111;ne=&#053;&#053;&#049;&#049;&#057;&#057;&#049;&#054;&#054;&#057;&#049;&#057;&#048;"
                            target="_blank" rel="noopener">
@@ -615,6 +612,7 @@
             </svg>
         </a>
 
-        <script src="/workshops/js/workshops.js?v=20221109"></script>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <script src="/workshops/js/workshops.js?v=20221111"></script>
     </body>
 </html>
