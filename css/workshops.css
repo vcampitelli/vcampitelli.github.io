@@ -57,9 +57,10 @@ p.big-lead {
 .bg-black h3 {
   color: #f0f0f0;
 }
-h2 > code {
+code.h2 {
   display: inline-block;
   padding: 0.5rem;
+  font-weight: 600;
   vertical-align: middle;
   color: var(--color-orange-dark);
   background-color: #eee;
@@ -68,16 +69,22 @@ h2 > code {
   margin-right: 0.5rem;
   border-radius: var(--border-radius);
 }
-h2 > code:before {
+code.h2:before {
   content: '$';
   color: #bbb;
   padding-right: .25rem;
 }
-h2 > code + span {
-  display: block;
-}
-.bg-black h2 > code {
+.bg-black code.h2 {
   background-color: rgba(255, 255, 255, 0.1);
+}
+.align-items-center {
+  align-items: center;
+}
+.mt-2 {
+  margin-top: 1rem;
+}
+.mb-0 {
+  margin-bottom: 0;
 }
 .mb-1 {
   margin-bottom: 0.5rem;
@@ -345,6 +352,20 @@ h2 > code + span {
 #contact > a > span > span {
   display: block;
 }
+#schedule-demo {
+  margin-left: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--header-link-color);
+  border: 0;
+  border-radius: var(--border-radius);
+  color: #fff;
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+#schedule-demo:is(:hover, :focus) {
+  opacity: 0.9;
+}
 
 /* Responsiveness */
 @media (min-width: 341px) {
@@ -397,9 +418,6 @@ h2 > code + span {
 
   h2 {
     margin-bottom: 0.5rem;
-  }
-  h2 > code + span {
-    line-height: 1;
   }
 }
 #floating-btn {
