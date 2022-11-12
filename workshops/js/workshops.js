@@ -3,15 +3,22 @@ document.getElementById('footer-2').innerHTML = '&#101;&#117;&#064;&#118;&#105;&
 
 const $content = document.getElementById('content');
 document.querySelector('#header-intro > a').onclick = function (e) {
+    if (!e.target.attributes.href) {
+        return;
+    }
+
     e.preventDefault();
     e.stopPropagation();
     $content.scrollIntoView({behavior: 'smooth'});
+
     return false;
 };
 
-document.getElementById('schedule-demo').onclick = function (e) {
+const openCalendly = function (e) {
     e.preventDefault();
     e.stopPropagation();
     Calendly.initPopupWidget({url: 'https://calendly.com/viniciuscampitelli/demo?hide_landing_page_details=1'});
     return false;
-}
+};
+document.getElementById('schedule-demo').onclick = openCalendly;
+document.getElementById('schedule-demo-header').onclick = openCalendly;
