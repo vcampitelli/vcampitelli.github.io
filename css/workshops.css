@@ -3,7 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 1.5;
 }
 h2 {
@@ -372,9 +372,7 @@ code.h2:before {
 #schedule-demo-header,
 #schedule-demo {
   background: var(--header-link-color);
-  border: 0;
   border-radius: var(--border-radius);
-  color: #fff;
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   cursor: pointer;
   transition: all .5s ease-in-out;
@@ -384,24 +382,37 @@ code.h2:before {
   font-size: 0.9rem;
 }
 #schedule-demo-header,
-#header-intro > a {
+#header-intro a {
   color: #fff;
-  display: inline-block;
+  display: block;
+  width: 100%;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   border: 2px var(--header-link-color) solid;
   vertical-align: middle;
   font-weight: 400;
+  text-align: center;
+  flex: 0 1 100%;
 }
 #schedule-demo-header:is(:hover, :focus),
-#header-intro > a:is(:hover, :focus) {
+#header-intro a:is(:hover, :focus) {
   color: var(--header-link-color);
   border-color: #fff;
   background-color: #fff;
 }
+#header-intro a > span {
+  font-family: Roboto, sans-serif;
+}
+#header-intro > .d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 #schedule-demo {
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
+  border: 0;
+  color: #fff;
 }
 #schedule-demo:is(:hover, :focus) {
   opacity: 0.7;
@@ -417,9 +428,21 @@ code.h2:before {
     padding: 3rem 0;
   }
 }
+@media (min-width: 500px) {
+  #header-intro > .d-flex {
+    max-width: 540px;
+    flex-wrap: nowrap;
+  }
+  #schedule-demo-header {
+    flex-basis: 65%;
+  }
+  #header-intro a {
+    flex-basis: 35%;
+  }
+}
 @media (min-width: 769px) {
   #schedule-demo-header,
-  #header-intro > a {
+  #header-intro a {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -468,6 +491,7 @@ code.h2:before {
 
   #header-intro > h1 {
     font-size: 6rem;
+    margin-bottom: 2rem;
   }
 
   h2 {
