@@ -148,33 +148,33 @@ span.muted {
 #header-intro > p > span {
   font-weight: 900;
 }
-#header-intro > a > svg [fill] {
+#header-intro a > svg [fill] {
   fill: var(--header-link-color);
 }
-#header-intro > a + a {
+#header-intro a + a {
   margin-left: 0.5em;
 }
 #header-intro > p {
   margin-bottom: 10px;
   font-weight: 600;
 }
-#header-intro > a {
+#header-intro a {
   color: var(--header-link-color);
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.5em 0.6em;
   border-radius: var(--border-radius);
 }
-#header-intro > a:hover,
-#header-intro > a:focus {
+#header-intro a:hover,
+#header-intro a:focus {
   color: #fff;
   background-color: var(--header-link-color);
 }
-#header-intro > a:hover > svg [fill],
-#header-intro > a:focus > svg [fill] {
+#header-intro a:hover > svg [fill],
+#header-intro a:focus > svg [fill] {
   fill: #fff;
 }
-#header-intro > a > svg {
+#header-intro a > svg {
   vertical-align: text-top;
 }
 
@@ -293,7 +293,7 @@ iframe, .slide-thumbnail {
 }
 
 @media (max-width: 340px) {
-  #header-intro > a > span {
+  #header-intro a > span {
     display: none;
   }
 }
