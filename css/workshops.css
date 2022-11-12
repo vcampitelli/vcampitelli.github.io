@@ -400,9 +400,6 @@ code.h2:before {
   border-color: #fff;
   background-color: #fff;
 }
-#header-intro a > span {
-  font-family: Roboto, sans-serif;
-}
 #header-intro > .d-flex {
   display: flex;
   flex-wrap: wrap;
