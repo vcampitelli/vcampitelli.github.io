@@ -22,25 +22,36 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;900&display=swap"
               rel="stylesheet">
         <link href="/css/index.css?v=20221112" rel="stylesheet" type="text/css">
-        <link href="/css/workshops.css?v=20221112" rel="stylesheet" type="text/css">
+        <link href="/css/workshops.css?v=20221114" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon.png?v=20211112">
         <link rel="shortcut icon" href="/img/favicon.png?v=20211112">
 
+        <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
         <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WP7PHWR');</script>
+        <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WP7PHWR');</script>
         <!-- End Google Tag Manager -->
     </head>
     <body>
         <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP7PHWR"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP7PHWR"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
         <!-- End Google Tag Manager (noscript) -->
         <header id="header">
             <div class="container">
@@ -233,7 +244,8 @@
                                 vcampitelli
                             </span>
                         </a>
-                        <a href="https://linkedin.com/in/viniciuscampitelli" target="_blank" rel="noopener" class="about-me-link">
+                        <a href="https://linkedin.com/in/viniciuscampitelli" target="_blank" rel="noopener"
+                           class="about-me-link">
                             <svg role="img" width="40px" height="40px" viewBox="0 0 455 455"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g>
@@ -426,8 +438,7 @@
                     <code class="h2">ls</code>
                     <h2>Temas</h2>
                     <p>
-                        Você pode requisitar outros temas e o grau de aprofundamento que deseja em cada um
-                        deles
+                        Você pode requisitar outros temas e o grau de aprofundamento que deseja em cada um deles
                     </p>
                     <div class="blocks">
                         <div class="block-white">
@@ -622,6 +633,34 @@
                     </div>
                 </div>
             </div>
+            <div class="section bg-black">
+                <div class="container">
+                    <code class="h2">history</code>
+                    <h2>Depoimentos</h2>
+                    <p>Veja o que dizem pessoas que já estiveram em meus treinamentos</p>
+
+                    <div id="testimonials" class="d-flex">
+                        <div>
+                            <video class="video-js vjs-big-play-centered" controls preload="auto" data-setup="{}"
+                                   width="255" height="360">
+                                <source src="/workshops/video/depoimentos/yampi.mp4" type="video/mp4">
+                                <p class="vjs-no-js">
+                                    Para visualizar esse vídeo, por favor ative o JavaScript ou verifique se seu
+                                    navegador possui
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank" rel="noopener">
+                                        suporte a vídeos
+                                    </a>
+                                </p>
+                            </video>
+                            <a href="https://www.linkedin.com/company/somosyampi/" target="_blank" rel="noopener"
+                               class="testimonial-reference">
+                                <span>Lucas Colette</span>
+                                CEO @ Yampi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="section">
                 <div class="container">
                     <code class="h2">ping</code>
@@ -776,7 +815,8 @@
             </svg>
         </a>
 
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         <script src="/js/workshops.js?v=20221112"></script>
+        <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </body>
 </html>

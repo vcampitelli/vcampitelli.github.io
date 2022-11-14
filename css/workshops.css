@@ -342,6 +342,57 @@ code.h2:before {
   fill: #fff;
 }
 
+/* Testimonials */
+#testimonials {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#testimonials > div {
+  margin-top: 2rem;
+  text-align: center;
+}
+.video-js {
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  border-radius: var(--border-radius);
+}
+.video-js > .vjs-tech {
+  object-fit: cover;
+}
+.video-js:not(.vjs-playing) > .vjs-tech {
+  opacity: 0.7;
+}
+.video-js.vjs-big-play-centered .vjs-big-play-button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-top: -2rem;
+  margin-left: -2rem;
+  color: var(--color-orange-dark);
+  border: 0;
+  line-height: 4rem;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.video-js.vjs-big-play-centered:hover .vjs-big-play-button,
+.video-js.vjs-big-play-centered .vjs-big-play-button:focus {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.testimonial-reference {
+  color: #999;
+}
+.testimonial-reference > span {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-orange);
+  transition: color .5s ease-in-out;
+}
+.testimonial-reference:is(:hover, :focus),
+.testimonial-reference:is(:hover, :focus) > span {
+  color: var(--color-orange-dark);
+}
+
 /* Contact */
 #contact {
   margin-bottom: 2rem;
@@ -435,6 +486,9 @@ code.h2:before {
   }
   #header-intro a {
     flex-basis: 35%;
+  }
+  #testimonials {
+    column-gap: 2rem;
   }
 }
 @media (min-width: 769px) {
