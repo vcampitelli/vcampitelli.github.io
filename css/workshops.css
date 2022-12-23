@@ -345,7 +345,7 @@ code.h2:before {
 /* Testimonials */
 #testimonials {
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
 }
 #testimonials > div {
   margin-top: 2rem;
