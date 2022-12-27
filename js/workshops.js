@@ -1,5 +1,19 @@
-document.getElementById('footer-1').innerHTML = '&#040;&#049;&#049;&#041;&#032;&#057;&#057;&#049;&#054;&#054;&#045;&#057;&#049;&#057;&#048;';
-document.getElementById('footer-2').innerHTML = '&#101;&#117;&#064;&#118;&#105;&#110;&#105;&#099;&#105;&#117;&#115;&#099;&#097;&#109;&#112;&#105;&#116;&#101;&#108;&#108;&#105;&#046;&#099;&#111;&#109;';
+function unpack(input) {
+    const len = input.length;
+    let str = '';
+    for (let i = 0; i < len; i += 2) {
+        const v = parseInt(input.substr(i, 2), 16);
+        if (v) {
+            str += String.fromCharCode(v);
+        }
+    }
+    return str;
+}
+
+document.getElementById('footer-1').innerHTML = unpack('283131292039333437372d32303135');
+document.getElementById('footer-1-url').href = unpack('68747470733a2f2f6170692e77686174736170702e636f6d2f73656e643f70686f6e653d35353131393334373732303135');
+document.getElementById('footer-2').innerHTML = unpack('65754076696e696369757363616d706974656c6c692e636f6d');
+document.getElementById('footer-2-url').href = unpack('6d61696c746f3a65754076696e696369757363616d706974656c6c692e636f6d');
 
 const $content = document.getElementById('sobre');
 document.querySelector('#header-intro > .d-flex > a').onclick = function (e) {
