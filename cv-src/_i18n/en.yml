@@ -40,14 +40,13 @@ PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform fo
 MT4_JOB_DEV: Full-stack Web developer
 MT4_JOB_LEAD: Lead developer at @MediaPost
 MT4_JOB_CYBER: Cybersecurity architect
-MONTH_FEBRUARY_SHORT: Feb
-MONTH_JUNE_SHORT: Jun
-PRO_4LINUX_DESCRIPTION: "Open courses instructor (HTML, CSS, JavaScript and PhoneGap)"
+PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap in the Web Development course"
 PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform and acting as Business Development in Brazil by running meetings and demos for clients"
-PRO_LETSCODE_DESCRIPTION: "Instructor on DevOps, database and other courses, also helped to plan and create materials for the DevOps course"
-PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and  and best practices"
+PRO_CODIGOFONTE_DESCRIPTION: I wrote a few video scripts for the "Programmer Dictionary" series in one of the largest Brazilian tech channels on YouTube
+PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating exercises and packets for the DevOps course"
+PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices"
 WORKSHOPS: Workshops
-WORKSHOPS_YAMPI_DESCRIPTION: "Delivered 40 hours of trainings in microsservices and DevOps subjects, like GraphQL, gRPC, Docker, Kubernetes and CI/CD"
+WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 60 hours of trainings in microsservices and DevOps subjects, like GraphQL, gRPC, Docker, Kubernetes and CI/CD"
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ran almost 70 hours of workshops during the year about several subjects (e.g. cybersecurity, architecture, DevOps)"
 EDUCATION: Education
 EDUCATION_UNIVERSITY_DESCRIPTION: Bachelor of Computer Science
