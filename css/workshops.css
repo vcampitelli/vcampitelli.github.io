@@ -572,7 +572,7 @@ code.h2:before {
 #floating-btn {
   position: fixed;
   z-index: 2;
-  display: block;
+  display: none;
   right: 10px;
   bottom: 10px;
   width: 52px;

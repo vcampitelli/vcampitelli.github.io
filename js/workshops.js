@@ -14,6 +14,9 @@ document.getElementById('footer-1').innerHTML = unpack('283131292039333437372d32
 document.getElementById('footer-1-url').href = unpack('68747470733a2f2f6170692e77686174736170702e636f6d2f73656e643f70686f6e653d35353131393334373732303135');
 document.getElementById('footer-2').innerHTML = unpack('65754076696e696369757363616d706974656c6c692e636f6d');
 document.getElementById('footer-2-url').href = unpack('6d61696c746f3a65754076696e696369757363616d706974656c6c692e636f6d');
+const $floating = document.getElementById('floating-btn');
+$floating.href = unpack('68747470733a2f2f77612e6d652f35353131393334373732303135');
+$floating.style.display = 'block';
 
 const $content = document.getElementById('sobre');
 document.querySelector('#header-intro > .d-flex > a').onclick = function (e) {
