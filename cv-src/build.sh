@@ -46,7 +46,7 @@ fi
 # Comitting them
 if $IS_BUILD; then
     git add ${DESTINATION_FOLDER}
-    git commit -m "Build dos arquivos estáticos do CV"
+    git commit ${DESTINATION_FOLDER} -m ":construction_worker: Building $(git rev-parse HEAD)"
     git push --force origin ${BRANCH}
     rm -rf ${DESTINATION_FOLDER}
 fi
