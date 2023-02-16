@@ -1,0 +1,19 @@
+:root {
+  --bs-border-radius: 5px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.btn, .card, .form-control {
+  border-radius: var(--bs-border-radius);
+}
+#container {
+  max-width: 800px;
+}
+.card-icon {
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+}
