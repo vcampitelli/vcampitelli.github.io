@@ -1,11 +1,17 @@
 {
   "name": "vcampitelli-certificado",
+  "author": {
+    "name": "Vinícius Campitelli",
+    "email": "eu@viniciuscampitelli.com",
+    "url": "https://viniciuscampitelli.com/"
+  },
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "lint": "eslint src --ext .js,.jsx",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,6 +20,14 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
+    "eslint": "^8.34.0",
+    "eslint-config-preact": "^1.3.0",
     "vite": "^4.1.0"
+  },
+  "eslintConfig": {
+    "extends": "preact",
+    "rules": {
+      "jest/no-deprecated-functions": 0
+    }
   }
 }

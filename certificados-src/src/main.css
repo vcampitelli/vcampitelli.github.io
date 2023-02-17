@@ -17,3 +17,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1em;
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  .text-md-nowrap {
+    white-space: nowrap;
+  }
+}
