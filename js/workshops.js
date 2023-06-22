@@ -19,7 +19,7 @@ $floating.href = unpack('68747470733a2f2f77612e6d652f35353131393334373732303135'
 $floating.style.display = 'block';
 
 const $content = document.getElementById('sobre');
-document.querySelector('#header-intro > .d-flex > a').onclick = function (e) {
+document.querySelector('#header-intro > .d-flex > a').addEventListener('click', function(e) {
     if (!e.target.attributes.href) {
         return;
     }
@@ -29,13 +29,12 @@ document.querySelector('#header-intro > .d-flex > a').onclick = function (e) {
     $content.scrollIntoView({behavior: 'smooth'});
 
     return false;
-};
+});
 
-const openCalendly = function (e) {
+const openCalendly = function(e) {
     e.preventDefault();
     e.stopPropagation();
     Calendly.initPopupWidget({url: 'https://calendly.com/viniciuscampitelli/demo?hide_landing_page_details=1'});
     return false;
 };
-document.getElementById('schedule-demo').onclick = openCalendly;
-document.getElementById('schedule-demo-header').onclick = openCalendly;
+document.querySelectorAll('.schedule-demo').forEach(n => n.addEventListener('click', openCalendly));
