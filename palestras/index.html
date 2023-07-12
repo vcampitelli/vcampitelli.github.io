@@ -15,9 +15,10 @@
         <meta property="og:image" content="https://viniciuscampitelli.com/img/workshops.png">
         <link rel="canonical" href="https://viniciuscampitelli.com/palestras">
 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;900&display=swap" rel="stylesheet"
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;900&display=swap" rel="stylesheet"
               type="text/css">
-        <link href="/css/index.css?v=20221111" rel="stylesheet" type="text/css">
+        <link href="/css/common.css?v=20230711" rel="stylesheet" type="text/css">
+        <link href="/css/index.css?v=20230711" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon.png?v=20210822">
         <link rel="shortcut icon" href="/img/favicon.png?v=20210822">
@@ -37,17 +38,15 @@
         <!-- End Google Tag Manager (noscript) -->
 
         <header id="header">
-            <div class="container d-flex">
-                <div>
-                    <img src="/img/profile.jpg" alt="Vinícius Campitelli" id="header-photo">
-                </div>
-                <div id="header-intro">
-                    <p>
-                        Olá! Meu nome é <span>Vinícius Campitelli</span> e sou apaixonado por tecnologia.
-                        Me interesso principalmente por <span>arquitetura de sistemas</span>, <span>DevOps</span> e
-                        <span>segurança da informação</span>. Trabalhei por anos com redes, automação de processos,
-                        cibersegurança, email marketing e fundei uma startup de e-learning.
-                    </p>
+            <div id="header-intro" class="container d-grid" style="grid-template-columns: 1fr auto">
+                <img src="/img/profile.jpg" alt="Vinícius Campitelli" id="header-photo">
+                <p>
+                    Olá! Meu nome é <span>Vinícius Campitelli</span> e sou apaixonado por tecnologia.
+                    Me interesso principalmente por <span>arquitetura de sistemas</span>, <span>DevOps</span> e
+                    <span>segurança da informação</span>. Trabalhei por anos com redes, automações, cibersegurança,
+                    email marketing e fundei uma startup de e-learning.
+                </p>
+                <div class="mt-2" style="grid-column: 2">
                     <a href="https://github.com/vcampitelli" aria-label="GitHub" title="GitHub">
                         <svg role="img" width="16px" height="16px" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
@@ -620,15 +619,9 @@
                     <h3>Alguns materiais que escrevi</h3>
                     <ul>
                         <li>
-                            <a href="https://www.phparch.com/article/cryptography-with-libsodium/"
+                            <a href="https://fusionauth.io/blog/2023/03/13/single-sign-on-laravel-fusionauth"
                                target="_blank" rel="noopener">
-                                Cryptography with Libsodium - php[architect]
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.phparch.com/article/cryptography-101/"
-                               target="_blank" rel="noopener">
-                                Cryptography 101 - php[architect]
+                                Adding single sign-on to a Laravel app using Socialite and OIDC
                             </a>
                         </li>
                         <li>
@@ -641,6 +634,18 @@
                             <a href="https://www.phparch.com/article/applying-best-coding-practices-to-php-part-two/"
                                target="_blank" rel="noopener">
                                 Applying Best Coding Practices to PHP, Part Two - php[architect]
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.phparch.com/article/cryptography-with-libsodium/"
+                               target="_blank" rel="noopener">
+                                Cryptography with Libsodium - php[architect]
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.phparch.com/article/cryptography-101/"
+                               target="_blank" rel="noopener">
+                                Cryptography 101 - php[architect]
                             </a>
                         </li>
                     </ul>
