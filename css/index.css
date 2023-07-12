@@ -1,126 +1,8 @@
-/**
- * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-body,
-h1,
-h2,
-h3,
-h4,
-blockquote,
-ul,
-ol,
-p {
-  margin: 0;
-  padding: 0;
-}
-ul, ol {
-  margin: 15px 0 15px 30px;
-}
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-:root {
-  --body-bg: #f5f5f5;
-  --header-link-color: #114b5f;
-  --subheading-color: #888;
-  --main-color: #22333B;
-  --main-color-light: #768185;
-  --bg-black: #222;
-  --color-orange: #f96;
-  --color-orange-dark: #ff5e62;
-  --border-radius: 5px;
-}
-
-/**
- * Common layout
- */
-body {
-  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
-  letter-spacing: -0.1px;
-  color: var(--main-color);
-}
-html,
-body {
-  background: var(--body-bg);
-  scrollbar-width: thin;
-  scrollbar-color: #bbb #ddd;
-}
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-@media (min-width: 576px) {
-  .container {
-    width: 540px;
-    padding: 0;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
-}
-h1,
-h2,
-h3 {
-  font-weight: 600;
-  line-height: 1;
-}
-h1 {
-  font-size: 2.4rem;
-}
-h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: var(--header-link-color);
-}
-h2 + h3 {
-  color: var(--subheading-color);
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 1.2;
-}
 .card-header > a {
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 1;
-}
-a {
-  color: var(--color-orange);
-  text-decoration: none;
-}
-a,
-svg [fill],
-.button-watch > svg > g > path {
-  transition: all .5s ease-in-out;
-}
-a:hover,
-a:focus {
-  color: var(--color-orange-dark);
-  text-decoration: none;
-}
-.d-flex {
-  display: flex;
+  letter-spacing: -1px;
 }
 span.muted {
   color: rgba(255, 153, 102, 0.5);
@@ -138,12 +20,25 @@ span.muted {
   background: var(--color-orange);
   background: linear-gradient(-20deg, var(--color-orange), var(--color-orange-dark));
 }
+#header:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--color-orange) url(../img/workshop-presencial.jpg) center center no-repeat;
+  background-size: cover;
+  background-blend-mode: normal;
+}
 #header-photo {
   display: block;
+  align-self: center;
   border-radius: 50%;
 }
 #header-intro {
   color: #f0f0f0;
+  column-gap: 2rem;
+  line-height: 1.2;
 }
 #header-intro > p > span {
   font-weight: 900;
@@ -151,11 +46,13 @@ span.muted {
 #header-intro a > svg [fill] {
   fill: var(--header-link-color);
 }
+#header-intro a:first-of-type {
+  margin-left: -0.6em;
+}
 #header-intro a + a {
   margin-left: 0.5em;
 }
 #header-intro > p {
-  margin-bottom: 10px;
   font-weight: 600;
 }
 #header-intro a {
@@ -175,7 +72,7 @@ span.muted {
   fill: #fff;
 }
 #header-intro a > svg {
-  vertical-align: text-top;
+  vertical-align: middle;
 }
 
 /**
@@ -191,7 +88,7 @@ span.muted {
 * Workshops
 */
 #workshops > div > p {
-  font-size: 1.1em;
+  font-size: 1.15em;
   margin-bottom: 1em;
   color: var(--main-color-light);
 }
@@ -222,7 +119,7 @@ iframe, .slide-thumbnail {
 }
 .button-watch {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   padding: 8px 10px;
   color: var(--color-orange);
   text-transform: uppercase;
@@ -235,7 +132,7 @@ iframe, .slide-thumbnail {
   color: #fff;
 }
 .button-watch > svg {
-  vertical-align: sub;
+  vertical-align: middle;
 }
 .button-watch > svg > g > path,
 .button-watch > svg > g > path {
@@ -247,7 +144,7 @@ iframe, .slide-thumbnail {
 }
 .button {
   display: inline-block;
-  font-size: 0.9rem;
+  font-weight: 500;
   padding: 12px 22px;
   background: var(--color-orange);
   color: #fff;
@@ -310,7 +207,7 @@ iframe, .slide-thumbnail {
   }
   #header-intro {
     margin-top: 1rem;
-    font-size: 1.35rem;
+    font-size: 1.7rem;
   }
 
   section,
@@ -324,7 +221,7 @@ iframe, .slide-thumbnail {
   #talks > article + article {
     border-top: 1px #ddd solid;
   }
-  .d-flex {
+  .d-flex, .d-grid {
     display: block;
   }
   #links .d-flex {
@@ -355,8 +252,8 @@ iframe, .slide-thumbnail {
     width: 150px;
   }
   #header-intro {
-    margin-left: 30px;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    line-height: 1.15;
   }
 
   section,

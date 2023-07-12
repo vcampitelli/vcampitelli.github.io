@@ -19,10 +19,10 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;900&display=swap"
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap"
               rel="stylesheet">
-        <link href="/css/index.css?v=20221112" rel="stylesheet" type="text/css">
-        <link href="/css/workshops.css?v=20230105" rel="stylesheet" type="text/css">
+        <link href="/css/common.css?v=20230711" rel="stylesheet" type="text/css">
+        <link href="/css/workshops.css?v=20230711" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon.png?v=20211112">
         <link rel="shortcut icon" href="/img/favicon.png?v=20211112">
@@ -31,19 +31,11 @@
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
         <!-- Google Tag Manager -->
-        <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WP7PHWR');</script>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WP7PHWR');</script>
         <!-- End Google Tag Manager -->
     </head>
     <body>
@@ -53,6 +45,7 @@
                     height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
         <!-- End Google Tag Manager (noscript) -->
+        <div id="header-wrapper">
         <header id="header">
             <div class="container">
                 <div id="header-intro">
@@ -66,7 +59,7 @@
                         <button type="button" id="schedule-demo-header" class="schedule-demo">
                             Agende uma demonstração gratuita
                         </button>
-                        <a href="#sobre">Saiba mais &#x2794;</a>
+                        <a href="/palestras">Ver palestras &#x2794;</a>
                     </div>
                 </div>
             </div>
@@ -106,7 +99,7 @@
                                 </g>
                             </svg>
                             <div>
-                                <p class="big-lead">15 anos</p>
+                                <p class="big-lead">16 anos</p>
                                 de experiência
                             </div>
                         </div>
@@ -167,8 +160,8 @@
                         <div>
                             <h3 class="mb-1">Palestras</h3>
                             <p>
-                                Apresentei sobre vários temas em grandes eventos de tecnologia (inclusive
-                                internacionais), que você pode saber mais através dos meus slides e algumas gravações
+                                Fiz apresentações sobre diversos temas em grandes eventos de tecnologia (inclusive
+                                internacionais), que você pode saber mais através dos meus slides e gravações
                                 <a href="/palestras" target="_blank" rel="noopener">nessa página</a>
                             </p>
                         </div>
@@ -265,6 +258,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <main id="content">
             <div class="section">
@@ -603,11 +597,8 @@
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24"></rect>
-                                    <rect fill="#000000" opacity="0.3" x="2" y="3" width="20" height="18"
-                                          rx="2"></rect>
                                     <path d="M9.9486833,13.3162278 C9.81256925,13.7245699 9.43043041,14 9,14 L5,14 C4.44771525,14 4,13.5522847 4,13 C4,12.4477153 4.44771525,12 5,12 L8.27924078,12 L10.0513167,6.68377223 C10.367686,5.73466443 11.7274983,5.78688777 11.9701425,6.75746437 L13.8145063,14.1349195 L14.6055728,12.5527864 C14.7749648,12.2140024 15.1212279,12 15.5,12 L19,12 C19.5522847,12 20,12.4477153 20,13 C20,13.5522847 19.5522847,14 19,14 L16.118034,14 L14.3944272,17.4472136 C13.9792313,18.2776054 12.7550291,18.143222 12.5298575,17.2425356 L10.8627389,10.5740611 L9.9486833,13.3162278 Z"
                                           fill="#000000" fill-rule="nonzero"></path>
-                                    <circle fill="#000000" opacity="0.3" cx="19" cy="6" r="1"></circle>
                                 </g>
                             </svg>
                             <div class="block-text">
@@ -708,7 +699,7 @@
                     <code class="h2">ping</code>
                     <h2>Está interessado?</h2>
 
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center mt-2">
                         <button type="button" id="schedule-demo" class="schedule-demo">
                             Agende uma demonstração gratuita
                         </button>
@@ -854,7 +845,7 @@
             </svg>
         </a>
 
-        <script src="/js/workshops.js?v=20230105"></script>
+        <script src="/js/workshops.js?v=20230711"></script>
         <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </body>

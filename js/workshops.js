@@ -18,19 +18,6 @@ const $floating = document.getElementById('floating-btn');
 $floating.href = unpack('68747470733a2f2f77612e6d652f35353131393334373732303135');
 $floating.style.display = 'block';
 
-const $content = document.getElementById('sobre');
-document.querySelector('#header-intro > .d-flex > a').addEventListener('click', function(e) {
-    if (!e.target.attributes.href) {
-        return;
-    }
-
-    e.preventDefault();
-    e.stopPropagation();
-    $content.scrollIntoView({behavior: 'smooth'});
-
-    return false;
-});
-
 const openCalendly = function(e) {
     e.preventDefault();
     e.stopPropagation();
