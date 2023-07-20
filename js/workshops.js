@@ -20,8 +20,6 @@ $floating.style.display = 'block';
 
 const openCalendly = function(e) {
     e.preventDefault();
-    e.stopPropagation();
     Calendly.initPopupWidget({url: 'https://calendly.com/viniciuscampitelli/demo?hide_landing_page_details=1'});
-    return false;
 };
 document.querySelectorAll('.schedule-demo').forEach(n => n.addEventListener('click', openCalendly));
