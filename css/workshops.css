@@ -102,6 +102,7 @@ code.h2:before {
   margin-left: 0;
 }
 #header-intro > h1 {
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   color: #f0f0f0;
   font-weight: 700;
@@ -197,17 +198,6 @@ code.h2:before {
 @media (min-width: 769px) {
   #header-intro {
     width: 90%;
-  }
-  #about-workshops {
-    display: flex;
-    column-gap: 1.3rem;
-    margin-top: 2rem;
-  }
-  #about-workshops > img {
-    display: block;
-    flex: 1 0 65.667%;
-    height: auto;
-    margin-bottom: 0;
   }
 }
 /* Blocks */
@@ -387,8 +377,8 @@ code.h2:before {
 
 /* Contact */
 #contact {
+  display: block;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
 }
 #contact > a {
   display: flex;
@@ -432,7 +422,6 @@ code.h2:before {
   display: block;
   width: 100%;
   padding: 1rem 0.5rem;
-  font-size: 1.3rem;
   border: 2px var(--border-color) solid;
   border-radius: var(--border-radius);
   vertical-align: middle;
@@ -481,16 +470,6 @@ code.h2:before {
   }
 }
 @media (min-width: 500px) {
-  #header-intro > .d-flex {
-    max-width: 540px;
-    flex-wrap: nowrap;
-  }
-  #schedule-demo-header {
-    flex-basis: 65%;
-  }
-  #header-intro a {
-    flex-basis: 35%;
-  }
   #testimonials {
     column-gap: 2rem;
   }
@@ -501,11 +480,23 @@ code.h2:before {
 @media (min-width: 769px) {
   #header-intro > .d-flex {
     max-width: 640px;
+    flex-wrap: nowrap;
+  }
+  #schedule-demo-header {
+    flex-basis: 65%;
+  }
+  #header-intro a {
+    flex-basis: 35%;
   }
   #schedule-demo-header,
   #header-intro a {
     padding-left: 1rem;
     padding-right: 1rem;
+    font-size: 1.3rem;
+  }
+  #contact {
+    display: flex;
+    flex-wrap: wrap;
   }
   #contact > a {
     flex: 0 0 auto;
@@ -532,7 +523,7 @@ code.h2:before {
   }
 
   #header-intro > h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   #schedule-demo + p {
@@ -573,6 +564,17 @@ code.h2:before {
     max-width: none;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
+  }
+  #about-workshops {
+    display: flex;
+    column-gap: 1.3rem;
+    margin-top: 2rem;
+  }
+  #about-workshops > img {
+    display: block;
+    flex: 1 0 65.667%;
+    height: auto;
+    margin-bottom: 0;
   }
 }
 #floating-btn {
