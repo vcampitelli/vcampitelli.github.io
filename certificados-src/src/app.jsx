@@ -17,10 +17,11 @@ const Card = ({data}) => {
                     </span>
                     <div>
                         <p className="fs-5 fw-bold mb-2">Certificado válido</p>
+                        {(data.name) ? (<p className="mb-1"><b>Nome:</b> {data.name}</p>) : null}
                         <p className="mb-1"><b>Empresa:</b> {data.company}</p>
                         <p className="mb-1"><b>Conteúdo:</b> {data.subject}</p>
                         <p className="mb-1"><b>Carga horária:</b> {data.workload} horas</p>
-                        <p className="mb-0"><b>Realização:</b> {data.dates}</p>
+                        <p className="mb-0"><b>Período:</b> {data.dates}</p>
                     </div>
                 </div>
             </div>
