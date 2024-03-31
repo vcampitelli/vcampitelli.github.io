@@ -93,7 +93,7 @@ export function App() {
                 <div className="ms-md-3 mt-3 mt-md-0">
                     <h1 className="mb-md-0 lh-1">Certificado de conclusão</h1>
                     <p className="fs-5 text-white-50 mb-0">
-                        Verifique um certificado de meus treinamentos
+                        Verifique a veracidade de um certificado de meus treinamentos
                     </p>
                 </div>
             </div>
