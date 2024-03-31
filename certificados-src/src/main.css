@@ -1,9 +1,17 @@
 :root {
   --bs-border-radius: 5px;
 }
+html {
+  font-size: 20px;
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: -1px;
+}
+@media (min-width: 1200px) {
+  .h1, h1 {
+    font-size: 2rem;
+  }
 }
 .btn, .card, .form-control {
   border-radius: var(--bs-border-radius);
@@ -12,14 +20,29 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
 }
 .card-icon {
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  line-height: 1.2em;
   text-align: center;
+  vertical-align: middle;
 }
 
 @media (min-width: 768px) {
   .text-md-nowrap {
     white-space: nowrap;
   }
+}
+
+#certificate-details > div + div {
+  margin-top: 1em;
+}
+.certificate-detail > b {
+  display: block;
+  font-variant: small-caps;
+  color: var(--bs-light);
+}
+
+footer {
+  border-top: 1px var(--bs-secondary) solid;
 }
