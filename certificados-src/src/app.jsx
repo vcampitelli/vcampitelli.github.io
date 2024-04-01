@@ -1,4 +1,4 @@
-import {useState} from 'preact/hooks';
+import {useEffect, useState} from 'preact/hooks';
 import get from 'axios';
 import favicon from '/favicon.png';
 import API_URL from './settings.js';
@@ -64,25 +64,49 @@ export function App() {
     const [code, setCode] = useState('');
     const [data, setData] = useState(null);
 
-    const handleSubmit = (e) => {
+    useEffect(() => {
+        const handleUrlChange = () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                setCode(hash);
+                doHandleSubmit(hash);
+            }
+        };
+
+        window.addEventListener('hashchange', handleUrlChange);
+        handleUrlChange();
+
+        return () => {
+            window.removeEventListener('hashchange', handleUrlChange);
+        };
+    }, []);
+
+    const handleSubmit = (e = undefined) => {
         if (code) {
-            setLoading(true);
-            get(`${API_URL}/${code}`).then((response) => {
-                setData({
-                    status: true,
-                    ...response.data,
-                });
-            }).catch((err) => {
-                setData({
-                    status: false,
-                });
-                console.error(err);
-            }).finally(() => {
-                setLoading(false);
-            });
+            window.location.assign(`#${code}`);
+            doHandleSubmit(code);
         }
-        e.preventDefault();
+        if (e !== undefined) {
+            e.preventDefault();
+        }
     };
+
+    const doHandleSubmit = (code) => {
+        setLoading(true);
+        get(`${API_URL}/${code}`).then((response) => {
+            setData({
+                status: true,
+                ...response.data,
+            });
+        }).catch((err) => {
+            setData({
+                status: false,
+            });
+            console.error(err);
+        }).finally(() => {
+            setLoading(false);
+        });
+    }
 
     return (
         <div id="container" className="container my-5 py-5">
