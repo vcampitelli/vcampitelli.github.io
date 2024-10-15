@@ -101,13 +101,26 @@ code.h2:before {
 #header-intro {
   margin-left: 0;
 }
+
 #header-intro > h1 {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   color: #f0f0f0;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.3;
+  padding-top: 32px;
+  letter-spacing: -1px;
 }
+
+#header-intro > h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
 #header-intro > h1::-moz-selection,
 #header-intro > h1::selection {
   color: #fff;
@@ -275,6 +288,12 @@ code.h2:before {
   grid-row: 1 / 1;
 }
 @media (max-width: 575.99px) {
+  #header-intro > h1 {
+    font-size: 1.5rem;
+  }
+  #header-intro > h2 {
+    letter-spacing: -1px;
+  }
   #header-intro > h1 > br {
     display: none;
   }
@@ -462,9 +481,6 @@ code.h2:before {
 
 /* Responsiveness */
 @media (min-width: 341px) {
-  #header {
-    padding-top: 3rem;
-  }
   .text-center > .schedule-demo {
     width: 100%;
   }
@@ -523,7 +539,7 @@ code.h2:before {
   }
 
   #header-intro > h1 {
-    font-size: 5rem;
+    font-size: 4.2rem;
   }
 
   #schedule-demo + p {
@@ -542,8 +558,8 @@ code.h2:before {
   }
 
   #header-intro > h1 {
-    font-size: 6rem;
-    margin-bottom: 2rem;
+    font-size: 5rem;
+    /* margin-bottom: 2rem; */
   }
 
   #about-me-box {
