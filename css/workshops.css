@@ -158,6 +158,71 @@ code.h2:before {
 #topics > .topics-image > video {
   display: none;
 }
+
+
+#topics-bullets-points {
+  gap: 36px;
+}
+#topics-bullets-points > ul {
+  list-style: none;
+  width: 100%;
+  padding-top: 16px;
+}
+#topics-bullets-points > ul li {
+  position: relative;
+  padding: 5px 0 5px 20px;
+}
+#topics-bullets-points > ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #FF9966;
+  border-radius: 50%;
+  animation: pulsar 1s infinite;
+}
+#topics-bullets-points > ul li::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #FF5B09;
+  border-radius: 50%;
+}
+
+@keyframes pulsar {
+  0% {
+      transform: translateY(-50%) scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: translateY(-50%) scale(1.5);
+      opacity: 0.7;
+  }
+  100% {
+      transform: translateY(-50%) scale(1.5);
+      opacity: 0;
+  }
+}
+#topics-bullets-points-title {
+  max-width: 330px;
+  width: 100%;
+}
+#topics-bullets-points-title > h2 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+#topics-bullets-points-title > p {
+  text-align: justify;
+}
+
+
 @media (min-width: 1201px) {
   #topics {
     display: flex;
