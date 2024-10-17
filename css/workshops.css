@@ -159,7 +159,6 @@ code.h2:before {
   display: none;
 }
 
-
 #topics-bullets-points {
   gap: 36px;
 }
@@ -372,11 +371,21 @@ code.h2:before {
   #about-me-box {
     border-radius: 0;
   }
+  #topics-bullets-points {
+    flex-direction: column;
+    gap: 16px;
+  }
+  #topics-bullets-points > ul {
+    margin: 0;
+  }
 }
 @media (max-width: 769px) {
   #about-me > .container {
     padding-left: 0;
     padding-right: 0;
+  }
+  #topics-bullets-points-title > h2 {
+    font-size: 2.5rem;
   }
 }
 .about-me-link {
