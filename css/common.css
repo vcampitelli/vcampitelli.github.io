@@ -37,7 +37,7 @@ body {
   --bg-black: #222;
   --color-orange: #f96;
   --color-orange-dark: #fe5f55;
-  --border-radius: 5px;
+  --border-radius: 0.5em;
 }
 
 /**

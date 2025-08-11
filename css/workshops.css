@@ -5,6 +5,7 @@
 }
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 h1 {
   font-size: 3rem;
@@ -108,10 +109,39 @@ code.h2:before {
   font-weight: 700;
   line-height: 1;
 }
+#header-intro > h1:first-of-type {
+  margin-bottom: 0 !important;
+}
 #header-intro > h1::-moz-selection,
 #header-intro > h1::selection {
   color: #fff;
   background: var(--header-link-color);
+}
+
+#header-slider {
+  height: 1em;
+  overflow: hidden;
+}
+#header-slider > span {
+  position: relative;
+  bottom: 0;
+  animation: slideUp 12s ease-in infinite;
+  color: var(--color-orange-dark);
+  font-weight: 900;
+}
+#header-slider > span:is(:hover, :focus) {
+  animation-play-state: paused;
+}
+#header-slider > span > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@keyframes slideUp {
+  0% { bottom: 0; }     32% { bottom: 0; }
+  33% { bottom: 100%; } 65% { bottom: 100%; }
+  66% { bottom: 200%; } 99% { bottom: 200%; }
+  100% { bottom: 0; }
 }
 
 /* Topics */
@@ -120,6 +150,8 @@ code.h2:before {
   padding: 1.5rem;
   background-color: #eaeaea;
   border-radius: var(--border-radius);
+}
+#topics > .topics-list > div + div {
   margin-top: 1rem;
 }
 #topics > .topics-list > div > div {
@@ -156,6 +188,7 @@ code.h2:before {
   }
   #topics > .topics-image > video {
     width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
     border-radius: var(--border-radius);
@@ -164,11 +197,8 @@ code.h2:before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-basis: 33%;
+    flex-basis: 40%;
     flex-shrink: 0;
-  }
-  #topics > .topics-list > div {
-    margin-top: 0;
   }
 }
 
@@ -194,11 +224,6 @@ code.h2:before {
   background: #2a2a2a;
   padding: 1rem 1.5rem;
   border-radius: var(--border-radius);
-}
-@media (min-width: 769px) {
-  #header-intro {
-    width: 90%;
-  }
 }
 /* Blocks */
 .blocks {
@@ -243,7 +268,7 @@ code.h2:before {
 #about-me-box {
   padding: 2rem;
   background: #fff;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   position: relative;
 }
 #about-me-stats > div {
@@ -543,6 +568,7 @@ code.h2:before {
 
   #header-intro > h1 {
     font-size: 6rem;
+    letter-spacing: -5px;
     margin-bottom: 2rem;
   }
 
