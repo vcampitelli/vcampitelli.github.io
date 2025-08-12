@@ -2,6 +2,7 @@
 :root {
   --header-link-color: #fe5f55;
   --purple: #41295a;
+  --purple-dark: #2f0743;
 }
 html {
   scroll-behavior: smooth;
@@ -12,7 +13,7 @@ h1 {
   line-height: 1.5;
 }
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   margin: 10px 0 0;
 }
@@ -100,9 +101,7 @@ code.h2:before {
 /* Header */
 #header-wrapper {
   text-shadow: none;
-  background: var(--purple);
-  background: -webkit-radial-gradient(circle at 10% 15%, var(--purple), #2f0743);
-  background: radial-gradient( circle farthest-corner at 10% 20%, var(--purple), #2f0743);
+  background: var(--purple) linear-gradient(to top, var(--purple), var(--purple-dark));
 }
 #header-intro {
   margin-left: 0;
@@ -127,7 +126,56 @@ code.h2:before {
   color: var(--color-orange-dark);
   font-weight: 900;
 }
-@media (max-width: 1200.99px) {
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  font-size: 0.8em;
+  background: var(--purple-dark);
+  will-change: background-color;
+  transition: background 0.5s;
+}
+#navbar.scrolled {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#navbar > .container {
+  display: flex;
+  justify-content: space-between;
+}
+#navbar > .container > a {
+  font-weight: 700;
+}
+#navbar > .container > a > img {
+  height: 1.5em;
+  vertical-align: text-bottom;
+}
+#navbar > .container > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: end;
+  list-style: none;
+}
+#navbar > .container > ul > li > a,
+#navbar > .container > a {
+  display: block;
+  padding: 16px 10px;
+}
+#navbar > .container > ul > li > a:target {
+  font-weight: 900;
+}
+#navbar > .container > ul > li > a {
+  color: #aaaaaa;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#navbar > .container > ul > li > a:is(:hover, :focus) {
+  color: var(--color-orange-dark);
+}
+@media (max-width: 1199.99px) {
   #header-slider > span {
     display: grid;
     grid-template-columns: 1fr;
@@ -192,7 +240,7 @@ code.h2:before {
 #topics > .topics-list > div > svg path {
   fill: var(--color-orange);
 }
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   #header-slider {
     height: 1em;
     overflow: hidden;
@@ -230,6 +278,14 @@ code.h2:before {
   }
   #topics > .topics-list > div + div {
     margin-top: 0;
+  }
+}
+@media (max-width: 991.99px) {
+  #navbar {
+    display: none;
+  }
+  #header-intro > h1 > br {
+    display: none;
   }
 }
 
@@ -331,10 +387,7 @@ code.h2:before {
   grid-row: 1 / 1;
 }
 @media (max-width: 575.99px) {
-  #header-intro > h1 > br {
-    display: none;
-  }
-  #about-me {
+  #sobre {
     padding-bottom: 0;
   }
   #about-me-box {
@@ -342,7 +395,7 @@ code.h2:before {
   }
 }
 @media (max-width: 769px) {
-  #about-me > .container {
+  #sobre > .container {
     padding-left: 0;
     padding-right: 0;
   }
@@ -583,7 +636,7 @@ code.h2:before {
     text-transform: lowercase;
   }
 }
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   #contact > a {
     flex: 0 0 auto;
     width: 33.33333333%;

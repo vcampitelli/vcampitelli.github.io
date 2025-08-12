@@ -23,3 +23,13 @@ const openCalendly = function(e) {
     Calendly.initPopupWidget({url: 'https://calendly.com/viniciuscampitelli/demo?hide_landing_page_details=1'});
 };
 document.querySelectorAll('.schedule-demo').forEach(n => n.addEventListener('click', openCalendly));
+
+const $navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > $navbar.offsetHeight) {
+        $navbar.classList.add('scrolled');
+        return;
+    }
+
+    $navbar.classList.remove('scrolled');
+});
