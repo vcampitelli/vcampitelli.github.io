@@ -1,5 +1,5 @@
 LOCATION: Sao Paulo, Brazil
-AGE: 31 years old
+AGE: 33 years old
 ABOUT: About
 ABOUT_INTRO: "My name is <b>Vinícius Campitelli</b> and I am a passionate entrepreneur and IT enthusiast. I started programming when I was 14 years old and I haven't stopped since.
               I have developed projects in several areas, including process automation, email marketing and cybersecurity. I have also <b>created my own startup</b>, an e-learning SaaS platform named Curseduca, and <b>spoken at several tech conferences</b>. I'm now an <b>IT Consultant</b> and <b>Workshop Instructor</b>."
@@ -37,17 +37,20 @@ MONTH_OCTOBER: october
 MONTH_NOVEMBER: november
 PROFESSIONAL: Professional
 PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for creating and selling digital products and online courses"
-MT4_JOB_DEV: Full-stack Web developer
+MT4_JOB_DEV: Full-stack Web developer and architect
 MT4_JOB_LEAD: Lead developer at @MediaPost
-MT4_JOB_CYBER: Cybersecurity architect
+MT4_JOB_CYBER: Cybersecurity engineer at segura
 PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap in the Web Development course"
 PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform and acting as Business Development in Brazil by running meetings and demos for clients"
 PRO_CODIGOFONTE_DESCRIPTION: I wrote a few video scripts for the "Programmer Dictionary" series in one of the largest Brazilian tech channels on YouTube
 PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating exercises and packets for the DevOps course"
-PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices"
+PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions"
+PRO_FUSIONAUTH_DESCRIPTION: "Working as Developer Advocate, I've created several articles and posts on the blog about the usage of the platform, as well as creating libraries in various languages for a quick start to the API"
 WORKSHOPS: Workshops
-WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 60 hours of trainings in microsservices and DevOps subjects, like GraphQL, gRPC, Docker, Kubernetes and CI/CD"
+WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 100 hours of trainings in microservices, DevOps, Linux, Cloud, tests, coding best practices and more"
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ran almost 70 hours of workshops during the year about several subjects (e.g. cybersecurity, architecture, DevOps)"
+WORKSHOPS_ANALITICA_DESCRIPTION: "Conducted over 40 hours of training on Git and GitLab for two teams, enabling the company to proceed with a government procurement process"
+WORKSHOPS_REDEPARCERIAS_DESCRIPTION: "Led a company-wide information security training, presenting processes and core concepts to strengthen policies, mitigate risks, and ensure enterprise data protection and compliance"
 EDUCATION: Education
 EDUCATION_UNIVERSITY_DESCRIPTION: Bachelor of Computer Science
 OPEN_COURSES: Featured courses
@@ -66,6 +69,9 @@ TALKS_DESCRIPTION: "I spoke at great teach conferences in Brazil about PHP devel
 TALKS_WATCH: watch
 TALKS_LIBSODIUM_MEETUP: "Libsodium: Modern cryptography in PHP"
 TALKS_PHPSP_LIVE_SECURITY: "PHPSP Live #21: Why worry about Security?"
+TALKS_PHPSP_LIVE_DOCKER: "PHPSP Live! #30 Practical Docker: Creating a Complete Development Environment"
+TALKS_JWT: "What you need to know about authentication with JWT"
+CURRENT: current
 PORTUGUESE: Portuguese
 ENGLISH: English
 SPANISH: Spanish

@@ -1,5 +1,5 @@
 LOCATION: São Paulo - SP
-AGE: 31 anos
+AGE: 33 anos
 ABOUT: Sobre
 ABOUT_INTRO: "Olá! Meu nome é <b>Vinícius Campitelli</b> e sou apaixonado por empreendedorismo, educação e tecnologia. Comecei a programar com 14 anos e desde então nunca mais parei.
               <b>Fundei minha própria startup</b> chamada Curseduca, uma plataforma SaaS de e-learning, <b>ministro workshops</b> para empresas e <b>palestras</b> em eventos de tecnologia, além de prestar <b>consultoria</b> na área de TI."
@@ -45,9 +45,12 @@ PRO_OTTERA_DESCRIPTION: "Engenheiro de Software na plataforma de streaming e atu
 PRO_CODIGOFONTE_DESCRIPTION: Escrevi alguns roteiros para a série "Dicionário do Programador" de um dos maiores canais de YouTube de tecnologia
 PRO_LETSCODE_DESCRIPTION: "Instrutor no curso de DevOps, além do planejamento, criação de materiais e exercícios para os módulos"
 PRO_YAMPI_CONSULTANCY_DESCRIPTION: "Consultoria em TI, auxiliando em tomadas de decisão, definições de arquiteturas, segurança e boas práticas em geral"
+PRO_FUSIONAUTH_DESCRIPTION: "Trabalhei como Developer Relations, criando artigos e postagens no blog sobre o uso da plataforma, além da criação de bibliotecas em diversas linguagens para integração com a API"
 WORKSHOPS: Treinamentos
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ministrei setenta horas de treinamentos sobre segurança, criptografia, arquiteturas de sistemas, microsserviços, e DevOps, entre outros assuntos"
-WORKSHOPS_YAMPI_DESCRIPTION: "Mais de 60 horas de workshops sobre microsserviços <em>(como REST, GraphQL, gRPC, Sagas, CQRS e Event Sourcing)</em> e DevOps <em>(Docker, Kubernetes e CI/CD)</em>"
+WORKSHOPS_YAMPI_DESCRIPTION: "Mais de 100 horas de workshops sobre microsserviços, DevOps, Linux, Cloud, boas práticas de programação, testes e mais"
+WORKSHOPS_ANALITICA_DESCRIPTION: "Treinamento de 40 horas para duas turmas sobre o uso de Git e GitLab, necessário para o ganho de uma licitação"
+WORKSHOPS_REDEPARCERIA_DESCRIPTION: "Liderei um treinamento de segurança da informação para toda a empresa, apresentando processos e conceitos básicos para fortalecer políticas, mitigar riscos e garantir a proteção e conformidade de dados"
 EDUCATION: Educação
 EDUCATION_UNIVERSITY_DESCRIPTION: Graduado em Bacharelado em Ciência da Computação
 OPEN_COURSES: Cursos em destaque
@@ -66,6 +69,9 @@ TALKS_DESCRIPTION: "Ministrei palestras sobre PHP, cibersegurança, arquitetura,
 TALKS_WATCH: assistir
 TALKS_LIBSODIUM_MEETUP: "Libsodium: Criptografia moderna no PHP"
 TALKS_PHPSP_LIVE_SECURITY: "PHPSP Live! #21 PHPapo: Segurança, por que se preocupar?"
+TALKS_PHPSP_LIVE_DOCKER: "PHPSP Live! #30 Docker na prática: Criando um ambiente de desenvolvimento completo"
+TALKS_JWT: "O que você precisa saber sobre autenticação com JWT"
+CURRENT: atualmente
 PORTUGUESE: Português
 ENGLISH: Inglês
 SPANISH: Espanhol
