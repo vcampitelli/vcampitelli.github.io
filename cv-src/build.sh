@@ -15,7 +15,7 @@ cd "$(dirname "$0")/../"
 COMMAND="bundle exec jekyll"
 case "$1" in
     "serve")
-        COMMAND+=" serve -w -H 0.0.0.0"
+        COMMAND+=" serve -w -H 0.0.0.0 --trace"
         ;;
 
     *)

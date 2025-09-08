@@ -9,9 +9,9 @@ ABOUT_JOB_CONSULTING: Consultoria em TI
 ABOUT_JOB_DEVELOPER: Desenvolvimento de aplicações PHP
 ABOUT_JOB_ADVOCATE: Developer Relations/Advocate
 SKILLS: Habilidades
-SKILL_LANGUAGES: Linguagens
 SKILL_DB: Banco de Dados
-SKILL_CLOUD: Gestão de Cloud
+SKILL_TECHNOLOGIES: Tecnologias
+SKILL_CLOUD: Cloud
 SKILL_SYSTEMS_ARCH: Arquitetura de sistemas
 SKILL_CYBERSECURITY: Cibersegurança
 SKILL_CRYPTOGRAPHY: Criptografia
@@ -21,7 +21,6 @@ SKILL_ENGINEERING: Engenharia
 SKILL_SOFTWARE_ENGINEERING: Engenharia de Software
 SKILL_DB_MODELING: Modelagem de Banco de Dados
 SKILL_INFORMATION_SECURITY: Segurança da Informação
-SKILL_TECH: Tecnologias
 SKILL_INFRA: Infraestrutura
 SKILL_NETWORKING: Redes
 SKILL_MANAGEMENT: Gestão
@@ -29,12 +28,6 @@ SKILL_PEOPLE_MANAGEMENT: Gestão de Pessoas
 SKILL_PROCESS_MANAGEMENT: Gestão de Projetos
 SKILL_LEADERSHIP: Liderança
 SKILL_AGILE: Metodologias Ágeis
-TIMELINE: Linha do tempo
-MONTH_JANUARY: janeiro
-MONTH_FEBRUARY: fevereiro
-MONTH_SEPTEMBER: setembro
-MONTH_OCTOBER: outubro
-MONTH_NOVEMBER: novembro
 PROFESSIONAL: Profissional
 PRO_CURSEDUCA_DESCRIPTION: "Co-fundador e CTO de uma plataforma SaaS de e-learning para produtores de conteúdos e treinamentos empresariais"
 MT4_JOB_DEV: Desenvolvedor Web Full-stack
