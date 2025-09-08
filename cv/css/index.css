@@ -423,7 +423,6 @@ footer > a {
   .d-screen-only {
     display: none !important;
   }
-  #section-pro-education,
   #talks-wrapper {
     margin-top: 0;
     page-break-before: always;
