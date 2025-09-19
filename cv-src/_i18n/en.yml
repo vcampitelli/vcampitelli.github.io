@@ -2,7 +2,7 @@ LOCATION: Sao Paulo, Brazil
 AGE: 33 years old
 ABOUT: About
 ABOUT_INTRO: "My name is <b>Vinícius Campitelli</b> and I am a passionate entrepreneur and a highly motivated full-stack engineer with a strong background in creating innovative Web applications.
-              I started programming when I was 14 years old and I haven't stopped since, developing projects in several areas, including process automation, email marketing and cybersecurity. I have also <b>founded a startup</b>, an e-learning SaaS platform named Curseduca, and <b>spoken at several tech conferences</b>. I'm now an <b>IT Consultant</b> and <b>Trainings Instructor</b>."
+              I started programming when I was 14 years old and I haven't stopped since, developing projects in several areas, including process automation, email marketing and cybersecurity. I have also <b>founded a startup</b>, an e-learning SaaS platform named Curseduca, and <b>spoken at several tech conferences</b>. I'm now an <b>IT Consultant</b> and <b>Training Instructor</b>."
 ABOUT_JOB_OPPORTUNITIES: "I am looking at job opportunities to work as:"
 ABOUT_JOB_CONTENT_CREATION: "Content creator <em>(e.g. articles, trainings and courses)</em>"
 ABOUT_JOB_CONSULTING: IT Consultant
@@ -24,19 +24,20 @@ SKILL_INFORMATION_SECURITY: Information Security
 SKILL_INFRA: Infrastructure
 SKILL_NETWORKING: Networking
 SKILL_MANAGEMENT: Management
-SKILL_PEOPLE_MANAGEMENT: Team Management
+SKILL_PRODUCT_MANAGEMENT: Product Manager
+SKILL_PEOPLE_MANAGEMENT: Team Manager
 SKILL_PROCESS_MANAGEMENT: Process Management
 SKILL_LEADERSHIP: Leadership
 SKILL_AGILE: Agile methods
 PROFESSIONAL: Professional
 PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for digital products and online courses"
-MT4_JOB_DEV: Full-stack Web developer and solutions architect
-MT4_JOB_LEAD: Lead developer at @MediaPost
+MT4_JOB_DEV: Full-stack developer (PHP, HTML, CSS, JavaScript, SQL, NoSQl), DevOps engineer (AWS and on-premises solutions), and solutions architect
+MT4_JOB_LEAD: Lead developer and team lead at @MediaPost, an e-mail marketing platform
 MT4_JOB_CYBER: Cybersecurity engineer at segura
-PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap in the Web Development course"
-PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform and acting as Business Development in Brazil by running meetings and demos for clients"
+PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap at the Web Development course"
+PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform (Drupal CMS) and acting as Business Development in Brazil by running meetings and demos for clients"
 PRO_CODIGOFONTE_DESCRIPTION: I wrote a few video scripts for the "Programmer Dictionary" series in one of the largest Brazilian tech channels on YouTube
-PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating exercises and packets for the DevOps course"
+PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating lessons and exercises for the DevOps course"
 PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions"
 PRO_FUSIONAUTH_DESCRIPTION: "Working as Developer Advocate / Developer Relations, I've created articles and blog posts about the CIAM platform, and developed libraries in several languages to demonstrate real-world usage of the SDKs"
 WORKSHOPS: Workshops
