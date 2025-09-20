@@ -81,7 +81,6 @@ body {
 }
 #intro {
   background: #eee;
-  color: #eee;
   align-items: center;
   justify-content: space-between;
   border-radius: 7px;
@@ -90,13 +89,11 @@ body {
   display: flex;
   align-items: center;
 }
-#intro > header > span {
-  font-size: 5px;
-}
 #intro > header > img {
   width: 60px;
   background: #fff;
   border-radius: 50%;
+  margin-right: 1rem;
 }
 #links {
   display: flex;
