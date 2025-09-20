@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet" type="text/css">
-        <link href="{{ "/css/index.css?d=202201241100" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
+        <link href="{{ "/css/index.css?d=20250920" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
         <link href="{{ "/css/font.css?d=202010081830" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon.png">
@@ -21,29 +21,31 @@
             <div id="intro" class="d-flex">
                 <header>
                     <img src="{{ "/img/profile.jpg" | prepend: site.baseurl_root }}" alt="Vinícius Campitelli">
-                    <h1 id="title">
-                        Vinícius<br>
-                        <span>Campitelli</span>
+                    <span>Name:</span>
+                    <h1 id="name" title="Vinícius Campitelli">
+                        Vinícius <span>Campitelli</span>
                     </h1>
                 </header>
-                <div class="ml-md-2 mt-2 mt-md-0">
-                    <i class="icon-location"></i> {% t LOCATION %}<br>
-                    <i class="icon-hourglass-3"></i> {% t AGE %}
+            </div>
+            <div id="links" class="mt-2">
+                <div>
+                    <i class="icon-location"></i> {% t LOCATION %}: {% t LOCATION_VALUE %}<br>
+                    <i class="icon-hourglass-3"></i> {% t AGE %}: {% t AGE_VALUE %}
                 </div>
                 <div class="ml-md-2">
-                    <a href="mailto:eu@viniciuscampitelli.com" title="Email: eu@viniciuscampitelli.com">
-                        <i class="icon-envelope"></i> eu@viniciuscampitelli.com
+                    <a href="mailto:eu@viniciuscampitelli.com" title="Email">
+                        <i class="icon-envelope"></i> Email: eu@viniciuscampitelli.com
                     </a>
-                    <a href="https://br.linkedin.com/in/viniciuscampitelli" title="LinkedIn: Vinícius Campitelli">
-                        <i class="icon-linkedin-square"></i> Vinícius Campitelli
+                    <a href="https://br.linkedin.com/in/viniciuscampitelli" title="LinkedIn">
+                        <i class="icon-linkedin-square"></i> LinkedIn: Vinícius Campitelli
                     </a>
                 </div>
                 <div class="ml-md-2">
-                    <a href="https://twitter.com/vcampitelli" title="Twitter: @vcampitelli">
-                        <i class="icon-twitter-square"></i> vcampitelli
+                    <a href="https://twitter.com/vcampitelli" title="Twitter">
+                        <i class="icon-twitter-square"></i> Twitter: @vcampitelli
                     </a>
-                    <a href="https://github.com/vcampitelli" title="GitHub: @vcampitelli">
-                        <i class="icon-github-square"></i> vcampitelli
+                    <a href="https://github.com/vcampitelli" title="GitHub">
+                        <i class="icon-github-square"></i> GitHub: @vcampitelli
                     </a>
                 </div>
             </div>
@@ -57,156 +59,152 @@
                 </section>
 
                 <section id="section-pro-education">
-                    <div class="d-flex half">
-                        <div>
-                            <section>
-                                <h1>{% t PROFESSIONAL %}</h1>
+                    <div>
+                        <section>
+                            <h1>{% t PROFESSIONAL %}</h1>
 
-                                <div class="w-half">
-                                    <p>
-                                        <span class="bold">Yampi</span>
-                                        <span class="small text-muted">(2022 - {% t CURRENT %})</span>
-                                    </p>
-                                    <p>{% t PRO_YAMPI_CONSULTANCY_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">FusionAuth</span>
-                                        <span class="small text-muted">(2023 - 2024)</span>
-                                    </p>
-                                    <p>{% t PRO_FUSIONAUTH_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">Ada / Let's Code</span>
-                                        <span class="small text-muted">(2022)</span>
-                                    </p>
-                                    <p>{% t PRO_LETSCODE_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">OTTera</span>
-                                        <span class="small text-muted">(2021 - 2022)</span>
-                                    </p>
-                                    <p>{% t PRO_OTTERA_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">Código Fonte TV</span>
-                                        <span class="small text-muted">(2021)</span>
-                                    </p>
-                                    <p>{% t PRO_CODIGOFONTE_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">4Linux</span>
-                                        <span class="small text-muted">(2015)</span>
-                                    </p>
-                                    <p>{% t PRO_4LINUX_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">Curseduca</span>
-                                        <span class="small text-muted">(2013 - 2020)</span>
-                                    </p>
-                                    <p>{% t PRO_CURSEDUCA_DESCRIPTION %}</p>
-                                </div>
-                                <div class="mt-2 w-half">
-                                    <p>
-                                        <span class="bold">MT4 Tecnologia / segura</span>
-                                        <span class="small text-muted">(2013 - 2019)</span>
-                                    </p>
-                                    <p>&bull; {% t MT4_JOB_DEV %}</p>
-                                    <p>&bull; {% t MT4_JOB_LEAD %}</p>
-                                    <p>&bull; {% t MT4_JOB_CYBER %}</p>
-                                </div>
-                            </section>
-                        </div>
+                            <div class="w-half">
+                                <p>
+                                    <span class="bold">Yampi</span>
+                                    <span class="small text-muted">(2022 - {% t CURRENT %})</span>
+                                </p>
+                                <p>{% t PRO_YAMPI_CONSULTANCY_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">FusionAuth</span>
+                                    <span class="small text-muted">(2023 - 2024)</span>
+                                </p>
+                                <p>{% t PRO_FUSIONAUTH_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">Ada / Let's Code</span>
+                                    <span class="small text-muted">(2022)</span>
+                                </p>
+                                <p>{% t PRO_LETSCODE_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">OTTera</span>
+                                    <span class="small text-muted">(2021 - 2022)</span>
+                                </p>
+                                <p>{% t PRO_OTTERA_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">Código Fonte TV</span>
+                                    <span class="small text-muted">(2021)</span>
+                                </p>
+                                <p>{% t PRO_CODIGOFONTE_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">4Linux</span>
+                                    <span class="small text-muted">(2015)</span>
+                                </p>
+                                <p>{% t PRO_4LINUX_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">Curseduca</span>
+                                    <span class="small text-muted">(2013 - 2020)</span>
+                                </p>
+                                <p>{% t PRO_CURSEDUCA_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="bold">MT4 Tecnologia / segura</span>
+                                    <span class="small text-muted">(2013 - 2019)</span>
+                                </p>
+                                <p>&bull; {% t MT4_JOB_DEV %}</p>
+                                <p>&bull; {% t MT4_JOB_LEAD %}</p>
+                                <p>&bull; {% t MT4_JOB_CYBER %}</p>
+                            </div>
+                        </section>
 
-                        <div class="ml-md-4">
-                            <section>
-                                <h1>{% t WORKSHOPS %}</h1>
+                        <section id="workshops-section">
+                            <h1>{% t WORKSHOPS %}</h1>
 
+                            <div>
+                                <p>
+                                    <span class="bold">Yampi</span>
+                                    <span class="small text-muted">(2022 - {% t CURRENT %})</span>
+                                </p>
+                                <p>{% t WORKSHOPS_YAMPI_DESCRIPTION %}</p>
+                            </div>
+
+                            <div class="mt-1">
+                                <p>
+                                    <span class="bold">Rede Parcerias</span>
+                                    <span class="small text-muted">(2025)</span>
+                                </p>
+                                <p>{% t WORKSHOPS_REDEPARCERIAS_DESCRIPTION %}</p>
+                            </div>
+
+                            <div class="mt-1">
+                                <p>
+                                    <span class="bold">Analítica Soluções</span>
+                                    <span class="small text-muted">(2023)</span>
+                                </p>
+                                <p>{% t WORKSHOPS_ANALITICA_DESCRIPTION %}</p>
+                            </div>
+
+                            <div class="mt-1">
+                                <p>
+                                    <span class="bold">Picolotec</span>
+                                    <span class="small text-muted">(2021)</span>
+                                </p>
+                                <p>{% t WORKSHOPS_PICOLOTEC_DESCRIPTION %}</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h1>{% t EDUCATION %}</h1>
+
+                            <div>
+                                <p>
+                                    <span class="bold">Universidade Federal de São Carlos</span>
+                                    <span class="small text-muted">(2009-2012)</span>
+                                </p>
+                                <p>{% t EDUCATION_UNIVERSITY_DESCRIPTION %}</p>
+                            </div>
+
+                            <div class="mt-1">
+                                <p class="bold">{% t OPEN_COURSES %}</p>
+                                <div id="featured-courses" class="d-flex">
+                                    <ul>
+                                        <li>
+                                            <p class="line-height-small">LINCE <span>@ MasterMind SP</span></p>
+                                            <p class="smaller line-height-small">
+                                                <span>{% t COURSE_LINCE_DESCRIPTION %}</span>
+                                            </p>
+                                        </li>
+                                        <li>{% t COURSE_NLP %} <span>@ Ápice</span></li>
+                                        <li>{% t COURSE_SALES %} <span>@ Insper</span></li>
+                                        <li>{% t COURSE_SPEAKING %} <span>@ The Speaker</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h1>{% t LANGUAGES %}</h1>
+                            <div class="d-flex">
                                 <div>
-                                    <p>
-                                        <span class="bold">Yampi</span>
-                                        <span class="small text-muted">(2022 - {% t CURRENT %})</span>
-                                    </p>
-                                    <p>{% t WORKSHOPS_YAMPI_DESCRIPTION %}</p>
+                                    <p class="bold">{% t PORTUGUESE %}</p>
+                                    {% t LANGUAGE_NATIVE %}
                                 </div>
-
-                                <div class="mt-2">
-                                    <p>
-                                        <span class="bold">Rede Parcerias</span>
-                                        <span class="small text-muted">(2025)</span>
-                                    </p>
-                                    <p>{% t WORKSHOPS_REDEPARCERIAS_DESCRIPTION %}</p>
+                                <div class="ml-md-2">
+                                    <p class="bold">{% t ENGLISH %}</p>
+                                    {% t LANGUAGE_FLUENT %}
                                 </div>
-
-                                <div class="mt-2">
-                                    <p>
-                                        <span class="bold">Analítica Soluções</span>
-                                        <span class="small text-muted">(2023)</span>
-                                    </p>
-                                    <p>{% t WORKSHOPS_ANALITICA_DESCRIPTION %}</p>
+                                <div class="ml-md-2">
+                                    <p class="bold">{% t SPANISH %}</p>
+                                    {%t LANGUAGE_BASIC %}
                                 </div>
-
-                                <div class="mt-2">
-                                    <p>
-                                        <span class="bold">Picolotec</span>
-                                        <span class="small text-muted">(2021)</span>
-                                    </p>
-                                    <p>{% t WORKSHOPS_PICOLOTEC_DESCRIPTION %}</p>
-                                </div>
-                            </section>
-
-                            <section>
-                                <h1>{% t EDUCATION %}</h1>
-
-                                <div>
-                                    <p>
-                                        <span class="bold">Universidade Federal de São Carlos</span>
-                                        <span class="small text-muted">(2009-2012)</span>
-                                    </p>
-                                    <p>{% t EDUCATION_UNIVERSITY_DESCRIPTION %}</p>
-                                </div>
-
-                                <div class="mt-2">
-                                    <p class="bold">{% t OPEN_COURSES %}</p>
-                                    <div id="featured-courses" class="d-flex">
-                                        <ul>
-                                            <li>
-                                                <p class="line-height-small">LINCE <span>@ MasterMind SP</span></p>
-                                                <p class="smaller line-height-small">
-                                                    <span>{% t COURSE_LINCE_DESCRIPTION %}</span>
-                                                </p>
-                                            </li>
-                                            <li>{% t COURSE_NLP %} <span>@ Ápice</span></li>
-                                            <li>{% t COURSE_SALES %} <span>@ Insper</span></li>
-                                            <li>{% t COURSE_SPEAKING %} <span>@ The Speaker</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="mt-3">
-                                <h1>{% t LANGUAGES %}</h1>
-                                <div class="d-flex">
-                                    <div>
-                                        <p class="bold">{% t PORTUGUESE %}</p>
-                                        {% t LANGUAGE_NATIVE %}
-                                    </div>
-                                    <div class="ml-md-2">
-                                        <p class="bold">{% t ENGLISH %}</p>
-                                        {% t LANGUAGE_FLUENT %}
-                                    </div>
-                                    <div class="ml-md-2">
-                                        <p class="bold">{% t SPANISH %}</p>
-                                        {%t LANGUAGE_BASIC %}
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+                            </div>
+                        </section>
                     </div>
                 </section>
 
@@ -218,7 +216,7 @@
                             <li class="code">PHP</li>
                             <li class="code">Laravel</li>
                             <li class="code">Python</li>
-                            <li class="code">Shell / Bash</li>
+                            <li class="code">Bash</li>
                             <li class="code">Node</li>
                             <li class="code">React</li>
                             <li class="code">Vite</li>
