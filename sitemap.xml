@@ -4,29 +4,85 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 <url>
   <loc>https://viniciuscampitelli.com/</loc>
-  <lastmod>2022-12-23T18:53:53+00:00</lastmod>
+  <lastmod>2025-09-20T17:19:55+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://viniciuscampitelli.com/cv/</loc>
-  <lastmod>2022-12-23T18:53:53+00:00</lastmod>
-  <priority>0.84</priority>
-</url>
-<url>
   <loc>https://viniciuscampitelli.com/palestras/</loc>
-  <lastmod>2022-12-23T18:53:53+00:00</lastmod>
+  <lastmod>2025-09-20T17:19:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://viniciuscampitelli.com/cv/en/</loc>
-  <lastmod>2022-12-23T18:53:53+00:00</lastmod>
+  <loc>https://viniciuscampitelli.com/slides-criando-deployment-zero/</loc>
+  <lastmod>2025-08-22T16:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-boas-praticas-frontend/</loc>
+  <lastmod>2025-08-22T12:02:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-sites-reativos-javascript/</loc>
+  <lastmod>2025-08-08T20:00:02+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-como-php-executado-web/</loc>
+  <lastmod>2025-05-14T14:57:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-criando-aplicacoes-nuvem/</loc>
+  <lastmod>2024-10-21T19:04:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-refatorando-aplicacoes/</loc>
+  <lastmod>2024-08-24T11:58:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-como-comecar-ti/</loc>
+  <lastmod>2024-08-23T11:26:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-pipelines-ci-cd/</loc>
+  <lastmod>2024-12-06T16:28:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-git/</loc>
+  <lastmod>2024-05-15T02:09:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-webauthn/</loc>
+  <lastmod>2024-09-17T15:35:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/slides-autenticacao-jwt/</loc>
+  <lastmod>2023-12-09T14:36:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/workshop-containers/</loc>
+  <lastmod>2023-05-04T22:31:41+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/levando-aplicacao-amazon/</loc>
+  <lastmod>2022-11-24T14:04:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://viniciuscampitelli.com/workshop-kubernetes/</loc>
-  <lastmod>2022-10-20T16:56:56+00:00</lastmod>
+  <lastmod>2023-05-20T10:39:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
@@ -41,7 +97,7 @@
 </url>
 <url>
   <loc>https://viniciuscampitelli.com/slides-criptografia-melhores-praticas/</loc>
-  <lastmod>2021-08-21T13:56:02+00:00</lastmod>
+  <lastmod>2024-08-18T03:05:35+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
@@ -92,21 +148,26 @@
 <url>
   <loc>https://viniciuscampitelli.com/slides/expressive-oauth2-jwt/</loc>
   <lastmod>2022-12-23T18:53:53+00:00</lastmod>
-  <priority>0.51</priority>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://viniciuscampitelli.com/slides/libsodium-php/</loc>
   <lastmod>2022-12-23T18:53:53+00:00</lastmod>
-  <priority>0.51</priority>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://viniciuscampitelli.com/slides/php-fora-da-web/</loc>
   <lastmod>2022-12-23T18:53:53+00:00</lastmod>
-  <priority>0.51</priority>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://viniciuscampitelli.com/cv/</loc>
+  <lastmod>2025-09-20T17:19:55+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://viniciuscampitelli.com/cv/en/</loc>
-  <lastmod>2022-12-23T18:53:53+00:00</lastmod>
+  <lastmod>2025-09-20T17:19:55+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 </urlset>
