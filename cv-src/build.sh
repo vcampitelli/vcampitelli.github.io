@@ -15,7 +15,7 @@ cd "$(dirname "$0")/../"
 COMMAND="bundle exec jekyll"
 case "$1" in
     "serve")
-        COMMAND+=" serve -w -H 0.0.0.0"
+        COMMAND+=" serve -w -H 0.0.0.0 --port 4001 --trace"
         ;;
 
     *)
@@ -37,7 +37,7 @@ else
   docker run \
     --name $CONTAINER_NAME \
     --volume="${PWD}:/app" \
-    -p "4000:4000" \
+    -p "4001:4001" \
     -w "/app/${SOURCE_FOLDER}" \
     -it $CONTAINER_NAME \
     $COMMAND

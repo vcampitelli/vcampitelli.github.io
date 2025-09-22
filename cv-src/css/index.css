@@ -1,6 +1,9 @@
 /**
  * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
  */
+:root {
+  --section-padding: 2rem;
+}
 *,
 *::before,
 *::after {
@@ -74,44 +77,50 @@ body {
   padding: 2rem;
 }
 #main {
-  padding: 2rem 1rem;
+  padding: var(--section-padding) 1rem;
 }
 #intro {
   background: #eee;
   align-items: center;
   justify-content: space-between;
+  border-radius: 7px;
 }
 #intro > header {
   display: flex;
+  align-items: center;
 }
 #intro > header > img {
-  width: 80px;
+  width: 60px;
   background: #fff;
   border-radius: 50%;
   margin-right: 1rem;
 }
-#intro > div > a {
+#links {
+  display: flex;
   color: #666;
+}
+#links > div > a {
+  color: currentColor;
   text-decoration: none;
   display: block;
 }
-#intro > div > a:hover,
-#intro > div > a:focus {
+#links > div > a:hover,
+#links > div > a:focus {
   color: #f96;
 }
-#intro i[class^="icon-"] {
+#links > div i[class^="icon-"] {
   display: inline-block;
-  width: 16px;
+  width: 18px;
+  margin-right: 4px;
   text-align: center;
 }
-h1#title {
-  text-align: center;
+h1#name {
   color: #f96;
   font-variant: small-caps;
   line-height: 1.2;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
 }
-h1#title > span {
+h1#name > span {
   background: #f96;
   color: #fff;
   padding: 0 7px;
@@ -141,7 +150,7 @@ ul.nolist {
   list-style: none;
 }
 section + section {
-  margin-top: 4rem;
+  margin-top: var(--section-padding);
 }
 h1 {
   font-size: 2rem;
@@ -162,6 +171,9 @@ h3 {
   color: #555;
   margin-bottom: 1rem;
   line-height: 1.2;
+}
+.mt-1 {
+  margin-top: 1rem;
 }
 .mt-2 {
   margin-top: 2rem;
@@ -185,6 +197,8 @@ h3 {
   font-size: 0.8rem;
 }
 .label-list {
+  margin-left: 0;
+  padding-left: 10px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -224,9 +238,6 @@ h3 {
   #skills {
     display: grid;
     grid-template-columns: 0fr auto;
-  }
-  #skills > .label-list {
-    padding-left: 10px;
   }
   #skills > .label-list {
     border-bottom: 1px #eee solid;
@@ -414,18 +425,16 @@ footer > a {
   #intro {
     margin-top: 0;
   }
-  section + section {
-    margin-top: 3rem;
-  }
   .container {
     max-width: 100%;
   }
   .d-screen-only {
     display: none !important;
   }
-  #section-pro-education,
   #talks-wrapper {
     margin-top: 0;
+  }
+  #workshops-section {
     page-break-before: always;
   }
   body {
