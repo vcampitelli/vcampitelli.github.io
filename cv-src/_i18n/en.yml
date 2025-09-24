@@ -32,15 +32,15 @@ SKILL_PROCESS_MANAGEMENT: Process Management
 SKILL_LEADERSHIP: Leadership
 SKILL_AGILE: Agile methods
 PROFESSIONAL: Professional
-PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for digital products and online courses"
-MT4_JOB_DEV: Full-stack developer (PHP, HTML, CSS, JavaScript, SQL, NoSQl), DevOps engineer (AWS and on-premises solutions), and solutions architect
-MT4_JOB_LEAD: Lead developer and team lead at @MediaPost, an e-mail marketing platform
-MT4_JOB_CYBER: Cybersecurity engineer at segura
+PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for digital products and online courses, I created most of the platform's features and developed the backend in PHP and Zend Framework"
+MT4_JOB_DEV: Full-stack developer (PHP, HTML, CSS, JavaScript, SQL, NoSQL), DevOps engineer (AWS and on-premises solutions), and solutions architect at this multi-company technology group
+MT4_JOB_LEAD: Lead developer and team lead at @MediaPost, an e-mail marketing platform that delivered more than 100,000,000 emails per month, had more than 100 servers (both AWS and on-premises), and more than 1,000 clients. I was responsible for the architecture, development, DevOps, and maintenance of the platform.
+MT4_JOB_CYBER: Cybersecurity engineer at segura, a PAM (Privileged Access Management) solution, which helps companies secure their infrastructure, servers and data. I developed features for the existing platform and was responsible for creating a new framework based on Symfony to be used on their tools.
 PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap at the Web Development course"
 PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform (Drupal CMS) and acting as Business Development in Brazil by running meetings and demos for clients"
 PRO_CODIGOFONTE_DESCRIPTION: Wrote a few video scripts for the "Programmer Dictionary" series in one of the largest YouTube tech channels in Brazil
 PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating lessons and exercises for the DevOps course"
-PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions"
+PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions in one of the largest Brazilian e-commerce companies"
 PRO_FUSIONAUTH_DESCRIPTION: "Working as Developer Advocate / Developer Relations, I've created articles and blog posts about the CIAM platform, and developed libraries in several languages to demonstrate real-world usage of the SDKs"
 WORKSHOPS: Workshops and Trainings
 WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 100 hours of trainings in tests, microservices, DevOps, Linux, Cloud, and more"
