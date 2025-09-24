@@ -71,19 +71,17 @@ select {
 body {
   background: #fff;
   color: #444;
-  font-family: "Roboto Slab", Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 #intro {
-  padding: 2rem;
+  align-items: center;
+  justify-content: space-between;
 }
 #main {
   padding: var(--section-padding) 1rem;
-}
-#intro {
-  background: #eee;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 7px;
 }
 #intro > header {
   display: flex;
@@ -118,13 +116,7 @@ h1#name {
   color: #f96;
   font-variant: small-caps;
   line-height: 1.2;
-  letter-spacing: 1px;
-}
-h1#name > span {
-  background: #f96;
-  color: #fff;
-  padding: 0 7px;
-  letter-spacing: -1px;
+  letter-spacing: -0.1px;
 }
 #svg-phone {
   enable-background: new 0 0 891.024 891.024;
@@ -435,6 +427,7 @@ footer > a {
     margin-top: 0;
   }
   #workshops-section {
+    margin-top: 0;
     page-break-before: always;
   }
   body {
