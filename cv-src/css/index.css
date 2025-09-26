@@ -87,17 +87,11 @@ body {
   display: flex;
   align-items: center;
 }
-#intro > header > img {
-  width: 60px;
-  background: #fff;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
 #links {
   display: flex;
   color: #666;
 }
-#links > div > a {
+#links > a {
   color: currentColor;
   text-decoration: none;
   display: block;
@@ -113,8 +107,8 @@ body {
   text-align: center;
 }
 h1#name {
+  font-size: 3rem;
   color: #f96;
-  font-variant: small-caps;
   line-height: 1.2;
   letter-spacing: -0.1px;
 }

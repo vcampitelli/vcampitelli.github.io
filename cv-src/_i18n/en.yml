@@ -3,8 +3,9 @@ LOCATION_VALUE: Sao Paulo, Brazil
 AGE: Age
 AGE_VALUE: 33 years old
 ABOUT: About
-ABOUT_INTRO: "My name is <b>Vinícius Campitelli</b> and I am a passionate entrepreneur and a highly motivated full-stack engineer with over 20 years of experience.
-              I have developed complex projects in several areas, including process automation, email marketing and cybersecurity. I've managed complex Linux systems both on-premise and in cloud environments, leveraging DevOps best practices to optimize performance, scalability, and security. I have also <b>founded an e-learning startup</b>, and <b>spoken at several tech conferences</b>.  I'm now an <b>IT Consultant</b> and <b>Training Instructor</b>."
+AND: and
+ABOUT_INTRO: "I am a passionate entrepreneur and a highly motivated full-stack engineer with over 20 years of experience.
+              I have developed complex projects in several areas, including process automation, email marketing and cybersecurity. I've managed complex Linux systems both on-premise and in cloud environments, leveraging DevOps best practices to optimize performance, scalability, and security. I have also <b>founded an e-learning startup</b>, and <b>spoken at several tech conferences</b>."
 ABOUT_JOB_OPPORTUNITIES: "I am looking at job opportunities to work as:"
 ABOUT_JOB_CONTENT_CREATION: "Content creator <em>(e.g. articles, trainings and courses)</em>"
 ABOUT_JOB_CONSULTING: IT Consultant
@@ -31,25 +32,31 @@ SKILL_PEOPLE_MANAGEMENT: Team Management
 SKILL_PROCESS_MANAGEMENT: Process Management
 SKILL_LEADERSHIP: Leadership
 SKILL_AGILE: Agile methods
-PROFESSIONAL: Professional
-PRO_CURSEDUCA_DESCRIPTION: "CTO and co-founder of an e-learning SaaS platform for digital products and online courses, I created most of the platform's features and developed the backend in PHP and Zend Framework"
+PROFESSIONAL: Experience
+PRO_CURSEDUCA_DESCRIPTION: "An e-learning SaaS platform for digital products and online courses, I created most of the platform's features and developed the backend in PHP and Zend Framework"
 MT4_JOB_DEV: Full-stack developer (PHP, HTML, CSS, JavaScript, SQL, NoSQL), DevOps engineer (AWS and on-premises solutions), and solutions architect at this multi-company technology group
-MT4_JOB_LEAD: Lead developer and team lead at @MediaPost, an e-mail marketing platform that delivered more than 100,000,000 emails per month, had more than 100 servers (both AWS and on-premises), and more than 1,000 clients. I was responsible for the architecture, development, DevOps, and maintenance of the platform.
-MT4_JOB_CYBER: Cybersecurity engineer at segura, a PAM (Privileged Access Management) solution, which helps companies secure their infrastructure, servers and data. I developed features for the existing platform and was responsible for creating a new framework based on Symfony to be used on their tools.
+MT4_JOB_LEAD: Lead developer and team lead at @MediaPost, an e-mail marketing platform that delivered more than 100,000,000 emails per month, had more than 100 servers (both AWS and on-premises), and more than 1,000 clients. I was responsible for the architecture, development, DevOps, and maintenance of the platform
+MT4_JOB_CYBER: Cybersecurity engineer at segura, a PAM (Privileged Access Management) solution, which helps companies secure their infrastructure, servers and data. I developed features for the existing platform and was responsible for creating a new framework based on Symfony
 PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap at the Web Development course"
-PRO_OTTERA_DESCRIPTION: "Working as Software Engineer at the OTT platform (Drupal CMS) and acting as Business Development in Brazil by running meetings and demos for clients"
+PRO_OTTERA_DESCRIPTION: "Worked in the OTT platform (Drupal CMS) and also conducted client meetings, product demonstrations, and technical pre-sales activities that facilitated the company's entry intro the Brazilian market"
 PRO_CODIGOFONTE_DESCRIPTION: Wrote a few video scripts for the "Programmer Dictionary" series in one of the largest YouTube tech channels in Brazil
 PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating lessons and exercises for the DevOps course"
-PRO_YAMPI_CONSULTANCY_DESCRIPTION: "IT Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions in one of the largest Brazilian e-commerce companies"
+PRO_YAMPI_CONSULTANCY_DESCRIPTION: "Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions in one of the largest Brazilian e-commerce companies"
 PRO_FUSIONAUTH_DESCRIPTION: "Working as Developer Advocate / Developer Relations, I've created articles and blog posts about the CIAM platform, and developed libraries in several languages to demonstrate real-world usage of the SDKs"
-WORKSHOPS: Workshops and Trainings
+PRO_ROLE_CONSULTANT: "IT Consultant"
+PRO_ROLE_TEACHER: "Teacher"
+PRO_ROLE_OTTERA: "Engineer and Business Development Representative"
+PRO_ROLE_CODIGOFONTE: "Video Script Writer"
+PRO_ROLE_CURSEDUCA: "CTO and Co-Founder"
+PRO_ROLE_MT4: "Engineer, Team Lead, and Solutions Architect"
+WORKSHOPS: Projects
 WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 100 hours of trainings in tests, microservices, DevOps, Linux, Cloud, and more"
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ran almost 70 hours of workshops about more than 10 subjects (e.g. cybersecurity, architecture, DevOps)"
 WORKSHOPS_ANALITICA_DESCRIPTION: "Over 40 hours of training on Git and GitLab, enabling the company to proceed with a government procurement process"
 WORKSHOPS_REDEPARCERIAS_DESCRIPTION: "Led a security training on processes and core concepts to strengthen policies, mitigate risks, and ensure data protection and compliance"
 EDUCATION: Education
 EDUCATION_UNIVERSITY_DESCRIPTION: Bachelor of Computer Science
-OPEN_COURSES: Featured courses
+OPEN_COURSES: Certifications
 COURSE_LINCE_DESCRIPTION: Leadership, Interpersonal Intelligence and Effective Communcation
 COURSE_NLP: Neuro-linguistic Programming
 COURSE_SALES: Sales Management
