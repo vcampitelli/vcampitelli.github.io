@@ -3,6 +3,7 @@ LOCATION_VALUE: Sao Paulo, Brazil
 AGE: Age
 AGE_VALUE: 33 years old
 ABOUT: About
+PHONE: Phone
 AND: and
 ABOUT_INTRO: "I am a passionate entrepreneur and a highly motivated full-stack engineer with over 20 years of experience.
               I have developed complex projects in several areas, including process automation, email marketing and cybersecurity. I've managed complex Linux systems both on-premise and in cloud environments, leveraging DevOps best practices to optimize performance, scalability, and security. I have also <b>founded an e-learning startup</b>, and <b>spoken at several tech conferences</b>."
@@ -54,6 +55,8 @@ WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 100 hours of trainings in tests, mi
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ran almost 70 hours of workshops about more than 10 subjects (e.g. cybersecurity, architecture, DevOps)"
 WORKSHOPS_ANALITICA_DESCRIPTION: "Over 40 hours of training on Git and GitLab, enabling the company to proceed with a government procurement process"
 WORKSHOPS_REDEPARCERIAS_DESCRIPTION: "Led a security training on processes and core concepts to strengthen policies, mitigate risks, and ensure data protection and compliance"
+ARTICLES_FUSIONAUTH_DESCRIPTION: Wrote articles about the FusionAuth platform, including a series on how to use the platform to build a secure, scalable, and secure CIAM solution
+ARTICLES_PHPARCH_DESCRIPTION: Wrote articles on cryptography and best practices for PHP developers
 EDUCATION: Education
 EDUCATION_UNIVERSITY_DESCRIPTION: Bachelor of Computer Science
 OPEN_COURSES: Certifications

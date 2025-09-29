@@ -107,10 +107,11 @@ body {
   text-align: center;
 }
 h1#name {
-  font-size: 3rem;
+  font-size: 3.3rem;
   color: #f96;
   line-height: 1.2;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.3px;
+  font-weight: bold;
 }
 #svg-phone {
   enable-background: new 0 0 891.024 891.024;
@@ -420,12 +421,10 @@ footer > a {
   #talks-wrapper {
     margin-top: 0;
   }
-  #workshops-section {
+  #workshops-section,
+  #section-skills {
     margin-top: 0;
     page-break-before: always;
-  }
-  body {
-    padding-bottom: 2rem;
   }
   #footer-text {
     display: flex;

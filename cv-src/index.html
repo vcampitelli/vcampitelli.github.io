@@ -28,12 +28,9 @@
                 </header>
             </div>
             <div id="links">
-                {% t LOCATION_VALUE %} | +55 11 93477-2015 |&nbsp;
-                <a href="mailto:eu@viniciuscampitelli.com" title="Email">
-                    eu@viniciuscampitelli.com</a>&nbsp;|&nbsp;
-                <a href="https://viniciuscampitelli.com" title="LinkedIn">
-                    viniciuscampitelli.com
-                </a>
+                {% t LOCATION %}: {% t LOCATION_VALUE %} | {% t PHONE %}: +55 11 93477-2015 |&nbsp;
+                Email:&nbsp;<a href="mailto:eu@viniciuscampitelli.com" title="Email">eu@viniciuscampitelli.com</a>&nbsp;|
+                Portfolio:&nbsp;<a href="https://viniciuscampitelli.com" title="LinkedIn">viniciuscampitelli.com</a>
             </div>
 
             <main id="main">
@@ -153,6 +150,19 @@
                                     <span class="small text-muted">2023</span>
                                 </p>
                                 <p>
+                                    <span class="bold">FusionAuth:</span>
+                                    <a href="https://fusionauth.io/blog/author/vinicius-campitelli/">
+                                        https://fusionauth.io/blog/author/vinicius-campitelli/
+                                    </a>
+                                </p>
+                                <p>{% t ARTICLES_FUSIONAUTH_DESCRIPTION %}</p>
+                            </div>
+
+                            <div class="mt-1">
+                                <p>
+                                    <span class="small text-muted">2023</span>
+                                </p>
+                                <p>
                                     <span class="bold">Analítica Soluções</span>
                                 </p>
                                 <p>{% t WORKSHOPS_ANALITICA_DESCRIPTION %}</p>
@@ -166,6 +176,20 @@
                                     <span class="bold">Picolotec</span>
                                 </p>
                                 <p>{% t WORKSHOPS_PICOLOTEC_DESCRIPTION %}</p>
+                            </div>
+
+                            <div class="mt-1">
+                                <p>
+                                    <span class="small text-muted">2020 - 2021</span>
+                                </p>
+                                <p>
+                                    <span class="bold">PHPArch:</span>
+                                    <a href="https://www.phparch.com/community/vinicius-campitelli/">
+                                        https://www.phparch.com/community/vinicius-campitelli/
+                                    </a>
+                                </p>
+                                <p>{% t ARTICLES_PHPARCH_DESCRIPTION %}</p>
+                                </p>
                             </div>
                         </section>
 
@@ -220,7 +244,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section id="section-skills">
                     <h1>{%t SKILLS %}</h1>
                     <div id="skills">
                         <p>{% t SKILL_TECHNOLOGIES %}</p>
@@ -245,7 +269,7 @@
                             <li class="code">MongoDB</li>
                             <li class="code">SQL</li>
                             <li class="code">MySQL</li>
-                            <li class="code">MariaSQL</li>
+                            <li class="code">MariaDB</li>
                             <li class="code">PostgreSQL</li>
                         </ul>
 
