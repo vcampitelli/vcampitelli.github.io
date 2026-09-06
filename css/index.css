@@ -32,10 +32,12 @@ span.muted {
 }
 #header-photo {
   display: block;
+  margin-bottom: 20px;
   align-self: center;
   border-radius: 50%;
 }
 #header-intro {
+  display: block;
   color: #f0f0f0;
   column-gap: 2rem;
   line-height: 1.2;
@@ -99,16 +101,14 @@ span.muted {
 /**
  * Talks
  */
-iframe, .slide-thumbnail {
+.slide-thumbnail {
+  display: block;
   width: 100%;
   border: 0;
   scrollbar-width: thin;
 }
 .slide-thumbnail > img {
   max-width: 100%;
-}
-.card {
-  align-self: center;
 }
 .card > h3 > a {
   text-decoration: none;
@@ -119,8 +119,7 @@ iframe, .slide-thumbnail {
 }
 .button-watch {
   display: inline-block;
-  font-size: 0.75rem;
-  padding: 8px 10px;
+  padding: 12px 22px;
   color: var(--color-orange);
   text-transform: uppercase;
   background-color: #eaeaea;
@@ -215,12 +214,6 @@ iframe, .slide-thumbnail {
     padding: 30px 0;
   }
 
-  #talks > article {
-    padding: 30px 0;
-  }
-  #talks > article + article {
-    border-top: 1px #ddd solid;
-  }
   .d-flex, .d-grid {
     display: block;
   }
@@ -230,13 +223,6 @@ iframe, .slide-thumbnail {
   }
   #links .d-flex a {
     flex-basis: 50% !important;
-  }
-  iframe, .slide-thumbnail > img {
-    height: 300px;
-    max-height: 90vh;
-  }
-  .card {
-    margin-top: 30px;
   }
   .button-watch-break {
     margin-bottom: 5px;
@@ -261,24 +247,42 @@ iframe, .slide-thumbnail {
     padding: 60px 0;
   }
 
-  #talks > article {
-    display: flex;
-    margin: 60px 0;
-  }
-  iframe,
   .slide-thumbnail,
   .slide-thumbnail > img {
     width: 450px;
     flex-shrink: 0;
   }
-  #talks > article,
-  iframe,
-  .slide-thumbnail > img,
-  .card {
-    height: 315px;
+  .slide-thumbnail > img {
+    height: 284px;
+    object-fit: cover;
   }
   .slide-thumbnail {
     min-height: 253px;
+  }
+}
+@media (max-width: 1023.99px) {
+  #talks > article {
+    padding: 30px 0;
+  }
+  #talks > article + article {
+    border-top: 1px #ddd solid;
+  }
+  .card {
+    margin-top: 10px;
+    align-self: center;
+  }
+}
+@media (min-width: 1024px) {
+  #header-intro {
+    display: grid;
+  }
+  #header-photo {
+    margin-bottom: 0;
+  }
+  #talks > article {
+    display: flex;
+    margin: 60px 0;
+    align-items: start;
   }
   .card {
     display: flex;
