@@ -2,7 +2,8 @@
  * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
  */
 :root {
-  --section-padding: 2rem;
+  --section-padding: 2.5rem;
+  --item-spacing: 0.75rem;
 }
 *,
 *::before,
@@ -71,8 +72,7 @@ select {
 body {
   background: #fff;
   color: #444;
-  font-family: Roboto, sans-serif;
-  font-optical-sizing: auto;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -87,17 +87,11 @@ body {
   display: flex;
   align-items: center;
 }
-#intro > header > img {
-  width: 60px;
-  background: #fff;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
 #links {
   display: flex;
   color: #666;
 }
-#links > div > a {
+#links > a {
   color: currentColor;
   text-decoration: none;
   display: block;
@@ -113,10 +107,11 @@ body {
   text-align: center;
 }
 h1#name {
+  font-size: 3.3rem;
   color: #f96;
-  font-variant: small-caps;
   line-height: 1.2;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.3px;
+  font-weight: bold;
 }
 #svg-phone {
   enable-background: new 0 0 891.024 891.024;
@@ -165,7 +160,7 @@ h3 {
   line-height: 1.2;
 }
 .mt-1 {
-  margin-top: 1rem;
+  margin-top: var(--item-spacing);
 }
 .mt-2 {
   margin-top: 2rem;
@@ -228,16 +223,12 @@ h3 {
 }
 @media (min-width: 792px), print {
   #skills {
-    display: grid;
-    grid-template-columns: 0fr auto;
+    display: block;
   }
   #skills > .label-list {
     border-bottom: 1px #eee solid;
   }
-  #skills > p {
-    margin: 0;
-    white-space: nowrap;
-  }
+  #skills > p { margin: 0; }
   #skills > p:last-of-type,
   #skills > .label-list:last-of-type {
     border-bottom: 0;
@@ -247,8 +238,7 @@ h3 {
     padding-top: 10px;
     padding-bottom: 5px;
   }
-  #skills > p:first-of-type,
-  #skills > .label-list:first-of-type {
+  #skills > p:first-of-type {
     padding-top: 0;
   }
   #skills > .label-list > li {
@@ -426,12 +416,10 @@ footer > a {
   #talks-wrapper {
     margin-top: 0;
   }
-  #workshops-section {
+  #workshops-section,
+  #section-skills {
     margin-top: 0;
     page-break-before: always;
-  }
-  body {
-    padding-bottom: 2rem;
   }
   #footer-text {
     display: flex;
