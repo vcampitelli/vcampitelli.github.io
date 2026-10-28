@@ -88,13 +88,7 @@ body {
   align-items: center;
 }
 #links {
-  display: flex;
   color: #666;
-}
-#links > a {
-  color: currentColor;
-  text-decoration: none;
-  display: block;
 }
 #links > div > a:hover,
 #links > div > a:focus {
@@ -417,7 +411,7 @@ footer > a {
     margin-top: 0;
   }
   #workshops-section,
-  #section-skills {
+  #section-pro-role-ada {
     margin-top: 0;
     page-break-before: always;
   }
@@ -440,6 +434,10 @@ footer > a {
   }
   .smaller {
     font-size: 0.7rem;
+  }
+  a {
+    color: currentColor;
+    text-decoration: none;
   }
 }
 @media screen {

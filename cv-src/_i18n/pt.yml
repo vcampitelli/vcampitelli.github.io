@@ -43,9 +43,9 @@ PRO_CODIGOFONTE_DESCRIPTION: Escrevi alguns roteiros para a série "Dicionário 
 PRO_LETSCODE_DESCRIPTION: "Instrutor no curso de DevOps, além do planejamento, criação de materiais e exercícios para os módulos"
 PRO_YAMPI_CONSULTANCY_DESCRIPTION: "Consultoria em TI sobre tomada de decisões, arquitetura de software, segurança de aplicações e boas práticas de engenharia; também ministrei treinamentos técnicos e workshops para uma das maiores empresas de e-commerce do Brasil"
 PRO_FUSIONAUTH_DESCRIPTION: "Atuei em Developer Relations e Developer Advocacy para uma plataforma CIAM. Criei artigos técnicos e postagens no blog, além de bibliotecas em diversas linguagens para demonstrar integrações reais com SDKs e APIs"
-PRO_ROLE_CONSULTANT_SEVERAL_COMPANIES_DESCRIPTION: "Operand: consultoria para identificar diversos problemas nos sistemas, identificando gargalos e propondo melhorias na arquitetura e nos bancos de dados
-    Gênesis Tecnologia: diversas melhorias nas configurações do servidor Web, PHP-FPM, Redis, sistema operacional e na aplicação para ajudar a identificar pontos de melhorias, gargalos e problemas de segurança"
-PRO_ROLE_CONSULTANT_SEVERAL_COMPANIES: "Several companies"
+PRO_ROLE_CONSULTANT_OPERAND_DESCRIPTION: "Prestação de consultoria de TI para diagnosticar problemas em sistemas, identificar gargalos de performance e propor melhorias em arquitetura de software e bancos de dados."
+PRO_ROLE_CONSULTANT_GENESIS_DESCRIPTION: "Implementação de melhorias em servidores web, PHP-FPM, Redis, sistema operacional e aplicações, com foco em performance, identificação de gargalos e análise de problemas de segurança."
+PRO_ROLE_CONSULTANT_OTHER_COMPANIES: "Outras empresas"
 PRO_ROLE_CONSULTANT: "Consultoria"
 PRO_ROLE_TEACHER: "Professor"
 PRO_ROLE_OTTERA: "Engenheiro e Pré-vendas técnico"
@@ -54,7 +54,7 @@ PRO_ROLE_CURSEDUCA: "CTO e Co-Fundador"
 PRO_ROLE_MT4: "Líder de equipe e Arquiteto de soluções"
 WORKSHOPS: Treinamentos e Projetos
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ministrei setenta horas de treinamentos sobre segurança, criptografia, arquiteturas de sistemas, microsserviços, e DevOps, entre outros assuntos"
-WORKSHOPS_YAMPI_DESCRIPTION: "Mais de 100 horas de workshops sobre microsserviços, DevOps, Linux, Cloud, boas práticas de programação, testes e mais"
+WORKSHOPS_YAMPI_DESCRIPTION: "Mais de 150 horas de workshops sobre microsserviços, DevOps, Linux, Cloud, boas práticas de programação, testes e mais"
 WORKSHOPS_ANALITICA_DESCRIPTION: "Treinamento de 40 horas para duas turmas sobre o uso de Git e GitLab, necessário para o ganho de uma licitação"
 WORKSHOPS_REDEPARCERIAS_DESCRIPTION: "Liderei um treinamento de segurança da informação para toda a empresa, apresentando processos e conceitos básicos para fortalecer políticas, mitigar riscos e garantir a proteção e conformidade de dados"
 ARTICLES_FUSIONAUTH_DESCRIPTION: Escrevi artigos técnicos sobre como usar a plataforma, soluções CIAM, SDKs e APIs da empresa
