@@ -1,12 +1,11 @@
 LOCATION: Location
 LOCATION_VALUE: Sao Paulo, Brazil
 AGE: Age
-AGE_VALUE: 33 years old
-ABOUT: About
+AGE_VALUE: 34 years old
+ABOUT: Professional Summary
 PHONE: Phone
 AND: and
-ABOUT_INTRO: "I am a passionate entrepreneur and a highly motivated full-stack engineer with over 20 years of experience.
-              I have developed complex projects in several areas, including process automation, email marketing and cybersecurity. I've managed complex Linux systems both on-premise and in cloud environments, leveraging DevOps best practices to optimize performance, scalability, and security. I have also <b>founded an e-learning startup</b>, and <b>spoken at several tech conferences</b>."
+ABOUT_INTRO: "Full-stack engineer, IT consultant, and technology educator with 20+ years of experience in software engineering, systems architecture, DevOps, cloud infrastructure, cybersecurity, and developer relations. Experienced with PHP, Laravel, Python, JavaScript, SQL/NoSQL, AWS, Linux, Docker, Kubernetes, and CI/CD. Founded an e-learning SaaS startup, led engineering teams, delivered technical training, and spoke at technology conferences."
 ABOUT_JOB_OPPORTUNITIES: "I am looking at job opportunities to work as:"
 ABOUT_JOB_CONTENT_CREATION: "Content creator <em>(e.g. articles, trainings and courses)</em>"
 ABOUT_JOB_CONSULTING: IT Consultant
@@ -33,34 +32,36 @@ SKILL_PEOPLE_MANAGEMENT: Team Management
 SKILL_PROCESS_MANAGEMENT: Process Management
 SKILL_LEADERSHIP: Leadership
 SKILL_AGILE: Agile methods
-PROFESSIONAL: Experience
-PRO_CURSEDUCA_DESCRIPTION: "An e-learning SaaS platform for digital products and online courses, I created most of the platform's features and developed the backend in PHP and Zend Framework"
-MT4_JOB_DEV: Full-stack developer (PHP, HTML, CSS, JavaScript, SQL, NoSQL), DevOps engineer (AWS and on-premises solutions), and solutions architect at this multi-company technology group
-MT4_JOB_LEAD: Lead developer and team lead at @MediaPost, an e-mail marketing platform that delivered more than 100,000,000 emails per month, had more than 100 servers (both AWS and on-premises), and more than 1,000 clients. I was responsible for the architecture, development, DevOps, and maintenance of the platform
-MT4_JOB_CYBER: Cybersecurity engineer at segura, a PAM (Privileged Access Management) solution, which helps companies secure their infrastructure, servers and data. I developed features for the existing platform and was responsible for creating a new framework based on Symfony
+PROFESSIONAL: Professional Experience
+PRO_CURSEDUCA_DESCRIPTION: "Co-founded and served as CTO of an e-learning SaaS platform for digital products and online courses. Created most platform features at the time and developed the backend in PHP and Zend Framework."
+MT4_JOB_DEV: Full-stack development with PHP, HTML, CSS, JavaScript, SQL, and NoSQL; DevOps engineering with AWS and on-premises infrastructure; and solutions architecture for a multi-company technology group
+MT4_JOB_LEAD: Led development and engineering teams at @MediaPost, an email marketing platform delivering more than 100,000,000 emails per month across 100+ AWS and on-premises servers for 1,000+ clients. Owned platform architecture, software development, DevOps, and maintenance
+MT4_JOB_CYBER: Developed cybersecurity features for segura, a Privileged Access Management (PAM) solution for infrastructure, servers, and data protection. Created a new Symfony-based framework for the platform
 PRO_4LINUX_DESCRIPTION: "Teaching HTML, CSS, JavaScript and PhoneGap at the Web Development course"
-PRO_OTTERA_DESCRIPTION: "Worked in the OTT platform (Drupal CMS) and also conducted client meetings, product demonstrations, and technical pre-sales activities that facilitated the company's entry intro the Brazilian market"
+PRO_OTTERA_DESCRIPTION: "Developed on an OTT platform using Drupal CMS and conducted client meetings, product demonstrations, and technical pre-sales activities that supported the company's entry into the Brazilian market"
 PRO_CODIGOFONTE_DESCRIPTION: Wrote a few video scripts for the "Programmer Dictionary" series in one of the largest YouTube tech channels in Brazil
 PRO_LETSCODE_DESCRIPTION: "Teaching DevOps, database and other classes, planning and creating lessons and exercises for the DevOps course"
-PRO_YAMPI_CONSULTANCY_DESCRIPTION: "Consulting in decision making, architecture design, security and best practices, besides running several training and workshop sessions in one of the largest Brazilian e-commerce companies"
-PRO_FUSIONAUTH_DESCRIPTION: "Working as Developer Advocate / Developer Relations, I've created articles and blog posts about the CIAM platform, and developed libraries in several languages to demonstrate real-world usage of the SDKs"
+PRO_YAMPI_CONSULTANCY_DESCRIPTION: "Providing IT consulting on decision-making, software architecture, application security, and engineering best practices; also delivered technical training and workshops for one of Brazil's largest e-commerce companies"
+PRO_FUSIONAUTH_DESCRIPTION: "Worked in Developer Relations and Developer Advocacy for a CIAM platform. Created technical articles and blog posts, and developed libraries in multiple programming languages to demonstrate real-world SDK and API integrations"
+PRO_ROLE_CONSULTANT_SEVERAL_COMPANIES_DESCRIPTION: "Operand:"
+PRO_ROLE_CONSULTANT_SEVERAL_COMPANIES: "Several companies"
 PRO_ROLE_CONSULTANT: "IT Consultant"
 PRO_ROLE_TEACHER: "Teacher"
 PRO_ROLE_OTTERA: "Engineer and Business Development Representative"
 PRO_ROLE_CODIGOFONTE: "Video Script Writer"
 PRO_ROLE_CURSEDUCA: "CTO and Co-Founder"
 PRO_ROLE_MT4: "Engineer, Team Lead, and Solutions Architect"
-WORKSHOPS: Projects
+WORKSHOPS: Training and Projects
 WORKSHOPS_YAMPI_DESCRIPTION: "Delivered over 100 hours of trainings in tests, microservices, DevOps, Linux, Cloud, and more"
 WORKSHOPS_PICOLOTEC_DESCRIPTION: "Ran almost 70 hours of workshops about more than 10 subjects (e.g. cybersecurity, architecture, DevOps)"
 WORKSHOPS_ANALITICA_DESCRIPTION: "Over 40 hours of training on Git and GitLab, enabling the company to proceed with a government procurement process"
 WORKSHOPS_REDEPARCERIAS_DESCRIPTION: "Led a security training on processes and core concepts to strengthen policies, mitigate risks, and ensure data protection and compliance"
-ARTICLES_FUSIONAUTH_DESCRIPTION: Wrote articles about the FusionAuth platform, including a series on how to use the platform to build a secure, scalable, and secure CIAM solution
+ARTICLES_FUSIONAUTH_DESCRIPTION: Wrote articles about the FusionAuth platform, including a series on building secure and scalable CIAM solutions
 ARTICLES_PHPARCH_DESCRIPTION: Wrote articles on cryptography and best practices for PHP developers
 EDUCATION: Education
 EDUCATION_UNIVERSITY_DESCRIPTION: Bachelor of Computer Science
 OPEN_COURSES: Certifications
-COURSE_LINCE_DESCRIPTION: Leadership, Interpersonal Intelligence and Effective Communcation
+COURSE_LINCE_DESCRIPTION: Leadership, Interpersonal Intelligence and Effective Communication
 COURSE_NLP: Neuro-linguistic Programming
 COURSE_SALES: Sales Management
 COURSE_SPEAKING: Public Speaking and Presentation

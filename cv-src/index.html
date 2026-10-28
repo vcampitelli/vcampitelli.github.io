@@ -9,10 +9,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="{{ "/css/index.css?d=20250924" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
+        <link href="{{ "/css/index.css?d=20261028" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
         <link href="{{ "/css/font.css?d=202010081830" | prepend: site.baseurl_root }}" rel="stylesheet" type="text/css">
 
         <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon.png">
@@ -54,6 +51,15 @@
                                     <span class="bold">{% t PRO_ROLE_CONSULTANT %} @ Yampi</span>
                                 </p>
                                 <p>{% t PRO_YAMPI_CONSULTANCY_DESCRIPTION %}</p>
+                            </div>
+                            <div class="mt-1 w-half">
+                                <p>
+                                    <span class="small text-muted">2023 - 2024</span>
+                                </p>
+                                <p>
+                                    <span class="bold">{% t PRO_ROLE_CONSULTANT %} @ {% t PRO_ROLE_CONSULTANT_SEVERAL_COMPANIES %}</span>
+                                </p>
+                                <p>{% t PRO_ROLE_CONSULTANT_SEVERAL_COMPANIES_DESCRIPTION %}</p>
                             </div>
                             <div class="mt-1 w-half">
                                 <p>
@@ -116,9 +122,11 @@
                                 <p>
                                     <span class="bold">{% t PRO_ROLE_MT4 %} @ MT4 Tecnologia, MediaPost {% t AND %} segura</span>
                                 </p>
-                                <p>&bull; {% t MT4_JOB_DEV %}</p>
-                                <p>&bull; {% t MT4_JOB_LEAD %}</p>
-                                <p>&bull; {% t MT4_JOB_CYBER %}</p>
+                                <ul>
+                                    <li>{% t MT4_JOB_DEV %}</li>
+                                    <li>{% t MT4_JOB_LEAD %}</li>
+                                    <li>{% t MT4_JOB_CYBER %}</li>
+                                </ul>
                             </div>
                         </section>
 
@@ -374,10 +382,14 @@
                                     <img src="{{ "/img/flag/br.svg" | prepend: site.baseurl_root }}" alt="{% t lang.PORTUGUESE %}" title="{% t lang.PORTUGUESE %}">
                                     PHPSP
                                 </p>
+                                <p>
                                 {% t TALKS_PHPSP_LIVE_SECURITY %}
                                 (<a href="https://www.youtube.com/watch?v=kYY-DjrN55U">{% t TALKS_WATCH %}</a>)
+                                </p>
+                                <p>
                                 {% t TALKS_PHPSP_LIVE_DOCKER %}
                                 (<a href="https://www.youtube.com/watch?v=vnVywc1C-_w">{% t TALKS_WATCH %}</a>)
+                                </p>
                             </div>
                             <div>
                                 <p>
